@@ -1,6 +1,11 @@
 const express = require('express');
 const app = express();
 const crudRoute = require('./routes/crudRoute');
+const { initDatabase } = require('./database/databaseConnector');
+
+
+// initialiser la connexion sur le base de donnée
+initDatabase();
 
 // Ato no apetraka ny partie vue
 app.set('views','./views');
