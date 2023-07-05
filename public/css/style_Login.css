@@ -1,0 +1,662 @@
+body{   
+    height: 100vh;
+    align-items: center;
+    display: flex;
+    background: linear-gradient(90deg,#380066 20%,#5f0085 70%,#a300c4 100%);
+} 
+.PART1{
+    width: 58%;
+    height: 100vh;
+}
+.PART2{
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 42%;
+    height: 100vh; 
+} 
+
+/* Block Salutation */
+.block-logo{
+    position: relative;
+    width: 72%;
+    height: 100vh;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+}
+.block-annce{
+    position: absolute;
+    top: 9vh;
+    left: 0;
+    width: 64%;
+    height: 15vh;
+    display: flex;
+    overflow: hidden; 
+}
+
+
+.box-annce{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    transition: 1.2s;
+}
+.block-annce .box-annce p{
+    font-size: 4.7vh;
+    font-family: font-1;
+    color: white;
+}
+.block-annce .p2{
+    margin-top: -2%;
+}
+
+
+.block-logo img{
+    width: 100%;
+    margin-top: 8vh;       /* A    E X A M I N E R  */
+}
+.block-logo p{
+    text-align: center;
+    color: rgb(209, 209, 209);
+    font-size: 145%;
+}
+.block-logo a{
+    width: 100%;
+    text-align: center;
+}
+.btn-vplus{
+    /* padding: 2vh 3vh; */
+    padding-top: 2%;
+    padding-bottom: 2%;
+    padding-right: 4%;
+    padding-left: 4%;
+    font-size: 100%;
+    
+}
+/* Block Formulaire */
+.block-form{
+    position: absolute;
+    width: 87%;
+    height: 30rem;
+    overflow: hidden; 
+    border-radius: 25px; 
+}
+
+
+/* Affichage n'i Contenu form */
+.box-content-form{
+    width: 100%;
+    height: 30rem;
+    background: rgb(241, 242, 242 , 17%) ;
+    z-index: 0;
+    display: flex;
+}
+.box-login{
+    position: absolute;
+    width: 100%;
+    height: 30rem;
+}
+.box-login form{
+    width: 100%;
+    height: 30rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+/* .firstChild{
+    margin-top: 10vh;
+} */
+
+
+form input::placeholder{
+    font-size: 110%;
+    color: rgb(240, 240, 240);
+}
+
+form input{
+    /* padding: 2.5vh 3.5vh; */
+    padding: 15px 30px;
+    width: 75%;
+    border-radius: 10px;
+    margin-top: 2vh;
+    font-size: 110%;
+    background: rgba(255, 255, 255, 0.24);
+    color: rgb(255, 255, 255);
+}
+.ResultAnalyse{
+    margin-top: -5%;
+    padding-bottom: 5%;
+    font-size: 110%;
+    color: rgba(255, 255, 255, 0.938);
+}
+
+ form input:focus{
+    background: rgba(255, 255, 255, 0.178);
+}
+form input:focus::placeholder{
+    color: rgba(235, 235, 235, 0.699);
+}
+/* Bouton submit */
+.submt-form{
+    margin-top: 4.5vh;
+    font-family: sans-serif;
+    color: rgba(255, 255, 255, 0.938);
+    background-color: rgb(255, 0, 179);
+    border-radius: 10px;
+    cursor: pointer;
+
+}
+.submt-form:hover{
+    transition: .5s;    
+    background-color: rgb(255, 0, 106);
+}
+
+.submt-form.submtClicked{
+    background-color: rgb(255, 0, 179);
+}
+.submt-form.submtClicked:hover{
+    transition: .5s;    
+    background-color: rgb(255, 0, 106);
+}
+
+.box-login form div{
+    width: 100%;
+    margin-top: 1vh;
+}
+.frm-anc{
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.788);
+    font-size: 100%;
+    margin-left: 18%;
+}
+.frm-anc:hover{
+    color: white;
+    transition: .3s;
+}
+.frm-anc span{
+    font-family: sans-serif;
+}
+.box-login{
+    transition: .6s;
+}
+
+@media screen and (max-width : 2000px ) {
+    .block-annce .box-annce p{
+        font-size: 45px;
+    }
+    .block-ttr-form  button{
+        font-size: 220%;
+    }
+    .block-logo p{
+        font-size: 200%;
+    }
+
+    .block-form{
+        height: 35rem;
+     
+    }
+    .box-content-form{
+        height: 35rem;
+    }
+    .box-login{
+        height: 35rem;
+    }
+    .box-login form{
+        height: 35rem;
+    }
+    .btn-vplus{
+        font-size: 160%;
+    }
+
+    .box-register .ttle-pa{
+        font-size: 29px;
+    }
+    form input::placeholder{
+        font-size: 25px;
+    }
+    form input{
+        padding: 20px 35px;
+        font-size: 25px;
+    }
+    .ResultAnalyse{
+        font-size: 25px;
+    }
+
+    .frm-anc{
+        font-size: 135%;
+    }
+    
+
+}
+@media screen and (max-width : 1750px)  {
+    .block-annce .box-annce p{
+        font-size: 40px;
+    }
+    .block-ttr-form  button{
+        font-size: 200%;
+    }
+    .block-form{
+        height: 29rem;
+     
+    }
+    .box-content-form{
+        height: 29rem;
+    }
+    .box-login{
+        height: 29rem;
+    }
+    .box-login form{
+        height: 29rem;
+    }
+    .block-logo p{
+        font-size: 170%;
+    }
+    .btn-vplus{
+        font-size: 130%;
+    }
+
+    .box-register .ttle-pa{
+        font-size: 26px;
+    }
+    form input::placeholder{
+        font-size: 22px;
+    }
+    form input{
+        padding: 16px 30px;
+        font-size: 22px;
+    }
+    .ResultAnalyse{
+        font-size: 22px;
+    }
+
+    .frm-anc{
+        font-size: 120%;
+        margin-left: 17%;
+    }
+}
+@media screen and (max-width : 1550px)  {
+    .block-annce .box-annce p{
+        font-size: 35px;
+    }
+    .block-ttr-form  button{
+        font-size: 170%;
+    }
+    .block-logo p{
+        font-size: 150%;
+    }
+
+    .block-form{
+        height: 26rem;
+     
+    }
+    .box-content-form{
+        height: 26rem;
+    }
+    .box-login{
+        height: 26rem;
+    }
+    .box-login form{
+        height: 26rem;
+    }
+
+    .btn-vplus{
+        font-size: 110%;
+    }
+
+    .box-register .ttle-pa{
+        font-size: 22px;
+    }
+    form input::placeholder{
+        font-size: 18px;
+    }
+    form input{
+        padding: 13px 24px;
+        font-size: 18px;
+    }
+    .ResultAnalyse{
+        font-size: 18px;
+    }
+
+    .frm-anc{
+        margin-left: 18%;
+        font-size: 100%;
+    }   
+
+}
+@media screen and (max-width : 1350px) {
+    .block-annce .box-annce p{
+        font-size: 30px;
+    }
+    .block-ttr-form  button{
+        font-size: 150%;
+    }
+    .block-logo p{
+        font-size: 135%;
+    }
+    .btn-vplus{
+        font-size: 95%;
+    }
+
+    .box-register .ttle-pa{
+        font-size: 21px;
+    }
+    .block-form{
+        height: 23rem;
+     
+    }
+    .box-content-form{
+        height: 23rem;
+    }
+    .box-login{
+        height: 23rem;
+    }
+    .box-login form{
+        height: 23rem;
+    }
+    form input::placeholder{
+        font-size: 17px;
+    }
+    form input{
+        padding: 10px 20px;
+        font-size: 17px;
+    }
+    .ResultAnalyse{
+        font-size: 17px;
+    }
+    
+}
+@media screen and (max-width : 1160px) {
+    .block-annce .box-annce p{
+        font-size: 25px;
+    }
+    .block-ttr-form  button{
+        font-size: 140%;
+    }
+    .block-logo p{
+        font-size: 120%;
+    }
+
+    .box-register .ttle-pa{
+        font-size: 20px;
+    }
+    form input::placeholder{
+        font-size: 16px;
+    }
+    form input{
+        padding: 9px 18px;
+        font-size: 16px;
+    }
+    .ResultAnalyse{
+        font-size: 16px;
+    }
+    .frm-anc{
+        margin-left: 19%;
+        font-size: 90%;
+    } 
+}
+
+
+
+
+/* TABlette and Smartphone
+ */
+@media screen and (max-width : 1023px) {
+    body{ 
+        align-items: center;
+        display: Block;
+        background: #33005c  ;
+    } 
+    .PART1{
+        display: none;
+    }
+    .PART2{
+        width: 70%;
+        margin: 0 auto; 
+    }
+    .phone{
+        display: block;
+    }
+
+    /* Block Formulaire */
+    .ttr-pgPhone{
+        height: 15vh;
+        display: flex;
+        width: 100%; 
+        align-items: center;
+        justify-content: center; 
+    }
+    .ttr-pgPhone img{
+        width: 18%;
+    }
+
+
+    .box-register .ttle-pa{
+        margin-top: 2vh;
+        font-size: 25px;
+    }
+
+    .block-form{
+        width: 100%;
+    }
+
+    .firstChild{
+        margin-top: 6vh;
+    }
+    .ResultAnalyse{
+        top: 18vh;
+    }
+    .InscripRsltAnalyse2{
+        top: 17vh;
+    }
+    
+    .block-ttr-form{
+        display: none;
+    }
+
+    .box-login .phone-Divbtn-inscri , .box-reg .phone-Divbtn-inscri{
+        margin-top: 6vh;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    
+    .phone-btn-inscri span{
+        color: rgb(255, 0, 179);
+        font-family: sans-serif;
+    }
+
+    .box-reg .phone-conn{
+        margin-top: -5vh;
+        margin-left: -40%;
+    }
+
+    .submt-form{
+        margin-top: 5vh
+    }
+
+    .box-content-form{
+        background: none ;
+    }
+
+    
+    .prev-insc{
+        margin-top: 2vh;
+    }
+    .nxt-insc{
+        width: 16%;
+    }
+
+    /* VARIATION WIDTH */
+
+    .box-register .ttle-pa{
+        margin-top: 2vh;
+        /* font-size: 28px; */
+    }
+    /* form input{
+        padding: 1.5vh 2.5vh;
+        padding: 15px 30px;
+        font-size: 22px;
+    } */
+    /* form input::placeholder{
+        font-size: 22px;
+    } */
+    /* .frm-anc{
+        font-size: 20px;
+
+    } */
+    .box-login .phone-btn-inscri , .box-reg .phone-btn-inscri{
+        /* font-size: 20px; */
+        font-size: 16px;
+        color: rgba(255, 255, 255, 0.788);
+        background:none ;
+        cursor: pointer; 
+        font-family: sans-serif;
+    }
+    
+
+}
+
+
+
+/* SMARTPHONE */ 
+
+@media screen and (max-width : 767px){
+    .PART2 , .block-form{
+        width: 100%;
+        height: 100vh;
+    }
+    .block-form{
+        height: 90VH;
+    }
+    form input{
+        width: 65%;
+    }
+}
+
+@media screen and (max-width : 650px) {
+
+    .ttr-pgPhone img{
+        width: 18%;
+    }
+    .box-register .ttle-pa{
+        font-size: 22px;
+    }
+    .frm-anc{
+        font-size: 17px;
+    }
+    form input{
+        margin-top: 1.5vh;
+        /* font-size: 19px; */
+        /* padding: 1.3vh 2.3vh; */
+    }
+    /* form input::placeholder{
+        font-size: 19px;
+    } */
+    /* .box-login .phone-btn-inscri , .box-reg .phone-btn-inscri{
+        font-size: 17px;
+    } */
+}
+@media screen and (max-width : 600px) {
+    .ttr-pgPhone img{
+        margin-top: 1vh;
+        width: 17%;
+        
+    }
+    .box-register .ttle-pa{
+        font-size: 21px;
+    }
+    form input{
+        /* font-size: 18px; */
+        /* padding: 2vh 3vh; */
+        margin-top: 1.6vh;
+    }
+    /* form input::placeholder{
+        font-size: 18px;
+    } */
+    /* .box-login .phone-btn-inscri , .box-reg .phone-btn-inscri{
+        font-size: 16px;
+    } */
+}
+@media screen and (max-width : 480px) {
+    /* .box-register .ttle-pa{
+        font-size: 15px;
+    } */
+    .frm-anc{
+        /* font-size: 13px; */
+        margin-left: 22%;
+    }
+    /* form input{
+        font-size: 13px;
+        padding: 1.5vh 2.5vh;
+    } */
+    /* form input::placeholder{
+        font-size: 13px;
+    } */
+    /* .box-login .phone-btn-inscri , .box-reg .phone-btn-inscri{
+        font-size: 12px;
+    } */
+}
+@media screen and (max-width : 380px) {
+    .ttr-pgPhone img{
+        margin-top: 6vh;
+        width: 16%;
+    }
+    .box-register .ttle-pa{
+        font-size: 13px;
+    }
+    .frm-anc{
+        font-size: 11px;
+    }
+    form input{
+        font-size: 11px;
+        /* padding: 1.5vh 2.5vh; */
+    }
+    .ResultAnalyse{
+        top: 19vh;
+        font-size: 11px;
+    }
+    .InscripRsltAnalyse2{
+        top: 17.5vh;
+    }
+    form input::placeholder{
+        font-size: 11px;
+    }
+    .box-login .phone-btn-inscri , .box-reg .phone-btn-inscri{
+        font-size: 10px;
+    }
+    
+}
+@media screen and (max-width : 320px) {
+    .ttr-pgPhone img{
+        margin-top: 6vh;
+        width: 16%;
+    }
+    .box-register .ttle-pa{
+        font-size: 12px;
+    }
+    .frm-anc{
+        font-size: 10px;
+    }
+    form input{
+        font-size: 10px;
+        /* padding: 1.5vh 2.5vh; */
+    }
+    .ResultAnalyse{
+        font-size: 10px;
+    }
+    form input::placeholder{
+        font-size: 10px;
+    }
+    .box-login .phone-btn-inscri , .box-reg .phone-btn-inscri{
+        font-size: 9px;
+    }
+    
+}
+

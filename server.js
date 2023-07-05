@@ -6,7 +6,6 @@ const { initDatabase } = require('./database/databaseConnector');
 
 // initialiser la connexion sur le base de donnée
 initDatabase();
-
 // Ato no apetraka ny partie vue
 app.set('views','./views');
 
@@ -14,6 +13,7 @@ app.set('views','./views');
 app.set('view engine','ejs');
 
 app.use(crudRoute);
+app.use('/public' , express.static('public'));
 
 // port n'ilay application
 let port = process.env.PORT || 8010;

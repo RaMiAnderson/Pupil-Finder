@@ -1,0 +1,99 @@
+.note{
+    width: 100%;
+    display: none;
+}
+
+.note .eme{
+    font-size: 28px;
+    float: right;
+}
+
+.note .status.honorable{
+    padding: 2px 4px;
+    background: #478303;
+    color: var(--white);
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.note .status.passable{
+    padding: 2px 4px;
+    background: #ffee00;
+    color: var(--white);
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.note .status.insuffisant{
+    padding: 2px 4px;
+    background: #f31111;
+    color: var(--white);
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+}
+.note .status.bien{
+    padding: 2px 4px;
+    background: #8de02c;
+    color: var(--white);
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.note  .status.assez_bien{
+    padding: 2px 4px;
+    background: #adf309;
+    color: var(--white);
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+
+.note .flottantebox .boxKely .honorableColor{ 
+    color : #478303;
+}
+
+.note .flottantebox .boxKely .passableColor{
+    color : #ffe600;
+}
+
+.note .flottantebox .boxKely .insuffisant{
+    background: #f31111;
+}
+.note .flottantebox .boxKely .bien{
+    color : #8de02c;
+}
+
+.note .flottantebox .boxKely .assez_bien{
+    color : #adf309;
+}
+
+
+.envoie{
+    position: relative;
+    padding: 5px 10px;
+    background: var(--violet);
+    text-decoration: none;
+    color: var(--white);
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.note .cardBox0 .numbers{
+    color: #f31111 ;
+}
+.note .ParentTableau table {
+    width: 100%;
+    /* margin-top: 50px; */
+  }
+
+
+  @media (max-width: 500px) {
+    .note .ParentTableau.noteParent .hiddenTab table {
+      width: 400px !important;
+    }
+  }

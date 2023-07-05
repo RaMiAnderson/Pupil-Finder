@@ -1,0 +1,293 @@
+.profil{
+    width: 100%;
+    padding: 20px;
+    display: grid;
+    grid-template-rows: 1.6fr 0.5fr;
+    grid-gap: 5%;
+    display: none;
+}
+.profil .profil-content{
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    border-radius:30px;
+    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+     height: 100%; 
+    /* overflow: hidden; */
+}
+.profil .profil-content .nom{
+    background: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 15%;
+    border-right: 1px solid rgba(0, 0, 0, 0.089);
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+}
+.profil .profil-content .nom .img{
+    color: rgba(36, 36, 36, 0.685);
+   font-size: 150px;
+   margin-bottom: 5%;
+}
+.profil .profil-content .nom  p{
+    color: rgba(0, 0, 0, 0.788);
+    padding: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/*info-cotent*/
+.profil  .info-content{
+  display: flex;
+  flex-direction: column;
+}
+
+.profil  .info-content .i{
+    border-bottom: 1px solid rgba(0, 0, 0, 0.089);
+    width: 100%; 
+    padding-left: 5%;
+   padding-top: 5%;
+}
+.profil  .info-content .i.final{
+    border-bottom: none;
+    
+}
+.profil  .info-content .i .in{
+    color: rgba(100, 100, 161, 0.61);
+    width: 15%;
+    margin-bottom: 2%;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.089);
+}
+.profil  .info-content .i .txt{
+    display: flex;
+   justify-content: space-between;
+   width: 100%;
+}
+.profil  .info-content .i .txt .papay{
+    width: 100%; /* La largeur du div occupera 100% de la largeur du conteneur parent */
+  height: 100%; 
+  display: flex;
+  justify-content: space-between;;/* La hauteur du div occuper
+  display: flex; /* Ajoute une marge intérieure de 20 pixels à l'intérieur du div */
+}
+.profil  .info-content .i .txt .papay p{
+    margin-right: 50px;
+    height: 5vh;
+    color: rgb(100, 100, 161);
+}
+.profil  .info-content .i .txt .papay span{
+    color: rgba(0, 0, 0, 0.788);
+}
+/* .profil  .info-content .i .txt .p{
+    width: 500px;
+} */
+.profil  .info-content .i .txt{
+    display:flex ;
+    margin-bottom: 5%;
+}
+/*profil-info*/
+.profil-info{
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+    border-radius: 20px;
+}
+.profil-info .pro{
+    display: grid;
+    grid-template-columns: 2fr 4fr 1fr ;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.089);
+}
+.profil-info .pro .pro1{
+    /* background: rgb(128, 0, 100); */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--violet);
+}
+.profil-info .pro .pro2{
+    /* background: rgb(0, 92, 128); */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2%;
+    color: rgba(11, 11, 12, 0.849);
+}
+.profil-info .pro .pro3{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.profil-info .pro .pro3 span{
+    background-color: #8de02c;
+     padding: 2px 4px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+    color: white;
+}
+@media screen and (max-width:1059px) {
+    .profil .profil-content .nom{
+        padding: 10%;
+    }
+    .profil  .info-content .i .in{
+        color: rgba(100, 100, 161, 0.61);
+        width: 1%;
+        margin-bottom: 2%;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.089);
+    }
+}
+@media screen and (max-width:1023px) {
+    .profil .profil-content{
+        display: initial;
+        justify-content: none;
+        align-items: none;
+        grid-template-columns: 0;
+        grid-template-rows: 50% 70% ;
+        border-radius:30px;
+        box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+    }
+    .profil .profil-content .nom .img{
+        margin-top: 10PX;
+        color: wheat;
+       font-size: 150px;
+       margin-bottom: 5%; 
+    }
+    .profil .profil-content .nom  p{
+        color: rgba(0, 0, 0, 0.788);
+        width: 500PX;
+        display:flex ;
+        justify-content: center;
+        align-items: center;
+        margin-top:20px;
+        margin-bottom: 20px;
+
+    }
+    .profil  .info-content .i .in{
+        color: rgba(100, 100, 161, 0.61);
+        margin-bottom: 2%;
+        border-bottom: none;
+    }
+    .profil .profil-content .nom{
+        display: flex;
+        align-items: center;
+        justify-content:center;
+        padding: 0;
+        border-right: none;
+    }
+    .info-content .nom1{
+        padding: 0;
+        display: flex;
+        align-items: center;
+        grid-template-columns: none;    
+        justify-content: center;
+        padding: 3%;
+    }
+    .nom1 .suit{
+        position: relative;
+        background: var(--white);
+        display: flex;
+    }
+    
+    .nom1 .sui span1 {
+        margin-top:80px;
+        height: 20vh;
+    }
+    .nom1 .nom1-content .t{
+        display: flex;
+        justify-self: start;
+    }
+    .info-content {
+        display: initial;
+    }
+    
+}
+@media screen and (max-width:768px) {
+    .profil .profil-content{
+        display: initial;
+        justify-content: none;
+        align-items: none;
+        grid-template-columns: 0;
+        grid-template-rows: 50% 70% ;
+        border-radius:30px;
+        box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+        
+    }
+    .profil .profil-content .nom .img{
+        margin-top: 10PX;
+        color: wheat;
+       font-size: 150px;
+       margin-bottom: 5%;
+       
+    }
+    .profil .profil-content .nom  p{
+        color: rgba(0, 0, 0, 0.788);
+        width: 500PX;
+        display:flex ;
+        justify-content: center;
+        align-items: center;
+        margin-top:10px;
+        margin-bottom: 20px;
+
+    }
+    .profil .profil-content .nom{
+        display: flex;
+        align-items: center;
+        justify-content:center;
+        padding: 0;
+        border-right: none;
+
+    }
+    .profil .info-content .i .txt .papay{
+        display: flex;
+        flex-wrap: wrap ;
+    }
+    .profil  .info-content .i .txt .papay p{
+        margin-right: 50px;
+        height: 5vh;
+        color: rgb(100, 100, 161);
+        margin-top: 5%;
+    }
+    .profil  .info-content .i .in{
+        color: rgba(100, 100, 161, 0.61);
+        width: 50%;
+        margin-bottom: 2%;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.089);
+    }
+    .nom1{
+        border-top: 1px solid rgba(0, 0, 0, 0.089) ;
+    }
+    .info-content .nom1{
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        grid-template-columns: none;    
+        justify-content: center;
+        padding: 3%;
+    }
+    .nom1 .suit{
+        position: relative;
+        background: var(--white);
+        display: flex;
+    }
+    
+    .nom1 .sui span1 {
+        margin-top:0;  
+        height: initial; 
+    }
+    .nom1 .nom1-content span{
+        display: none;
+    }
+    .nom1 .nom1-content .t{
+        display: flex;
+        justify-self: start;
+    }
+    .info-content {
+        display: initial;
+    }
+    .profil-info{
+        padding: 5%;
+    }
+}

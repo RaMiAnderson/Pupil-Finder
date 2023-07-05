@@ -1,0 +1,358 @@
+
+body {
+  min-height: calc(100vh - 60px);
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+.parentMax{
+  position: relative;
+  width: 100%;
+  top: 0;
+}
+
+
+
+.topbarMax{
+  /* width: 94%; */
+  width: 100%;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 100;
+}
+
+/* Nav Barre Horizontale*/
+.navigation-Vertical {
+  position: fixed;
+  width: 6%;
+  height: 100vh;
+  background: var(--violet);
+  border-left: 10px solid var(--violet);
+  transition: 0.5s;
+  overflow: hidden;
+  z-index: 110;
+  top: 0;
+  display: none;
+}
+.active_toggle .navigation-Vertical{
+  width: 22%;
+  box-shadow: 10px 0 25px 0 rgba(0, 0, 0, 0.164);
+}
+
+.navigation-Vertical  ul {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.navigation-Vertical ul li {
+  position: relative;
+  width: 100%;
+  list-style: none;
+
+}
+
+.navigation-Vertical ul li:nth-child(1) {
+  margin-bottom: 40px;
+  pointer-events: none;
+}
+
+.navigation-Vertical ul li button {
+  position: relative;
+  width: 100%;
+  display: flex;
+  border: none;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+  color: var(--white);
+  background: transparent;
+  cursor: pointer;
+}
+.navigation-Vertical ul li  a {
+  text-decoration: none;
+}
+/* .navigation-Vertical ul li button:hover{
+  background-color: var(--violetbe);
+} */
+
+.navigation-Vertical ul li button .icon {
+  position: relative;
+  min-width: 90%;
+  height: 60px;
+  line-height: 75px;
+  text-align: center;
+  margin-top: -3px;
+}
+.active_toggle .navigation-Vertical ul li button .icon{
+  min-width: 20%;
+}
+
+.sizeIcon{
+  font-size: 1.50rem;
+}
+
+.navigation-Vertical ul li button .titre {
+  position: relative;
+  display: block;
+  padding: 0 10px;
+  height: 60px;
+  line-height: 60px;
+  text-align: start;
+  white-space: nowrap;
+  font-size: 1.1rem;
+}
+
+.main {
+  position: relative;
+  width: 94%;
+  left: 6%;
+  background: var(--white);
+  transition: 0.5s;
+  z-index: 10;
+  margin-top: 60px;
+}
+.active_toggle .main{
+  left: 22%;
+}
+
+.topbar {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  background: white;
+  box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  z-index: 100;
+}
+
+.toggle {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.5rem;
+  cursor: pointer;
+  z-index: 10000;
+  left: 6%;
+  transition: .5s;
+  display: none;
+}
+.toggle .Toggle1, .toggle .Toggle2{
+  color: var(--blackbe);
+}
+.active_toggle .toggle{
+  left: 22%;
+  transition: .5s;
+}
+.active_toggle .Toggle1{
+  display: none;
+}
+.Toggle2{
+  display: none;
+}
+.active_toggle .Toggle2{
+  display: block;
+}
+.navIcon{
+  font-size: 1.5rem;
+}
+
+.navHorizontal{
+  position: absolute;
+  height: 60px;
+  width: 12%;
+  right: 0;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  transition: .5s;
+}
+.btnNavH{
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  border-radius: 50%;
+  padding: 6px ;
+}
+.btnNavH.home{
+  background : var(--violet);
+  color : var(--white);
+}
+.user {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%; 
+   overflow: hidden;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.6rem;
+}
+/* Responsivité*/
+@media screen and (max-width: 1200px) {
+  .navHorizontal{
+    width: 13.5%;
+  }
+}
+@media screen and (max-width: 1023px) {
+  .topbarMax{
+    width: 100%;
+  }
+  .toggle{
+    left: 0;
+  }
+
+  .navHorizontal{
+    width: 16%;
+    right: 0;
+  }
+  .active_toggle .navHorizontal{
+    transition: .5s;
+    transform: translateX(200%);
+    
+  }
+  
+  .main {
+    width: 100%;
+    left: 0;
+  }
+  .active_toggle .main{
+    left: 0;
+  }
+
+
+
+  .navigation-Vertical {
+    position: fixed;
+    width: 70%;
+    height: 100vh;
+    background: var(--violet);
+    border-left: 10px solid var(--violet);
+    transition: 0.5s;
+    overflow:inherit;
+    z-index: 110;
+    top: 0;
+    left: -70%;
+
+  }
+  .active_toggle .navigation-Vertical{
+    width: 70%;
+    left: 0;
+    box-shadow: 10px 0 25px 0 rgba(0, 0, 0, 0.164);
+  }
+  .active_toggle .toggle{
+    left: 70%;
+  }
+  
+  .navigation-Vertical ul {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+  
+  .navigation-Vertical ul li {
+    position: relative;
+    width: 100%;
+    list-style: none;
+  }
+  
+  .navigation-Vertical ul li:nth-child(1) {
+    margin-bottom: 40px;
+    pointer-events: none;
+  }
+  
+  .navigation-Vertical ul li button {
+    position: relative;
+    width: 100%;
+    display: flex;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    color: var(--white);
+    background: transparent;
+    cursor: pointer;
+    border: none;
+  }
+  
+  .navigation-Vertical ul li button .icon {
+    min-width: 0;
+    width: 60px;
+    height: 60px;
+    line-height: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: -2px;
+  }
+  .active_toggle .navigation-Vertical ul li button .icon{
+    min-width: 0;
+  }
+  
+  .sizeIcon{
+    font-size: 1.50rem;
+  }
+  
+}
+
+@media screen and (max-width: 950px) {
+  .navHorizontal{
+    width: 17%;
+  }
+}
+@media screen and (max-width: 870px) {
+  .navHorizontal{
+    width: 150px;
+    margin-right: 5px;
+  }
+  .sizeIcon{
+    font-size: 1.50rem;
+  }
+  
+
+}
+
+
+@media screen and (max-width: 620px) {
+  .user {
+    min-width: 40px;
+  }
+  .navigation-Vertical {
+    left: -80%;
+    width: 80%;
+    position: fixed;
+    z-index: 1000;
+  }
+  .active_toggle .navigation-Vertical {
+    width: 80%;
+    left: 0;
+  }
+  .active_toggle .toggle {
+    left: 80%;
+    
+  }
+  .navHorizontal{
+    width: 30%;
+  }
+  
+}
+@media screen and (max-width : 440px) {
+  .navHorizontal{
+    width: 150px;
+  }
+}
+
+@media screen and (max-height : 650px) {
+  .navigation-Vertical ul li:nth-child(1) {
+    margin-bottom: 1px;
+    pointer-events: none;
+  }
+}

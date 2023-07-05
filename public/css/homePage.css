@@ -1,0 +1,143 @@
+.homepage{
+    width: 100%;
+    height: calc(100vh - 60px);
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    top: 60px;
+}
+
+.homepage .blockGrid{
+    width: 48%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 60px);
+    animation: .5s Part2; 
+}
+.homepage .flottantebox{
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 15px;
+    right: 0;
+    height: calc(100vh - 60px);
+}
+.homepage .iconBoxFlottante .iconAccRglg{
+    opacity: 50%;
+}
+.homepage .blockImg{
+    width: 48%;
+    height: calc(100vh - 60px);
+    animation: .5s Part1;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+}
+.homepage .blockImg img{
+    width: 96%;
+    margin-right: -10%;
+}
+.homepage .flottantebox .boxKely {
+    position: relative;
+    
+    padding: 25px;
+    width: 100%;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.185);
+}
+.homepage .flottantebox .boxKely.bgProfil {
+    background: var(--white);
+}
+.homepage .flottantebox .boxKely.bgAnnonce {
+    background: var(--white);
+}
+.homepage .flottantebox .boxKely.bgEDT {
+    background: var(--white);
+}
+.homepage .flottantebox .boxKely.bgAbsence {
+    background: var(--white);
+}
+.homepage .flexcontent{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+.homepage .flottantebox .boxKely .flexcontent .Cpt{
+    font-size: 2.5rem;
+    margin-top: -15px;
+}
+.homepage .flottantebox .boxKely .chiffreBoxF {
+    position: relative;
+    font-weight: 500;
+    font-size: 1.5rem;
+    color: var(--violet);
+}
+.homepage .flottantebox .boxKely .restpayer {
+    color: var(--red);
+  }
+  .homepage .flottantebox .boxKely .payer {
+    color: var(--green);
+  }
+  
+  
+  .homepage .flottantebox .boxKely .iconBoxFlottante {
+    font-size: 3.5rem;
+    color: var(--blackbe);
+  }
+  /*.homepage .flottantebox .boxKely .iconBoxFlottante i{
+    color: var(--green) ;
+  }*/
+  
+  .homepage .flottantebox .boxKely:hover {
+    background: var(--violet);
+  }
+  .homepage .flottantebox .boxKely:hover .chiffreBoxF, .homepage .flottantebox .boxKely:hover .nomBoxKely, .homepage .flottantebox .boxKely:hover .iconBoxFlottante .iconAccRglg {
+    color: var(--white);
+    opacity: 100%;
+  }
+
+ .logOutAcc{
+     text-decoration: none;
+ }
+ 
+  @media screen and (max-width : 1023px) {
+    .homepage .blockImg{
+       display: none;  
+    }
+    .homepage .blockGrid{
+        width: 100%;
+    }
+  }
+  @media screen and (max-width : 767px) {
+    .homepage .blockGrid{
+        width: 100%;
+    }
+    .homepage .flottantebox{
+        grid-template-columns: repeat(1, 1fr);
+    }
+  }
+  
+  @keyframes Part1 {
+    0%{
+        transform: translateX(-100%);
+    }
+    100%{
+        transform: translateX(0);
+    }
+}
+@keyframes Part2 {
+    0%{
+        transform: translateX(100%);
+    }
+    100%{
+        transform: translateX(0);
+    }
+}

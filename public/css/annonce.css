@@ -1,0 +1,16 @@
+
+ .annonce .ann-rec .cont{
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+ }
+
+ #img1{
+    font-size: 1.2rem;
+    margin-right: 10px;
+ }
+ strong{
+  color: #5f0085;
+ }
+
+ 
