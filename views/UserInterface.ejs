@@ -1,174 +1,176 @@
 <!DOCTYPE html>
 <html lang="fr">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pupil.Finder</title>
 
     <!-- All -->
-    <link rel="stylesheet" href="../public/css/allstyle.css">
-    <link rel="stylesheet" href="../public/css/style_acceuil.css">
+    <link rel="stylesheet" href="../public/css/allstyle.css" />
+    <link rel="stylesheet" href="../public/css/style_acceuil.css" />
 
-    <link rel="shortcut icon" href="../public/imgs/ICON-01.svg" type="image/x-icon">
-    <link rel="stylesheet" href="../public/css/homePage.css">
-    <link rel="stylesheet" href="../public/css/A_payer.css">
-    <link rel="stylesheet" href="../public/css/note.css">
-    
-    <link rel="stylesheet" href="../public/css/annonce.css">
-    <link rel="stylesheet" href="../public/css/notif.css">
-    <link rel="stylesheet" href="../public/css/calen.css">
-    <link rel="stylesheet" href="../public/css/edt.css">
-    <link rel="stylesheet" href="../public/css/profil.css">
-    <link rel="stylesheet" href="../public/css/absence.css">
- 
+    <link
+      rel="shortcut icon"
+      href="../public/imgs/ICON-01.svg"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="../public/css/homePage.css" />
+    <link rel="stylesheet" href="../public/css/A_payer.css" />
+    <link rel="stylesheet" href="../public/css/note.css" />
+
+    <link rel="stylesheet" href="../public/css/annonce.css" />
+    <link rel="stylesheet" href="../public/css/notif.css" />
+    <link rel="stylesheet" href="../public/css/calen.css" />
+    <link rel="stylesheet" href="../public/css/edt.css" />
+    <link rel="stylesheet" href="../public/css/profil.css" />
+    <link rel="stylesheet" href="../public/css/absence.css" />
+
     <!-- FontAwesome -->
-    <link rel="stylesheet" href="../public/assets/FontAwesome/css/all.min.css">
+    <link
+      rel="stylesheet"
+      href="../public/assets/FontAwesome/css/all.min.css"
+    />
+  </head>
 
-</head>
-
-<body>
-
+  <body>
     <div class="parentMax">
-        <!-- Nav Barre Vertical -->
-        <div id="navVertical" class="navigation-Vertical">
-            <ul>
-                <li>
-                    <button>
-                        <span class="icon">
-                            <i class="fas fa-school sizeIcon"></i>
-                        </span>
-                        <p class="titre">ISPM Plateforme</p>
-                    </button>
-                </li>
+      <!-- Nav Barre Vertical -->
+      <div id="navVertical" class="navigation-Vertical">
+        <ul>
+          <li>
+            <button>
+              <span class="icon">
+                <i class="fas fa-school sizeIcon"></i>
+              </span>
+              <p class="titre">ISPM Plateforme</p>
+            </button>
+          </li>
 
+          <li>
+            <button id="Profil">
+              <span class="icon">
+                <i class="far fa-user sizeIcon"></i>
+              </span>
+              <p class="titre">Mon Profil</p>
+            </button>
+          </li>
 
-                <li>
-                    <button id="Profil">
-                        <span class="icon ">
-                            <i class="far fa-user sizeIcon"></i>
-                        </span>
-                        <p class="titre">Mon Profil</p>
-                    </button>
-                </li>
+          <li>
+            <button id="Annonce">
+              <span class="icon">
+                <i class="fas fa-bullhorn sizeIcon"></i>
+              </span>
+              <p class="titre">Annonces</p>
+            </button>
+          </li>
 
-                <li>
-                    <button id="Annonce">
-                        <span class="icon">
-                            <i class="fas fa-bullhorn sizeIcon"></i>
-                        </span>
-                        <p class="titre">Annonces</p>
-                    </button>
-                </li>
+          <li>
+            <button id="Edt">
+              <span class="icon">
+                <i class="far fa-calendar sizeIcon"></i>
+              </span>
+              <p class="titre">Emploie du temps</p>
+            </button>
+          </li>
 
-                <li>
-                    <button id="Edt">
-                        <span class="icon">
-                            <i class="far fa-calendar sizeIcon"></i>
-                        </span>
-                        <p class="titre">Emploie du temps</p>
-                    </button>
-                </li>
+          <li>
+            <button id="Absence">
+              <span class="icon">
+                <i class="fas fa-hourglass-end sizeIcon"></i>
+              </span>
+              <p class="titre">Absence</p>
+            </button>
+          </li>
 
-                <li>
-                    <button id="Absence">
-                        <span class="icon">
-                            <i class="fas fa-hourglass-end sizeIcon"></i>
-                        </span>
-                        <p class="titre">Absence</p>
-                    </button>
-                </li>
+          <li>
+            <button id="Payer">
+              <span class="icon">
+                <i class="far fa-credit-card sizeIcon"></i>
+              </span>
+              <p class="titre">A Payer</p>
+            </button>
+          </li>
 
-                <li>
-                    <button id="Payer">
-                        <span class="icon">
-                            <i class="far fa-credit-card sizeIcon"></i>
-                        </span>
-                        <p class="titre">A Payer</p>
-                    </button>
-                </li>
+          <li>
+            <button id="Note">
+              <span class="icon">
+                <i class="far fa-file-alt sizeIcon"></i>
+              </span>
+              <p class="titre">Notes</p>
+            </button>
+          </li>
 
-                <li>
-                    <button id="Note">
-                        <span class="icon">
-                            <i class="far fa-file-alt sizeIcon"></i>
-                        </span>
-                        <p class="titre">Notes</p>
-                    </button>
-                </li>
+          <li>
+            <button id="Agenda">
+              <span class="icon">
+                <i class="far fa-calendar-alt sizeIcon"></i>
+              </span>
+              <p class="titre">calendrier Scolaire</p>
+            </button>
+          </li>
+          <li>
+            <a href="">
+              <button id="Logout">
+                <span class="icon">
+                  <i class="fas fa-sign-out-alt sizeIcon"></i>
+                </span>
+                <p class="titre">Se Deconnecter</p>
+              </button>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="topbarMax">
+        <div class="topbar">
+          <div class="toggle">
+            <i class="fas fa-bars Toggle1"></i>
+            <i class="fas fa-xmark Toggle2"></i>
+          </div>
 
-                <li>
-                    <button id="Agenda">
-                        <span class="icon">
-                            <i class="far fa-calendar-alt sizeIcon"></i>
-                        </span>
-                        <p class="titre">calendrier Scolaire</p>
-                    </button>
-                </li>
-                <li>
-                    <a href="">
-                        <button id="Logout">
-                            <span class="icon">
-                                <i class="fas fa-sign-out-alt sizeIcon"></i>
-                            </span>
-                            <p class="titre">Se Deconnecter</p>
-                        </button>
-                    </a>
-                </li>
-            </ul>
-        </div>
-        <div class="topbarMax">
-            <div class="topbar">
-                <div class="toggle">
-                    <i class="fas fa-bars Toggle1"></i>
-                    <i class="fas fa-xmark Toggle2"></i>
-                </div>
-
-                <div class="navHorizontal">
-                    <div>
-                        <button class="btnNavH home" id="versHome"><i class=" fas fa-home navIcon"></i></button>
-                    </div>
-                    <div>
-                        <button class="btnNavH" id="Notiff"><i class=" far fa-bell navIcon"></i></button>
-                    </div>
-
-                    <div class="user">
-                        <i class="far fa-user-circle"></i>
-                    </div>
-
-                </div>
-
+          <div class="navHorizontal">
+            <div>
+              <button class="btnNavH home" id="versHome">
+                <i class="fas fa-home navIcon"></i>
+              </button>
             </div>
-        </div>
-        <!-- CONTENU -->
-        <!-- HommePage -->
-        <%- include('./partials/UserHomepage') %>
-        <div class="main ">
-            <!-- Notiffication -->
-            <%- include('./partials/UserNotif') %>
-            <!-- Annonce -->
-            <%- include('./partials/UserAnnonce') %>
-            <!-- A payer  ETO ZAO-->  
-            <%- include('./partials/UserApayer') %>
-            <!-- Note -->
-            <%- include('./partials/UserNote') %>
-            <!-- Calendrier -->
-            <%- include('./partials/UserCalendar') %>
-            <!-- EDT -->
-            <%- include('./partials/UserEDT') %>
-            <!-- Profil -->
-            <%- include('./partials/UserProfil') %>
-            <!-- Absence -->
-            <%- include('./partials/UserAbsence') %>
+            <div>
+              <button class="btnNavH" id="Notiff">
+                <i class="far fa-bell navIcon"></i>
+              </button>
+            </div>
 
+            <div class="user">
+              <i class="far fa-user-circle"></i>
+            </div>
+          </div>
         </div>
+      </div>
+      <!-- CONTENU -->
+      <!-- HommePage -->
+      <%- include('./partials/UserHomepage') %>
+      <div class="main">
+        <!-- Notiffication -->
+        <%- include('./partials/UserNotif') %>
+        <!-- Annonce -->
+        <%- include('./partials/UserAnnonce') %>
+        <!-- A payer  ETO ZAO-->
+        <%- include('./partials/UserApayer') %>
+        <!-- Note -->
+        <%- include('./partials/UserNote') %>
+        <!-- Calendrier -->
+        <%- include('./partials/UserCalendar') %>
+        <!-- EDT -->
+        <%- include('./partials/UserEDT') %>
+        <!-- Profil -->
+        <%- include('./partials/UserProfil') %>
+        <!-- Absence -->
+        <%- include('./partials/UserAbsence') %>
+      </div>
     </div>
 
     <!-- =========== Scripts =========  -->
     <script src="../public/js/scriptDflt.js"></script>
     <script src="../public/assets/FontAwesome/js/all.min.js"></script>
-
-</body>
-
+  </body>
 </html>
