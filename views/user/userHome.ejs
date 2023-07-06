@@ -1,0 +1,1595 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pupil.Finder</title>
+
+    <!-- All -->
+    <link rel="stylesheet" href="../public/css/allstyle.css">
+    <link rel="stylesheet" href="../public/css/style_acceuil.css">
+
+    <link rel="shortcut icon" href="../public/imgs/ICON-01.svg" type="image/x-icon">
+    <link rel="stylesheet" href="../public/css/homePage.css">
+    <link rel="stylesheet" href="../public/css/A_payer.css">
+    <link rel="stylesheet" href="../public/css/note.css">
+    
+    <link rel="stylesheet" href="../public/css/annonce.css">
+    <link rel="stylesheet" href="../public/css/notif.css">
+    <link rel="stylesheet" href="../public/css/calen.css">
+    <link rel="stylesheet" href="../public/css/edt.css">
+    <link rel="stylesheet" href="../public/css/profil.css">
+    <link rel="stylesheet" href="../public/css/absence.css">
+ 
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="../public/assets/FontAwesome/css/all.min.css">
+
+</head>
+
+<body>
+
+    <div class="parentMax">
+        <!-- Nav Barre Vertical -->
+        <div id="navVertical" class="navigation-Vertical">
+            <ul>
+                <li>
+                    <button>
+                        <span class="icon">
+                            <i class="fas fa-school sizeIcon"></i>
+                        </span>
+                        <p class="titre">ISPM Plateforme</p>
+                    </button>
+                </li>
+
+
+                <li>
+                    <button id="Profil">
+                        <span class="icon ">
+                            <i class="far fa-user sizeIcon"></i>
+                        </span>
+                        <p class="titre">Mon Profil</p>
+                    </button>
+                </li>
+
+                <li>
+                    <button id="Annonce">
+                        <span class="icon">
+                            <i class="fas fa-bullhorn sizeIcon"></i>
+                        </span>
+                        <p class="titre">Annonces</p>
+                    </button>
+                </li>
+
+                <li>
+                    <button id="Edt">
+                        <span class="icon">
+                            <i class="far fa-calendar sizeIcon"></i>
+                        </span>
+                        <p class="titre">Emploie du temps</p>
+                    </button>
+                </li>
+
+                <li>
+                    <button id="Absence">
+                        <span class="icon">
+                            <i class="fas fa-hourglass-end sizeIcon"></i>
+                        </span>
+                        <p class="titre">Absence</p>
+                    </button>
+                </li>
+
+                <li>
+                    <button id="Payer">
+                        <span class="icon">
+                            <i class="far fa-credit-card sizeIcon"></i>
+                        </span>
+                        <p class="titre">A Payer</p>
+                    </button>
+                </li>
+
+                <li>
+                    <button id="Note">
+                        <span class="icon">
+                            <i class="far fa-file-alt sizeIcon"></i>
+                        </span>
+                        <p class="titre">Notes</p>
+                    </button>
+                </li>
+
+                <li>
+                    <button id="Agenda">
+                        <span class="icon">
+                            <i class="far fa-calendar-alt sizeIcon"></i>
+                        </span>
+                        <p class="titre">calendrier Scolaire</p>
+                    </button>
+                </li>
+                <li>
+                    <a href="">
+                        <button id="Logout">
+                            <span class="icon">
+                                <i class="fas fa-sign-out-alt sizeIcon"></i>
+                            </span>
+                            <p class="titre">Se Deconnecter</p>
+                        </button>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="topbarMax">
+            <div class="topbar">
+                <div class="toggle">
+                    <i class="fas fa-bars Toggle1"></i>
+                    <i class="fas fa-xmark Toggle2"></i>
+                </div>
+
+                <div class="navHorizontal">
+                    <div>
+                        <button class="btnNavH home" id="versHome"><i class=" fas fa-home navIcon"></i></button>
+                    </div>
+                    <div>
+                        <button class="btnNavH" id="Notiff"><i class=" far fa-bell navIcon"></i></button>
+                    </div>
+
+                    <div class="user">
+                        <i class="far fa-user-circle"></i>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+        <!-- CONTENU -->
+        <div class="homepage" id="homePageGG">
+            <!--Page Acceuil  Branch : ANDERSON !!!  ACCEUIL ihany tsy inclus am Block content-->
+            <div class="blockImg">
+                <img src="../public/imgs/Illustration/Welcome-Last Design.svg" alt="Welcome">
+            </div>
+            <div class="blockGrid">
+                <div class="flottantebox">
+                    <div id="ProfilAcc" class="boxKely bgProfil">
+                        <div class="flexcontent">
+                            <div class="chiffreBoxF Cpt">0</div>
+                            <div class="chiffreBoxF">Profile</div>
+                        </div>
+                        <div class="iconBoxFlottante">
+                            <i class="far fa-user iconAccRglg"></i>
+                        </div>
+                    </div>
+
+                    <div id="AnnonceAcc" class="boxKely bgAnnonce">
+                        <div class="flexcontent">
+                            <div class="chiffreBoxF Cpt">3</div>
+                            <div class="chiffreBoxF">Annonces</div>
+                        </div>
+                        <div class="iconBoxFlottante">
+                            <i class="fas fa-bullhorn iconAccRglg"></i>
+                        </div>
+                    </div>
+
+                    <div id="EDTAcc" class="boxKely bgEDT">
+                        <div class="flexcontent">
+                            <div class="chiffreBoxF Cpt">1</div>
+                            <div class="chiffreBoxF">EDT</div>
+                        </div>
+                        <div class="iconBoxFlottante">
+                            <i class="far fa-calendar iconAccRglg"></i>
+                        </div>
+                    </div>
+                    <div id="AbsenceAcc" class="boxKely bgAbsence">
+                        <div class="flexcontent">
+                            <div class="chiffreBoxF Cpt">5</div>
+                            <div class="chiffreBoxF">Absences</div>
+                        </div>
+                        <div class="iconBoxFlottante">
+                            <i class="fas fa-hourglass-end iconAccRglg"></i>
+                        </div>
+                    </div>
+                    <div id="ApayerAcc" class="boxKely bgAnnonce">
+                        <div class="flexcontent">
+                            <div class="chiffreBoxF Cpt">2</div>
+                            <div class="chiffreBoxF">À Payer</div>
+                        </div>
+                        <div class="iconBoxFlottante">
+                            <i class="far fa-credit-card iconAccRglg"></i>
+                        </div>
+                    </div>
+                    <div id="NoteAcc" class="boxKely bgProfil">
+                        <div class="flexcontent">
+                            <div class="chiffreBoxF Cpt">6</div>
+                            <div class="chiffreBoxF">Notes</div>
+                        </div>
+                        <div class="iconBoxFlottante">
+                            <i class="far fa-file-alt iconAccRglg"></i>
+                        </div>
+                    </div>
+                    <div id="CalendrierAcc" class="boxKely bgAbsence">
+                        <div class="flexcontent">
+                            <div class="chiffreBoxF Cpt">2</div>
+                            <div class="chiffreBoxF">Calendrier </div>
+                        </div>
+                        <div class="iconBoxFlottante">
+                            <i class="far fa-calendar-alt iconAccRglg"></i>
+                        </div>
+                    </div>
+                    <a href="/auth/logout" class="logOutAcc">
+                        <div  class="boxKely bgProfil">
+                            <div class="flexcontent">
+
+                                <div class="chiffreBoxF Cpt"></div>
+                                <div class="chiffreBoxF">Se Deconnecter </div>
+                            </div>
+                            <div class="iconBoxFlottante">
+                                <i class="fas fa-sign-out-alt iconAccRglg"></i>
+                            </div>
+                        </div>
+                    </a>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="main ">
+            <!-- Notiffication -->
+            <div id="PgNotif" class="notif">
+
+                <div class="a">
+                    <div class="imgNom">
+                        <h2>Notifications </h2>
+                    </div>
+                </div>
+
+                <!--annonce 1 plus récent, 2 hier ohatra de lay 3 farany plus ancien fa miandry javascript anaovana azy-->
+
+                <div class="ann-rec">
+                    <legend><strong>Aujourd'hui</strong></legend>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Explicabo in illum delectus doloribus.
+                        Quaerat, perferendis pariatur. Voluptatibus error unde aliquam maxime, suscipit atque natus
+                        corrupti commodi quasi quisquam laudantium molestiae.</p>
+                </div>
+
+                <div class="ann-rec">
+                    <legend><strong>Hier</strong></legend>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Explicabo in illum delectus doloribus.
+                        Quaerat, perferendis pariatur. Voluptatibus error unde aliquam maxime, suscipit atque natus
+                        corrupti commodi quasi quisquam laudantium molestiae.</p>
+                </div>
+
+                <div class="ann-rec">
+                    <legend><strong>Aujourd'hui</strong></legend>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Explicabo in illum delectus doloribus.
+                        Quaerat, perferendis pariatur. Voluptatibus error unde aliquam maxime, suscipit atque natus
+                        corrupti commodi quasi quisquam laudantium molestiae.</p>
+                </div>
+
+                <div class="ann-rec">
+                    <legend><strong>Hier</strong></legend>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Explicabo in illum delectus doloribus.
+                        Quaerat, perferendis pariatur. Voluptatibus error unde aliquam maxime, suscipit atque natus
+                        corrupti commodi quasi quisquam laudantium molestiae.</p>
+                </div>
+
+                <div class="ann-rec">
+                    <legend><strong>Aujourd'hui</strong></legend>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Explicabo in illum delectus doloribus.
+                        Quaerat, perferendis pariatur. Voluptatibus error unde aliquam maxime, suscipit atque natus
+                        corrupti commodi quasi quisquam laudantium molestiae.</p>
+                </div>
+            </div>
+            <!-- Annonce -->
+            <div id="PgAnnonce" class="notif annonce">
+
+                <div class="a">
+                    <div class="imgNom">
+                        <h2>Annonces</h2>
+                    </div>
+                    <form action="">
+                        <input type="date" name="date" id="date">
+                        <input type="submit" value="Recherche">
+                    </form>
+                </div>
+
+                <!--annonce 1 plus récent, 2 hier ohatra de lay 3 farany plus ancien fa miandry javascript anaovana azy-->
+
+                <div class="ann-rec">
+                    <legend><strong>Aujourd'hui</strong></legend>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Explicabo in illum delectus doloribus.
+                        Quaerat, perferendis pariatur. Voluptatibus error unde aliquam maxime, suscipit atque natus
+                        corrupti commodi quasi quisquam laudantium molestiae.</p>
+                    <div class="cont">
+                        <i id="img1" class="fas fa-scroll mitah"></i>
+                        <p><strong>Annonces générales</strong></p>
+                    </div>
+                </div>
+
+                <div class="ann-rec">
+                    <legend><strong>Hier</strong></legend>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Explicabo in illum delectus doloribus.
+                        Quaerat, perferendis pariatur. Voluptatibus error unde aliquam maxime, suscipit atque natus
+                        corrupti commodi quasi quisquam laudantium molestiae.</p>
+                    <div class="cont">
+                        <i id="img1" class="fas fa-info-circle mitah"></i>
+                        <p><strong>Annonces pédacologiques</strong></p>
+                    </div>
+                </div>
+
+                <div class="ann-rec">
+                    <legend><strong>Aujourd'hui</strong></legend>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Explicabo in illum delectus doloribus.
+                        Quaerat, perferendis pariatur. Voluptatibus error unde aliquam maxime, suscipit atque natus
+                        corrupti commodi quasi quisquam laudantium molestiae.</p>
+                    <div class="cont">
+                        <i id="img1" class="fas fa-cogs mitah"></i>
+                        <p><strong>Annonces administratives</strong></p>
+                    </div>
+                </div>
+
+                <div class="ann-rec">
+                    <legend><strong>Hier</strong></legend>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Explicabo in illum delectus doloribus.
+                        Quaerat, perferendis pariatur. Voluptatibus error unde aliquam maxime, suscipit atque natus
+                        corrupti commodi quasi quisquam laudantium molestiae.</p>
+                    <div class="cont">
+                        <i id="img1" class="fas fa-shield-alt mitah"></i>
+                        <p><strong>Annonces de sécurité</strong></p>
+                    </div>
+                </div>
+
+                <div class="ann-rec">
+                    <legend><strong>Aujourd'hui</strong></legend>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Explicabo in illum delectus doloribus.
+                        Quaerat, perferendis pariatur. Voluptatibus error unde aliquam maxime, suscipit atque natus
+                        corrupti commodi quasi quisquam laudantium molestiae.</p>
+                    <div class="cont">
+                        <i id="img1" class="fas fa-calendar-week mitah"></i>
+                        <p><strong>Annonces d'événements</strong></p>
+                    </div>
+                </div>
+            </div>
+            <!-- A payer -->
+            <div id="Apayer" class="Apayer">
+
+                <div class="flottantebox">
+                    <div class="boxKely">
+                        <div>
+                            <div class="chiffreBoxF restpayer">435000 Ar</div>
+                            <div class="nomBoxKely">Reste à payer</div>
+                        </div>
+                        <div class="iconBoxFlottante">
+                            <i class="fas fa-money-bill-wave"></i>
+                        </div>
+                    </div>
+
+                    <div class="boxKely">
+                        <div>
+                            <div class="chiffreBoxF  payer">1050000 Ar</div>
+                            <div class="nomBoxKely">Payé</div>
+                        </div>
+                        <div class="iconBoxFlottante">
+                            <i class="fas fa-hands-helping"></i>
+                        </div>
+                    </div>
+
+                    <div class="boxKely">
+                        <div>
+                            <div class="chiffreBoxF ">1485000 Ar</div>
+                            <div class="nomBoxKely">Total</div>
+                        </div>
+                        <div class="iconBoxFlottante">
+                            <i class="fas fa-calculator"></i>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="ParentTableau">
+                    <div class="ListRecu">
+                        <div class="ListRecuTete">
+                            <h2>Liste des Reçus</h2>
+                            <form action="" id="formDatePayer">
+                                <input type="date">
+                                <input type="submit" value="Recherche">
+                            </form>
+                        </div>
+
+                       <div class="hiddenTab">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <td>Libelé</td>
+                                    <td>Montant</td>
+                                    <td>Status</td>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <tr>
+                                    <td>Première tranche</td>
+                                    <td>700000 Ar</td>
+                                    <td><span class="status payyee">Payé</span></td>
+                                </tr>
+
+                                <tr>
+                                    <td>Deuxième tranche</td>
+                                    <td>350000 Ar</td>
+                                    <td><span class="status payyee">Payé</span></td>
+                                </tr>
+
+                                <tr>
+                                    <td>Tranche finale</td>
+                                    <td>350000 Ar</td>
+                                    <td><span class="status NonPayyee">Non Payé</span></td>
+                                </tr>
+
+                                <tr>
+                                    <td>T-Shirt IGGL</td>
+                                    <td>25000 Ar</td>
+                                    <td><span class="status NonPayyee">Non Payé</span></td>
+                                </tr>
+
+                                <tr>
+                                    <td>Dommage</td>
+                                    <td>60000 Ar</td>
+                                    <td><span class="status NonPayyee">Non Payé</span></td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                       </div>
+                    </div>
+
+
+                </div>
+            </div>
+            <!-- Note -->
+            <div id="PgNote" class="Apayer note">
+                <div class="flottantebox">
+                    <div class="boxKely ">
+                        <div>
+                            <div class="chiffreBoxF assez_bien">173,05/300</div>
+                            <div class="nomBoxKely">Total des notes</div>
+                        </div>
+
+                        <div class="iconBoxFlottante">
+                            <i class="far fa-file-alt"></i>
+                        </div>
+                    </div>
+
+                    <div class="boxKely">
+                        <div>
+                            <div class="chiffreBoxF assez_bien">11,53/20</div>
+                            <div class="nomBoxKely">Moyenne</div>
+                        </div>
+
+                        <div class="iconBoxFlottante">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                    </div>
+
+                    <div class="boxKely">
+                        <div>
+                            <div class="chiffreBoxF passableColor ">34<span class="eme">è</span></div>
+                            <div class="nomBoxKely">Rang</div>
+                        </div>
+
+                        <div class="iconBoxFlottante">
+                            <i class="fas fa-info"></i>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="ParentTableau noteParent">
+                    <div class="ListRecu">
+                        <div class="ListRecuTete">
+                            <h2>Fiche de notes</h2>
+                            <form action="" id="FormDateNote">
+                                <input type="date" name="date">
+                                <input type="submit" value="Recherche">
+                            </form>
+                        </div>
+
+                        <div class="hiddenTab">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <td>Matières</td>
+                                        <td>Coefficient</td>
+                                        <td>Notes</td>
+                                        <td>Remarques</td>
+                                    </tr>
+                                </thead>
+    
+                                <tbody>
+                                    <tr>
+                                        <td>Comptabilité</td>
+                                        <td>3</td>
+                                        <td>19</td>
+                                        <td><span class="status honorable">Honorable</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Organisation de l'entreprise</td>
+                                        <td>3</td>
+                                        <td>12</td>
+                                        <td><span class="status assez_bien">Assez-bien</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mathématique Financière</td>
+                                        <td>3</td>
+                                        <td>14,75</td>
+                                        <td><span class="status bien">Bien</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Structure de données</td>
+                                        <td>3</td>
+                                        <td>15</td>
+                                        <td><span class="status bien">Bien</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Base de données</td>
+                                        <td>3</td>
+                                        <td>4</td>
+                                        <td><span class="status insuffisant">Insuffisant</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Algorithme et programmation</td>
+                                        <td>3</td>
+                                        <td>8</td>
+                                        <td><span class="status passable">Passable</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Informatique Scientifique</td>
+                                        <td>3</td>
+                                        <td>19</td>
+                                        <td><span class="status honorable">Honorable</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Algèbre Linéaire</td>
+                                        <td>3</td>
+                                        <td>1</td>
+                                        <td><span class="status insuffisant">Insuffisant</span></td>
+                                    </tr>
+    
+                                    <tr>
+                                        <td>Probabilité</td>
+                                        <td>3</td>
+                                        <td>1,25</td>
+                                        <td><span class="status insuffisant">Insuffisant</span></td>
+                                    </tr>
+    
+                                    <tr>
+                                        <td>Analyse Mathématique</td>
+                                        <td>3</td>
+                                        <td>5,25</td>
+                                        <td><span class="status insuffisant">Insuffisant</span></td>
+                                    </tr>
+    
+                                    <tr>
+                                        <td>Mathématique Discrète</td>
+                                        <td>3</td>
+                                        <td>16,05</td>
+                                        <td><span class="status bien">Très bien</span></td>
+                                    </tr>
+    
+                                    <tr>
+                                        <td>Pascal</td>
+                                        <td>4</td>
+                                        <td>20</td>
+                                        <td><span class="status honorable">Honorable</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>HTML&CSS</td>
+                                        <td>4</td>
+                                        <td>17</td>
+                                        <td><span class="status bien">Très bien</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Français</td>
+                                        <td>3</td>
+                                        <td>7,75</td>
+                                        <td><span class="status insuffisant">Insuffisant</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Dictée</td>
+                                        <td>3</td>
+                                        <td>13</td>
+                                        <td><span class="status assez_bien">Assez-bien</span></td>
+                                    </tr>
+    
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+            <!-- Calendrier -->
+            <div id="PGcalender" class="calender">
+                <div class="flottantebox">
+                    <div class="boxKely">
+                        <div>
+                            <div class="chiffreBoxF">Evénements :</div>
+                            <div class="nomBoxKely">Lorem ipsum dolor sit amet.</div>
+                        </div>
+                    </div>
+
+                    <div class="boxKely">
+                        <div>
+                            <div class="chiffreBoxF findann">Fin D'année:</div>
+                            <div class="nomBoxKely">Lorem ipsum dolor sit amet.</div>
+                        </div>
+                    </div>
+
+
+
+                </div>
+                <div class="Content">
+                    <div class="soratra">
+                        <h2>Calendrier scolaire :</h2>
+                    </div>
+                    <div class="sep-calender">
+                        <h2>
+                            janvier
+                        </h2>
+
+
+                        <ul class="day">
+                            <li>dim</li>
+                            <li>lun</li>
+                            <li>mar</li>
+                            <li>mer</li>
+                            <li>jeu</li>
+                            <li>ven</li>
+                            <li>sam</li>
+                        </ul>
+                        <ul class="date">
+                            <li class="first-day">1</li>
+                            <li>2</li>
+                            <li>3</li>
+                            <li>4</li>
+                            <li>5</li>
+                            <li>6</li>
+                            <li>7</li>
+                            <li>8</li>
+                            <li>9</li>
+                            <li>10</li>
+                            <li>11</li>
+                            <li>12</li>
+                            <li>13</li>
+                            <li>14</li>
+                            <li>15</li>
+                            <li>16</li>
+                            <li>17</li>
+                            <li>18</li>
+                            <li>19</li>
+                            <li>20</li>
+                            <li>21</li>
+                            <li>22</li>
+                            <li>23</li>
+                            <li>24</li>
+                            <li>25</li>
+                            <li>26</li>
+                            <li>27</li>
+                            <li>28</li>
+                            <li>29</li>
+                            <li>30</li>
+                            <li class="last-day">31</li>
+                            <li class="Apart"></li>
+                            <li class="Apart"></li>
+                            <li class="Apart"></li>
+                            <li class="Apart"></li>
+                        </ul>
+
+
+                    </div>
+                    <div class="sep-calender">
+                        <h2>
+                            fevrier
+                        </h2>
+
+
+                        <ul class="day">
+                            <li>dim</li>
+                            <li>lun</li>
+                            <li>mar</li>
+                            <li>mer</li>
+                            <li>jeu</li>
+                            <li>ven</li>
+                            <li>sam</li>
+                        </ul>
+                        <ul class="date">
+                            <li class="prev-month"> </li>
+                            <li class="Apart"> </li>
+                            <li class="Apart"> </li>
+                            <li class="first-day">1</li>
+                            <li>2</li>
+                            <li>3</li>
+                            <li>4</li>
+                            <li>5</li>
+                            <li>6</li>
+                            <li>7</li>
+                            <li>8</li>
+                            <li>9</li>
+                            <li>10</li>
+                            <li>11</li>
+                            <li>12</li>
+                            <li>13</li>
+                            <li>14</li>
+                            <li>15</li>
+                            <li>16</li>
+                            <li>17</li>
+                            <li>18</li>
+                            <li>19</li>
+                            <li>20</li>
+                            <li>21</li>
+                            <li>22</li>
+                            <li>23</li>
+                            <li>24</li>
+                            <li>25</li>
+                            <li>26</li>
+                            <li>27</li>
+                            <li>28</li>
+                            <li class="last-day">29</li>
+                            <li class="Apart"></li>
+                            <li class="Apart"></li>
+                            <li class="Apart"></li>
+
+                        </ul>
+
+
+                    </div>
+                    <div class="sep-calender">
+                        <h2>
+                            Mars
+                        </h2>
+
+
+                        <ul class="day">
+                            <li>dim</li>
+                            <li>lun</li>
+                            <li>mar</li>
+                            <li>mer</li>
+                            <li>jeu</li>
+                            <li>ven</li>
+                            <li>sam</li>
+                        </ul>
+                        <ul class="date">
+                            <li class="prev-month Apart"> </li>
+                            <li class="Apart"> </li>
+                            <li class="Apart"> </li>
+                            <li class="first-day">1</li>
+                            <li>2</li>
+                            <li>3</li>
+                            <li>4</li>
+                            <li>5</li>
+                            <li>6</li>
+                            <li>7</li>
+                            <li>8</li>
+                            <li>9</li>
+                            <li>10</li>
+                            <li>11</li>
+                            <li>12</li>
+                            <li>13</li>
+                            <li>14</li>
+                            <li>15</li>
+                            <li>16</li>
+                            <li>17</li>
+                            <li>18</li>
+                            <li>19</li>
+                            <li>20</li>
+                            <li class=" DaySpec">21</li>
+                            <li>22</li>
+                            <li>23</li>
+                            <li>24</li>
+                            <li>25</li>
+                            <li>26</li>
+                            <li>27</li>
+                            <li>28</li>
+                            <li>29</li>
+                            <li>30</li>
+                            <li class="last-day ">31</li>
+                            <li class="Apart"></li>
+                        </ul>
+
+
+                    </div>
+                    <div class="sep-calender">
+                        <h2>
+                            Avril
+                        </h2>
+
+
+                        <ul class="day">
+                            <li>dim</li>
+                            <li>lun</li>
+                            <li>mar</li>
+                            <li>mer</li>
+                            <li>jeu</li>
+                            <li>ven</li>
+                            <li>sam</li>
+                        </ul>
+                        <ul class="date">
+                            <li class="prev-month Apart"> </li>
+                            <li class="Apart"> </li>
+                            <li class="Apart"> </li>
+                            <li class="Apart"> </li>
+                            <li class="Apart"> </li>
+                            <li class="Apart"> </li>
+                            <li class="first-day">1</li>
+                            <li>2</li>
+                            <li>3</li>
+                            <li>4</li>
+                            <li>5</li>
+                            <li>6</li>
+                            <li>7</li>
+                            <li>8</li>
+                            <li>9</li>
+                            <li class="DaySpec">10</li>
+                            <li>11</li>
+                            <li>12</li>
+                            <li>13</li>
+                            <li>14</li>
+                            <li>15</li>
+                            <li>16</li>
+                            <li>17</li>
+                            <li>18</li>
+                            <li>19</li>
+                            <li>20</li>
+                            <li>21</li>
+                            <li>22</li>
+                            <li>23</li>
+                            <li>24</li>
+                            <li>25</li>
+                            <li>26</li>
+                            <li>27</li>
+                            <li>28</li>
+                            <li>29</li>
+                            <li class="last-day">30</li>
+                            <li class="Apart"></li>
+                            <li class="Apart"></li>
+                            <li class="Apart"></li>
+                            <li class="Apart"></li>
+                            <li class="Apart"></li>
+                            <li class="Apart"></li>
+                        </ul>
+
+
+                    </div>
+                    <div class="sep-calender">
+                        <h2>
+                            Mai
+                        </h2>
+
+
+                        <ul class="day">
+                            <li>dim</li>
+                            <li>lun</li>
+                            <li>mar</li>
+                            <li>mer</li>
+                            <li>jeu</li>
+                            <li>ven</li>
+                            <li>sam</li>
+                        </ul>
+                        <ul class="date">
+                            <li class="prev-month Apart"> </li>
+                            <li class="first-day DaySpec">1</li>
+                            <li>2</li>
+                            <li>3</li>
+                            <li>4</li>
+                            <li>5</li>
+                            <li>6</li>
+                            <li>7</li>
+                            <li>8</li>
+                            <li>9</li>
+                            <li>10</li>
+                            <li>11</li>
+                            <li>12</li>
+                            <li>13</li>
+                            <li>14</li>
+                            <li>15</li>
+                            <li>16</li>
+                            <li>17</li>
+                            <li>18</li>
+                            <li>19</li>
+                            <li>20</li>
+                            <li>21</li>
+                            <li>22</li>
+                            <li>23</li>
+                            <li>24</li>
+                            <li>25</li>
+                            <li>26</li>
+                            <li>27</li>
+                            <li>28</li>
+                            <li>29</li>
+                            <li class="last-day">30</li>
+                            <li class="Apart"></li>
+                            <li class="Apart"></li>
+                            <li class="Apart"></li>
+                        </ul>
+
+
+                    </div>
+                    <div class="sep-calender">
+                        <h2>
+                            Juin
+                        </h2>
+
+
+                        <ul class="day">
+                            <li>dim</li>
+                            <li>lun</li>
+                            <li>mar</li>
+                            <li>mer</li>
+                            <li>jeu</li>
+                            <li>ven</li>
+                            <li>sam</li>
+                        </ul>
+                        <ul class="date">
+                            <li class="prev-month"> </li>
+                            <li class="Apart"> </li>
+                            <li class="Apart"> </li>
+                            <li class="Apart"> </li>
+                            <li class="first-day">1</li>
+                            <li>2</li>
+                            <li>3</li>
+                            <li>4</li>
+                            <li>5</li>
+                            <li>6</li>
+                            <li>7</li>
+                            <li>8</li>
+                            <li>9</li>
+                            <li>10</li>
+                            <li>11</li>
+                            <li>12</li>
+                            <li>13</li>
+                            <li>14</li>
+                            <li>15</li>
+                            <li>16</li>
+                            <li>17</li>
+                            <li>18</li>
+                            <li>19</li>
+                            <li>20</li>
+                            <li>21</li>
+                            <li>22</li>
+                            <li>23</li>
+                            <li>24</li>
+                            <li>25</li>
+                            <li class=" DaySpec">26</li>
+                            <li>27</li>
+                            <li>28</li>
+                            <li>29</li>
+                            <li class="last-day">30</li>
+                            <li class="Apart"></li>
+                        </ul>
+
+
+                    </div>
+                    <div class="sep-calender">
+                        <h2>
+                            Juillet
+                        </h2>
+
+
+                        <ul class="day">
+                            <li>dim</li>
+                            <li>lun</li>
+                            <li>mar</li>
+                            <li>mer</li>
+                            <li>jeu</li>
+                            <li>ven</li>
+                            <li>sam</li>
+                        </ul>
+                        <ul class="date">
+                            <li class="prev-month Apart"> </li>
+                            <li class="Apart"> </li>
+                            <li class="Apart"> </li>
+                            <li class="Apart"> </li>
+                            <li class="Apart"> </li>
+                            <li class="Apart"> </li>
+                            <li class="first-day">1</li>
+                            <li>2</li>
+                            <li>3</li>
+                            <li>4</li>
+                            <li>5</li>
+                            <li>6</li>
+                            <li>7</li>
+                            <li>8</li>
+                            <li>9</li>
+                            <li>10</li>
+                            <li>11</li>
+                            <li>12</li>
+                            <li>13</li>
+                            <li>14</li>
+                            <li>15</li>
+                            <li>16</li>
+                            <li>17</li>
+                            <li>18</li>
+                            <li>19</li>
+                            <li>20</li>
+                            <li>21</li>
+                            <li>22</li>
+                            <li>23</li>
+                            <li>24</li>
+                            <li>25</li>
+                            <li>26</li>
+                            <li>27</li>
+                            <li>28</li>
+                            <li>29</li>
+                            <li>30</li>
+                            <li class="last-day">31</li>
+                            <li class="Apart"></li>
+                            <li class="Apart"></li>
+                            <li class="Apart"></li>
+                            <li class="Apart"></li>
+                            <li class="Apart"></li>
+                        </ul>
+
+
+                    </div>
+                    <div class="sep-calender">
+                        <h2>
+                            Aout
+                        </h2>
+
+
+                        <ul class="day">
+                            <li>dim</li>
+                            <li>lun</li>
+                            <li>mar</li>
+                            <li>mer</li>
+                            <li>jeu</li>
+                            <li>ven</li>
+                            <li>sam</li>
+                        </ul>
+                        <ul class="date">
+                            <li class="prev-month Apart"> </li>
+                            <li class="Apart"> </li>
+                            <li class="first-day">1</li>
+                            <li>2</li>
+                            <li>3</li>
+                            <li>4</li>
+                            <li>5</li>
+                            <li>6</li>
+                            <li>7</li>
+                            <li>8</li>
+                            <li>9</li>
+                            <li>10</li>
+                            <li>11</li>
+                            <li>12</li>
+                            <li>13</li>
+                            <li>14</li>
+                            <li>15</li>
+                            <li>16</li>
+                            <li>17</li>
+                            <li>18</li>
+                            <li>19</li>
+                            <li>20</li>
+                            <li>21</li>
+                            <li>22</li>
+                            <li>23</li>
+                            <li>24</li>
+                            <li>25</li>
+                            <li>26</li>
+                            <li>27</li>
+                            <li>28</li>
+                            <li>29</li>
+                            <li>30</li>
+                            <li class="last-day">31</li>
+                            <li class="Apart"></li>
+                            <li class="Apart"></li>
+                        </ul>
+
+
+                    </div>
+                    <div class="sep-calender">
+                        <h2>
+                            septembre
+                        </h2>
+
+
+                        <ul class="day">
+                            <li>dim</li>
+                            <li>lun</li>
+                            <li>mar</li>
+                            <li>mer</li>
+                            <li>jeu</li>
+                            <li>ven</li>
+                            <li>sam</li>
+                        </ul>
+                        <ul class="date">
+                            <li class="prev-month Apart"> </li>
+                            <li class="Apart"> </li>
+                            <li class="Apart"> </li>
+                            <li class="Apart"> </li>
+                            <li class="Apart"> </li>
+                            <li class="first-day">1</li>
+                            <li>2</li>
+                            <li>3</li>
+                            <li>4</li>
+                            <li>5</li>
+                            <li>6</li>
+                            <li>7</li>
+                            <li>8</li>
+                            <li>9</li>
+                            <li>10</li>
+                            <li>11</li>
+                            <li>12</li>
+                            <li>13</li>
+                            <li>14</li>
+                            <li>15</li>
+                            <li>16</li>
+                            <li>17</li>
+                            <li>18</li>
+                            <li>19</li>
+                            <li>20</li>
+                            <li>21</li>
+                            <li>22</li>
+                            <li>23</li>
+                            <li>24</li>
+                            <li>25</li>
+                            <li>26</li>
+                            <li>27</li>
+                            <li>28</li>
+                            <li>29</li>
+                            <li>30</li>
+                            <li class="last-day">31</li>
+                        </ul>
+
+
+                    </div>
+                    <div class="sep-calender">
+                        <h2>
+                            octobre
+                        </h2>
+
+
+                        <ul class="day">
+                            <li>dim</li>
+                            <li>lun</li>
+                            <li>mar</li>
+                            <li>mer</li>
+                            <li>jeu</li>
+                            <li>ven</li>
+                            <li>sam</li>
+                        </ul>
+                        <ul class="date">
+                            <li class="first-day">1</li>
+                            <li>2</li>
+                            <li>3</li>
+                            <li>4</li>
+                            <li>5</li>
+                            <li>6</li>
+                            <li>7</li>
+                            <li>8</li>
+                            <li>9</li>
+                            <li>10</li>
+                            <li>11</li>
+                            <li>12</li>
+                            <li>13</li>
+                            <li>14</li>
+                            <li>15</li>
+                            <li>16</li>
+                            <li>17</li>
+                            <li>18</li>
+                            <li>19</li>
+                            <li>20</li>
+                            <li>21</li>
+                            <li>22</li>
+                            <li>23</li>
+                            <li>24</li>
+                            <li>25</li>
+                            <li>26</li>
+                            <li>27</li>
+                            <li>28</li>
+                            <li>29</li>
+                            <li>30</li>
+                            <li class="last-day">31</li>
+                            <li class="Apart"></li>
+                            <li class="Apart"></li>
+                            <li class="Apart"></li>
+                            <li class="Apart"></li>
+                        </ul>
+
+
+                    </div>
+                    <div class="sep-calender">
+                        <h2>
+                            Novembre
+                        </h2>
+
+
+                        <ul class="day">
+                            <li>dim</li>
+                            <li>lun</li>
+                            <li>mar</li>
+                            <li>mer</li>
+                            <li>jeu</li>
+                            <li>ven</li>
+                            <li>sam</li>
+                        </ul>
+                        <ul class="date">
+                            <li class="prev-month Apart"> </li>
+                            <li class="Apart"> </li>
+                            <li class="Apart"> </li>
+                            <li class="first-day">1</li>
+                            <li>2</li>
+                            <li>3</li>
+                            <li>4</li>
+                            <li>5</li>
+                            <li>6</li>
+                            <li>7</li>
+                            <li>8</li>
+                            <li>9</li>
+                            <li>10</li>
+                            <li>11</li>
+                            <li>12</li>
+                            <li>13</li>
+                            <li>14</li>
+                            <li>15</li>
+                            <li>16</li>
+                            <li>17</li>
+                            <li>18</li>
+                            <li>19</li>
+                            <li>20</li>
+                            <li>21</li>
+                            <li>22</li>
+                            <li>23</li>
+                            <li>24</li>
+                            <li>25</li>
+                            <li>26</li>
+                            <li>27</li>
+                            <li>28</li>
+                            <li>29</li>
+                            <li class="last-day">30</li>
+                            <li class="Apart"></li>
+                            <li class="Apart"></li>
+                        </ul>
+
+
+                    </div>
+                    <div class="sep-calender">
+                        <h2>
+                            Decembre
+                        </h2>
+
+
+                        <ul class="day">
+                            <li>dim</li>
+                            <li>lun</li>
+                            <li>mar</li>
+                            <li>mer</li>
+                            <li>jeu</li>
+                            <li>ven</li>
+                            <li>sam</li>
+                        </ul>
+                        <ul class="date">
+                            <li class="prev-month Apart"> </li>
+                            <li class="Apart"> </li>
+                            <li class="Apart"> </li>
+                            <li class="Apart"> </li>
+                            <li class="Apart"> </li>
+                            <li class="first-day"></li>
+                            <li>2</li>
+                            <li>3</li>
+                            <li>4</li>
+                            <li>5</li>
+                            <li>6</li>
+                            <li>7</li>
+                            <li>8</li>
+                            <li>9</li>
+                            <li>10</li>
+                            <li>11</li>
+                            <li>12</li>
+                            <li>13</li>
+                            <li>14</li>
+                            <li>15</li>
+                            <li>16</li>
+                            <li>17</li>
+                            <li>18</li>
+                            <li>19</li>
+                            <li>20</li>
+                            <li>21</li>
+                            <li>22</li>
+                            <li>23</li>
+                            <li>24</li>
+                            <li>25</li>
+                            <li>26</li>
+                            <li>27</li>
+                            <li>28</li>
+                            <li>29</li>
+                            <li>30</li>
+                            <li class="last-day">31</li>
+                            <li class="Apart"></li>
+                            <li class="Apart"></li>
+                            <li class="Apart"></li>
+                            <li class="Apart"></li>
+                            <li class="Apart"></li>
+                            <li class="Apart"></li>
+
+                        </ul>
+
+
+                    </div>
+                </div>
+
+            </div>
+            <div id="PgEDT" class="Apayer EDT">
+                <div class="antsa ">
+                    <!--box date, filiere, heure creuse-->
+                    <div class="boxviolet">
+                        <div class="date">
+
+                            <div class="nombre"><span>jj</span> / <span>mm</span> / <span>aa</span></div>
+                            <div class="nom">Date</div>
+
+                        </div>
+
+                        <div class="date">
+
+                            <div class="nombre">4</div>
+                            <div class="nom">Total d'heure creuse</div>
+
+                        </div>
+                    </div>
+                </div>
+                <!--box1 -->
+                <div class="ParentTableau box1">
+                    <div class=" ListRecu edt">
+                        <div class="ListRecuTete title">
+                            <h2>Emploi du temps</h2>
+                            <form action="">
+                                <input type="date">
+                                <input type="submit" value="Recherche">
+                            </form>
+                        </div>
+                       <div class="hiddenTab">
+                        <div class="grid">
+                            <div class="un">HEURES</div>
+                            <div class="deux">LUNDI</div>
+                            <div class="trois">MARDI</div>
+                            <div class="quatre">MERCREDI</div>
+                            <div class="cinq">JEUDI</div>
+                            <div class="six">VENDREDI</div>
+                            <div class="samedi">SAMEDI</div>
+                            <div class="sept">07h15-09h15</div>
+                            <div class="huit">Algèbre</div>
+                            <div class="neuf">MATH Discret</div>
+                            <div class="onze">Français</div>
+                            <div class="douze"></div>
+                            <div class="treize">Probabilité</div>
+                            <div class="samedi1">IS</div>
+                            <div class="quartorze">09h15-11h15</div>
+                            <div class="quinze">SD</div>
+                            <div class="seize">Base de Données</div>
+                            <div class="dixsept">Analyse MATH</div>
+                            <div class="dixhuit">TP Programation</div>
+                            <div class="dixneuf">Organisation</div>
+                            <div class="samedi2">MATH FI Fi</div>
+                            <div class="vinght"></div>
+                            <div class="vun"></div>
+                            <div class="vdeux"></div>
+                            <div class="vtrois"></div>
+                            <div class="vquatre"></div>
+                            <div class="vcinq"></div>
+                            <div class="vsix"></div>
+                            <div class="vsept"></div>
+                            <div class="samedi4"></div>
+                            <div class="vhuit">12h30H-14h15</div>
+                            <div class="vneuf">Algorithme</div>
+                            <div class="trente">Comptabilité</div>
+                            <div class="tun">Français</div>
+                            <div class="tdeux">TP Programation</div>
+                            <div class="ttrois">HTML - CSS</div>
+                            <div class="samedi5"></div>
+                            <div class="tquatre">14h15-15h30</div>
+                            <div class="tcinq">Pascal</div>
+                            <div class="tsix"></div>
+                            <div class="tsept"></div>
+                            <div class="thuit">SD</div>
+                            <div class="tneuf"></div>
+                            <div class="samedi6"></div>
+                        </div>
+                       </div>
+                    </div>
+                </div>
+            </div>
+            <div id="PgProfil" class="profil">
+                <div class="profil-content ">
+                    <div class="nom">
+                        <i class="fas fa-user-circle img" ></i>
+                        <p>RAKOTOARIMALALA Andriantsoa Samoela</p>
+                    </div>
+                    <div class="info-content ">
+                          <div class="i">
+                            <div class="in">
+                                <p>Info Général</p>
+                            </div>
+                            <div class="txt">
+                                <div class="papay">
+                                    <p>Genre: <span>Mâle</span></p>
+
+                                    <p class="p">Adresse: <span>Lot II V 2 A Ampandrana Besarety</span></p>  
+                                    
+                                    <p>Numéro Phone: <span>032 38 545 42</span></p> 
+                                    <p>Adresse email: <span>Samrkt567@gmail.com</span></p> 
+                                </div>
+                            </div>
+                          </div>
+                          <div class="i">
+                            <div class="in">
+                                <p>Filière et Classe</p>
+                            </div>
+                            <div class="txt">
+                                <div class="papay">
+                                    <p>Filière: <span>IGGLIA</span></p>
+                                    <p class="p">Classe: <span>1 B</span></p>  
+                                    
+                                    <p>Numéro en Classe: <span>19 </span></p> 
+                                    <p>Matricule: <span>3367 </span></p> 
+                                </div>
+                            </div>
+                          </div>
+                          <div class="i">
+                            <div class="in">
+                                <p>Père</p>
+                            </div>
+                            <div class="txt">
+                                <div class="papay">
+                                    <p>Nom : <span> RAKOTOARIMALALA</span></p>
+                                    <p>Prénom : <span>Solofoniriana</span></p>
+                                    <p>Proffesion: <span>Developpeur</span></p> 
+                                    <p class="p">Adresse: <span>Lot II V 2 A Ampandrana Besarety</span></p>  
+                                </div>
+                            </div>
+                          </div>
+                          <div class="i final">
+                            <div class="in">
+                                <p>Mère</p>
+                            </div>
+                            <div class="txt">
+                                    <div class="papay">
+                                        <p>Nom : <span>HANTANIAINA TOLOJANAHARY</span></p>
+                                        <p>Prénom : <span>Joelinina</span></p>
+                                        <p>Proffesion: <span>Vendeuse</span></p> 
+                                        <p class="p">Adresse: <span>Lot II V 2 A Ampandrana Besarety</span></p>  
+                                </div>
+                            </div>
+                          </div>
+                    </div>  
+                </div>
+                <div class="profil-info">
+                   <div class="pro">
+                        <div class="pro1">Les Informations Médicales</div>
+                        <div class="pro2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, delectus! Voluptate dignissimos explicabo possimus tempore atque accusamus laborum itaque, dolorum laboriosam necessitatibus. Repellendus totam sapiente alias quam quas in mollitia!</div>
+                        <div class="pro3"><span>Validé</span></div>
+                   </div> 
+                   <div class="pro">
+                        <div class="pro1">Antécédents scolaire</div>
+                        <div class="pro2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro, sapiente? Ut dignissimos quis eius! Ipsum eum pariatur obcaecati explicabo, excepturi quas veniam velit amet perferendis sapiente aliquid aperiam! Qui, delectus!</div>
+                     
+                    </div> 
+                    <div class="pro">
+                        <div class="pro1">Remarques des Proffesseurs</div>
+                        <div class="pro2">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, odio modi sequi amet optio assumenda fuga, officia numquam delectus labore a eius exercitationem itaque porro eligendi dolorum placeat esse veniam.</div>
+                   </div> 
+                </div>
+            </div>
+            <div id="PPggAbsence" class="Apayer Absence">
+                <div class="flottantebox">
+                    <!-- <div class="boxKely">
+                        <div>
+                            <div class="chiffreBoxF restpayer">435000 Ar</div>
+                            <div class="nomBoxKely">Reste à payer</div>
+                        </div>
+                        <div class="iconBoxFlottante">
+                            <i class="fas fa-money-bill-wave"></i>
+                        </div>
+                    </div> -->
+
+                    <div class="boxKely">
+                        <div>
+                            <div class="chiffreBoxF  payer">4</div>
+                            <div class="nomBoxKely">Total Absence</div>
+                        </div>
+                        <div class="iconBoxFlottante">
+                            <i class="far fa-calendar"></i>
+                        </div>
+                    </div>
+<!-- 
+                    <div class="boxKely">
+                        <div>
+                            <div class="chiffreBoxF ">1485000 Ar</div>
+                            <div class="nomBoxKely">Total</div>
+                        </div>
+                        <div class="iconBoxFlottante">
+                            <i class="fas fa-calculator"></i>
+                        </div>
+                    </div> -->
+
+                </div>
+
+                <div class="ParentTableau">
+                    <div class="ListRecu">
+                        <div class="ListRecuTete">
+                            <h2>Liste Absences</h2>
+                            <form action="" id="formDateAbs">
+                                <input type="date">
+                                <input type="submit" value="Rechercher">
+                            </form>
+                        </div>
+
+                       <div class="hiddenTab">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <td>Matières</td>
+                                    <td>Heures</td>
+                                    <td>Status</td>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <tr>
+                                    <td>INformatique scientifique</td>
+                                    <td>07h 15 - 08h 15</td>
+                                    <td><span class="status payyee">Present</span></td>
+                                </tr>
+
+                                <tr>
+                                    <td>Html css</td>
+                                    <td>08h 15 - 09h 15</td>
+                                    <td><span class="status payyee">Present</span></td>
+                                </tr>
+
+                                <tr>
+                                    <td>Francais</td>
+                                    <td>09h 15 - 10h 15</td>
+                                    <td><span class="status NonPayyee">Absent</span></td>
+                                </tr>
+
+                                <tr>
+                                    <td>Structure de donné</td>
+                                    <td>10h 15 - 11h 30</td>
+                                    <td><span class="status NonPayyee">Absent</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Mathématique Finacière</td>
+                                    <td>11h 15 - 12h 15</td>
+                                    <td><span class="status payyee">Present</span></td>
+                                </tr>
+
+                                <tr>
+                                    <td>Pascal</td>
+                                    <td>12h 15 - 13h 15</td>
+                                    <td><span class="status payyee">Present</span></td>
+                                </tr>
+
+                                <tr>
+                                    <td>Analyse Mathematique</td>
+                                    <td>14h 15 - 15h 30</td>
+                                    <td><span class="status NonPayyee">Absent</span></td>
+                                </tr>
+
+                              
+
+                            </tbody>
+                        </table>
+                       </div>
+                    </div>
+
+
+                </div>  
+            </div>
+
+        </div>
+    </div>
+
+    <!-- =========== Scripts =========  -->
+    <script src="../../public/js/scriptDflt.js"></script>
+    <script src="../../public/assets/FontAwesome/js/all.min.js"></script>
+
+</body>
+
+</html>

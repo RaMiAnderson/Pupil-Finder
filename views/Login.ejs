@@ -5,10 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- style par defaut -->
-    <link rel="stylesheet" href="../public/css/allstyle.css">
+    <link rel="stylesheet" href="/public/css/allstyle.css">
     <!-- style specifique -->
-    <link rel="stylesheet" href="../public/css/style_Login.css">
-    <link rel="shortcut icon" href="../public/imgs/ICON-01.svg" type="image/x-icon">
+    <link rel="stylesheet" href="/public/css/style_Login.css">
+    <link rel="shortcut icon" href="/public/imgs/ICON-01.svg" type="image/x-icon">
     
  <title>Pupil.Finder</title>
 </head>
@@ -33,13 +33,17 @@
             
             <div class="box-content-form"> <!--  Conteneur Connexion et Isncription   -->
                     <div class="box-login" id="box-conn"> <!--  Conteneur Connexion  -->
-                        <form action="" id="myFormLog"  >
+                        <form action="/auth/login" method="post" id="myFormLog"  >
                             <span class="ResultAnalyse Rslt_AnalyseInputLogin">Veuillez Remplir ces champs</span>
                            
-                            <input id="persEmail" class="filtre-vidLog" type="email" name=""  placeholder="Email" >
-                            <input id="persPass" class="filtre-vidLog" type="password" name=""  placeholder="Mot de passe" >
+                            <input id="persEmail" class="filtre-vidLog" type="email" name="email"  placeholder="Email" >
+                            <input id="persPass" class="filtre-vidLog" type="password" name="password"  placeholder="Mot de passe" >
                             <div>
                                 <a href="pages/mdpForget.html" class="frm-anc">Mot de passe oublié <span>?</span></a>
+                            </div>
+                            <div>
+                                <a href="/auth/add-user" class="frm-anc">Ajouter un utilisateur <span>?</span></a>
+
                             </div>
                             <input id="submt-form-Login" class="submt-form" type="submit" value="Se Connecter" >
                             

@@ -1,8 +1,22 @@
 const express = require('express');
 const app = express();
-const crudRoute = require('./routes/crudRoute');
+const authRoute = require('./routes/authRoute');
+const userRoute = require('./routes/userRoute');
+const adminRoute = require('./routes/adminRoute');
+const session = require('express-session');
 const { initDatabase } = require('./database/databaseConnector');
 
+// Configuration de Session
+const sessionConfig =  session({
+    secret: 'dvf025vx4d2vs5vs2vqe1bf2ds5gbsfd6sf52sd2fxb5sdgb8gf5dh5z5rdf6hbdfb9d8gbrs74b1fg',
+    resave: false,
+    saveUninitialized: true,
+    cookie: { secure: false }, // Modifier à "true" si vous utilisez HTTPS
+});
+
+
+// Middleware pour parser les données POST
+app.use(express.urlencoded({ extended: true }));
 
 // initialiser la connexion sur le base de donnée
 initDatabase();
@@ -12,8 +26,18 @@ app.set('views','./views');
 // definiissena ny moteur de template 
 app.set('view engine','ejs');
 
-app.use(crudRoute);
+app.use(sessionConfig);
+app.use('/auth',authRoute);
+app.use('/user',userRoute);
+app.use('/admin',adminRoute);
+
+
 app.use('/public' , express.static('public'));
+
+// Redirigena any @ login ny index route
+app.get('/', (req,res) => {
+    res.redirect('/auth/login');
+})
 
 // port n'ilay application
 let port = process.env.PORT || 8010;
