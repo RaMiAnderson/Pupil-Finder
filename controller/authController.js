@@ -9,13 +9,13 @@ const loginController = async (req,res) => {
         if (userConnected) {
             // ILAY ROLE NO PASSEKO ZAY MITOVY AMLE PREFIX ANLE ROUTE DE PAGE : AFKA ANONTANIANA AHO ;)
             res.redirect(`/${userConnected}`);
-            return;
+            return; 
         }
         res.redirect('/auth/login');
     } catch (error) {
         res.redirect(`/auth/login?message=${error}`);
-    }
-}
+    };
+};
 
 const addUserController = async (req,res) => {
     try {
@@ -25,8 +25,8 @@ const addUserController = async (req,res) => {
     } catch (error) {
         console.log(error);
         res.redirect(`/auth/add-user?message=${error}`);
-    }
-}
+    };
+};
 
 const logoutController = (req,res) => {
     // Détruire la session et rediriger vers la page de connexion
@@ -36,7 +36,7 @@ const logoutController = (req,res) => {
         }
         res.redirect('/auth/login');
     });
-}
+};
 
 const getPageLoginController = (req, res) => {
     const stateConnexion = authentificationService.verifyIfAlreadyConnected(req);
@@ -49,7 +49,7 @@ const getPageLoginController = (req, res) => {
 
 const getPageAddUserController = (req,res) => {
     res.render('addUser');
-}
+};
    
 
 const deleteUserController = (req,res) => {
@@ -62,4 +62,4 @@ module.exports = {
     logoutController,
     getPageLoginController,
     getPageAddUserController
-}
+};
