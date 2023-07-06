@@ -1,0 +1,16 @@
+<div id="PgNotif" class="notif">
+
+        <div class="a">
+            <div class="imgNom">
+                <h2>Notifications </h2>
+            </div>
+        </div>
+
+        <!--annonce 1 plus récent, 2 hier ohatra de lay 3 farany plus ancien fa miandry javascript anaovana azy-->
+        <% for(var i = 0; i < userNotif.length; i++ ){ %>
+            <div class="ann-rec">
+                <legend><strong><%= userNotif[(userNotif.length - 1) - i ].date %></strong></legend>
+                <p><%= userNotif[(userNotif.length - 1) - i ].content %></p>
+            </div>
+        <% } %>
+</div>

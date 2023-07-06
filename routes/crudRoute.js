@@ -8,5 +8,8 @@ router.get('/Login' , crudContrroler.Login);
 //Route Temporaire : alohany havitana authentification fotsiny: (Mba afahana iaccedena aminy)
         router.get('/pupilfinder' , crudContrroler.userInterface);
         router.get('/ppupilfinder' , crudContrroler.adminInterface);
+        // Profil user
+
+
 
 module.exports = router;

@@ -1,0 +1,26 @@
+<!-- Annonce -->
+<div id="PgAnnonce" class="notif annonce">
+
+        <div class="a">
+            <div class="imgNom">
+                <h2>Annonces</h2>
+            </div>
+            <!-- <form action="">
+                <input type="date" name="date" id="date">
+                <input type="submit" value="Recherche">
+            </form> -->
+        </div>
+
+        <!--annonce 1 plus récent, 2 hier ohatra de lay 3 farany plus ancien fa miandry javascript anaovana azy-->
+        <% for(var i = 0; i < userAnnonce.length; i++ ){ %>
+            <div class="ann-rec">
+                <legend><strong><%= userAnnonce[(userAnnonce.length - 1) - i ].date %></strong></legend>
+                <p><%= userAnnonce[(userAnnonce.length - 1) - i ].content %></p>
+                <div class="cont">
+                    <i id="img1" class="fas fa-scroll mitah"></i>
+                    <p><strong><%= userAnnonce[(userAnnonce.length - 1) - i ].type %></strong></p>
+                </div>
+            </div>
+        <% } %>
+      
+    </div>
