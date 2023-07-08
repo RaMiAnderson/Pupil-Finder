@@ -5,11 +5,10 @@ const User = require('../model/user');
 
 const login = async (user,request) => {
     try {
-        // const stateConnection = verifyIfAlreadyConnected(request);
-        // if (stateConnection) return request?.session?.role;
+        const stateConnection = verifyIfAlreadyConnected(request);
+        if (stateConnection) return request?.session?.role;
         const userConnected = await checkPasswordUser(user);
-        // request.session.user = userConnected;
-
+        request.session.user = userConnected;
         return userConnected?.role;
     } catch (error) {
         throw error;
