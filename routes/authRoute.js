@@ -15,3 +15,4 @@ router.post("/add-user" ,authController.addUserController);
 router.post('/login' , authController.loginController);
 
 module.exports = router;
+  

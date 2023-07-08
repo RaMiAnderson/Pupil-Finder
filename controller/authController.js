@@ -16,7 +16,7 @@ const loginController = async (req,res) => {
         res.redirect(`/auth/login?message=${error}`);
     };
 };
-
+ 
 const addUserController = async (req,res) => {
     try {
         const user = req.body;

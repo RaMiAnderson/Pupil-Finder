@@ -10,5 +10,6 @@ const userSchema = Schema({
     password: { type: String, required: true },
 });
 
+//nasina unique plugin uniqValidator mba ho Unique
 userSchema.plugin(uniqueValidator);
 module.exports = mongoose.model("User", userSchema);

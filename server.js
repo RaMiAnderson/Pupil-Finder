@@ -1,8 +1,10 @@
 const express = require('express');
 const app = express();
+
 const authRoute = require('./routes/authRoute');
 const userRoute = require('./routes/userRoute');
 const adminRoute = require('./routes/adminRoute');
+
 const session = require('express-session');
 const { initDatabase } = require('./database/databaseConnector');
 
@@ -36,7 +38,7 @@ app.use('/public' , express.static('public'));
 
 // Redirigena any @ login ny index route
 app.get('/', (req,res) => {
-    res.redirect('/auth/login');
+    res.redirect('/auth/login'); 
 })
 
 // port n'ilay application

@@ -5,10 +5,11 @@ const User = require('../model/user');
 
 const login = async (user,request) => {
     try {
-        const stateConnection = verifyIfAlreadyConnected(request);
-        if (stateConnection) return request?.session?.role;
+        // const stateConnection = verifyIfAlreadyConnected(request);
+        // if (stateConnection) return request?.session?.role;
         const userConnected = await checkPasswordUser(user);
-        request.session.user = userConnected;
+        // request.session.user = userConnected;
+
         return userConnected?.role;
     } catch (error) {
         throw error;
@@ -57,8 +58,7 @@ const checkPasswordUser = async (user) => {
         return new Promise((resolve, reject) => {
             User.findOne({ email: user.email }, async (err, userBase) => {
                 if (err) { reject(err) };
-                const userPasswordEncrypted = await encryptPassword(user.password);
-                const resultCheck = await comparePasswordencrypted(userPasswordEncrypted, userBase.password);
+                const resultCheck = await comparePasswordencrypted(user.password , userBase.password);
                 if (resultCheck) {
                     const res = {
                         email : userBase.email,
@@ -73,20 +73,20 @@ const checkPasswordUser = async (user) => {
     } catch (error) {
         throw `error : ${error}`
     }
-}
+};
 
 const comparePasswordencrypted = (inputPassword, databasePassword) => {
     return new Promise((resolve, reject) => {
         bcrypt.compare(inputPassword, databasePassword).then((valid) => {
-            if (!valid) {
+            if (valid) {
                 resolve(true);
-            }
+            };
             resolve(false);
         }).catch((error) => {
             reject(`Error on compare Password ${error}`);
         });
-    })
-}
+    });
+};
 
 
 
