@@ -11,7 +11,6 @@ const loginController = async (req,res) => {
             res.redirect(`/${userConnected}`);
             return; 
         }
-        res.redirect('/auth/login');
     } catch (error) {
         res.redirect(`/auth/login?message=${error}`);
     };

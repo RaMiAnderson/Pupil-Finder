@@ -1,5 +1,5 @@
 const bcrypt = require("bcrypt");
-const User = require('../model/user');
+const User = require('../model/user') ;
 
 
 
@@ -56,17 +56,25 @@ const checkPasswordUser = async (user) => {
 
         return new Promise((resolve, reject) => {
             User.findOne({ email: user.email }, async (err, userBase) => {
-                if (err) { reject(err) };
-                const resultCheck = await comparePasswordencrypted(user.password , userBase.password);
-                if (resultCheck) {
-                    const res = {
-                        email : userBase.email,
-                        name : userBase.name,
-                        role : userBase.role,
-                    }
-                    resolve(res);
-                }
-                reject('Password incorrect');
+                if (err) { 
+                    reject(err) ;
+                };
+                if (userBase !== null ) {
+                    const resultCheck = await comparePasswordencrypted(user.password , userBase.password);
+                    if (resultCheck) {
+                        const res = {
+                            email : userBase.email,
+                            name : userBase.name,
+                            role : userBase.role,
+                        }
+                        resolve(res);
+                    }   
+                    // ETO API POST PASSWORD INCORECT
+                    reject('Password incorrect');
+                } else {
+                    // ETO API POST GMAIL NOT FOUND 404
+                    reject('Email not found , please try again with your correct gamil');
+                };
             });
         });
     } catch (error) {
