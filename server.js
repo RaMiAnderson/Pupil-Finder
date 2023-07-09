@@ -5,6 +5,8 @@ const authRoute = require('./routes/authRoute');
 const userRoute = require('./routes/userRoute');
 const adminRoute = require('./routes/adminRoute');
 
+const authentificationService = require('./services/authentificationService');
+
 // api
 const apiLogin = require('./routes/apiLogin');
 
@@ -41,7 +43,7 @@ app.use('/api' , apiLogin);
 
 // route API
 app.get('/api-data-pupil' , (req, res) => {
-    res.redirect('/api/login')
+    res.redirect('/api/login');
 });
 
 

@@ -3,6 +3,7 @@ const User = require('../model/user') ;
 
 
 
+
 const login = async (user,request) => {
     try {
         const stateConnection = verifyIfAlreadyConnected(request);
@@ -70,9 +71,11 @@ const checkPasswordUser = async (user) => {
                         resolve(res);
                     }   
                     // ETO API POST PASSWORD INCORECT
+                    
                     reject('Password incorrect');
                 } else {
                     // ETO API POST GMAIL NOT FOUND 404
+                    
                     reject('Email not found , please try again with your correct gamil');
                 };
             });
@@ -102,5 +105,6 @@ const comparePasswordencrypted = (inputPassword, databasePassword) => {
 module.exports = {
     addUser,
     verifyIfAlreadyConnected,
-    login
+    login,
+
 }

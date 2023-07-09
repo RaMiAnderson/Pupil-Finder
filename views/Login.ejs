@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,14 +10,35 @@
     <!-- style specifique -->
     <link rel="stylesheet" href="/public/css/style_Login.css">
     <link rel="shortcut icon" href="/public/imgs/ICON-01.svg" type="image/x-icon">
-    
- <title>Pupil.Finder</title>
+
+    <title>Pupil.Finder</title>
+    <script>
+        fetch('/api-data-pupil')
+            .then((res) => res.json())
+            .then((data) => {
+
+                // Balise Affichage
+                const Rslt_AnalyseInputLogin = document.querySelector('.Rslt_AnalyseInputLogin');
+
+
+                if (data.status == "") {
+                    Rslt_AnalyseInputLogin.style.color = "white"
+                    Rslt_AnalyseInputLogin.textContent = data.Default;
+                } else {
+                    Rslt_AnalyseInputLogin.textContent = data.status;
+                    Rslt_AnalyseInputLogin.style.color = "#ffee00"
+                };
+
+            })
+            .catch((err) => console.log(` error : ${err}`));
+    </script>
 </head>
+
 <body>
-        
+
     <div class="PART1">
-        <div class="block-logo">   <!--  Conteneur Logo  -->
-            <div class="block-annce"> 
+        <div class="block-logo"> <!--  Conteneur Logo  -->
+            <div class="block-annce">
                 <div id="box-bienv" class=" box-annce"> <!-- Bienvenu block  -->
                     <p>Merci De</p>
                     <p class="p2">Nous Avoir Choisi</p>
@@ -24,47 +46,38 @@
             </div>
             <img src="/public/imgs/Logo cover 2.0-01.svg" alt="Logo">
             <p>Assurez la supervision de votre enfant à tout <br>moment avec <span>Pupil<span>.Finder</span></span></p>
-            <a href="" ><button type="button"  class="submt-form btn-vplus">Voir Plus</button></a>
+            <a href=""><button type="button" class="submt-form btn-vplus">Voir Plus</button></a>
         </div>
     </div>
     <div class="PART2">
         <div class="block-form"> <!--  Conteneur Formulaire  -->
 
-            
-            <div class="box-content-form"> <!--  Conteneur Connexion et Isncription   -->
-                    <div class="box-login" id="box-conn"> <!--  Conteneur Connexion  -->
-                        <form action="/auth/login" method="post" id="myFormLog"  >
-                            <span class="ResultAnalyse Rslt_AnalyseInputLogin">Veuillez Remplir ces champs</span>
-                           
-                            <input id="persEmail" class="filtre-vidLog" type="email" name="email"  placeholder="Email" >
-                            <input id="persPass" class="filtre-vidLog" type="password" name="password"  placeholder="Mot de passe" >
-                            <div>
-                                <a href="pages/mdpForget.html" class="frm-anc">Mot de passe oublié <span>?</span></a>
-                            </div>
-                            <div>
-                                <a href="/auth/add-user" class="frm-anc">Ajouter un utilisateur <span>?</span></a>
 
-                            </div>
-                            <input id="submt-form-Login" class="submt-form" type="submit" value="Se Connecter" >
-                            
-                        </form>
-                         
-                    </div>
-                    
+            <div class="box-content-form"> <!--  Conteneur Connexion et Isncription   -->
+                <div class="box-login" id="box-conn"> <!--  Conteneur Connexion  -->
+                    <form action="/auth/login" method="post" id="myFormLog">
+                        <span class="ResultAnalyse Rslt_AnalyseInputLogin"></span>
+
+                        <input id="persEmail" class="filtre-vidLog" type="email" name="email" placeholder="Email">
+                        <input id="persPass" class="filtre-vidLog" type="password" name="password"
+                            placeholder="Mot de passe">
+                        <div>
+                            <a href="pages/mdpForget.html" class="frm-anc">Mot de passe oublié <span>?</span></a>
+                        </div>
+                        <div>
+                            <a href="/auth/add-user" class="frm-anc">Ajouter un utilisateur <span>?</span></a>
+
+                        </div>
+                        <input id="submt-form-Login" class="submt-form" type="submit" value="Se Connecter">
+
+                    </form>
+
+                </div>
+
             </div>
-    
+
         </div>
     </div>
-    
-    <script>
-    //    const form = document.getElementById("myFormLog");
-       myFormLog.addEventListener('submit' , async (e) => {
-            // e.preventDefault();
-            await fetch('/api-log')
-                .then((res) => res.json())
-                .then((data) => console.log(data))
-                .catch((err) => console.log(` tsy mety e, error : ${err}`));
-       });
-    </script>
 </body>
+
 </html>

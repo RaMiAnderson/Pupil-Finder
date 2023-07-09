@@ -20,6 +20,7 @@
     "mongoose": "^5.13.19",
     "mongoose-aggregate-paginate-v2": "^1.0.6",
     "mongoose-unique-validator": "^2.0.3",
+    "node-fetch": "^3.3.1",
     "path": "^0.12.7"
   },
   "devDependencies": {
