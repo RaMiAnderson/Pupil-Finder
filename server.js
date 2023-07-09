@@ -5,8 +5,6 @@ const authRoute = require('./routes/authRoute');
 const userRoute = require('./routes/userRoute');
 const adminRoute = require('./routes/adminRoute');
 
-
-
 // api
 // const apiLogin = require('./api/apiLogin.json');
 
