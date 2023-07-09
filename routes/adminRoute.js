@@ -10,4 +10,3 @@ router.get("/",adminController.getHomepage);
 
 module.exports = router
 
-

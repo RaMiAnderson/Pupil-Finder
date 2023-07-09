@@ -58,9 +58,13 @@
     
     <script>
     //    const form = document.getElementById("myFormLog");
-       myFormLog.addEventListener('submit' , (e) => {
+       myFormLog.addEventListener('submit' , async (e) => {
             // e.preventDefault();
-       })
+            await fetch('/api-log')
+                .then((res) => res.json())
+                .then((data) => console.log(data))
+                .catch((err) => console.log(` tsy mety e, error : ${err}`));
+       });
     </script>
 </body>
 </html>
