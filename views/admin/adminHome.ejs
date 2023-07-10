@@ -114,14 +114,14 @@
           </li>
           <li>
             <!-- SE deconnecter -->
-            <a href="">
-              <button id="Logout">
+            <form action="/admin" method="post">
+              <button id="Logout" type="submit">
                 <span class="icon">
                   <i class="fas fa-sign-out-alt sizeIcon"></i>
                 </span>
                 <p class="titre">Se Deconnecter</p>
               </button>
-            </a>
+            </form>
           </li>
         </ul>
       </div>
@@ -225,17 +225,17 @@
               </div>
             </div>
             <!-- Se deconnecter -->
-            <a href="" class="logOutAcc">
-              <div class="boxKely bgProfil">
-                <div class="flexcontent">
-                  <div class="chiffreBoxF Cpt"></div>
-                  <div class="chiffreBoxF">Se Deconnecter</div>
-                </div>
-                <div class="iconBoxFlottante">
-                  <i class="fas fa-sign-out-alt iconAccRglg"></i>
-                </div>
-              </div>
-            </a>
+            <form action="/admin" method="post" class="logOutAcc">
+              <button type="submit" class="boxKely bgProfil">
+                  <div class="flexcontent">
+                    <div class="chiffreBoxF Cpt"></div>
+                    <div class="chiffreBoxF">Se Deconnecter</div>
+                  </div>
+                  <div class="iconBoxFlottante">
+                    <i class="fas fa-sign-out-alt iconAccRglg"></i>
+                  </div>
+              </button>
+            </form>
           </div>
         </div>
       </div>

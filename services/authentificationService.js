@@ -34,7 +34,8 @@ const  addUser = async (user) => {
         return new Promise((resolve, reject) => {
             userModel.save((err) => {
                 if (err) {
-                    reject(`cant post user :  ${err.message}`);
+                    console.log(err);
+                    reject(`cant post user : server failed`);
                 }
                 resolve(userModel);
             })
@@ -48,7 +49,11 @@ const encryptPassword = (password) => {
     return new Promise((resolve, reject) => {
         bcrypt.hash(password, 10).then((hash) => {
             resolve(hash);
-        }).catch((error) => { reject(error) });
+        }).catch((error) => { 
+            const errorMessages = "Error Password";
+            console.log(error);
+            reject(errorMessages); 
+        });
     })
 }
 
@@ -58,11 +63,14 @@ const checkPasswordUser = async (user) => {
         return new Promise((resolve, reject) => {
             User.findOne({ email: user.email }, async (err, userBase) => {
                 if (err) { 
-                    reject(err) ;
+                    console.log(err);
+                    reject("ErrorServeur");
                 };
+                // De lasa stocké ao anaty argument userBase ilay document an'ilay user itany(tous)
                 if (userBase !== null ) {
                     const resultCheck = await comparePasswordencrypted(user.password , userBase.password);
                     if (resultCheck) {
+                        // Mila ataontsika anatin'ito res ito all info anle user fa io ampesaintsika any amle ejs aveo {AFAKA ANTAnIANA AHO; ANDERSON}
                         const res = {
                             email : userBase.email,
                             name : userBase.name,

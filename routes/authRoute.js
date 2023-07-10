@@ -10,7 +10,7 @@ router.get("/add-user",authController.getPageAddUserController);
 router.get('/logout' , authController.logoutController);
 
 
-
+ 
 // Action
 router.post("/add-user" ,authController.addUserController);
 router.post('/login' , authController.loginController);

@@ -61,7 +61,8 @@
     <script>
         const urlParams = new URLSearchParams(window.location.search);
         const messages = urlParams.get('message');
-        const Rslt_AnalyseInputLogin = document.querySelector('.Rslt_AnalyseInputLogin');
+        const Rslt_AnalyseInputLogin = document.querySelector('.Rslt_AnalyseInputLogin'); // amzay tsy afaka manao retour
+
         if (messages === null ) Rslt_AnalyseInputLogin.textContent = "Veuillez remplir ces champs"
         else Rslt_AnalyseInputLogin.textContent = messages;
     </script>
