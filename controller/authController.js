@@ -3,17 +3,11 @@ const authentificationService = require("../services/authentificationService");
 
 
 const loginController = async (req,res) => {
-    try {
         const user = req.body;
         const userConnected = await authentificationService.login(user,req);
-        if (userConnected) {
-            // ILAY ROLE NO PASSEKO ZAY MITOVY AMLE PREFIX ANLE ROUTE DE PAGE : AFKA ANONTANIANA AHO ;)
-            res.redirect(`/${userConnected}`);
-            return; 
-        }
-    } catch (error) {
-        res.redirect(`/auth/login?message=${error}`);
-    };
+        if (userConnected.status == 200) res.redirect(`/${userConnected.role}`);
+        else  res.redirect(`/auth/login?message=${userConnected.message}`);
+    
 };
  
 const addUserController = async (req,res) => {

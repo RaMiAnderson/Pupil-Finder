@@ -9,8 +9,8 @@ const login = async (user,request) => {
         const stateConnection = verifyIfAlreadyConnected(request);
         if (stateConnection) return request?.session?.role;
         const userConnected = await checkPasswordUser(user);
-        request.session.user = userConnected;
-        return userConnected?.role;
+        if (userConnected.status == 200) request.session.user = userConnected;
+        return userConnected;
     } catch (error) {
         throw error;
     }
@@ -67,16 +67,18 @@ const checkPasswordUser = async (user) => {
                             email : userBase.email,
                             name : userBase.name,
                             role : userBase.role,
+                            status : 200
                         }
                         resolve(res);
                     }   
                     // ETO API POST PASSWORD INCORECT
+                    resolve({status: 403, message: 'Mot de passe incorrect'})
                     
-                    reject('Password incorrect');
+                    // reject('Password incorrect');
                 } else {
                     // ETO API POST GMAIL NOT FOUND 404
-                    
-                    reject('Email not found , please try again with your correct gamil');
+                    resolve({status: 403, message: "Votre email n'est pas inscrit"})
+                    // reject('Email not found , please try again with your correct gamil');
                 };
             });
         });

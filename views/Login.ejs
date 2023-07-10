@@ -12,26 +12,6 @@
     <link rel="shortcut icon" href="/public/imgs/ICON-01.svg" type="image/x-icon">
 
     <title>Pupil.Finder</title>
-    <script>
-        fetch('/api-data-pupil')
-            .then((res) => res.json())
-            .then((data) => {
-
-                // Balise Affichage
-                const Rslt_AnalyseInputLogin = document.querySelector('.Rslt_AnalyseInputLogin');
-
-
-                if (data.status == "") {
-                    Rslt_AnalyseInputLogin.style.color = "white"
-                    Rslt_AnalyseInputLogin.textContent = data.Default;
-                } else {
-                    Rslt_AnalyseInputLogin.textContent = data.status;
-                    Rslt_AnalyseInputLogin.style.color = "#ffee00"
-                };
-
-            })
-            .catch((err) => console.log(` error : ${err}`));
-    </script>
 </head>
 
 <body>
@@ -78,6 +58,13 @@
 
         </div>
     </div>
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const messages = urlParams.get('message');
+        const Rslt_AnalyseInputLogin = document.querySelector('.Rslt_AnalyseInputLogin');
+        if (messages === null ) Rslt_AnalyseInputLogin.textContent = "Veuillez remplir ces champs"
+        else Rslt_AnalyseInputLogin.textContent = messages;
+    </script>
 </body>
 
 </html>

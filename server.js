@@ -5,10 +5,8 @@ const authRoute = require('./routes/authRoute');
 const userRoute = require('./routes/userRoute');
 const adminRoute = require('./routes/adminRoute');
 
-const authentificationService = require('./services/authentificationService');
 
-// api
-const apiLogin = require('./routes/apiLogin');
+
 
 const session = require('express-session');
 const { initDatabase } = require('./database/databaseConnector');
@@ -38,13 +36,6 @@ app.use('/auth',authRoute);
 app.use('/user',userRoute);
 app.use('/admin',adminRoute);
 
-// MiddleWare API
-app.use('/api' , apiLogin);
-
-// route API
-app.get('/api-data-pupil' , (req, res) => {
-    res.redirect('/api/login');
-});
 
 
 // middleware pour utiliser dossier public
