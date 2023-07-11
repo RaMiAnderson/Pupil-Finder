@@ -8,6 +8,17 @@ const authController = require("../controller/authController")
 
 router.get("/",adminController.getHomepage);
 
+// page des formulaire 
+
+router.get('/add-filiere' , adminController.addFiliere );
+
+router.get('/add-matiere' , adminController.addMatiere );
+
+
+
+//Post 
+
+
 
 // logout
 
