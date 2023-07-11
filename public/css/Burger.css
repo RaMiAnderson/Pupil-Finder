@@ -1,0 +1,46 @@
+.toggle {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.5rem;
+  cursor: pointer;
+  z-index: 10000;
+  left: 6%;
+  transition: 0.5s;
+}
+.toggle .Toggle1,
+.toggle .Toggle2 {
+  color: var(--blackbe);
+}
+.active_toggle .toggle {
+  left: 22%;
+  transition: 0.5s;
+}
+.active_toggle .Toggle1 {
+  display: none;
+}
+.Toggle2 {
+  display: none;
+}
+.active_toggle .Toggle2 {
+  display: block;
+}
+
+.navigation-Vertical {
+  position: fixed;
+  width: 6%;
+  height: 100vh;
+  background: var(--violet);
+  border-left: 10px solid var(--violet);
+  transition: 0.5s;
+  overflow: hidden;
+  z-index: 110;
+  top: 0;
+}
+.btnNavH.home {
+  background: none;
+  color: var(--blackbe);
+}

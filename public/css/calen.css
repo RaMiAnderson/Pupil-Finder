@@ -1,194 +1,193 @@
-.calender .flottantebox{
+.calender .flottantebox {
   display: grid;
-    position: sticky;
-    top: 60px;
-    width: 100%;
-    padding: 20px;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 30px;
-    ;margin-bottom: 20px;
-    /* box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08); */
-    background: var(--white);
-    z-index: 90;
-  }
-  
-  .calender .flottantebox .boxKely {
-    position: relative;
-    background: var(--white);
-    padding: 30px;
-    border-radius: 20px;
-    display: flex;
-    justify-content: space-between;
-    cursor: pointer;
-    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
-  }
-  
-  .calender .flottantebox .boxKely .chiffreBoxF {
-    position: relative;
-    font-weight: 500;
-    font-size: 2rem;
-    color: var(--violet);
-  }
-  .calender .flottantebox .boxKely .chiffreBoxF.findann {
-    color: var(--red);
-  }
-  .calender .flottantebox .boxKely .restpayer {
-    color: var(--red);
-  }
-  .calender  .flottantebox .boxKely .payer {
-    color: var(--green);
-  }
-  
-  .calender  .flottantebox .boxKely .nomBoxKely {
-    color: var(--blackkely);
-    font-size: 1.1rem;
-    margin-top: 5px;
-  }
-  
-  .calender  .flottantebox .boxKely .iconBoxFlottante {
-    font-size: 3.5rem;
-    color: var(--blackkely);
-  }
-  
-  .calender  .flottantebox .boxKely:hover {
-    background: var(--violet);
-  }
-  .calender  .flottantebox .boxKely:hover .chiffreBoxF, .calender .flottantebox .boxKely:hover .nomBoxKely, .calender .flottantebox .boxKely:hover .iconBoxFlottante {
-    color: var(--white);
-  }
+  position: sticky;
+  top: 60px;
+  width: 100%;
+  padding: 20px;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 30px;
+  margin-bottom: 20px;
+  /* box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08); */
+  background: var(--white);
+  z-index: 90;
+}
+
+.calender .flottantebox .boxKely {
+  position: relative;
+  background: var(--white);
+  padding: 30px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+}
+
+.calender .flottantebox .boxKely .chiffreBoxF {
+  position: relative;
+  font-weight: 500;
+  font-size: 2rem;
+  color: var(--violet);
+}
+.calender .flottantebox .boxKely .chiffreBoxF.findann {
+  color: var(--red);
+}
+.calender .flottantebox .boxKely .restpayer {
+  color: var(--red);
+}
+.calender .flottantebox .boxKely .payer {
+  color: var(--green);
+}
+
+.calender .flottantebox .boxKely .nomBoxKely {
+  color: var(--blackkely);
+  font-size: 1.1rem;
+  margin-top: 5px;
+}
+
+.calender .flottantebox .boxKely .iconBoxFlottante {
+  font-size: 3.5rem;
+  color: var(--blackkely);
+}
+
+.calender .flottantebox .boxKely:hover {
+  background: var(--violet);
+}
+.calender .flottantebox .boxKely:hover .chiffreBoxF, .calender .flottantebox .boxKely:hover .nomBoxKely, .calender .flottantebox .boxKely:hover .iconBoxFlottante {
+  color: var(--white);
+}
 
 .calender {
-    margin: 0;
-    padding: 0;
-    background-color: var(--white);
-    /* margin: 15vh auto; */
-    margin: 0 auto;
-    width: 95%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    display: none;
+  margin: 0;
+  padding: 0;
+  background-color: var(--white);
+  /* margin: 15vh auto; */
+  margin: 0 auto;
+  width: 95%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
-.calender .Content{
-    box-sizing: border-box;
-    text-transform: uppercase;
-    width: 100%;
-    gap: 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    background-color: var(--white);
-    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
-
+.calender .Content {
+  box-sizing: border-box;
+  text-transform: uppercase;
+  width: 100%;
+  gap: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  background-color: var(--white);
+  box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
 }
 
-.calender .soratra{
-    position: relative;
-    top: 0;
-    width: 100%;
-    height: 10vh;
-    line-height: 10vh;
-    color: var(--violet);
-
+.calender .soratra {
+  position: relative;
+  top: 0;
+  width: 100%;
+  height: 10vh;
+  line-height: 10vh;
+  color: var(--violet);
 }
-.calender .Apart{
-    pointer-events: none;
+.calender .Apart {
+  pointer-events: none;
 }
-.calender .soratra h2{
-    text-align: start;
-    margin-left: 20px;
-    align-content: center;
-    text-transform:none;
+.calender .soratra h2 {
+  text-align: start;
+  margin-left: 20px;
+  align-content: center;
+  text-transform: none;
 }
 
 .calender .sep-calender {
-    box-shadow: 1px 1px 10px 0 rgba(0, 0, 0, .2), -3px -3px 10px 0 #fff;
-    border-radius: 10px;
-    padding: 10px;
+  box-shadow: 1px 1px 10px 0 rgba(0, 0, 0, 0.2), -3px -3px 10px 0 #fff;
+  border-radius: 10px;
+  padding: 10px;
 }
 
-.calender .sep-calender h2{
-    text-align: center;
-    padding: 1rem;
-    font-weight: bold;
-    font-size: 34px;
-    letter-spacing: 2px;
-    color: var(--violet);
+.calender .sep-calender h2 {
+  text-align: center;
+  padding: 1rem;
+  font-weight: bold;
+  font-size: 34px;
+  letter-spacing: 2px;
+  color: var(--violet);
 }
 
-.calender .sep-calender ul{
-    display: grid;
-    grid-template-columns: repeat(7,1fr);
-    list-style: none;
-
-} 
+.calender .sep-calender ul {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  list-style: none;
+}
 .calender li {
-    padding: 1px;
-    margin: 4px;
-    text-align: center;
-    border-radius: 50%;
-    cursor: pointer;
+  padding: 1px;
+  margin: 4px;
+  text-align: center;
+  border-radius: 50%;
+  cursor: pointer;
 }
 .calender li:hover {
-  background-color: rgba(216, 216, 216, 0.63) ;
+  background-color: rgba(216, 216, 216, 0.63);
 }
-.calender .DaySpec{
-    background-color: var(--violet);
-    color: var(--white);
+.calender .DaySpec {
+  background-color: var(--violet);
+  color: var(--white);
 }
-.calender .DaySpec:hover{
-    background-color: var(--violet);
-    color: var(--white);
+.calender .DaySpec:hover {
+  background-color: var(--violet);
+  color: var(--white);
 }
-.calender li:nth-child(7n+1){
-    color: var(--red) ;
+.calender li:nth-child(7n + 1) {
+  color: var(--red);
 }
-.calender li:nth-child(7n){
-    color: var( --blackbe);
+.calender li:nth-child(7n) {
+  color: var(--blackbe);
 }
 .calender .first-day,
-.calender .prev-month~li{
-    opacity: 1 !important;
-    /* font-weight: 900; */
+.calender .prev-month ~ li {
+  opacity: 1 !important;
+  /* font-weight: 900; */
 }
 .calender .prev-month,
 .calender .prev-month li {
-    opacity: .5;
+  opacity: 0.5;
 }
-.calender .last-day~li{
-    opacity: .5 !important;
-    font-weight: 200;
+.calender .last-day ~ li {
+  opacity: 0.5 !important;
+  font-weight: 200;
 }
-.calender .day li{
-    pointer-events: none;
+.calender .day li {
+  pointer-events: none;
 }
 
+#Agenda{
+  background-color: var(--white);
+  color: var(--violet);
+}
 
 @media (max-width: 1023px) {
-    .calender .flottantebox {
-      grid-template-columns: repeat(2, 1fr);
-    }
-    .calender .ListRecuTete form{
-      width: 40%;
-    }
-    .calender .flottantebox .boxKely {
-        padding: 20px;
-    }
+  .calender .flottantebox {
+    grid-template-columns: repeat(2, 1fr);
   }
-  
-  @media (max-width: 767px) {
-    .calender .ParentTableau {
-      grid-template-columns: 1fr;
-    }
-    .calender .ListRecu {
-      overflow-x: auto;
-    }
-    .calender .ListRecuTete form{
-      width: 50%;
-    }
-    .calender  .flottantebox {
-      grid-template-columns: repeat(1, 1fr);
-    }
-    
+  .calender .ListRecuTete form {
+    width: 40%;
   }
+  .calender .flottantebox .boxKely {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 767px) {
+  .calender .ParentTableau {
+    grid-template-columns: 1fr;
+  }
+  .calender .ListRecu {
+    overflow-x: auto;
+  }
+  .calender .ListRecuTete form {
+    width: 50%;
+  }
+  .calender .flottantebox {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

@@ -1,36 +1,34 @@
-body{
-justify-content: center;
-background: white;
+body {
+  justify-content: center;
+  background: white;
 }
-.PART2{
-    display: flex;
-    justify-content: center;
+.PART2 {
+  display: flex;
+  justify-content: center;
 }
-.block-form{
-    background-color: rgb(245, 245, 245);
-    /* box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.205); */
-    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.342);
-    border-radius: 8px;
-    margin: 0;
-
-
+.block-form {
+  background-color: rgb(245, 245, 245);
+  /* box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.205); */
+  box-shadow: 0 7px 25px rgba(0, 0, 0, 0.342);
+  border-radius: 8px;
+  margin: 0;
 }
-form input{
-    background: rgba(133, 133, 133, 0.24);
-    color: rgb(36, 36, 36);
+form input {
+  background: rgba(133, 133, 133, 0.24);
+  color: rgb(36, 36, 36);
 }
-form input:focus{
-    background: rgba(109, 109, 109, 0.24);
-    border: none;
+form input:focus {
+  background: rgba(109, 109, 109, 0.24);
+  border: none;
 }
-form input::placeholder{
-    color: rgb(36, 36, 36);
+form input::placeholder {
+  color: rgb(36, 36, 36);
 }
-form input:focus::placeholder{
-    color: rgba(36, 36, 36, 0.753);
+form input:focus::placeholder {
+  color: rgba(36, 36, 36, 0.753);
 }
-.ResultAnalyse{
-    position: static;
+.ResultAnalyse {
+  position: static;
 }
 
 /* .submt-form{
@@ -38,71 +36,71 @@ form input:focus::placeholder{
 
 } */
 
-
 /* LOGO MDPFORGET */
-.mdpFlogo{
-    width: 100%;
-    height: 36%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
+.mdpFlogo {
+  width: 100%;
+  height: 36%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
 }
-.mdpFlogo .LOGO{
-    width: 18%;
-    margin-top: 3%;
+.mdpFlogo .LOGO {
+  width: 18%;
+  margin-top: 3%;
 }
-.LOGO img{
-    width: 100%;
+.LOGO img {
+  width: 100%;
 }
-.mdpFlogo h1{
-    /* font-size: 1.3rem; */
-    font-size: 210%;
-    font-family: sans-serif;
-    font-weight: 300;
-    color: rgba(0, 0, 0, 0.801);
-    /* color: rgba(255, 255, 255, 0.747); */
+.mdpFlogo h1 {
+  /* font-size: 1.3rem; */
+  font-size: 210%;
+  font-family: sans-serif;
+  font-weight: 300;
+  color: rgba(0, 0, 0, 0.801);
+  /* color: rgba(255, 255, 255, 0.747); */
 }
-.mdpFlogoPara{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+.mdpFlogoPara {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 .mdpFlogo p {
-    /* font-size: 0.9rem; */
-    /* color: rgba(255, 255, 255, 0.747); */
-    font-size: 160%;
-    color: rgba(0, 0, 0, 0.801);
+  /* font-size: 0.9rem; */
+  /* color: rgba(255, 255, 255, 0.747); */
+  font-size: 160%;
+  color: rgba(0, 0, 0, 0.801);
 }
-.mdpFlogo p span , .codeNonReçu span{
-    font-family: sans-serif;
-    /* color: rgba(0, 0, 0, 0.801); */
-    /* color: #9300ce; */
-    color: var(--violet);
+.mdpFlogo p span,
+.codeNonReçu span {
+  font-family: sans-serif;
+  /* color: rgba(0, 0, 0, 0.801); */
+  /* color: #9300ce; */
+  color: var(--violet);
 }
-.mdpFlogo p a , .codeNonReçu{
-    /* font-size: 0.9rem; */
-    font-size: 90%;
-    text-decoration: none;
-    font-family: sans-serif;
-    /* color: #9300ce; */
-    color: var(--violet);
-    font-weight: bold;
+.mdpFlogo p a,
+.codeNonReçu {
+  /* font-size: 0.9rem; */
+  font-size: 90%;
+  text-decoration: none;
+  font-family: sans-serif;
+  /* color: #9300ce; */
+  color: var(--violet);
+  font-weight: bold;
 }
-.mdpFlogo p a:hover , .codeNonReçu:hover{
-    /* color: #59007c ; */
-    color: var(--violetbe);
-    transform: .3s;
+.mdpFlogo p a:hover,
+.codeNonReçu:hover {
+  /* color: #59007c ; */
+  color: var(--violetbe);
+  transform: 0.3s;
 }
-.codeNonReçu{
-    background: none;
-    cursor: pointer;
+.codeNonReçu {
+  background: none;
+  cursor: pointer;
 }
-
-
 
 /* T S Y   A Z O   F A F A N A */
 
@@ -118,100 +116,97 @@ form input:focus::placeholder{
     transition: .3s;
 } */
 
-.Justiteration{
-    display: none;
+.Justiteration {
+  display: none;
 }
-@media screen and (max-width : 1750px) {
-    .mdpFlogo h1{
-        font-size: 180%;
-    }
-    .mdpFlogo p {
-        font-size: 130%;
-    }
+@media screen and (max-width: 1750px) {
+  .mdpFlogo h1 {
+    font-size: 180%;
+  }
+  .mdpFlogo p {
+    font-size: 130%;
+  }
 }
-@media screen and (max-width : 1550px) {
-    .mdpFlogo h1{
-        font-size: 160%;
-    }
-    .mdpFlogo p {
-        font-size: 110%;
-    }
-    .mdpFlogo p a , .codeNonReçu{
-        font-size: 95%;
-    }
+@media screen and (max-width: 1550px) {
+  .mdpFlogo h1 {
+    font-size: 160%;
+  }
+  .mdpFlogo p {
+    font-size: 110%;
+  }
+  .mdpFlogo p a,
+  .codeNonReçu {
+    font-size: 95%;
+  }
 }
-@media screen and (max-width : 1350px) {
-    .mdpFlogo h1{
-        font-size: 150%;
-    }
-    .mdpFlogo p {
-        font-size: 105%;
-    }
-    .mdpFlogo p a , .codeNonReçu{
-        font-size: 100%;
-    }
+@media screen and (max-width: 1350px) {
+  .mdpFlogo h1 {
+    font-size: 150%;
+  }
+  .mdpFlogo p {
+    font-size: 105%;
+  }
+  .mdpFlogo p a,
+  .codeNonReçu {
+    font-size: 100%;
+  }
 }
-@media screen and (max-width : 1160px) {
-    .mdpFlogo h1{
-        font-size: 140%;
-    }
-    .mdpFlogo p {
-        font-size: 100%;
-    }
-    .mdpFlogo p a , .codeNonReçu{
-        font-size: 105%;
-    }
+@media screen and (max-width: 1160px) {
+  .mdpFlogo h1 {
+    font-size: 140%;
+  }
+  .mdpFlogo p {
+    font-size: 100%;
+  }
+  .mdpFlogo p a,
+  .codeNonReçu {
+    font-size: 105%;
+  }
 }
-@media screen and (max-width : 1023px) {
-    .block-form{
-        background: none;
-        box-shadow: none;
-        width: 100%;
-       
-    }
-    .mdpFlogo .LOGO{
-        width: 16%;
-        margin-top: 1%;
-    }
+@media screen and (max-width: 1023px) {
+  .block-form {
+    background: none;
+    box-shadow: none;
+    width: 100%;
+  }
+  .mdpFlogo .LOGO {
+    width: 16%;
+    margin-top: 1%;
+  }
 }
-@media screen and (max-width : 767px) {
-    .mdpFlogo h1{
-        font-size: 25px;
-    }
-    .mdpFlogo p {
-        font-size: 16px;
-    }
-    .mdpFlogo p a , .codeNonReçu{
-        font-size: 15px;
-    }
-
-   
-
+@media screen and (max-width: 767px) {
+  .mdpFlogo h1 {
+    font-size: 25px;
+  }
+  .mdpFlogo p {
+    font-size: 16px;
+  }
+  .mdpFlogo p a,
+  .codeNonReçu {
+    font-size: 15px;
+  }
 }
-@media screen and (max-width : 650px) {
-    .mdpFlogo{
-        height: 30%;
-    }
-    .mdpFlogo p{
-        text-align: center;
-    }
-}
-
-@media screen and (max-width : 380px) {
-    .mdpFlogo h1{
-        font-size: 18px;
-    }
-    .mdpFlogo p {
-        font-size: 11px;
-    }
-    .mdpFlogo p a , .codeNonReçu{
-        font-size: 11px;
-    }
-    .mdpFlogo{
-        height: 20%;
-    }
-
+@media screen and (max-width: 650px) {
+  .mdpFlogo {
+    height: 30%;
+  }
+  .mdpFlogo p {
+    text-align: center;
+  }
 }
 
-
-
+@media screen and (max-width: 380px) {
+  .mdpFlogo h1 {
+    font-size: 18px;
+  }
+  .mdpFlogo p {
+    font-size: 11px;
+  }
+  .mdpFlogo p a,
+  .codeNonReçu {
+    font-size: 11px;
+  }
+  .mdpFlogo {
+    height: 20%;
+  }
+}

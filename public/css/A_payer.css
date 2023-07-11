@@ -1,215 +1,215 @@
-.Apayer{
+.Apayer {
   width: 100%;
-  display: none;
 }
-.Apayer .flottantebox{
-    position: relative;
-    width: 100%;
-    padding: 20px;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 30px;
+.Apayer .flottantebox {
+  position: relative;
+  width: 100%;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 30px;
+}
+
+.Apayer .flottantebox .boxKely {
+  position: relative;
+  background: var(--white);
+  padding: 30px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+}
+
+.Apayer .flottantebox .boxKely .chiffreBoxF {
+  position: relative;
+  font-weight: 500;
+  font-size: 2.5rem;
+  color: var(--violet);
+}
+.Apayer .flottantebox .boxKely .restpayer {
+  color: var(--red);
+}
+.Apayer .flottantebox .boxKely .payer {
+  color: var(--green);
+}
+
+.Apayer .flottantebox .boxKely .nomBoxKely {
+  color: var(--blackkely);
+  font-size: 1.1rem;
+  margin-top: 5px;
+}
+
+.Apayer .flottantebox .boxKely .iconBoxFlottante {
+  font-size: 3.5rem;
+  color: var(--blackkely);
+}
+
+.Apayer .flottantebox .boxKely:hover {
+  background: var(--violet);
+}
+.Apayer .flottantebox .boxKely:hover .chiffreBoxF,
+.Apayer .flottantebox .boxKely:hover .nomBoxKely,
+.Apayer .flottantebox .boxKely:hover .iconBoxFlottante {
+  color: var(--white);
+}
+
+.Apayer .ParentTableau {
+  position: relative;
+  width: 100%;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 2fr;
+  grid-gap: 30px;
+}
+
+.Apayer .ParentTableau .ListRecu {
+  position: relative;
+  display: grid;
+  /* min-height: 500px; */
+  background: var(--white);
+  padding: 20px;
+  box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+  border-radius: 20px;
+  overflow: inherit;
+  width: 100%;
+}
+.Apayer .ParentTableau .ListRecu .hiddenTab {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.Apayer .ParentTableau .ListRecuTete {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 40px;
+}
+.Apayer .ListRecuTete h2 {
+  font-weight: 600;
+  color: var(--violet);
+}
+.Apayer .ListRecuTete form {
+  display: flex;
+  width: 35%;
+  justify-content: space-between;
+}
+.Apayer .ListRecuTete form input {
+  padding: 5px 10px;
+  font-size: 1rem;
+  border: none;
+  color: var(--blackbe);
+  background-color: transparent;
+}
+.Apayer .ListRecuTete form input[type="date"] {
+  width: 70%;
+  border-radius: 10px;
+  border: solid 1px var(--blackkely);
+}
+.Apayer .ListRecuTete form input[type="submit"] {
+  cursor: pointer;
+  background: var(--violet);
+  border-radius: 10px;
+  color: var(--white);
+  margin-left: 15px;
+}
+.Apayer .ListRecuTete form input[type="submit"]:hover {
+  background: var(--rose);
+  transition: 0.2s;
+}
+.Apayer .ListRecuTete form input[type="date"]:focus {
+  color: var(--violet);
+}
+
+.Apayer .ParentTableau table {
+  width: 100%;
+  border-collapse: collapse;
+  /* margin-top: -50px; */
+}
+.Apayer .ParentTableau table thead td {
+  font-weight: 600;
+}
+.Apayer .ParentTableau .ListRecu table tr {
+  color: var(--blackbe);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.Apayer .ParentTableau table tr:last-child {
+  border-bottom: none;
+}
+.Apayer .ParentTableau table tbody tr:hover {
+  background: var(--violet);
+  color: var(--white);
+}
+.Apayer .ParentTableau .ListRecu table tr td {
+  padding: 10px;
+}
+.Apayer .ParentTableau table tr td:last-child {
+  text-align: end;
+}
+.Apayer table tr td:nth-child(2) {
+  text-align: end;
+}
+.Apayer .status.payyee {
+  padding: 2px 4px;
+  background: #8de02c;
+  color: var(--white);
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+}
+.Apayer .NonPayyee {
+  background: #f00;
+  color: var(--white);
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 2px 4px;
+}
+
+#Payer {
+  background-color: var(--white);
+  color: var(--violet);
+}
+
+@media (max-width: 1023px) {
+  .Apayer .flottantebox {
+    grid-template-columns: repeat(2, 1fr);
   }
-  
-  .Apayer .flottantebox .boxKely {
-    position: relative;
-    background: var(--white);
-    padding: 30px;
-    border-radius: 20px;
-    display: flex;
-    justify-content: space-between;
-    cursor: pointer;
-    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+  .Apayer .ListRecuTete form {
+    width: 40%;
   }
-  
-  .Apayer .flottantebox .boxKely .chiffreBoxF {
-    position: relative;
-    font-weight: 500;
-    font-size: 2.5rem;
-    color: var(--violet);
-  }
-  .Apayer .flottantebox .boxKely .restpayer {
-    color: var(--red);
-  }
-  .Apayer .flottantebox .boxKely .payer {
-    color: var(--green);
-  }
-  
-  .Apayer .flottantebox .boxKely .nomBoxKely {
-    color: var(--blackkely);
-    font-size: 1.1rem;
-    margin-top: 5px;
-  }
-  
-  .Apayer .flottantebox .boxKely .iconBoxFlottante {
-    font-size: 3.5rem;
-    color: var(--blackkely);
-  }
-  
-  .Apayer .flottantebox .boxKely:hover {
-    background: var(--violet);
-  }
-  .Apayer .flottantebox .boxKely:hover .chiffreBoxF, .Apayer .flottantebox .boxKely:hover .nomBoxKely, .Apayer .flottantebox .boxKely:hover .iconBoxFlottante {
-    color: var(--white);
-  }
-  
+}
+
+@media (max-width: 767px) {
   .Apayer .ParentTableau {
-    position: relative;
-    width: 100%;
-    padding: 20px;
-    display: grid;
-    grid-template-columns: 2fr ;
-    grid-gap: 30px;
+    grid-template-columns: 1fr;
   }
-  
-  .Apayer .ParentTableau .ListRecu {
-    position: relative;
-    display: grid;
-    /* min-height: 500px; */
-    background: var(--white);
-    padding: 20px;
-    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
-    border-radius: 20px;
-    overflow: inherit;
-    width: 100%;
-  }
-  .Apayer .ParentTableau .ListRecu .hiddenTab{
-    width: 100%;
+  .Apayer .ListRecu {
     overflow-x: auto;
   }
-  
-  .Apayer .ParentTableau .ListRecuTete {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: 40PX;
-  }
-  .Apayer .ListRecuTete h2 {
-    font-weight: 600;
-    color: var(--violet);
-  }
-  .Apayer .ListRecuTete form{
-    display: flex;
-    width: 35%;
-    justify-content: space-between;
-  }
-  .Apayer .ListRecuTete form input{
-    padding: 5px 10px;
-    font-size: 1rem;
-    border: none;
-    color: var(--blackbe);
-    background-color: transparent;
-  }
-  .Apayer .ListRecuTete form input[type="date"]{
-    width: 70%;
-    border-radius: 10px;
-    border: solid 1px var(--blackkely);
-  }
-  .Apayer .ListRecuTete form input[type="submit"]{
-    cursor: pointer;
-    background: var(--violet);
-    border-radius: 10px;
-    color: var(--white);
-    margin-left: 15px ;
-  }
-  .Apayer .ListRecuTete form input[type="submit"]:hover{
-    background: var(--rose);
-    transition: .2s;
-  }
-  .Apayer .ListRecuTete form input[type="date"]:focus{
-    color: var(--violet);
-  }
-
-  
-  .Apayer .ParentTableau table {
+  .Apayer .ListRecuTete {
+    flex-direction: column;
+    align-items: center !important;
+    justify-content: center;
     width: 100%;
-    border-collapse: collapse;
-    /* margin-top: -50px; */
+    height: 100px;
   }
-  .Apayer .ParentTableau table thead td {
-    font-weight: 600;
+  .Apayer .ListRecuTete form {
+    width: 100%;
   }
-  .Apayer .ParentTableau .ListRecu table tr {
-    color: var(--blackbe);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  .Apayer .flottantebox {
+    grid-template-columns: repeat(1, 1fr);
   }
-  .Apayer .ParentTableau  table tr:last-child {
-    border-bottom: none;
+}
+
+@media (max-width: 480px) {
+  .Apayer .ParentTableau .hiddenTab table {
+    width: 370px;
   }
-  .Apayer .ParentTableau  table tbody tr:hover {
-    background: var(--violet);
-    color: var(--white);
+}
+@media (max-width: 380px) {
+  .Apayer .ParentTableau {
+    width: 100%;
+    padding: 0 !important;
   }
-  .Apayer .ParentTableau .ListRecu table tr td {
-    padding: 10px;
-  }
-  .Apayer .ParentTableau  table tr td:last-child {
-    text-align: end;
-  }
-  .Apayer   table tr td:nth-child(2) {
-    text-align: end;
-  }
-  .Apayer .status.payyee {
-    padding: 2px 4px;
-    background: #8de02c;
-    color: var(--white);
-    border-radius: 4px;
-    font-size: 14px;
-    font-weight: 500;
-  }
-  .Apayer .NonPayyee {
-    background: #f00;
-    color: var(--white);
-    border-radius: 4px;
-    font-size: 14px;
-    font-weight: 500;
-    padding: 2px 4px;
-  }
-  
-  
-  @media (max-width: 1023px) {
-    .Apayer .flottantebox {
-      grid-template-columns: repeat(2, 1fr);
-    }
-    .Apayer .ListRecuTete form{
-      width: 40%;
-    }
-    
-  }
-  
-  @media (max-width: 767px) {
-    .Apayer .ParentTableau {
-      grid-template-columns: 1fr;
-    }
-    .Apayer .ListRecu {
-      overflow-x: auto;
-    }
-    .Apayer .ListRecuTete{
-      flex-direction: column;
-      align-items: center !important;
-      justify-content: center;
-      width: 100%;
-      height: 100px;
-    }
-    .Apayer .ListRecuTete form{
-      width: 100%;
-    }
-    .Apayer  .flottantebox {
-      grid-template-columns: repeat(1, 1fr);
-    }
-    
-  }
- 
-  
-  @media (max-width: 480px) {
-    .Apayer .ParentTableau .hiddenTab table {
-      width: 370px;
-    }
-  }
-  @media (max-width: 380px) {
-    .Apayer .ParentTableau {
-      width: 100%;
-      padding: 0 !important;
-    }
-  }
-  
+}

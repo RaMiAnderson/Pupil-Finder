@@ -12,17 +12,9 @@
 
     <link rel="shortcut icon" href="/public/imgs/ICON-01.svg" type="image/x-icon" />
     <link rel="stylesheet" href="/public/css/homePage.css" />
-    <link rel="stylesheet" href="/public/css/A_payer.css" />
-    <link rel="stylesheet" href="/public/css/note.css" />
 
-    <link rel="stylesheet" href="/public/css/annonce.css" />
-    <link rel="stylesheet" href="/public/css/notif.css" />
-    <link rel="stylesheet" href="/public/css/calen.css" />
-    <link rel="stylesheet" href="/public/css/edt.css" />
-    <link rel="stylesheet" href="/public/css/profil.css" />
-    <link rel="stylesheet" href="/public/css/absence.css" />
 
-    <link rel="stylesheet" href="/public/css/AdminInterface.css" />
+
 
     <!-- FontAwesome -->
     <link rel="stylesheet" href="/public/assets/FontAwesome/css/all.min.css" />
@@ -30,107 +22,10 @@
 
   <body>
     <div class="parentMax">
-      <!-- Nav Barre Vertical -->
-      <div id="navVertical" class="navigation-Vertical">
-        <ul>
-          <li>
-            <button>
-              <span class="icon">
-                <i class="fas fa-school sizeIcon"></i>
-              </span>
-              <p class="titre">ISPM Plateforme</p>
-            </button>
-          </li>
 
-          <li>
-            <button id="Profil">
-              <span class="icon">
-                <i class="far fa-user sizeIcon"></i>
-              </span>
-              <p class="titre">Mon Profil</p>
-            </button>
-          </li>
-
-          <li>
-            <button id="Annonce">
-              <span class="icon">
-                <i class="fas fa-bullhorn sizeIcon"></i>
-              </span>
-              <p class="titre">Annonces</p>
-            </button>
-          </li>
-
-          <li>
-            <button id="Edt">
-              <span class="icon">
-                <i class="far fa-calendar sizeIcon"></i>
-              </span>
-              <p class="titre">Emploie du temps</p>
-            </button>
-          </li>
-
-          <li>
-            <button id="Absence">
-              <span class="icon">
-                <i class="fas fa-hourglass-end sizeIcon"></i>
-              </span>
-              <p class="titre">Absence</p>
-            </button>
-          </li>
-
-          <li>
-            <button id="Payer">
-              <span class="icon">
-                <i class="far fa-credit-card sizeIcon"></i>
-              </span>
-              <p class="titre">A Payer</p>
-            </button>
-          </li>
-
-          <li>
-            <button id="Note">
-              <span class="icon">
-                <i class="far fa-file-alt sizeIcon"></i>
-              </span>
-              <p class="titre">Notes</p>
-            </button>
-          </li>
-
-          <li>
-            <button id="Agenda">
-              <span class="icon">
-                <i class="far fa-calendar-alt sizeIcon"></i>
-              </span>
-              <p class="titre">Calendrier Scolaire</p>
-            </button>
-          </li>
-          <li>
-            <button id="AddUser">
-              <span class="icon">
-                <i class="fas fa-user-plus sizeIcon rectifAdd"></i>
-              </span>
-              <p class="titre">Creer un Compte</p>
-            </button>
-          </li>
-          <li>
-            <!-- SE deconnecter -->
-            <form action="/admin" method="post">
-              <button id="Logout" type="submit">
-                <span class="icon">
-                  <i class="fas fa-sign-out-alt sizeIcon"></i>
-                </span>
-                <p class="titre">Se Deconnecter</p>
-              </button>
-            </form>
-          </li>
-        </ul>
-      </div>
       <div class="topbarMax">
         <div class="topbar">
-          <div class="toggle">
-            <i class="fas fa-bars Toggle1"></i>
-            <i class="fas fa-xmark Toggle2"></i>
-          </div>
+          
 
           <div class="navHorizontal">
             <div>
@@ -139,9 +34,11 @@
               </button>
             </div>
             <div>
-              <button class="btnNavH" id="Notiff">
-                <i class="far fa-bell navIcon"></i>
-              </button>
+              <form action="/admin/notification">
+                <button type="submit" class="btnNavH" id="Notiff">
+                  <i class="far fa-bell navIcon"></i>
+                </button>
+              </form>
             </div>
 
             <div class="user">
@@ -159,71 +56,91 @@
         </div>
         <div class="blockGrid">
           <div class="flottantebox">
-            <div id="ProfilAcc" class="boxKely bgProfil">
-              <div class="flexcontent">
-                <div class="chiffreBoxF Cpt">0</div>
-                <div class="chiffreBoxF">Profile</div>
-              </div>
-              <div class="iconBoxFlottante">
-                <i class="far fa-user iconAccRglg"></i>
-              </div>
-            </div>
 
-            <div id="AnnonceAcc" class="boxKely bgAnnonce">
-              <div class="flexcontent">
-                <div class="chiffreBoxF Cpt">3</div>
-                <div class="chiffreBoxF">Annonces</div>
+            <a href="/admin/gerer" style="text-decoration: none;">
+              <div id="ProfilAcc" class="boxKely bgProfil">
+                <div class="flexcontent">
+                  <div class="chiffreBoxF Cpt">0</div>
+                  <div class="chiffreBoxF">Profile</div>
+                </div>
+                <div class="iconBoxFlottante">
+                  <i class="far fa-user iconAccRglg"></i>
+                </div>
               </div>
-              <div class="iconBoxFlottante">
-                <i class="fas fa-bullhorn iconAccRglg"></i>
-              </div>
-            </div>
+            </a>
 
-            <div id="EDTAcc" class="boxKely bgEDT">
-              <div class="flexcontent">
-                <div class="chiffreBoxF Cpt">1</div>
-                <div class="chiffreBoxF">EDT</div>
+            <a href="/admin/annonce" style="text-decoration: none;">
+              <div id="AnnonceAcc" class="boxKely bgAnnonce">
+                <div class="flexcontent">
+                  <div class="chiffreBoxF Cpt">3</div>
+                  <div class="chiffreBoxF">Annonces</div>
+                </div>
+                <div class="iconBoxFlottante">
+                  <i class="fas fa-bullhorn iconAccRglg"></i>
+                </div>
               </div>
-              <div class="iconBoxFlottante">
-                <i class="far fa-calendar iconAccRglg"></i>
+            </a>
+
+            <a href="/admin/edt" style="text-decoration: none;">
+              <div id="EDTAcc" class="boxKely bgEDT">
+                <div class="flexcontent">
+                  <div class="chiffreBoxF Cpt">1</div>
+                  <div class="chiffreBoxF">EDT</div>
+                </div>
+                <div class="iconBoxFlottante">
+                  <i class="far fa-calendar iconAccRglg"></i>
+                </div>
               </div>
-            </div>
-            <div id="AbsenceAcc" class="boxKely bgAbsence">
-              <div class="flexcontent">
-                <div class="chiffreBoxF Cpt">5</div>
-                <div class="chiffreBoxF">Absences</div>
+            </a>
+            
+            <a href="/admin/absence" style="text-decoration: none;">
+              <div id="AbsenceAcc" class="boxKely bgAbsence">
+                <div class="flexcontent">
+                  <div class="chiffreBoxF Cpt">5</div>
+                  <div class="chiffreBoxF">Absences</div>
+                </div>
+                <div class="iconBoxFlottante">
+                  <i class="fas fa-hourglass-end iconAccRglg"></i>
+                </div>
               </div>
-              <div class="iconBoxFlottante">
-                <i class="fas fa-hourglass-end iconAccRglg"></i>
+            </a>
+            
+            <a href="admin/apayer" style="text-decoration: none;">
+              <div id="ApayerAcc" class="boxKely bgAnnonce">
+                <div class="flexcontent">
+                  <div class="chiffreBoxF Cpt">2</div>
+                  <div class="chiffreBoxF">À Payer</div>
+                </div>
+                <div class="iconBoxFlottante">
+                  <i class="far fa-credit-card iconAccRglg"></i>
+                </div>
               </div>
-            </div>
-            <div id="ApayerAcc" class="boxKely bgAnnonce">
-              <div class="flexcontent">
-                <div class="chiffreBoxF Cpt">2</div>
-                <div class="chiffreBoxF">À Payer</div>
+            </a>
+            
+            <a href="/admin/note" style="text-decoration: none;">
+              <div id="NoteAcc" class="boxKely bgProfil">
+                <div class="flexcontent">
+                  <div class="chiffreBoxF Cpt">6</div>
+                  <div class="chiffreBoxF">Notes</div>
+                </div>
+                <div class="iconBoxFlottante">
+                  <i class="far fa-file-alt iconAccRglg"></i>
+                </div>
               </div>
-              <div class="iconBoxFlottante">
-                <i class="far fa-credit-card iconAccRglg"></i>
+            </a>
+            
+            <a href="admin/calendrier" style="text-decoration: none;">
+              <div id="CalendrierAcc" class="boxKely bgAbsence">
+                <div class="flexcontent">
+                  <div class="chiffreBoxF Cpt">2</div>
+                  <div class="chiffreBoxF">Calendrier</div>
+                </div>
+                <div class="iconBoxFlottante">
+                  <i class="far fa-calendar-alt iconAccRglg"></i>
+                </div>
               </div>
-            </div>
-            <div id="NoteAcc" class="boxKely bgProfil">
-              <div class="flexcontent">
-                <div class="chiffreBoxF Cpt">6</div>
-                <div class="chiffreBoxF">Notes</div>
-              </div>
-              <div class="iconBoxFlottante">
-                <i class="far fa-file-alt iconAccRglg"></i>
-              </div>
-            </div>
-            <div id="CalendrierAcc" class="boxKely bgAbsence">
-              <div class="flexcontent">
-                <div class="chiffreBoxF Cpt">2</div>
-                <div class="chiffreBoxF">Calendrier</div>
-              </div>
-              <div class="iconBoxFlottante">
-                <i class="far fa-calendar-alt iconAccRglg"></i>
-              </div>
-            </div>
+            </a>
+            
             <!-- Se deconnecter -->
             <form action="/admin" method="post" class="logOutAcc">
               <button type="submit" class="boxKely bgProfil">
@@ -239,383 +156,12 @@
           </div>
         </div>
       </div>
-      <div class="main">
-        <!-- Notiffication -->
-        <%- include('../partials/UserNotif') %>
-        <!-- Annonce -->
-        <div id="PgAnnonce" class="notif annonce">
-          <div class="a">
-            <div class="imgNom">
-              <h2>Annonces</h2>
-            </div>
-            <!-- INPUT ADMIN -->
-          </div>
-          <%- include('../partials/UserAnnonce') %>
-        </div>
-        <!-- A payer -->
-        <div id="Apayer" class="Apayer">
-          <div class="ParentTableau">
-            <div class="ListRecu">
-              <div class="ListRecuTete">
-                <h2>Liste des Reçus</h2>
-                <form action="" id="formDatePayer">
-                  <input type="date" />
-                  <input type="submit" value="Recherche" />
-                </form>
-              </div>
-
-              <div class="hiddenTab">
-                <table>
-                  <thead>
-                    <tr>
-                      <td>Libelé</td>
-                      <td>Montant</td>
-                      <td>Status</td>
-                    </tr>
-                  </thead>
-
-                  <tbody>
-                    <tr>
-                      <td>Première tranche</td>
-                      <td>700000 Ar</td>
-                      <td><span class="status payyee">Payé</span></td>
-                    </tr>
-
-                    <tr>
-                      <td>Deuxième tranche</td>
-                      <td>350000 Ar</td>
-                      <td><span class="status payyee">Payé</span></td>
-                    </tr>
-
-                    <tr>
-                      <td>Tranche finale</td>
-                      <td>350000 Ar</td>
-                      <td><span class="status NonPayyee">Non Payé</span></td>
-                    </tr>
-
-                    <tr>
-                      <td>T-Shirt IGGL</td>
-                      <td>25000 Ar</td>
-                      <td><span class="status NonPayyee">Non Payé</span></td>
-                    </tr>
-
-                    <tr>
-                      <td>Dommage</td>
-                      <td>60000 Ar</td>
-                      <td><span class="status NonPayyee">Non Payé</span></td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- Note -->
-        <div id="PgNote" class="Apayer note">
-          <div class="ParentTableau noteParent">
-            <div class="ListRecu">
-              <div class="ListRecuTete">
-                <h2>Fiche de notes</h2>
-                <form action="" id="FormDateNote">
-                  <input type="date" name="date" />
-                  <input type="submit" value="Recherche" />
-                </form>
-              </div>
-
-              <div class="hiddenTab">
-                <table>
-                  <thead>
-                    <tr>
-                      <td>Matières</td>
-                      <td>Coefficient</td>
-                      <td>Notes</td>
-                      <td>Remarques</td>
-                    </tr>
-                  </thead>
-
-                  <tbody>
-                    <tr>
-                      <td>Comptabilité</td>
-                      <td>3</td>
-                      <td>19</td>
-                      <td><span class="status honorable">Honorable</span></td>
-                    </tr>
-                    <tr>
-                      <td>Organisation de l'entreprise</td>
-                      <td>3</td>
-                      <td>12</td>
-                      <td><span class="status assez_bien">Assez-bien</span></td>
-                    </tr>
-                    <tr>
-                      <td>Mathématique Financière</td>
-                      <td>3</td>
-                      <td>14,75</td>
-                      <td><span class="status bien">Bien</span></td>
-                    </tr>
-                    <tr>
-                      <td>Structure de données</td>
-                      <td>3</td>
-                      <td>15</td>
-                      <td><span class="status bien">Bien</span></td>
-                    </tr>
-                    <tr>
-                      <td>Base de données</td>
-                      <td>3</td>
-                      <td>4</td>
-                      <td>
-                        <span class="status insuffisant">Insuffisant</span>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Algorithme et programmation</td>
-                      <td>3</td>
-                      <td>8</td>
-                      <td><span class="status passable">Passable</span></td>
-                    </tr>
-                    <tr>
-                      <td>Informatique Scientifique</td>
-                      <td>3</td>
-                      <td>19</td>
-                      <td><span class="status honorable">Honorable</span></td>
-                    </tr>
-                    <tr>
-                      <td>Algèbre Linéaire</td>
-                      <td>3</td>
-                      <td>1</td>
-                      <td>
-                        <span class="status insuffisant">Insuffisant</span>
-                      </td>
-                    </tr>
-
-                    <tr>
-                      <td>Probabilité</td>
-                      <td>3</td>
-                      <td>1,25</td>
-                      <td>
-                        <span class="status insuffisant">Insuffisant</span>
-                      </td>
-                    </tr>
-
-                    <tr>
-                      <td>Analyse Mathématique</td>
-                      <td>3</td>
-                      <td>5,25</td>
-                      <td>
-                        <span class="status insuffisant">Insuffisant</span>
-                      </td>
-                    </tr>
-
-                    <tr>
-                      <td>Mathématique Discrète</td>
-                      <td>3</td>
-                      <td>16,05</td>
-                      <td><span class="status bien">Très bien</span></td>
-                    </tr>
-
-                    <tr>
-                      <td>Pascal</td>
-                      <td>4</td>
-                      <td>20</td>
-                      <td><span class="status honorable">Honorable</span></td>
-                    </tr>
-                    <tr>
-                      <td>HTML&CSS</td>
-                      <td>4</td>
-                      <td>17</td>
-                      <td><span class="status bien">Très bien</span></td>
-                    </tr>
-                    <tr>
-                      <td>Français</td>
-                      <td>3</td>
-                      <td>7,75</td>
-                      <td>
-                        <span class="status insuffisant">Insuffisant</span>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Dictée</td>
-                      <td>3</td>
-                      <td>13</td>
-                      <td><span class="status assez_bien">Assez-bien</span></td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- Calendrier -->
-        <div id="PGcalender" class="calender">
-          <div class="Content"></div>
-        </div>
-        <div id="PgEDT" class="Apayer EDT">
-          <div class="antsa">
-            <!--box date, filiere, heure creuse-->
-            <div class="boxviolet">
-              <div class="date">
-                <div class="nombre">
-                  <span>jj</span> / <span>mm</span> / <span>aa</span>
-                </div>
-                <div class="nom">Date</div>
-              </div>
-
-              <div class="date">
-                <div class="nombre">4</div>
-                <div class="nom">Total d'heure creuse</div>
-              </div>
-            </div>
-          </div>
-          <!--box1 -->
-          <div class="ParentTableau box1">
-            <div class="ListRecu edt">
-              <div class="ListRecuTete title">
-                <h2>Emploi du temps</h2>
-                <form action="">
-                  <input type="date" />
-                  <input type="submit" value="Recherche" />
-                </form>
-              </div>
-              <div class="hiddenTab">
-                <div class="grid">
-                  <div class="un">HEURES</div>
-                  <div class="deux">LUNDI</div>
-                  <div class="trois">MARDI</div>
-                  <div class="quatre">MERCREDI</div>
-                  <div class="cinq">JEUDI</div>
-                  <div class="six">VENDREDI</div>
-                  <div class="samedi">SAMEDI</div>
-                  <div class="sept">07h15-09h15</div>
-                  <div class="huit">Algèbre</div>
-                  <div class="neuf">MATH Discret</div>
-                  <div class="onze">Français</div>
-                  <div class="douze"></div>
-                  <div class="treize">Probabilité</div>
-                  <div class="samedi1">IS</div>
-                  <div class="quartorze">09h15-11h15</div>
-                  <div class="quinze">SD</div>
-                  <div class="seize">Base de Données</div>
-                  <div class="dixsept">Analyse MATH</div>
-                  <div class="dixhuit">TP Programation</div>
-                  <div class="dixneuf">Organisation</div>
-                  <div class="samedi2">MATH FI Fi</div>
-                  <div class="vinght"></div>
-                  <div class="vun"></div>
-                  <div class="vdeux"></div>
-                  <div class="vtrois"></div>
-                  <div class="vquatre"></div>
-                  <div class="vcinq"></div>
-                  <div class="vsix"></div>
-                  <div class="vsept"></div>
-                  <div class="samedi4"></div>
-                  <div class="vhuit">12h30H-14h15</div>
-                  <div class="vneuf">Algorithme</div>
-                  <div class="trente">Comptabilité</div>
-                  <div class="tun">Français</div>
-                  <div class="tdeux">TP Programation</div>
-                  <div class="ttrois">HTML - CSS</div>
-                  <div class="samedi5"></div>
-                  <div class="tquatre">14h15-15h30</div>
-                  <div class="tcinq">Pascal</div>
-                  <div class="tsix"></div>
-                  <div class="tsept"></div>
-                  <div class="thuit">SD</div>
-                  <div class="tneuf"></div>
-                  <div class="samedi6"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div id="PgProfil" class="profil">
-          <button><a href="/admin/add-filiere" style="text-decoration: none;">Ajout Filière</a></button>
-          <button><a href="/admin/add-matiere" style="text-decoration: none;">Ajout Matiere</a></button>
-        </div>
-        <div id="PPggAbsence" class="Apayer Absence">
-          <div class="flottantebox">
-            <div class="boxKely">
-              <div>
-                <div class="chiffreBoxF payer">4</div>
-                <div class="nomBoxKely">Total Absence</div>
-              </div>
-              <div class="iconBoxFlottante">
-                <i class="far fa-calendar"></i>
-              </div>
-            </div>
-          </div>
-
-          <div class="ParentTableau">
-            <div class="ListRecu">
-              <div class="ListRecuTete">
-                <h2>Liste Absences</h2>
-                <form action="" id="formDateAbs">
-                  <input type="date" />
-                  <input type="submit" value="Rechercher" />
-                </form>
-              </div>
-
-              <div class="hiddenTab">
-                <table>
-                  <thead>
-                    <tr>
-                      <td>Matières</td>
-                      <td>Heures</td>
-                      <td>Status</td>
-                    </tr>
-                  </thead>
-
-                  <tbody>
-                    <tr>
-                      <td>INformatique scientifique</td>
-                      <td>07h 15 - 08h 15</td>
-                      <td><span class="status payyee">Present</span></td>
-                    </tr>
-
-                    <tr>
-                      <td>Html css</td>
-                      <td>08h 15 - 09h 15</td>
-                      <td><span class="status payyee">Present</span></td>
-                    </tr>
-
-                    <tr>
-                      <td>Francais</td>
-                      <td>09h 15 - 10h 15</td>
-                      <td><span class="status NonPayyee">Absent</span></td>
-                    </tr>
-
-                    <tr>
-                      <td>Structure de donné</td>
-                      <td>10h 15 - 11h 30</td>
-                      <td><span class="status NonPayyee">Absent</span></td>
-                    </tr>
-                    <tr>
-                      <td>Mathématique Finacière</td>
-                      <td>11h 15 - 12h 15</td>
-                      <td><span class="status payyee">Present</span></td>
-                    </tr>
-
-                    <tr>
-                      <td>Pascal</td>
-                      <td>12h 15 - 13h 15</td>
-                      <td><span class="status payyee">Present</span></td>
-                    </tr>
-
-                    <tr>
-                      <td>Analyse Mathematique</td>
-                      <td>14h 15 - 15h 30</td>
-                      <td><span class="status NonPayyee">Absent</span></td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+    
     </div>
 
     <!-- =========== Scripts =========  -->
     
-    <script src="/public/js/scriptDflt.js"></script>
+  
 
     <script src="/public/assets/FontAwesome/js/all.min.js"></script>
   </body>
