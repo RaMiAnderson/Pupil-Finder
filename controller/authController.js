@@ -14,7 +14,7 @@ const loginController = async (req,res) => {
         else  res.redirect(`/auth/login?message=${userConnected.message}`);
     
 };
- 
+  
 const addUserController = async (req,res) => {
     try {
         const user = req.body;

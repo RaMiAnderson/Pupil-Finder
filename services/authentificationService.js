@@ -23,14 +23,29 @@ const verifyIfAlreadyConnected = (request) => {
     }
     return false;
 }
-
+ 
 const  addUser = async (user) => {
     try {
         const userModel = new User();
-        userModel.name = user.name;
-        userModel.email = user.email;
-        userModel.password = await encryptPassword(user.password);
-        userModel.role = user.role;
+        userModel.nom = user.Nom;
+        userModel.prenom = user.Prenom;
+        userModel.adresseEleve = user.AdresseEleve;
+        userModel.numeros = user.Numero;
+        userModel.email = user.Email;
+        userModel.password = await encryptPassword(user.MotDePasse);
+        userModel.nomPere = user.nomPere;
+        userModel.proffesionPere = user.ProfessionPere;
+        userModel.age = user.age;
+        userModel.dateNaissance = user.dateNaissance;
+        userModel.adressePere = user.AdressePere;
+        userModel.numerosPere = user.NumeroPere;
+        userModel.nomMere = user.NomMere;
+        userModel.proffesionMere = user.ProfessionMere;
+        userModel.numerosMere = user.NumeroMere;
+        userModel.adresseMere = user.AdresseMere;
+        // userModel.classe = user.Classe;
+        userModel.role = "user";
+        userModel.genre = user.gender;
         return new Promise((resolve, reject) => {
             userModel.save((err) => {
                 if (err) {
@@ -73,7 +88,7 @@ const checkPasswordUser = async (user) => {
                         // Mila ataontsika anatin'ito res ito all info anle user fa io ampesaintsika any amle ejs aveo {AFAKA ANTAnIANA AHO; ANDERSON}
                         const res = {
                             email : userBase.email,
-                            name : userBase.name,
+                            name : userBase.nom,
                             role : userBase.role,
                             status : 200
                         }
