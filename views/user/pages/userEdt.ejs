@@ -12,8 +12,9 @@
     <link rel="shortcut icon" href="/public/imgs/ICON-01.svg" type="image/x-icon" />
 
 
-    <link rel="stylesheet" href="/public/css/calen.css" />
- 
+
+    <link rel="stylesheet" href="/public/css/edt.css" />
+
     <link rel="stylesheet" href="/public/css/Burger.css">
 
     <!-- FontAwesome -->
@@ -33,9 +34,9 @@
               <p class="titre">ISPM Plateforme</p>
             </button>
           </li>
-
+  
           <li>
-            <form action="/admin/gerer">
+            <form action="/user/profil">
               <button type="submit" id="Profil">
                 <span class="icon">
                   <i class="far fa-user sizeIcon"></i>
@@ -44,9 +45,9 @@
               </button>
             </form>
           </li>
-
+  
           <li>
-            <form action="/admin/annonce">
+            <form action="/user/annonce">
               <button type="submit" id="Annonce">
                 <span class="icon">
                   <i class="fas fa-bullhorn sizeIcon"></i>
@@ -56,9 +57,9 @@
             </form>
             
           </li>
-
+  
           <li>
-            <form action="/admin/edt">
+            <form action="/user/edt">
               <button id="Edt" type="submit">
                 <span class="icon">
                   <i class="far fa-calendar sizeIcon"></i>
@@ -68,9 +69,9 @@
             </form>
             
           </li>
-
+  
           <li>
-            <form action="/admin/absence">
+            <form action="/user/absence">
               <button type="submit" id="Absence">
                 <span class="icon">
                   <i class="fas fa-hourglass-end sizeIcon"></i>
@@ -80,9 +81,9 @@
             </form>
             
           </li>
-
+  
           <li>
-            <form action="/admin/apayer">
+            <form action="/user/apayer">
               <button type="submit" id="Payer">
                 <span class="icon">
                   <i class="far fa-credit-card sizeIcon"></i>
@@ -92,9 +93,9 @@
             </form>
             
           </li>
-
+  
           <li>
-            <form action="/admin/note">
+            <form action="/user/note">
               <button type="submit" id="Note">
                 <span class="icon">
                   <i class="far fa-file-alt sizeIcon"></i>
@@ -104,9 +105,9 @@
             </form>
             
           </li>
-
+  
           <li>
-            <form action="/admin/calendrier">
+            <form action="/user/calendrier">
               <button type="submit" id="Agenda">
                 <span class="icon">
                   <i class="far fa-calendar-alt sizeIcon"></i>
@@ -114,22 +115,12 @@
                 <p class="titre">Calendrier Scolaire</p>
               </button>
             </form>
-             
-          </li>
-          <li>
-            <form action="">
-              <button type="submit" id="AddUser">
-                <span class="icon">
-                  <i class="fas fa-user-plus sizeIcon rectifAdd"></i>
-                </span>
-                <p class="titre">Creer un Compte</p>
-              </button>
-            </form>
             
           </li>
+          
           <li>
             <!-- SE deconnecter -->
-            <form action="/admin/deconnexion" method="post">
+            <form action="/user/deconnexion" method="post">
               <button id="Logout" type="submit">
                 <span class="icon">
                   <i class="fas fa-sign-out-alt sizeIcon"></i>
@@ -146,10 +137,10 @@
             <i class="fas fa-bars Toggle1"></i>
             <i class="fas fa-xmark Toggle2"></i>
           </div>
-
+  
           <div class="navHorizontal">
             <div>
-              <form action="/admin">
+              <form action="/user">
                 <button type="submit" class="btnNavH home" id="versHome">
                   <i class="fas fa-home navIcon"></i>
                 </button>
@@ -157,39 +148,111 @@
               
             </div>
             <div>
-              <form action="/admin/notification">
+              <form action="/user/notification">
                 <button class="btnNavH" id="Notiff">
                   <i class="far fa-bell navIcon"></i>
                 </button>
               </form>
             </div>
-
+  
             <div class="user">
               <i class="far fa-user-circle"></i>
             </div>
           </div>
         </div>
       </div>
-
       <!-- CONTENU -->
       <div class="main">
-       
         
-        <div id="PGcalender" class="calender">
-          <div class="Content">
 
-                <!-- ATO DE MICODE -->
-
-           
+        <!-- ATO AMIN'I PgEDT ato no Micode -->
+        <div id="PgEDT" class="Apayer EDT">
+          <div class="antsa">
+            <!--box date, filiere, heure creuse-->
+            <div class="boxviolet">
+              <div class="date">
+                <div class="nombre">
+                  <span>jj</span> / <span>mm</span> / <span>aa</span>
+                </div>
+                <div class="nom">Date</div>
+              </div>
+        
+              <div class="date">
+                <div class="nombre">4</div>
+                <div class="nom">Total d'heure creuse</div>
+              </div>
+            </div>
+          </div>
+          <!--box1 -->
+          <div class="ParentTableau box1">
+            <div class="ListRecu edt">
+              <div class="ListRecuTete title">
+                <h2>Emploi du temps</h2>
+                <form action="">
+                  <input type="date" />
+                  <input type="submit" value="Recherche" />
+                </form>
+              </div>
+              <div class="hiddenTab">
+                <div class="grid">
+                  <div class="un">HEURES</div>
+                  <div class="deux">LUNDI</div>
+                  <div class="trois">MARDI</div>
+                  <div class="quatre">MERCREDI</div>
+                  <div class="cinq">JEUDI</div>
+                  <div class="six">VENDREDI</div>
+                  <div class="samedi">SAMEDI</div>
+                  <div class="sept">07h15-09h15</div>
+                  <div class="huit">Algèbre</div>
+                  <div class="neuf">MATH Discret</div>
+                  <div class="onze">Français</div>
+                  <div class="douze"></div>
+                  <div class="treize">Probabilité</div>
+                  <div class="samedi1">IS</div>
+                  <div class="quartorze">09h15-11h15</div>
+                  <div class="quinze">SD</div>
+                  <div class="seize">Base de Données</div>
+                  <div class="dixsept">Analyse MATH</div>
+                  <div class="dixhuit">TP Programation</div>
+                  <div class="dixneuf">Organisation</div>
+                  <div class="samedi2">MATH FI Fi</div>
+                  <div class="vinght"></div>
+                  <div class="vun"></div>
+                  <div class="vdeux"></div>
+                  <div class="vtrois"></div>
+                  <div class="vquatre"></div>
+                  <div class="vcinq"></div>
+                  <div class="vsix"></div>
+                  <div class="vsept"></div>
+                  <div class="samedi4"></div>
+                  <div class="vhuit">12h30H-14h15</div>
+                  <div class="vneuf">Algorithme</div>
+                  <div class="trente">Comptabilité</div>
+                  <div class="tun">Français</div>
+                  <div class="tdeux">TP Programation</div>
+                  <div class="ttrois">HTML - CSS</div>
+                  <div class="samedi5"></div>
+                  <div class="tquatre">14h15-15h30</div>
+                  <div class="tcinq">Pascal</div>
+                  <div class="tsix"></div>
+                  <div class="tsept"></div>
+                  <div class="thuit">SD</div>
+                  <div class="tneuf"></div>
+                  <div class="samedi6"></div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-
+        
+        
       </div>
     </div>
 
     <!-- =========== Scripts =========  -->
-    
+
     <script src="/public/js/scriptDflt.js"></script>
+
     <script src="/public/assets/FontAwesome/js/all.min.js"></script>
   </body>
 </html>

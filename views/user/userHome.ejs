@@ -12,114 +12,19 @@
 
     <link rel="shortcut icon" href="/public/imgs/ICON-01.svg" type="image/x-icon" />
     <link rel="stylesheet" href="/public/css/homePage.css" />
-    <link rel="stylesheet" href="/public/css/A_payer.css" />
-    <link rel="stylesheet" href="/public/css/note.css" />
-
-    <link rel="stylesheet" href="/public/css/annonce.css" />
-    <link rel="stylesheet" href="/public/css/notif.css" />
-    <link rel="stylesheet" href="/public/css/calen.css" />
-    <link rel="stylesheet" href="/public/css/edt.css" />
-    <link rel="stylesheet" href="/public/css/profil.css" />
-    <link rel="stylesheet" href="/public/css/absence.css" />
 
     <!-- FontAwesome -->
     <link rel="stylesheet" href="/public/assets/FontAwesome/css/all.min.css" />
+
+    
   </head>
 
   <body>
     <div class="parentMax">
-      <!-- Nav Barre Vertical -->
-      <div id="navVertical" class="navigation-Vertical">
-        <ul>
-          <li>
-            <button>
-              <span class="icon">
-                <i class="fas fa-school sizeIcon"></i>
-              </span>
-              <p class="titre">ISPM Plateforme</p>
-            </button>
-          </li>
 
-          <li>
-            <button id="Profil">
-              <span class="icon">
-                <i class="far fa-user sizeIcon"></i>
-              </span>
-              <p class="titre">Mon Profil</p>
-            </button>
-          </li>
-
-          <li>
-            <button id="Annonce">
-              <span class="icon">
-                <i class="fas fa-bullhorn sizeIcon"></i>
-              </span>
-              <p class="titre">Annonces</p>
-            </button>
-          </li>
-
-          <li>
-            <button id="Edt">
-              <span class="icon">
-                <i class="far fa-calendar sizeIcon"></i>
-              </span>
-              <p class="titre">Emploie du temps</p>
-            </button>
-          </li>
-
-          <li>
-            <button id="Absence">
-              <span class="icon">
-                <i class="fas fa-hourglass-end sizeIcon"></i>
-              </span>
-              <p class="titre">Absence</p>
-            </button>
-          </li>
-
-          <li>
-            <button id="Payer">
-              <span class="icon">
-                <i class="far fa-credit-card sizeIcon"></i>
-              </span>
-              <p class="titre">A Payer</p>
-            </button>
-          </li>
-
-          <li>
-            <button id="Note">
-              <span class="icon">
-                <i class="far fa-file-alt sizeIcon"></i>
-              </span>
-              <p class="titre">Notes</p>
-            </button>
-          </li>
-
-          <li>
-            <button id="Agenda">
-              <span class="icon">
-                <i class="far fa-calendar-alt sizeIcon"></i>
-              </span>
-              <p class="titre">calendrier Scolaire</p>
-            </button>
-          </li>
-          <li>
-            <form action="/user" method="post">
-              <button id="Logout" type="submit">
-                <span class="icon">
-                  <i class="fas fa-sign-out-alt sizeIcon"></i>
-                </span>
-                <p class="titre">Se Deconnecter</p>
-              </button>
-            </form>
-          </li>
-        </ul>
-      </div>
       <div class="topbarMax">
         <div class="topbar">
-          <div class="toggle">
-            <i class="fas fa-bars Toggle1"></i>
-            <i class="fas fa-xmark Toggle2"></i>
-          </div>
+          
 
           <div class="navHorizontal">
             <div>
@@ -128,9 +33,11 @@
               </button>
             </div>
             <div>
-              <button class="btnNavH" id="Notiff">
-                <i class="far fa-bell navIcon"></i>
-              </button>
+              <form action="/admin/notification">
+                <button type="submit" class="btnNavH" id="Notiff">
+                  <i class="far fa-bell navIcon"></i>
+                </button>
+              </form>
             </div>
 
             <div class="user">
@@ -140,57 +47,120 @@
         </div>
       </div>
       <!-- CONTENU -->
-      <!-- HommePage -->
       <div class="homepage" id="homePageGG">
         <!--Page Acceuil  Branch : ANDERSON !!!  ACCEUIL ihany tsy inclus am Block content-->
         <div class="blockImg">
-          <img src="/public/imgs/Illustration/Welcome-Last Design.svg" alt="Welcome" />
+          <img
+            src="/public/imgs/Illustration/Welcome-Last Design.svg" alt="Welcome" />
         </div>
-
         <div class="blockGrid">
           <div class="flottantebox">
-            <div id="ProfilAcc" class="boxKely bgProfil">
-              <div class="flexcontent">
-                <div class="chiffreBoxF Cpt">0</div>
-                <div class="chiffreBoxF">Profile</div>
+
+            <a href="/user/profil" style="text-decoration: none;">
+              <div id="ProfilAcc" class="boxKely bgProfil">
+                <div class="flexcontent">
+                  <div class="chiffreBoxF Cpt">0</div>
+                  <div class="chiffreBoxF">Profile</div>
+                </div>
+                <div class="iconBoxFlottante">
+                  <i class="far fa-user iconAccRglg"></i>
+                </div>
               </div>
-              <div class="iconBoxFlottante">
-                <i class="far fa-user iconAccRglg"></i>
+            </a>
+
+            <a href="/user/annonce" style="text-decoration: none;">
+              <div id="AnnonceAcc" class="boxKely bgAnnonce">
+                <div class="flexcontent">
+                  <div class="chiffreBoxF Cpt">3</div>
+                  <div class="chiffreBoxF">Annonces</div>
+                </div>
+                <div class="iconBoxFlottante">
+                  <i class="fas fa-bullhorn iconAccRglg"></i>
+                </div>
               </div>
-            </div>
-            <%- include('../partials/UserHomepage') %> 
+            </a>
+
+            <a href="/user/edt" style="text-decoration: none;">
+              <div id="EDTAcc" class="boxKely bgEDT">
+                <div class="flexcontent">
+                  <div class="chiffreBoxF Cpt">1</div>
+                  <div class="chiffreBoxF">EDT</div>
+                </div>
+                <div class="iconBoxFlottante">
+                  <i class="far fa-calendar iconAccRglg"></i>
+                </div>
+              </div>
+            </a>
+            
+            <a href="/user/absence" style="text-decoration: none;">
+              <div id="AbsenceAcc" class="boxKely bgAbsence">
+                <div class="flexcontent">
+                  <div class="chiffreBoxF Cpt">5</div>
+                  <div class="chiffreBoxF">Absences</div>
+                </div>
+                <div class="iconBoxFlottante">
+                  <i class="fas fa-hourglass-end iconAccRglg"></i>
+                </div>
+              </div>
+            </a>
+            
+            <a href="/user/apayer" style="text-decoration: none;">
+              <div id="ApayerAcc" class="boxKely bgAnnonce">
+                <div class="flexcontent">
+                  <div class="chiffreBoxF Cpt">2</div>
+                  <div class="chiffreBoxF">À Payer</div>
+                </div>
+                <div class="iconBoxFlottante">
+                  <i class="far fa-credit-card iconAccRglg"></i>
+                </div>
+              </div>
+            </a>
+            
+            <a href="/user/note" style="text-decoration: none;">
+              <div id="NoteAcc" class="boxKely bgProfil">
+                <div class="flexcontent">
+                  <div class="chiffreBoxF Cpt">6</div>
+                  <div class="chiffreBoxF">Notes</div>
+                </div>
+                <div class="iconBoxFlottante">
+                  <i class="far fa-file-alt iconAccRglg"></i>
+                </div>
+              </div>
+            </a>
+            
+            <a href="/user/calendrier" id="teste" style="text-decoration: none;">
+              <div id="CalendrierAcc" class="boxKely bgAbsence">
+                <div class="flexcontent">
+                  <div class="chiffreBoxF Cpt">2</div>
+                  <div class="chiffreBoxF">Calendrier</div>
+                </div>
+                <div class="iconBoxFlottante">
+                  <i class="far fa-calendar-alt iconAccRglg"></i>
+                </div>
+              </div>
+            </a>
+            
+            <!-- Se deconnecter -->
+            <form action="/user/deconnexion" method="post" class="logOutAcc">
+              <button id="logout" type="submit" class="boxKely bgProfil">
+                  <div class="flexcontent">
+                    <div class="chiffreBoxF Cpt"></div>
+                    <div class="chiffreBoxF">Se Deconnecter</div>
+                  </div>
+                  <div class="iconBoxFlottante">
+                    <i class="fas fa-sign-out-alt iconAccRglg"></i>
+                  </div>
+              </button>
+            </form>
           </div>
         </div>
       </div>
-      <div class="main">
-        <!-- Notiffication -->
-        <%- include('../partials/UserNotif') %>
-        <!-- Annonce -->
-        <div id="PgAnnonce" class="notif annonce">
-          <div class="a">
-            <div class="imgNom">
-              <h2>Annonces</h2>
-            </div>
-          </div>
-          <%- include('../partials/UserAnnonce') %>
-        </div>
-        <!-- A payer  ETO ZAO-->
-        <%- include('../partials/UserApayer') %>
-        <!-- Note -->
-        <%- include('../partials/UserNote') %>
-        <!-- Calendrier -->
-        <%- include('../partials/UserCalendar') %>
-        <!-- EDT -->
-        <%- include('../partials/UserEDT') %>
-        <!-- Profil -->
-        <%- include('../partials/UserProfil') %>  
-        <!-- Absence -->
-        <%- include('../partials/UserAbsence') %>
-      </div>
+    
     </div>
 
     <!-- =========== Scripts =========  -->
-    <script src="/public/js/scriptDflt.js"></script>
+
+
     <script src="/public/assets/FontAwesome/js/all.min.js"></script>
   </body>
 </html>

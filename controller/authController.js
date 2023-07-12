@@ -7,10 +7,9 @@ const loginController = async (req,res) => {
         const userConnected = await authentificationService.login(user,req);
         if (userConnected.status == 200){
             // res.redirect(`/${userConnected.role}`);
-
             // User ou Admin ? : tsy redirigena satry te ipasse donné am ejs an'i user, afaka antaniana aho (ANDERSON)
             if (userConnected.role !== "user") res.redirect(`/admin`)
-            else res.render(`user/userHome` , data = userConnected);
+            else res.redirect(`/user`);
         } 
         else  res.redirect(`/auth/login?message=${userConnected.message}`);
     

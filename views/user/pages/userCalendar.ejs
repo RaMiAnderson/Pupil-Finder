@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pupil.Finder</title>
+
+    <!-- All -->
+    <link rel="stylesheet" href="/public/css/allstyle.css" />
+    <link rel="stylesheet" href="/public/css/style_acceuil.css" />
+    <link rel="shortcut icon" href="/public/imgs/ICON-01.svg" type="image/x-icon" />
+
+
+    <link rel="stylesheet" href="/public/css/calen.css" />
+ 
+    <link rel="stylesheet" href="/public/css/Burger.css">
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="/public/assets/FontAwesome/css/all.min.css" />
+  </head>
+
+  <body>
+    <div class="parentMax">
+      <!-- Nav Barre Vertical -->
+      <div id="navVertical" class="navigation-Vertical">
+        <ul>
+          <li>
+            <button>
+              <span class="icon">
+                <i class="fas fa-school sizeIcon"></i>
+              </span>
+              <p class="titre">ISPM Plateforme</p>
+            </button>
+          </li>
+  
+          <li>
+            <form action="/user/profil">
+              <button type="submit" id="Profil">
+                <span class="icon">
+                  <i class="far fa-user sizeIcon"></i>
+                </span>
+                <p class="titre">Mon Profil</p>
+              </button>
+            </form>
+          </li>
+  
+          <li>
+            <form action="/user/annonce">
+              <button type="submit" id="Annonce">
+                <span class="icon">
+                  <i class="fas fa-bullhorn sizeIcon"></i>
+                </span>
+                <p class="titre">Annonces</p>
+              </button>
+            </form>
+            
+          </li>
+  
+          <li>
+            <form action="/user/edt">
+              <button id="Edt" type="submit">
+                <span class="icon">
+                  <i class="far fa-calendar sizeIcon"></i>
+                </span>
+                <p class="titre">Emploie du temps</p>
+              </button>
+            </form>
+            
+          </li>
+  
+          <li>
+            <form action="/user/absence">
+              <button type="submit" id="Absence">
+                <span class="icon">
+                  <i class="fas fa-hourglass-end sizeIcon"></i>
+                </span>
+                <p class="titre">Absence</p>
+              </button>
+            </form>
+            
+          </li>
+  
+          <li>
+            <form action="/user/apayer">
+              <button type="submit" id="Payer">
+                <span class="icon">
+                  <i class="far fa-credit-card sizeIcon"></i>
+                </span>
+                <p class="titre">A Payer</p>
+              </button>
+            </form>
+            
+          </li>
+  
+          <li>
+            <form action="/user/note">
+              <button type="submit" id="Note">
+                <span class="icon">
+                  <i class="far fa-file-alt sizeIcon"></i>
+                </span>
+                <p class="titre">Notes</p>
+              </button>
+            </form>
+            
+          </li>
+  
+          <li>
+            <form action="/user/calendrier">
+              <button type="submit" id="Agenda">
+                <span class="icon">
+                  <i class="far fa-calendar-alt sizeIcon"></i>
+                </span>
+                <p class="titre">Calendrier Scolaire</p>
+              </button>
+            </form>
+            
+          </li>
+          
+          <li>
+            <!-- SE deconnecter -->
+            <form action="/user/deconnexion" method="post">
+              <button id="Logout" type="submit">
+                <span class="icon">
+                  <i class="fas fa-sign-out-alt sizeIcon"></i>
+                </span>
+                <p class="titre">Se Deconnecter</p>
+              </button>
+            </form>
+          </li>
+        </ul>
+      </div>
+      <div class="topbarMax">
+        <div class="topbar">
+          <div class="toggle">
+            <i class="fas fa-bars Toggle1"></i>
+            <i class="fas fa-xmark Toggle2"></i>
+          </div>
+  
+          <div class="navHorizontal">
+            <div>
+              <form action="/user">
+                <button type="submit" class="btnNavH home" id="versHome">
+                  <i class="fas fa-home navIcon"></i>
+                </button>
+              </form>
+              
+            </div>
+            <div>
+              <form action="/user/notification">
+                <button class="btnNavH" id="Notiff">
+                  <i class="far fa-bell navIcon"></i>
+                </button>
+              </form>
+            </div>
+  
+            <div class="user">
+              <i class="far fa-user-circle"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CONTENU -->
+      <div class="main">
+       
+        <!-- ATO AM PGCalendar no micode -->
+        <div id="PGcalender" class="calender">
+          <div class="flottantebox">
+            <div class="boxKely">
+              <div>
+                <div class="chiffreBoxF">Evénements :</div>
+                <div class="nomBoxKely">Lorem ipsum dolor sit amet.</div>
+              </div>
+            </div>
+        
+            <div class="boxKely">
+              <div>
+                <div class="chiffreBoxF findann">Fin D'année:</div>
+                <div class="nomBoxKely">Lorem ipsum dolor sit amet.</div>
+              </div>
+            </div>
+          </div>
+          <div class="Content">
+            <div class="soratra">
+              <h2>Calendrier scolaire :</h2>
+            </div>
+            <div class="sep-calender">
+              <h2>janvier</h2>
+        
+              <ul class="day">
+                <li>dim</li>
+                <li>lun</li>
+                <li>mar</li>
+                <li>mer</li>
+                <li>jeu</li>
+                <li>ven</li>
+                <li>sam</li>
+              </ul>
+              <ul class="date">
+                <li class="first-day">1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+                <li>6</li>
+                <li>7</li>
+                <li>8</li>
+                <li>9</li>
+                <li>10</li>
+                <li>11</li>
+                <li>12</li>
+                <li>13</li>
+                <li>14</li>
+                <li>15</li>
+                <li>16</li>
+                <li>17</li>
+                <li>18</li>
+                <li>19</li>
+                <li>20</li>
+                <li>21</li>
+                <li>22</li>
+                <li>23</li>
+                <li>24</li>
+                <li>25</li>
+                <li>26</li>
+                <li>27</li>
+                <li>28</li>
+                <li>29</li>
+                <li>30</li>
+                <li class="last-day">31</li>
+                <li class="Apart"></li>
+                <li class="Apart"></li>
+                <li class="Apart"></li>
+                <li class="Apart"></li>
+              </ul>
+            </div>
+            <div class="sep-calender">
+              <h2>fevrier</h2>
+        
+              <ul class="day">
+                <li>dim</li>
+                <li>lun</li>
+                <li>mar</li>
+                <li>mer</li>
+                <li>jeu</li>
+                <li>ven</li>
+                <li>sam</li>
+              </ul>
+              <ul class="date">
+                <li class="prev-month"></li>
+                <li class="Apart"></li>
+                <li class="Apart"></li>
+                <li class="first-day">1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+                <li>6</li>
+                <li>7</li>
+                <li>8</li>
+                <li>9</li>
+                <li>10</li>
+                <li>11</li>
+                <li>12</li>
+                <li>13</li>
+                <li>14</li>
+                <li>15</li>
+                <li>16</li>
+                <li>17</li>
+                <li>18</li>
+                <li>19</li>
+                <li>20</li>
+                <li>21</li>
+                <li>22</li>
+                <li>23</li>
+                <li>24</li>
+                <li>25</li>
+                <li>26</li>
+                <li>27</li>
+                <li>28</li>
+                <li class="last-day">29</li>
+                <li class="Apart"></li>
+                <li class="Apart"></li>
+                <li class="Apart"></li>
+              </ul>
+            </div>
+            <div class="sep-calender">
+              <h2>Mars</h2>
+        
+              <ul class="day">
+                <li>dim</li>
+                <li>lun</li>
+                <li>mar</li>
+                <li>mer</li>
+                <li>jeu</li>
+                <li>ven</li>
+                <li>sam</li>
+              </ul>
+              <ul class="date">
+                <li class="prev-month Apart"></li>
+                <li class="Apart"></li>
+                <li class="Apart"></li>
+                <li class="first-day">1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+                <li>6</li>
+                <li>7</li>
+                <li>8</li>
+                <li>9</li>
+                <li>10</li>
+                <li>11</li>
+                <li>12</li>
+                <li>13</li>
+                <li>14</li>
+                <li>15</li>
+                <li>16</li>
+                <li>17</li>
+                <li>18</li>
+                <li>19</li>
+                <li>20</li>
+                <li class="DaySpec">21</li>
+                <li>22</li>
+                <li>23</li>
+                <li>24</li>
+                <li>25</li>
+                <li>26</li>
+                <li>27</li>
+                <li>28</li>
+                <li>29</li>
+                <li>30</li>
+                <li class="last-day">31</li>
+                <li class="Apart"></li>
+              </ul>
+            </div>
+            <div class="sep-calender">
+              <h2>Avril</h2>
+        
+              <ul class="day">
+                <li>dim</li>
+                <li>lun</li>
+                <li>mar</li>
+                <li>mer</li>
+                <li>jeu</li>
+                <li>ven</li>
+                <li>sam</li>
+              </ul>
+              <ul class="date">
+                <li class="prev-month Apart"></li>
+                <li class="Apart"></li>
+                <li class="Apart"></li>
+                <li class="Apart"></li>
+                <li class="Apart"></li>
+                <li class="Apart"></li>
+                <li class="first-day">1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+                <li>6</li>
+                <li>7</li>
+                <li>8</li>
+                <li>9</li>
+                <li class="DaySpec">10</li>
+                <li>11</li>
+                <li>12</li>
+                <li>13</li>
+                <li>14</li>
+                <li>15</li>
+                <li>16</li>
+                <li>17</li>
+                <li>18</li>
+                <li>19</li>
+                <li>20</li>
+                <li>21</li>
+                <li>22</li>
+                <li>23</li>
+                <li>24</li>
+                <li>25</li>
+                <li>26</li>
+                <li>27</li>
+                <li>28</li>
+                <li>29</li>
+                <li class="last-day">30</li>
+                <li class="Apart"></li>
+                <li class="Apart"></li>
+                <li class="Apart"></li>
+                <li class="Apart"></li>
+                <li class="Apart"></li>
+                <li class="Apart"></li>
+              </ul>
+            </div>
+            <div class="sep-calender">
+              <h2>Mai</h2>
+        
+              <ul class="day">
+                <li>dim</li>
+                <li>lun</li>
+                <li>mar</li>
+                <li>mer</li>
+                <li>jeu</li>
+                <li>ven</li>
+                <li>sam</li>
+              </ul>
+              <ul class="date">
+                <li class="prev-month Apart"></li>
+                <li class="first-day DaySpec">1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+                <li>6</li>
+                <li>7</li>
+                <li>8</li>
+                <li>9</li>
+                <li>10</li>
+                <li>11</li>
+                <li>12</li>
+                <li>13</li>
+                <li>14</li>
+                <li>15</li>
+                <li>16</li>
+                <li>17</li>
+                <li>18</li>
+                <li>19</li>
+                <li>20</li>
+                <li>21</li>
+                <li>22</li>
+                <li>23</li>
+                <li>24</li>
+                <li>25</li>
+                <li>26</li>
+                <li>27</li>
+                <li>28</li>
+                <li>29</li>
+                <li class="last-day">30</li>
+                <li class="Apart"></li>
+                <li class="Apart"></li>
+                <li class="Apart"></li>
+              </ul>
+            </div>
+            <div class="sep-calender">
+              <h2>Juin</h2>
+        
+              <ul class="day">
+                <li>dim</li>
+                <li>lun</li>
+                <li>mar</li>
+                <li>mer</li>
+                <li>jeu</li>
+                <li>ven</li>
+                <li>sam</li>
+              </ul>
+              <ul class="date">
+                <li class="prev-month"></li>
+                <li class="Apart"></li>
+                <li class="Apart"></li>
+                <li class="Apart"></li>
+                <li class="first-day">1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+                <li>6</li>
+                <li>7</li>
+                <li>8</li>
+                <li>9</li>
+                <li>10</li>
+                <li>11</li>
+                <li>12</li>
+                <li>13</li>
+                <li>14</li>
+                <li>15</li>
+                <li>16</li>
+                <li>17</li>
+                <li>18</li>
+                <li>19</li>
+                <li>20</li>
+                <li>21</li>
+                <li>22</li>
+                <li>23</li>
+                <li>24</li>
+                <li>25</li>
+                <li class="DaySpec">26</li>
+                <li>27</li>
+                <li>28</li>
+                <li>29</li>
+                <li class="last-day">30</li>
+                <li class="Apart"></li>
+              </ul>
+            </div>
+            <div class="sep-calender">
+              <h2>Juillet</h2>
+        
+              <ul class="day">
+                <li>dim</li>
+                <li>lun</li>
+                <li>mar</li>
+                <li>mer</li>
+                <li>jeu</li>
+                <li>ven</li>
+                <li>sam</li>
+              </ul>
+              <ul class="date">
+                <li class="prev-month Apart"></li>
+                <li class="Apart"></li>
+                <li class="Apart"></li>
+                <li class="Apart"></li>
+                <li class="Apart"></li>
+                <li class="Apart"></li>
+                <li class="first-day">1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+                <li>6</li>
+                <li>7</li>
+                <li>8</li>
+                <li>9</li>
+                <li>10</li>
+                <li>11</li>
+                <li>12</li>
+                <li>13</li>
+                <li>14</li>
+                <li>15</li>
+                <li>16</li>
+                <li>17</li>
+                <li>18</li>
+                <li>19</li>
+                <li>20</li>
+                <li>21</li>
+                <li>22</li>
+                <li>23</li>
+                <li>24</li>
+                <li>25</li>
+                <li>26</li>
+                <li>27</li>
+                <li>28</li>
+                <li>29</li>
+                <li>30</li>
+                <li class="last-day">31</li>
+                <li class="Apart"></li>
+                <li class="Apart"></li>
+                <li class="Apart"></li>
+                <li class="Apart"></li>
+                <li class="Apart"></li>
+              </ul>
+            </div>
+            <div class="sep-calender">
+              <h2>Aout</h2>
+        
+              <ul class="day">
+                <li>dim</li>
+                <li>lun</li>
+                <li>mar</li>
+                <li>mer</li>
+                <li>jeu</li>
+                <li>ven</li>
+                <li>sam</li>
+              </ul>
+              <ul class="date">
+                <li class="prev-month Apart"></li>
+                <li class="Apart"></li>
+                <li class="first-day">1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+                <li>6</li>
+                <li>7</li>
+                <li>8</li>
+                <li>9</li>
+                <li>10</li>
+                <li>11</li>
+                <li>12</li>
+                <li>13</li>
+                <li>14</li>
+                <li>15</li>
+                <li>16</li>
+                <li>17</li>
+                <li>18</li>
+                <li>19</li>
+                <li>20</li>
+                <li>21</li>
+                <li>22</li>
+                <li>23</li>
+                <li>24</li>
+                <li>25</li>
+                <li>26</li>
+                <li>27</li>
+                <li>28</li>
+                <li>29</li>
+                <li>30</li>
+                <li class="last-day">31</li>
+                <li class="Apart"></li>
+                <li class="Apart"></li>
+              </ul>
+            </div>
+            <div class="sep-calender">
+              <h2>septembre</h2>
+        
+              <ul class="day">
+                <li>dim</li>
+                <li>lun</li>
+                <li>mar</li>
+                <li>mer</li>
+                <li>jeu</li>
+                <li>ven</li>
+                <li>sam</li>
+              </ul>
+              <ul class="date">
+                <li class="prev-month Apart"></li>
+                <li class="Apart"></li>
+                <li class="Apart"></li>
+                <li class="Apart"></li>
+                <li class="Apart"></li>
+                <li class="first-day">1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+                <li>6</li>
+                <li>7</li>
+                <li>8</li>
+                <li>9</li>
+                <li>10</li>
+                <li>11</li>
+                <li>12</li>
+                <li>13</li>
+                <li>14</li>
+                <li>15</li>
+                <li>16</li>
+                <li>17</li>
+                <li>18</li>
+                <li>19</li>
+                <li>20</li>
+                <li>21</li>
+                <li>22</li>
+                <li>23</li>
+                <li>24</li>
+                <li>25</li>
+                <li>26</li>
+                <li>27</li>
+                <li>28</li>
+                <li>29</li>
+                <li>30</li>
+                <li class="last-day">31</li>
+              </ul>
+            </div>
+            <div class="sep-calender">
+              <h2>octobre</h2>
+        
+              <ul class="day">
+                <li>dim</li>
+                <li>lun</li>
+                <li>mar</li>
+                <li>mer</li>
+                <li>jeu</li>
+                <li>ven</li>
+                <li>sam</li>
+              </ul>
+              <ul class="date">
+                <li class="first-day">1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+                <li>6</li>
+                <li>7</li>
+                <li>8</li>
+                <li>9</li>
+                <li>10</li>
+                <li>11</li>
+                <li>12</li>
+                <li>13</li>
+                <li>14</li>
+                <li>15</li>
+                <li>16</li>
+                <li>17</li>
+                <li>18</li>
+                <li>19</li>
+                <li>20</li>
+                <li>21</li>
+                <li>22</li>
+                <li>23</li>
+                <li>24</li>
+                <li>25</li>
+                <li>26</li>
+                <li>27</li>
+                <li>28</li>
+                <li>29</li>
+                <li>30</li>
+                <li class="last-day">31</li>
+                <li class="Apart"></li>
+                <li class="Apart"></li>
+                <li class="Apart"></li>
+                <li class="Apart"></li>
+              </ul>
+            </div>
+            <div class="sep-calender">
+              <h2>Novembre</h2>
+        
+              <ul class="day">
+                <li>dim</li>
+                <li>lun</li>
+                <li>mar</li>
+                <li>mer</li>
+                <li>jeu</li>
+                <li>ven</li>
+                <li>sam</li>
+              </ul>
+              <ul class="date">
+                <li class="prev-month Apart"></li>
+                <li class="Apart"></li>
+                <li class="Apart"></li>
+                <li class="first-day">1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+                <li>6</li>
+                <li>7</li>
+                <li>8</li>
+                <li>9</li>
+                <li>10</li>
+                <li>11</li>
+                <li>12</li>
+                <li>13</li>
+                <li>14</li>
+                <li>15</li>
+                <li>16</li>
+                <li>17</li>
+                <li>18</li>
+                <li>19</li>
+                <li>20</li>
+                <li>21</li>
+                <li>22</li>
+                <li>23</li>
+                <li>24</li>
+                <li>25</li>
+                <li>26</li>
+                <li>27</li>
+                <li>28</li>
+                <li>29</li>
+                <li class="last-day">30</li>
+                <li class="Apart"></li>
+                <li class="Apart"></li>
+              </ul>
+            </div>
+            <div class="sep-calender">
+              <h2>Decembre</h2>
+        
+              <ul class="day">
+                <li>dim</li>
+                <li>lun</li>
+                <li>mar</li>
+                <li>mer</li>
+                <li>jeu</li>
+                <li>ven</li>
+                <li>sam</li>
+              </ul>
+              <ul class="date">
+                <li class="prev-month Apart"></li>
+                <li class="Apart"></li>
+                <li class="Apart"></li>
+                <li class="Apart"></li>
+                <li class="Apart"></li>
+                <li class="first-day"></li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+                <li>6</li>
+                <li>7</li>
+                <li>8</li>
+                <li>9</li>
+                <li>10</li>
+                <li>11</li>
+                <li>12</li>
+                <li>13</li>
+                <li>14</li>
+                <li>15</li>
+                <li>16</li>
+                <li>17</li>
+                <li>18</li>
+                <li>19</li>
+                <li>20</li>
+                <li>21</li>
+                <li>22</li>
+                <li>23</li>
+                <li>24</li>
+                <li>25</li>
+                <li>26</li>
+                <li>27</li>
+                <li>28</li>
+                <li>29</li>
+                <li>30</li>
+                <li class="last-day">31</li>
+                <li class="Apart"></li>
+                <li class="Apart"></li>
+                <li class="Apart"></li>
+                <li class="Apart"></li>
+                <li class="Apart"></li>
+                <li class="Apart"></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+
+      </div>
+    </div>
+
+    <!-- =========== Scripts =========  -->
+    
+    <script src="/public/js/scriptDflt.js"></script>
+    <script src="/public/assets/FontAwesome/js/all.min.js"></script>
+  </body>
+</html>

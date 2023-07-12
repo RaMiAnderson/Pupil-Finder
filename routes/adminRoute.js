@@ -47,7 +47,7 @@ router.get('/add-matiere' , adminController.addMatiere );
 
 // logout
 
-router.post("/" , authController.logoutController );
+router.post("/deconnexion" , authController.logoutController );
 
 module.exports = router
 
