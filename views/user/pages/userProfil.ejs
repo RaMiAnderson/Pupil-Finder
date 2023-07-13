@@ -56,7 +56,7 @@
               <p class="titre">Annonces</p>
             </button>
           </form>
-          
+
         </li>
 
         <li>
@@ -68,7 +68,7 @@
               <p class="titre">Emploie du temps</p>
             </button>
           </form>
-          
+
         </li>
 
         <li>
@@ -80,7 +80,7 @@
               <p class="titre">Absence</p>
             </button>
           </form>
-          
+
         </li>
 
         <li>
@@ -92,7 +92,7 @@
               <p class="titre">A Payer</p>
             </button>
           </form>
-          
+
         </li>
 
         <li>
@@ -104,7 +104,7 @@
               <p class="titre">Notes</p>
             </button>
           </form>
-          
+
         </li>
 
         <li>
@@ -116,9 +116,9 @@
               <p class="titre">Calendrier Scolaire</p>
             </button>
           </form>
-          
+
         </li>
-        
+
         <li>
           <!-- SE deconnecter -->
           <form action="/user/deconnexion" method="post">
@@ -146,7 +146,7 @@
                 <i class="fas fa-home navIcon"></i>
               </button>
             </form>
-            
+
           </div>
           <div>
             <form action="/user/notification">
@@ -172,9 +172,7 @@
         <div class="profil-content">
           <div class="nom">
             <i class="fas fa-user-circle img"></i>
-            <p>
-              TAY BE AA
-            </p>
+            <p><%= dataProfil.nom %> <%= dataProfil.prenom %></p>
           </div>
           <div class="info-content">
             <div class="i">
@@ -183,26 +181,27 @@
               </div>
               <div class="txt">
                 <div class="papay">
-                  <p>Genre: <span>Homme</span></p>
+                  <p>Genre: <span><%= dataProfil.genre %></span></p>
 
-                  <p class="p">Adresse: <span>Ampandrana</span></p>
+                  <p class="p">Adresse: <span><%= dataProfil.adresseEleve %></span></p>
 
-                  <p>Numéro Phone: <span>034 00 000 00</span></p>
-                  <p>Adresse email: <span>userEmail@gmai.com</span></p>
+                  <p>Numéro Phone: <span><%= dataProfil.numeros %></span></p>
+                  <p>Adresse email: <span><%= dataProfil.email %></span></p>
                 </div>
               </div>
             </div>
             <div class="i">
               <div class="in">
-                <p>Filière et Classe</p>
+                <p>Information suplementaire</p>
               </div>
               <div class="txt">
                 <div class="papay">
-                  <p>Filière: <span>IGGL</span></p>
-                  <p class="p">Classe: <span>hhhyh</span></p>
-
-                  <p>Numéro en Classe: <span>19</span></p>
-                  <p>Matricule: <span>1111</span></p>
+                  
+                  <p>Date de Naissance: <span><%= dataProfil.dateNaissance %></span></p>
+                  <p class="p">Classe: <span>Comming Soon </span></p>
+                  <!-- Mila Amboarina, Num en Classe -->
+                  <p>Numéro en Classe: <span> Comming Soon </span></p>
+                  <p>Matricule: <span> Comming Soon</span></p>
                 </div>
               </div>
             </div>
@@ -212,10 +211,9 @@
               </div>
               <div class="txt">
                 <div class="papay">
-                  <p>Nom : <span>Goliata</span></p>
-                  <p>Prénom : <span>Mark</span></p>
-                  <p>Proffesion: <span>undefined</span></p>
-                  <p class="p">Adresse: <span>Ampandrana</span></p>
+                  <p>Nom : <span><%= dataProfil.nomPere %></span></p>
+                  <p>Proffesion: <span> <%= dataProfil.proffesionPere %></span></p>
+                  <p class="p">Adresse: <span><%= dataProfil.adressePere %></span></p>
                 </div>
               </div>
             </div>
@@ -225,10 +223,9 @@
               </div>
               <div class="txt">
                 <div class="papay">
-                  <p>Nom : <span>Perety</span></p>
-                  <p>Prénom : <span>Kolo</span></p>
-                  <p>Proffesion: <span>Dev</span></p>
-                  <p class="p">Adresse: <span>Ampandrana</span></p>
+                  <p>Nom : <span><%= dataProfil.nomMere %></span></p>
+                  <p>Proffesion: <span><%= dataProfil.proffesionMere %></span></p>
+                  <p class="p">Adresse: <span><%= dataProfil.adresseMere %></span></p>
                 </div>
               </div>
             </div>

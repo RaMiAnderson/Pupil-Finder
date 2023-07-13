@@ -6,8 +6,7 @@ const userSchema = Schema({
     //Unique id created automatically by the mongoose
     nom: { type: String, required: true },
     prenom:{type : String, required: true},
-    genre:{type : String, required: true , Enumerator : ["Male" , "Female"]},
-    age:{type : String, required: true},
+    genre:{type : String, required: true , Enumerator : ["Homme" , "Femme"]},
     dateNaissance:{type : Date, required: true},
     adresseEleve:{type : String, required: true},
     email: { type: String, required: true, unique: true },

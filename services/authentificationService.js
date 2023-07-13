@@ -35,7 +35,6 @@ const  addUser = async (user) => {
         userModel.password = await encryptPassword(user.MotDePasse);
         userModel.nomPere = user.nomPere;
         userModel.proffesionPere = user.ProfessionPere;
-        userModel.age = user.age;
         userModel.dateNaissance = user.dateNaissance;
         userModel.adressePere = user.AdressePere;
         userModel.numerosPere = user.NumeroPere;
