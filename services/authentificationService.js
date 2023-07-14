@@ -33,7 +33,7 @@ const  addUser = async (user) => {
         userModel.numeros = user.Numero;
         userModel.email = user.Email;
         userModel.password = await encryptPassword(user.MotDePasse);
-        userModel.nomPere = user.nomPere;
+        userModel.nomPere = user.NomPere;
         userModel.proffesionPere = user.ProfessionPere;
         userModel.dateNaissance = user.dateNaissance;
         userModel.adressePere = user.AdressePere;

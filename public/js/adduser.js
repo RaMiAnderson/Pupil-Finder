@@ -96,10 +96,10 @@ const validPassword= function(inputMotDePasse) {
 
 
   /*<----------validation Nom-------------------->*/
-  form.nomMere.addEventListener('change',function(){
+  form.NomMere.addEventListener('change',function(){
     validNom(this); 
   })
-  form.nomPere.addEventListener('change',function(){
+  form.NomPere.addEventListener('change',function(){
     validNom(this); 
   })
   form.Nom.addEventListener('change',function(){

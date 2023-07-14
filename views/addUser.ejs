@@ -4,15 +4,14 @@
     <meta charset="UTF-8">
     <!---<title> Responsive Registration Form | CodingLab </title>--->
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <title>Pupil.Finder</title>
+     <title>Registration Form</title>
      <link rel="stylesheet" href="/public/css/addUser.css">
-     <link rel="shortcut icon" href="/public/imgs/ICON-01.svg" type="image/x-icon">
    </head>
 <body>
   <div class="container">
     <div class="title">Registration</div>
     <div class="content">
-      <form action="/auth/add-user" method="POST">
+      <form action="/auth/add-user" method="POST" id="loginform">
         <div class="user-details">
           <div class="input-box">
             <span class="details">Nom</span>
@@ -32,10 +31,12 @@
           <div class="input-box">
             <span class="details">Adresse</span>
             <input type="text" placeholder="Enter your Adresse" name="AdresseEleve" required>
+            <small></small>
           </div>
           <div class="input-box">
             <span class="details">Numero de telephone</span>
             <input type="text" placeholder="Enter your number" name="Numero" required>
+            <small></small>
           </div>
           <div class="input-box">
             <!-- OVAINA SELECT -->
@@ -46,6 +47,7 @@
           <div class="input-box">
             <span class="details">Adresse Email</span>
             <input type="text" placeholder="Entrer votre Adresse Email"name="Email" required>
+            <small></small>
           </div>
           <div class="input-box">
             <span class="details">Mot de passe</span>
@@ -54,20 +56,21 @@
           </div>
           <div class="input-box">
             <span class="details">Nom du Pere </span>
-            <input type="text" placeholder="Nom" name="nomPere" required>
+            <input type="text" placeholder="Nom" name="NomPere" required>
+            <small></small>
           </div>
           <div class="input-box">
-                <span class="details">Profession du Pere</span>
+                <span class="details">Profession </span>
                 <input type="text" placeholder="Profession" name="ProfessionPere" required> 
                 <small></small>
           </div>
           <div class="input-box">
-            <span class="details">Adresse du Pere </span>
+            <span class="details">Adresse </span>
             <input type="text" placeholder="Profession" name="AdressePere" required> 
             <small></small>
         </div>
         <div class="input-box">
-            <span class="details">Numero du Pere </span>
+            <span class="details">Numero </span>
             <input type="text" placeholder="Numero" name="NumeroPere" required> 
             <small></small>
         </div>
@@ -77,33 +80,33 @@
             <small></small>
           </div>
           <div class="input-box">
-                <span class="details">Profession de la Mere </span>
+                <span class="details">Profession </span>
                 <input type="text" placeholder="Profession" name="ProfessionMere" required> 
                 <small></small>
           </div>
           <div class="input-box">
-            <span class="details">Adresse de la Mere </span>
+            <span class="details">Adresse </span>
             <input type="text" placeholder="Profession" name="AdresseMere" required> 
             <small></small>
         </div>
         <div class="input-box">
-            <span class="details">Numero de la Mere</span>
+            <span class="details">Numero </span>
             <input type="text" placeholder="Numero" name="NumeroMere" required> 
             <small></small>
         </div>
         </div>
         <div class="gender-details">
-          <input type="radio" name="gender" id="dot-1" value="Homme">
-          <input type="radio" name="gender" id="dot-2" value="Femme">
-          <span class="gender-title">Genre</span>
+          <input type="radio" name="gender" id="dot-1" value="Male">
+          <input type="radio" name="gender" id="dot-2" value="Female">
+          <span class="gender-title">Gender</span>
           <div class="category">
             <label for="dot-1">
             <span class="dot one"></span>
-            <span class="gender">Homme</span>
+            <span class="gender">Male</span>
           </label>
           <label for="dot-2">
             <span class="dot two"></span>
-            <span class="gender">Femme</span>
+            <span class="gender">Female</span>
           </label>
           <!-- <label for="dot-3">
             <span class="dot three"></span>
@@ -117,5 +120,6 @@
       </form>
     </div>
   </div>
+  <script src="/public/js/adduser.js"></script>
 </body>
 </html>
