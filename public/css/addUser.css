@@ -144,3 +144,9 @@ form .user-details .input-box{
     flex-direction: column;
   }
 }
+.text-succes{
+  color: green;
+}
+.text-danger{
+  color: red;
+}

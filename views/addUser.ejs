@@ -12,72 +12,88 @@
   <div class="container">
     <div class="title">Registration</div>
     <div class="content">
-      <form action="/auth/add-user" method="POST">
+      <form action="/auth/add-user" method="POST" id="loginform">
         <div class="user-details">
           <div class="input-box">
             <span class="details">Nom</span>
             <input type="text" placeholder="Entrer votre nom" name="Nom" required>
+            <small></small>
           </div>
           <div class="input-box">
             <span class="details">Prenom</span>
             <input type="text" placeholder="Entrer votre prenom" name="Prenom" required>
+            <small></small>
           </div>
           <div class="input-box">
             <span class="details">Date de naissance</span>
             <input type="date" placeholder="Entrer votre prenom" name="dateNaissance" required>
+            <small></small>
           </div>
           <div class="input-box">
             <span class="details">Adresse</span>
             <input type="text" placeholder="Entrer votre Adresse" name="AdresseEleve" required>
+            <small></small>
           </div>
           <div class="input-box">
             <span class="details">Numero de telephone</span>
             <input type="text" placeholder="Entrer votre numéro" name="Numero" required>
+            <small></small>
           </div>
           <div class="input-box">
             <!-- OVAINA SELECT -->
             <span class="details">Classe</span>
             <input type="text" placeholder="Entrer votre Classe" name="Classe" required>
+            <small></small>
           </div>
           <div class="input-box">
             <span class="details">Adresse Email</span>
             <input type="email" placeholder="Entrer votre Adresse Email"name="Email" required>
+            <small></small>
           </div>
           <div class="input-box">
             <span class="details">Mot de passe</span>
             <input type="text" placeholder="Entrer votre mot de passe"name="MotDePasse" required>
+            <small></small>
           </div>
           <div class="input-box">
             <span class="details">Nom du Pere </span>
             <input type="text" placeholder="Nom" name="nomPere" required>
+            <small></small>
           </div>
           <div class="input-box">
                 <span class="details">Profession du Pere</span>
                 <input type="text" placeholder="Profession" name="ProfessionPere" required> 
+                <small></small>
           </div>
           <div class="input-box">
             <span class="details">Adresse du Pere </span>
             <input type="text" placeholder="Profession" name="AdressePere" required> 
+            <small></small>
         </div>
         <div class="input-box">
             <span class="details">Numero du Pere </span>
             <input type="text" placeholder="Numero" name="NumeroPere" required> 
+            <small></small>
         </div>
         <div class="input-box">
             <span class="details">Nom de la Mere </span>
             <input type="text" placeholder="Nom" name="NomMere" required>
+            <small></small>
           </div>
           <div class="input-box">
                 <span class="details">Profession de la Mere </span>
                 <input type="text" placeholder="Profession" name="ProfessionMere" required> 
+                <small></small>
           </div>
           <div class="input-box">
             <span class="details">Adresse de la Mere </span>
             <input type="text" placeholder="Profession" name="AdresseMere" required> 
+            <small></small>
         </div>
         <div class="input-box">
             <span class="details">Numero de la Mere</span>
             <input type="text" placeholder="Numero" name="NumeroMere" required> 
+            <small></small>
         </div>
         </div>
         <div class="gender-details">
@@ -105,5 +121,7 @@
       </form>
     </div>
   </div>
+
+  <script src="/public/js/addUser.js"></script>
 </body>
 </html>
