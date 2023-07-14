@@ -23,7 +23,7 @@ const verifyIfAlreadyConnected = (request) => {
     }
     return false;
 }
- 
+  
 const  addUser = async (user) => {
     try {
         const userModel = new User();

@@ -12,7 +12,7 @@
   <div class="container">
     <div class="title">Registration</div>
     <div class="content">
-      <form action="/auth/add-user" method="POST" id="loginform">
+      <form action="/auth/add-user" method="POST">
         <div class="user-details">
           <div class="input-box">
             <span class="details">Nom</span>
@@ -31,13 +31,11 @@
           </div>
           <div class="input-box">
             <span class="details">Adresse</span>
-            <input type="text" placeholder="Entrer votre Adresse" name="AdresseEleve" required>
-            <small></small>
+            <input type="text" placeholder="Enter your Adresse" name="AdresseEleve" required>
           </div>
           <div class="input-box">
             <span class="details">Numero de telephone</span>
-            <input type="text" placeholder="Entrer votre numéro" name="Numero" required>
-            <small></small>
+            <input type="text" placeholder="Enter your number" name="Numero" required>
           </div>
           <div class="input-box">
             <!-- OVAINA SELECT -->
@@ -47,8 +45,7 @@
           </div>
           <div class="input-box">
             <span class="details">Adresse Email</span>
-            <input type="email" placeholder="Entrer votre Adresse Email"name="Email" required>
-            <small></small>
+            <input type="text" placeholder="Entrer votre Adresse Email"name="Email" required>
           </div>
           <div class="input-box">
             <span class="details">Mot de passe</span>
@@ -58,7 +55,6 @@
           <div class="input-box">
             <span class="details">Nom du Pere </span>
             <input type="text" placeholder="Nom" name="nomPere" required>
-            <small></small>
           </div>
           <div class="input-box">
                 <span class="details">Profession du Pere</span>
@@ -121,7 +117,5 @@
       </form>
     </div>
   </div>
-
-  <script src="/public/js/addUser.js"></script>
 </body>
 </html>
