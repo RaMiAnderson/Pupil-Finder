@@ -8,14 +8,16 @@
 
     <!-- All -->
     <link rel="stylesheet" href="/public/css/allstyle.css" />
-    <link rel="stylesheet" href="/public/css/style_acceuil.css" />
+    <link rel="stylesheet" href="/public/css/Burger.css">
+    <link rel="stylesheet" href="/public/css/style_acceuil.css"/>
+    
     <link rel="shortcut icon" href="/public/imgs/ICON-01.svg" type="image/x-icon" />
 
 
 
     <link rel="stylesheet" href="/public/css/profil.css" />
 
-    <link rel="stylesheet" href="/public/css/Burger.css">
+  
 
     <!-- FontAwesome -->
     <link rel="stylesheet" href="/public/assets/FontAwesome/css/all.min.css" />
@@ -178,9 +180,51 @@
 
         <!-- ATO AMIN'I PgProfil -->
         <div id="PgProfil" class="profil">
-          <button><a href="/admin/add-filiere" style="text-decoration: none;">Ajout Filière</a></button>
-          <button><a href="/admin/add-matiere" style="text-decoration: none;">Ajout Matiere</a></button>
+          <!-- <button><a href="/admin/add-filiere" style="text-decoration: none;">Ajout Filière</a></button>
+          <button><a href="/admin/add-matiere" style="text-decoration: none;">Ajout Matiere</a></button> -->
+
+          <!-- MATIERE -->
+          <div class="profil-content">
+            <h3>Ajout Matiere</h3>
+            <form action="/admin/gerer/add-matiere" method="post" style="display: flex;">
+              <input type="text" placeholder="Nom de la matiere" name="nomMatiere" required>
+              <input type="text" placeholder="Nom du Prof" name="nomProf" required>
+              <input type="submit">
+            </form>
+          </div>
+
+          <!-- CLASSE -->
+          <div class="profil-content">
+            <h3>Ajout Classe</h3>
+
+            <!-- Fampidirana nombre matiere -->
+            <form action="/admin/gerer/nombre-matiere" method="post">
+              <input type="text" placeholder="Entrer le nombre des matiere" name="nombreMatiere">
+              <input type="submit" value="Créer le champs des matiere">
+            </form>
+
+
+            <h3>Ajout Matiere dans la classe</h3>
+            <!-- Mbola mila aodina boucle fa iankina am nombre matiere ampidirina -->
+            <form action="/admin/gerer/add-classe" method="post" style="display: flex;">
+
+              <input type="text" placeholder="Nom de la classe" name="nomClasse" required>
+      
+          
+              <div id="parentFormMatiere">
+                <span id="dataNombreMatiere" hidden><%= data.nombreMatiere %></span>
+                
+
+                
+              </div>
+              <input type="submit">
+            </form>
+
+
+          </div>
         </div>
+
+       
 
 
 
@@ -192,5 +236,73 @@
     <script src="/public/js/scriptDflt.js"></script>
 
     <script src="/public/assets/FontAwesome/js/all.min.js"></script>
+    <script>
+      const parentFormMatiereClass = document.getElementById('parentFormMatiere');
+
+      fetch("/admin/gerer/getDataGerer")
+        .then((res) => res.json())
+        .then((data) => {
+
+          if (document.getElementById('dataNombreMatiere').textContent !== ""){
+            const nombreMatiere = parseInt(document.getElementById('dataNombreMatiere').textContent);
+
+
+            for  (var i = 0 ; i < nombreMatiere ; i++){
+              var selectMatiere = document.createElement("select");
+              var inputCoeff = document.createElement("input");
+              
+          
+              // Select config : Matière
+              selectMatiere.name = `nomMatiere${i}`;
+              selectMatiere.id = `selectMatiere${i}`;
+
+              
+              // input texte config : Coef
+              inputCoeff.type = "text";
+              inputCoeff.placeholder = "Coeff";
+              inputCoeff.name = `coeffMatiere${i}`;
+
+              parentFormMatiereClass.appendChild(selectMatiere);
+              parentFormMatiereClass.appendChild(inputCoeff);
+
+              // ----option config : Matière
+              // avadika tableau ilay objet data
+              var tabListMatiere = Object.values(data);
+              var selectCorespondant = document.getElementById(`selectMatiere${i}`);
+
+              for (var j = 0; j < tabListMatiere.length ; j++){
+                var option = document.createElement("option");
+
+                option.value = tabListMatiere[j].nomMatiere;
+                option.textContent = tabListMatiere[j].nomMatiere;
+
+
+                selectCorespondant.appendChild(option);
+              }
+
+
+              // for (var j = 0 ; j < tabListMatiere.lenght ; j++){
+                // var option = document.createElement("option");
+              //   var selectCorespondant = document.getElementById(`selectMatiere${i}`);
+
+              //   option.value = tabListMatiere[j].nomMatiere;
+              //   option.textContent = tabListMatiere[j].nomMatiere;
+
+              //   selectCorespondant.appendChild(option);
+              // }
+             
+
+            }
+
+            
+     
+          }
+      
+          
+        });
+  
+     
+       
+    </script>
   </body>
 </html>

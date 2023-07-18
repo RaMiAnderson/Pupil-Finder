@@ -11,7 +11,7 @@ const getHomepage = (req, res) => {
     else res.redirect("/admin");
 
   } else {
-    res.redirect("auth/login");
+    res.redirect("/auth/login");
   }
 };
 
@@ -22,7 +22,7 @@ const getAbsence = (req, res) => {
       res.render("user/pages/userAbsence");
     else res.redirect("/admin");
 
-  } else res.redirect("auth/login");
+  } else res.redirect("/auth/login");
 };
 
 const getAnnonce = (req, res) => {
@@ -32,7 +32,7 @@ const getAnnonce = (req, res) => {
       res.render("user/pages/userAnnonce");
     else res.redirect("/admin");
 
-  } else res.redirect("auth/login");
+  } else res.redirect("/auth/login");
 };
 
 const getApayer = (req, res) => {
@@ -42,7 +42,7 @@ const getApayer = (req, res) => {
       res.render("user/pages/userApayer");
     else res.redirect("/admin");
 
-  } else res.redirect("auth/login");
+  } else res.redirect("/auth/login");
 };
 
 const getCalendar = (req, res) => {
@@ -52,7 +52,7 @@ const getCalendar = (req, res) => {
       res.render("user/pages/userCalendar");
     else res.redirect("/admin");
 
-  } else res.redirect("auth/login");
+  } else res.redirect("/auth/login");
 };
 
 const getEdt = (req, res) => {
@@ -61,7 +61,7 @@ const getEdt = (req, res) => {
     if (req?.session?.user?.role === "user") res.render("user/pages/userEdt");
     else res.redirect("/admin");
 
-  } else res.redirect("auth/login");
+  } else res.redirect("/auth/login");
 };
 
 const getProfil = (req, res) => {
@@ -95,7 +95,7 @@ const getProfil = (req, res) => {
         res.render("user/pages/userProfil", { dataProfil: UserProfil });
       });
     } else res.redirect("/admin");
-  } else res.redirect("auth/login");
+  } else res.redirect("/auth/login");
 };
 
 const getNote = (req, res) => {
@@ -104,7 +104,7 @@ const getNote = (req, res) => {
     if (req?.session?.user?.role === "user") res.render("user/pages/userNote");
     else res.redirect("/admin");
 
-  } else res.redirect("auth/login");
+  } else res.redirect("/auth/login");
 };
 
 const getNotif = (req, res) => {
@@ -113,7 +113,7 @@ const getNotif = (req, res) => {
     if (req?.session?.user?.role === "user") res.render("user/pages/userNotif");
     else res.redirect("/admin");
 
-  } else res.redirect("auth/login");
+  } else res.redirect("/auth/login");
 };
 
 // POST

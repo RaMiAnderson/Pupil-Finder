@@ -1,10 +1,9 @@
 const express = require('express');
 const app = express();
 
-const authRoute = require('./routes/authRoute');
+const authRoute = require('./routes/authRoute') ;
 const userRoute = require('./routes/userRoute');
 const adminRoute = require('./routes/adminRoute');
-
 
 
 

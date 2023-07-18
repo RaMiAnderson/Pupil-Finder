@@ -31,23 +31,35 @@ router.get("/notification" , adminController.getNotif);
 
 
 
-// page des formulaire 
-
-router.get('/add-filiere' , adminController.addFiliere );
-
-router.get('/add-matiere' , adminController.addMatiere );
-
-
-
-
-
 //---------------------- Post --------------- 
 
+
+// -------GERER-----
+router.post('/gerer/add-matiere' , adminController.addMatiereController );
+
+router.post('/gerer/nombre-matiere' , adminController.getNmbrMatiere);
+
+// router.post('/gerer/add-classe' , adminController.addClasseController);
 
 
 // logout
 
 router.post("/deconnexion" , authController.logoutController );
+
+
+
+
+
+// API route 
+
+
+router.get("/gerer/getDataGerer" , adminController.dataGerer );
+
+
+
+
+
+
 
 module.exports = router
 

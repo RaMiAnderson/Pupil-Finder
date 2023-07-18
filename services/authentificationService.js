@@ -49,7 +49,7 @@ const  addUser = async (user) => {
             userModel.save((err) => {
                 if (err) {
                     console.log(err);
-                    reject(`cant post user : server failed`);
+                    reject(`can't post user : server failed`);
                 }
                 resolve(userModel);
             })

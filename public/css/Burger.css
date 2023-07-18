@@ -11,8 +11,7 @@
   left: 6%;
   transition: 0.5s;
 }
-.toggle .Toggle1,
-.toggle .Toggle2 {
+.toggle .Toggle1,.toggle .Toggle2 {
   color: var(--blackbe);
 }
 .active_toggle .toggle {
