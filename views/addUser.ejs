@@ -7,11 +7,11 @@
      <title>Registration Form</title>
      <link rel="stylesheet" href="/public/css/addUser.css">
    </head>
-<body>
+<body> 
   <div class="container">
     <div class="title">Registration</div>
     <div class="content">
-      <form action="/auth/add-user" method="POST" id="loginform">
+      <form action="/admin/gerer/add-user" method="POST" id="loginform">
         <div class="user-details">
           <div class="input-box">
             <span class="details">Nom</span>
@@ -41,7 +41,11 @@
           <div class="input-box">
             <!-- OVAINA SELECT -->
             <span class="details">Classe</span>
-            <input type="text" placeholder="Entrer votre Classe" name="Classe" required>
+            <!-- <input type="text" placeholder="Entrer votre Classe" name="Classe" required> -->
+            <select name="Classe" id="selectClasse" required>
+
+
+            </select>
             <small></small>
           </div>
           <div class="input-box">
@@ -121,5 +125,25 @@
     </div>
   </div>
   <script src="/public/js/adduser.js"></script>
+  <script>
+    const selectClasse = document.getElementById('selectClasse');
+
+    fetch("/admin/gerer/add-user/getClasse")
+      .then((res) => res.json())
+      .then((data) => {
+        const classe = Object.values(data);
+       
+        for (var i = 0; i < classe.length ; i++){
+          var option = document.createElement("option");
+
+          option.value = classe[i].nomClasse;
+          option.textContent = classe[i].nomClasse;
+
+          selectClasse.appendChild(option);
+        }
+
+      })
+
+  </script>
 </body>
 </html>

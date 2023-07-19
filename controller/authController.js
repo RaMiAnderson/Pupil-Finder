@@ -14,17 +14,7 @@ const loginController = async (req,res) => {
     
 };
   
-const addUserController = async (req,res) => {
-    try {
-        const user = req.body;
-        const result = await authentificationService.addUser(user);
-        res.redirect('/auth/login');
-    } catch (error) {
-        const messageError = "Erreur d'ajout de l'utilisateur";
-        console.log(error);
-        res.redirect(`/auth/add-user?message=${messageError}`);
-    };
-};
+
 
 const logoutController = (req,res) => {
     // Détruire la session et rediriger vers la page de connexion
@@ -45,19 +35,22 @@ const getPageLoginController = (req, res) => {
     res.render('Login');
 };
 
-const getPageAddUserController = (req,res) => {
-    res.render('addUser');
-};
+
    
 
 const deleteUserController = (req,res) => {
 
 }
 
+
+
+
+
+
+
 module.exports = {
     loginController,
-    addUserController,
     logoutController,
     getPageLoginController,
-    getPageAddUserController
+
 };

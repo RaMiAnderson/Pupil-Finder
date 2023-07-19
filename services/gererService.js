@@ -108,11 +108,35 @@ const addClasse = (dataClasse) => {
 }
 
 
+const getClasseDispo = async (role) => {
+    try {
+        if(role !== "admin") return false
+        else {
+            return new Promise( (resolve,reject) => {
+                classe.find( {} , (err,classeBase) => {
+                    if(err){
+                        console.log(err);
+                        reject("ErrorServeur");
+                    }
+                    resolve(classeBase)
+                })
+            });
+        };
+    }
+    catch (err){
+        const messageError = "Erreur : Server failed";
+        console.log(err);
+        throw messageError;
+    }
+}
+
+
 module.exports = {
     getMatiereDispo,
 
     structureDataClasse,
     addMatiere,
     addClasse,
-    NombreMatiere
+    NombreMatiere,
+    getClasseDispo
 }

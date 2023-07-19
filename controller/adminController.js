@@ -1,3 +1,4 @@
+
 const authentificationService = require("../services/authentificationService");
 const gererService = require('../services/gererService');
 const temporaryData = require('../tmp/temporaryData');
@@ -94,6 +95,12 @@ const getNotif = (req,res) => {
 }
 
 
+const getPageAddUserController = (req,res) => {
+    res.render('addUser');
+};
+
+
+
 
 
 
@@ -144,7 +151,17 @@ const addClasseController = async (req, res) => {
 }
 
 
-
+const addUserController = async (req,res) => {
+    try {
+        const user = req.body;
+        const result = await authentificationService.addUser(user);
+        res.redirect('/admin/gerer');
+    } catch (error) {
+        const messageError = "Erreur d'ajout de l'utilisateur";
+        console.log(error);
+        res.redirect(`/auth/add-user?message=${messageError}`);
+    };
+};
 
 
 
@@ -159,13 +176,26 @@ const dataGerer = async (req,res) => {
     if (stateConnection) {
         if (req?.session?.user?.role === "admin") {
             const matiereDispo = await gererService.getMatiereDispo(req?.session?.user?.role);
-            
             res.json(matiereDispo);
         }  
         else res.redirect('/user');
     } 
     else res.redirect("/auth/login");
 }
+
+const getClasseDispo = async (req,res) => {
+    const stateConnection = authentificationService.verifyIfAlreadyConnected(req);
+    if (stateConnection) {
+        if (req?.session?.user?.role === "admin") {
+            const classeDipso = await gererService.getClasseDispo(req?.session?.user?.role);
+            
+            res.json(classeDipso);
+        }  
+        else res.redirect('/user');
+    } 
+    else res.redirect("/auth/login");
+}
+
 
 
 
@@ -179,11 +209,14 @@ module.exports = {
     getGerer,
     getNote,
     getNotif,
+    getPageAddUserController,
 
     addMatiereController,
     getNmbrMatiere,
     addClasseController,
+    addUserController,
 
 
-    dataGerer
+    dataGerer,
+    getClasseDispo
 }

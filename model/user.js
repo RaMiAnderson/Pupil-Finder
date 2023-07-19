@@ -11,7 +11,7 @@ const userSchema = Schema({
     adresseEleve:{type : String, required: true},
     email: { type: String, required: true, unique: true },
     numeros: { type: String, required: true, unique: true },
-    classe: { type: mongoose.Schema.Types.ObjectId, ref: 'Classe' },
+    classe: { type: String, required : true },
     role: { type: String, default: 'user' },
     password: { type: String, required: true },
     nomPere : {type : String, required : true},

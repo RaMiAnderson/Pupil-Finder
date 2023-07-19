@@ -26,6 +26,8 @@ router.get("/note" , adminController.getNote);
 router.get("/notification" , adminController.getNotif);
 
 
+router.get("/gerer/add-user",adminController.getPageAddUserController);
+
 
 
 
@@ -40,6 +42,10 @@ router.post('/gerer/add-matiere' , adminController.addMatiereController );
 router.post('/gerer/nombre-matiere' , adminController.getNmbrMatiere);
 
 router.post('/gerer/add-classe' , adminController.addClasseController);
+
+router.post("/gerer/add-user" ,adminController.addUserController);
+
+
 
 
 
@@ -57,6 +63,9 @@ router.post("/deconnexion" , authController.logoutController );
 
 
 router.get("/gerer/getDataGerer" , adminController.dataGerer );
+
+
+router.get("/gerer/add-user/getClasse" , adminController.getClasseDispo)
 
 
 
