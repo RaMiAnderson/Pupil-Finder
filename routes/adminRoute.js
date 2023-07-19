@@ -39,7 +39,10 @@ router.post('/gerer/add-matiere' , adminController.addMatiereController );
 
 router.post('/gerer/nombre-matiere' , adminController.getNmbrMatiere);
 
-// router.post('/gerer/add-classe' , adminController.addClasseController);
+router.post('/gerer/add-classe' , adminController.addClasseController);
+
+
+
 
 
 // logout

@@ -62,12 +62,11 @@ const getGerer = async (req,res) => {
     const stateConnection = authentificationService.verifyIfAlreadyConnected(req);
     if (stateConnection) {
         if (req?.session?.user?.role === "admin") {
-            // const matiereDispo = await gererService.getMatiereDispo(req?.session?.user?.role);
             const data =  {
                 nombreMatiere: await temporaryData.dataNombreMatiere,
-                // listMatiereDispo : matiereDispo
+               
             };
-            // Ipasse anle list matiere any am front sisa
+        
 
             res.render("admin/pages/adminGerer" , {data} );
         }  
@@ -129,19 +128,20 @@ const getNmbrMatiere = async (req,res) => {
     }
 }
 
-
-// const addClasseController = async (req, res) => {
-//     try {
-//         const classe = req.body;
-//         const result = await gererService.addClasse(classe);
-//         res.redirect('/admin/gerer');
-//     }
-//     catch (err) {
-//         const messageError = "ERREUR d'ajout de la classe";
-//         console.log(err);
-//         res.redirect(`/admin/gerer?message=${messageError}`);
-//     };
-// }
+  
+const addClasseController = async (req, res) => {
+    try {
+        const classe = req.body;
+        const structuredDataClass = await gererService.structureDataClasse(classe);
+        const result = await gererService.addClasse(structuredDataClass);
+        res.redirect('/admin/gerer');
+    }
+    catch (err) {
+        const messageError = "ERREUR d'ajout de la classe";
+        console.log(err);
+        res.redirect(`/admin/gerer?message=${messageError}`);
+    };
+}
 
 
 
@@ -182,7 +182,7 @@ module.exports = {
 
     addMatiereController,
     getNmbrMatiere,
-    // addClasseController
+    addClasseController,
 
 
     dataGerer

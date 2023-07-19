@@ -1,4 +1,4 @@
-// const classe = require('../model/classe');
+const classe = require('../model/classe');
 const Matiere = require('../model/matiere');
 const temporaryData = require('../tmp/temporaryData');
 
@@ -61,25 +61,58 @@ const NombreMatiere = async (nombre) => {
 }
 
 
-// const addClasse = (dataClasse) => {
-//     try {
-//         const classeModel = new classe();
+const structureDataClasse = async  (classe) => {
+    const nombreMatiere = await temporaryData.dataNombreMatiere;
+    let listMatiereClasse = [];
+    let listCoeffMatiere = [];
+    for (var i = 0 ; i < nombreMatiere; i++){
+        // alaina izay matière sy coeff de sarahana anaty tab distinct
+        var matiere = classe[`nomMatiere${i}`];
+        var coeff = classe[`coeffMatiere${i}`];
 
-//         classeModel.nomClasse = dataClasse.nomClasse;
-//         classeModel.coeff = dataClasse.coeff;
-//         classeModel.matiere = dataClasse.matiere;
-//     }
-//     catch (err) {
-//         throw `ERROR : ${err}`;
-//     }
-// }
+        listMatiereClasse.push(matiere);
+        listCoeffMatiere.push(coeff);
+    }
+   
+    let structuredData = {
+        nomClasse: classe.nomClasse,
+        listMatiere : listMatiereClasse,
+        listCoeff : listCoeffMatiere
+    }
+    return structuredData;
+} 
+
+
+
+const addClasse = (dataClasse) => {
+    try {
+        const classeModel = new classe();
+
+        classeModel.nomClasse = dataClasse.nomClasse;
+        classeModel.matiere = dataClasse.listMatiere;
+        classeModel.coeff = dataClasse.listCoeff;
+
+        return new Promise((resolve, reject) => {
+            classeModel.save( (err) => {
+                if (err){
+                    console.log(err);
+                    reject("ERROR: Post class Failed");
+                }
+                resolve(classeModel)
+            })
+        });
+    }
+    catch (err) {
+        throw `ERROR : ${err}`;
+    }
+}
 
 
 module.exports = {
     getMatiereDispo,
 
-
+    structureDataClasse,
     addMatiere,
-    // addClasse,
+    addClasse,
     NombreMatiere
 }
