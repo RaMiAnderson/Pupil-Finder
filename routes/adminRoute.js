@@ -23,7 +23,6 @@ router.get("/gerer" , adminController.getGerer);
 
 router.get("/note" , adminController.getNote);
 
-router.get("/notification" , adminController.getNotif);
 
 
 router.get("/gerer/add-user",adminController.getPageAddUserController);

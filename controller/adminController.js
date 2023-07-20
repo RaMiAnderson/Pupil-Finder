@@ -85,15 +85,6 @@ const getNote = (req,res) => {
     else res.redirect("/auth/login");
 }
 
-const getNotif = (req,res) => {
-    const stateConnection = authentificationService.verifyIfAlreadyConnected(req);
-    if (stateConnection) {
-        if (req?.session?.user?.role === "admin")  res.render("admin/pages/adminNotif")
-        else res.redirect('/user');
-    } 
-    else res.redirect("/auth/login");
-}
-
 
 const getPageAddUserController = (req,res) => {
     res.render('addUser');
@@ -208,7 +199,6 @@ module.exports = {
     getEdt,
     getGerer,
     getNote,
-    getNotif,
     getPageAddUserController,
 
     addMatiereController,

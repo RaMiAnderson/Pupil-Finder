@@ -149,13 +149,6 @@
             </form>
 
           </div>
-          <div>
-            <form action="/user/notification">
-              <button class="btnNavH" id="Notiff">
-                <i class="far fa-bell navIcon"></i>
-              </button>
-            </form>
-          </div>
 
           <div class="user">
             <i class="far fa-user-circle"></i>
@@ -199,10 +192,10 @@
                 <div class="papay">
                   
                   <p>Date de Naissance: <span><%= dataProfil.dateNaissance %></span></p>
-                  <p class="p">Classe: <span>Comming Soon </span></p>
+                  <p class="p">Classe: <span><%= dataProfil.classe %></span></p>
                   <!-- Mila Amboarina, Num en Classe -->
-                  <p>Numéro en Classe: <span> Comming Soon </span></p>
-                  <p>Matricule: <span> Comming Soon</span></p>
+                  <p>Numéro en Classe: <span> <%= dataProfil.numInClasse %> </span></p>
+                  <p>Matricule: <span> <%= dataProfil.matricule %></span></p>
                 </div>
               </div>
             </div>

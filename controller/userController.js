@@ -81,6 +81,8 @@ const getProfil = (req, res) => {
           email: userBase.email,
           numeros: userBase.numeros,
           classe: userBase.classe,
+          numInClasse : userBase.numInClasse,
+          matricule : userBase.matricule,
           role: userBase.role,
           nomPere: userBase.nomPere,
           adressePere: userBase.adressePere,
@@ -107,14 +109,6 @@ const getNote = (req, res) => {
   } else res.redirect("/auth/login");
 };
 
-const getNotif = (req, res) => {
-  const stateConnection = authentificationService.verifyIfAlreadyConnected(req);
-  if (stateConnection) {
-    if (req?.session?.user?.role === "user") res.render("user/pages/userNotif");
-    else res.redirect("/admin");
-
-  } else res.redirect("/auth/login");
-};
 
 // POST
 
@@ -127,6 +121,5 @@ module.exports = {
   getEdt,
   getProfil,
   getNote,
-  getNotif,
   getProfil,
 };

@@ -1,6 +1,6 @@
 const bcrypt = require("bcrypt");
 const User = require('../model/user') ;
-const Classe = require('../model/classe');
+const gererService = require("../services/gererService")
 
 
 
@@ -43,7 +43,9 @@ const  addUser = async (user) => {
         userModel.proffesionMere = user.ProfessionMere;
         userModel.numerosMere = user.NumeroMere;
         userModel.adresseMere = user.AdresseMere;
-        userModel.classe = user.Classe;
+        userModel.classe = user.Classe; 
+        userModel.numInClasse = await gererService.getNumInClasse(user.Classe);
+        userModel.matricule = await gererService.getMatriculeClasse();
         userModel.role = "user";
         userModel.genre = user.gender;
         return new Promise((resolve, reject) => {

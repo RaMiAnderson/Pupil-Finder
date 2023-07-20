@@ -34,6 +34,33 @@
   background: #fff;
 }
 
+.ann-rec .div1 {
+  /* background-color: red; */
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.ann-rec .div1 div{
+  width: 5%;
+  display: flex;
+  justify-content: space-around;
+  /* background-color: green; */
+}
+
+.ann-rec .div1 div button{
+  background: transparent;
+}
+.ann-rec .div1 div button, .ann-rec .div1 div button i {
+ font-size: 18px;
+ color: var(--violet);
+}
+.ann-rec .div1 div button:hover , .ann-rec .div1 div button i:hover {
+ 
+ color: var(--rose);
+ transition: 0.2s;
+}
+
 .notif .a .img {
   /* width:150px; */
   font-size: 7rem;
@@ -44,7 +71,7 @@
 
 .notif h2 {
   margin-left: 20px;
-  font-size: 40px;
+  font-size: 28px;
   color: var(--violet);
   text-transform: none;
 }
@@ -63,7 +90,7 @@
   justify-content: end;
   width: 35%;
 }
-.notif .a input {
+.notif .a input , .PosterBtn{
   padding: 5px 10px;
   font-size: 1rem;
   border: none;
@@ -71,14 +98,14 @@
   background-color: transparent;
 }
 
-.notif .a input[type="submit"] {
+.notif .a input[type="submit"], .PosterBtn {
   cursor: pointer;
   background: var(--violet);
   border-radius: 10px;
   color: var(--white);
   margin-left: 15px;
 }
-.notif .a input[type="submit"]:hover {
+.notif .a input[type="submit"]:hover , .PosterBtn:hover {
   background: var(--rose);
   transition: 0.2s;
 }
@@ -93,6 +120,41 @@
 
 strong {
   color: #5f0085;
+}
+
+.sectionDePost{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 30px 0;
+  /* background-color: red; */
+}
+.sectionDePost span{
+  color: var(--violet);
+  font-size: 20px;
+  margin-left: 20px;
+}
+.sectionDePost form{
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+.sectionDePost form textarea{
+  border: solid 1px var(--blackkely);
+  width: 100%;
+  height: 100px;
+  padding: 5px 10px;
+  border-radius: 10px;
+}
+.sectionDePost div{
+  width: 100%;
+}
+.PosterBtn{
+  margin-top: 15px;
+  
 }
 
 /*RESPONSIVITE*/

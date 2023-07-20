@@ -136,6 +136,9 @@ body {
   border-radius: 50%;
   padding: 6px;
 }
+.btnNavH.home i{
+  font-size: 28px;
+}
 .btnNavH.home {
   background: var(--violet);
   color: var(--white);
@@ -149,7 +152,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 2.6rem;
+  font-size: 32px;
 }
 /* Responsivité*/
 @media screen and (max-width: 1200px) {

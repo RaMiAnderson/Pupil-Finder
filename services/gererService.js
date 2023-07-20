@@ -1,6 +1,7 @@
 const classe = require('../model/classe');
 const Matiere = require('../model/matiere');
 const temporaryData = require('../tmp/temporaryData');
+const User = require('../model/user');
 
 
 
@@ -130,9 +131,50 @@ const getClasseDispo = async (role) => {
     }
 }
 
+const getNumInClasse = async (Classe) => {
+    try{
+        return new Promise( (resolve, reject) => {
+            User.find( {classe : Classe } ,(err, userBase) => {
+                if (err) {
+                    console.log(err);
+                    reject("ErrorServeur");
+                }
+                const tabUserBase = userBase;
+                const calculNum = tabUserBase.length + 1;
+                resolve(calculNum);
+            })
+        });
+    }
+    catch (err) {
+        console.log(err)
+    }
+}
+
+const getMatriculeClasse = async () => {
+    try {
+        return new Promise( (resolve, reject) => {
+            User.find( {role : "user"} , (err,userBase) => {
+                if (err) {
+                    console.log(err);
+                    reject("ErrorServeur");
+                }
+                const tabUserBase = userBase;
+                const matriculBase = 100;
+                const calculMatricule = matriculBase + tabUserBase.length + 1;
+                resolve(calculMatricule);
+            })
+        });
+    }
+    catch (err) {
+        console.log(err);
+    }
+}
+
 
 module.exports = {
     getMatiereDispo,
+    getNumInClasse,
+    getMatriculeClasse,
 
     structureDataClasse,
     addMatiere,

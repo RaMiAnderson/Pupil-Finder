@@ -22,7 +22,6 @@ router.get("/profil" , userController.getProfil);
 
 router.get("/note" , userController.getNote);
 
-router.get("/notification" , userController.getNotif);
 
 
 

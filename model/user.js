@@ -12,6 +12,8 @@ const userSchema = Schema({
     email: { type: String, required: true, unique: true },
     numeros: { type: String, required: true, unique: true },
     classe: { type: String, required : true },
+    numInClasse: { type: Number, required : true },
+    matricule: { type: Number, required : true },
     role: { type: String, default: 'user' },
     password: { type: String, required: true },
     nomPere : {type : String, required : true},

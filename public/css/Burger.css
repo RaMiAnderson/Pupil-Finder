@@ -13,6 +13,7 @@
 }
 .toggle .Toggle1,.toggle .Toggle2 {
   color: var(--blackbe);
+  font-size: 28px;
 }
 .active_toggle .toggle {
   left: 22%;
@@ -40,6 +41,6 @@
   top: 0;
 }
 .btnNavH.home {
-  background: none;
-  color: var(--blackbe);
+  background: none !important;
+  color: var(--blackbe) !important;
 }
