@@ -28,7 +28,7 @@ a {
     display: flex;
     flex-wrap: wrap;
 }
-.d-flex h3{
+.d-flex h3, .h3Div{
    color: var(--violetbe);
 }
 

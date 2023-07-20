@@ -1,0 +1,45 @@
+.classe{
+    color: var(--violet);
+}
+.inputadmin{
+    margin-left: 15px;
+}
+#inputclasse{
+    border: 1px solid #000;
+    border-radius: 5px;
+    padding: 5px 50px;
+}
+.sept1{
+    background-color:  rgba(206, 206, 206, 0.849);
+    font-size: 300;
+}
+.sept2{
+    background-color:  rgba(206, 206, 206, 0.849);
+    font-size: 300;
+}
+.p{
+    padding: 0px 15px;
+}
+#matiere{
+    background-color:  #fff;
+    font-size: large;
+}
+.modifieredt{
+    color: #fff;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    padding: 5px 10px;
+    margin-top: 40px;
+    cursor: pointer;
+    background: var(--violet);
+    border-radius: 10px;
+    color: var(--white);
+    margin-left: 15px;
+    font-size: 15px;
+}
+.modifieredt:hover{
+    background-color: var(--rose);
+    transition: .2s;
+}
+
+

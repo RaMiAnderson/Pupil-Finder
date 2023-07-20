@@ -4,13 +4,22 @@
     <meta charset="UTF-8">
     <!---<title> Responsive Registration Form | CodingLab </title>--->
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <title>Registration Form</title>
+     <title>Pupil.Finder</title>
      <link rel="stylesheet" href="/public/css/allstyle.css">
      <link rel="stylesheet" href="/public/css/addUser.css">
+     <link rel="stylesheet" href="/public/assets/FontAwesome/css/all.min.css">
+     <link rel="shortcut icon" href="/public/imgs/ICON-01.svg" type="image/x-icon" />
    </head>
 <body> 
   <div class="container">
-    <div class="title">Registration</div>
+    <div class="title" style="display: flex; justify-content: space-between;">
+      <p>Registration</p>
+      <a href="/admin/gerer">
+        <button class="btnBack">
+          <i class="fas fa-mail-reply"></i> Retour
+        </button>
+      </a>
+    </div>
     <div class="content">
       <form action="/admin/gerer/add-user" method="POST" id="loginform">
         <div class="user-details">
@@ -126,6 +135,7 @@
     </div>
   </div>
   <script src="/public/js/adduser.js"></script>
+  <script src="/public/assets/FontAwesome/js/all.min.js"></script>
   <script>
     const selectClasse = document.getElementById('selectClasse');
 

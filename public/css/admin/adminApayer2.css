@@ -1,0 +1,181 @@
+
+.ParentTableauApayer{
+    position: relative;
+    width: 50%;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 2fr ;
+    grid-gap: 30px;
+
+}
+.Apayer h1{
+    text-align: center;
+    margin: 20px;
+    margin-top: 100px;
+    font-size: 900;
+    color: var(--rose);
+}
+.Apayer .ParentTableauApayer .ListRecu {
+    position: relative;
+    display: grid;
+    /* min-height: 500px; */
+    background: var(--white);
+    padding: 20px;
+    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+    border-radius: 20px;
+    overflow: inherit;
+    width: 100%;
+}
+.inputpayer{
+    margin-left: 160px;
+}
+.inputpayer h3{
+    font-size: large;
+}
+.inputpayer .libelle{
+    border: 1px solid #000;
+    border-radius: 10px;
+    padding: 8px 25px;
+}
+.inputpayer .montant{
+    border: 1px solid #000;
+    border-radius: 10px;
+    padding: 8px 25px;
+}
+.inputpayer .Poster{
+    color: #fff;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    padding: 5px 10px;
+    margin-top: 40px;
+    cursor: pointer;
+    background: var(--violet);
+    border-radius: 10px;
+    color: var(--white);
+    margin-left: 85px;
+    font-size: 15px;
+}
+.inputpayer .Poster:hover{
+    background-color: var(--rose);
+    transition: .2s;
+}
+.inputpayer2{
+    margin-left: 160px;
+}
+.inputpayer2 h3{
+    font-size: large;
+}
+.inputpayer2 .libelle{
+    border: 1px solid #000;
+    border-radius: 10px;
+    padding: 8px 25px;
+}
+.inputpayer2 .montant{
+    border: 1px solid #000;
+    border-radius: 10px;
+    padding: 8px 25px;
+}
+.inputpayer2 .Poster{
+    color: #fff;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    padding: 5px 10px;
+    margin-top: 40px;
+    cursor: pointer;
+    background: var(--violet);
+    border-radius: 10px;
+    color: var(--white);
+    margin-left: 85px;
+    font-size: 15px;
+}
+.inputpayer2 .Poster:hover{
+    background-color: var(--rose);
+    transition: .2s;
+}
+.ParentTableauApayer2{
+    position: relative;
+    width: 50%;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 2fr ;
+    grid-gap: 30px;
+}
+.Apayer .ParentTableauApayer2 .ListRecu2{
+    position: relative;
+    display: grid;
+    /* min-height: 500px; */
+    background: var(--white);
+    padding: 20px;
+    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+    border-radius: 20px;
+    overflow: inherit;
+    width: 100%;;
+}
+#libelle2{
+    border: 1px solid #000;
+    border-radius: 10px;
+    padding: 09px 30px;
+}
+.ParentTableauApayer3{
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 2fr ;
+    grid-gap: 30px;
+}
+.Apayer .ParentTableauApayer3 .ListRecu3{
+    position: relative;
+    display: grid;
+    /* min-height: 500px; */
+    background: var(--white);
+    padding: 20px;
+    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+    border-radius: 20px;
+    overflow: inherit;
+    width: 100%;
+}
+.divflex{
+    display: flex;   
+}
+.ListRecuTete3{
+    display: flex;
+    justify-content: space-between;
+}
+.Apayer .ListRecuTete3 h2 {
+    margin-left: 130px;
+    font-weight: 600;
+    color: var(--violet);
+}
+.Apayer .ListRecuTete3 form{
+    display: flex;
+    width: 35%;
+    justify-content: space-between;
+  }
+  .Apayer .ListRecuTete3 form input{
+    padding: 5px 10px;
+    font-size: 1rem;
+    border: none;
+    color: var(--blackbe);
+    background-color: transparent;
+  }
+  .Apayer .ListRecuTete3 form input[type="date"]{
+    width: 70%;
+    border-radius: 10px;
+    border: solid 1px var(--blackkely);
+  }
+  .Apayer .ListRecuTete3 form input[type="submit"]{
+    cursor: pointer;
+    background: var(--violet);
+    border-radius: 10px;
+    color: var(--white);
+    margin-left: 15px ;
+  }
+  .Apayer .ListRecuTete3 form input[type="submit"]:hover{
+    background: var(--rose);
+    transition: .2s;
+  }
+  .Apayer .ListRecuTete3 form input[type="date"]:focus{
+    color: var(--violet);
+  }
+

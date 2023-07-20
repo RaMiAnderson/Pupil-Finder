@@ -14,6 +14,7 @@
     <link rel="shortcut icon" href="/public/imgs/ICON-01.svg" type="image/x-icon" />
 
     <link rel="stylesheet" href="/public/css/annonce.css" />
+    <link rel="stylesheet" href="/public/css/admin/adminAnnonce.css">
 
    
     <!-- FontAwesome -->
@@ -169,17 +170,22 @@
             </form>   
           </div>
           
-          <div class="sectionDePost">
-            <div>
-              <span>Poster une annonce :</span>
-            </div>
-            <form action="">
-              <textarea name="annonce"  cols="30" rows="10" placeholder="Ecrivez ici"></textarea>
-              <input type="submit" value="Poster" class="PosterBtn">
-            </form>  
-            <div>
-              <span>Liste des annonces :</span>
-            </div>
+          <div class="w3-container" id="">
+
+            <form action="" target="_blank">
+              <p><textarea name="" id="" cols="10" rows="5" class="w3-input w3-padding-16 w3-border"placeholder="commenncez à écrire..." ></textarea></p>
+        
+            <select name="types" id="">
+                <option value="">Entrer la type de l'annonce</option>
+                <option value="hier">Annonces générales</option>
+                <option value="recent">Annonces administratives</optiion>
+                <option value="ancien">Annonces d'événements</option>
+                <option value="hier">Annonces de sécurité</option>
+                <option value="recent"> Annonces pédacologiques</optiion>
+        
+            </select>
+              <p><button class="www" type="submit">Envoyer</button></p>
+            </form>
           </div>
           
           <!-- afaka anaovana recherche dashboard -->

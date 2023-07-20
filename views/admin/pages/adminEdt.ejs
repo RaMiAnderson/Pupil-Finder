@@ -8,15 +8,16 @@
 
     <!-- All -->
     <link rel="stylesheet" href="/public/css/allstyle.css" />
-    <link rel="stylesheet" href="/public/css/Burger.css">
+    <link rel="stylesheet" href="/public/css/Burger.css" />
     <link rel="stylesheet" href="/public/css/style_acceuil.css" />
-    <link rel="shortcut icon" href="/public/imgs/ICON-01.svg" type="image/x-icon" />
+    <link
+      rel="shortcut icon"
+      href="/public/imgs/ICON-01.svg"
+      type="image/x-icon"
+    />
 
-
-
-    <link rel="stylesheet" href="/public/css/edt.css" />
-
-   
+    <link rel="stylesheet" href="/public/css/admin/adminEdt2.css" />
+    <link rel="stylesheet" href="/public/css/admin/adminEdt1.css" />
 
     <!-- FontAwesome -->
     <link rel="stylesheet" href="/public/assets/FontAwesome/css/all.min.css" />
@@ -45,7 +46,7 @@
                 <p class="titre">Gerer</p>
               </button>
             </form>
-          </li> 
+          </li>
 
           <li>
             <form action="/admin/annonce">
@@ -56,7 +57,6 @@
                 <p class="titre">Annonces</p>
               </button>
             </form>
-            
           </li>
 
           <li>
@@ -68,7 +68,6 @@
                 <p class="titre">Emploie du temps</p>
               </button>
             </form>
-            
           </li>
 
           <li>
@@ -80,7 +79,6 @@
                 <p class="titre">Absence</p>
               </button>
             </form>
-            
           </li>
 
           <li>
@@ -92,7 +90,6 @@
                 <p class="titre">A Payer</p>
               </button>
             </form>
-            
           </li>
 
           <li>
@@ -104,7 +101,6 @@
                 <p class="titre">Notes</p>
               </button>
             </form>
-            
           </li>
 
           <li>
@@ -116,7 +112,6 @@
                 <p class="titre">Calendrier Scolaire</p>
               </button>
             </form>
-            
           </li>
           <li>
             <!-- SE deconnecter -->
@@ -145,7 +140,6 @@
                   <i class="fas fa-home navIcon"></i>
                 </button>
               </form>
-              
             </div>
 
             <div class="user">
@@ -156,59 +150,495 @@
       </div>
       <!-- CONTENU -->
       <div class="main">
-        
-
         <!-- ATO AMIN'I PgEDT ato no Micode -->
         <div id="PgEDT" class="Apayer EDT">
-          <div class="antsa">
-            <!--box date, filiere, heure creuse-->
-            <div class="boxviolet">
-              <div class="date">
-                <div class="nombre">
-                  <span>jj</span> / <span>mm</span> / <span>aa</span>
+          <div class="ParentTableau box1">
+            <form action="">
+              <div class="ListRecu edt">
+                <div class="ListRecuTete title">
+                  <h2>Créer une nouvelle emploi du temps</h2>
+                  <div class="inputadmin">
+                    <label class="classe">Classe</label>
+                    <br />
+                    <select id="inputclasse">
+                      <option>6éme</option>
+                      <option>5éme</option>
+                      <option>4éme</option>
+                      <option>3éme</option>
+                      <option>2nd</option>
+                      <option>1ère</option>
+                      <option>Terminale OSE</option>
+                      <option>Terminale L</option>
+                      <option>Terminale S</option>
+                      <option>Terminale A1</option>
+                      <option>Terminale A2</option>
+                      <option>Terminale D</option>
+                      <option>Terminale C</option>
+                    </select>
+                  </div>
                 </div>
-                <div class="nom">Date</div>
+                <div class="hiddenTab">
+                  <div class="grid">
+                    <div class="un">heure</div>
+                    <div class="deux">LUNDI</div>
+                    <div class="trois">MARDI</div>
+                    <div class="quatre">MERCREDI</div>
+                    <div class="cinq">JEUDI</div>
+                    <div class="six">VENDREDI</div>
+                    <div class="samedi">SAMEDI</div>
+                    <div class="sept">
+                      <input type="time" class="sept1" />
+                      <p class="p">-</p>
+                      <input type="time" class="sept2" />
+                    </div>
+                    <div class="huit">
+                      <select id="matiere">
+                        <option></option>
+                        <option>Mathematique</option>
+                        <option>Physique</option>
+                        <option>histo-geo</option>
+                        <option>Francais</option>
+                        <option>Malagasy</option>
+                        <option>Anglais</option>
+                        <option>SVT</option>
+                        <option>EPS</option>
+                        <option>Philosophie</option>
+                        <option>allemand</option>
+                        <option>Espagnol</option>
+                      </select>
+                    </div>
+                    <div class="neuf">
+                      <select id="matiere">
+                        <option></option>
+                        <option>Mathematique</option>
+                        <option>Physique</option>
+                        <option>histo-geo</option>
+                        <option>Francais</option>
+                        <option>Malagasy</option>
+                        <option>Anglais</option>
+                        <option>SVT</option>
+                        <option>EPS</option>
+                        <option>Philosophie</option>
+                        <option>allemand</option>
+                        <option>Espagnol</option>
+                      </select>
+                    </div>
+                    <div class="onze">
+                      <select id="matiere">
+                        <option></option>
+                        <option>Mathematique</option>
+                        <option>Physique</option>
+                        <option>histo-geo</option>
+                        <option>Francais</option>
+                        <option>Malagasy</option>
+                        <option>Anglais</option>
+                        <option>SVT</option>
+                        <option>EPS</option>
+                        <option>Philosophie</option>
+                        <option>allemand</option>
+                        <option>Espagnol</option>
+                      </select>
+                    </div>
+                    <div class="douze">
+                      <select id="matiere">
+                        <option></option>
+                        <option>Mathematique</option>
+                        <option>Physique</option>
+                        <option>histo-geo</option>
+                        <option>Francais</option>
+                        <option>Malagasy</option>
+                        <option>Anglais</option>
+                        <option>SVT</option>
+                        <option>EPS</option>
+                        <option>Philosophie</option>
+                        <option>allemand</option>
+                        <option>Espagnol</option>
+                      </select>
+                    </div>
+                    <div class="treize">
+                      <select id="matiere">
+                        <option></option>
+                        <option>Mathematique</option>
+                        <option>Physique</option>
+                        <option>histo-geo</option>
+                        <option>Francais</option>
+                        <option>Malagasy</option>
+                        <option>Anglais</option>
+                        <option>SVT</option>
+                        <option>EPS</option>
+                        <option>Philosophie</option>
+                        <option>allemand</option>
+                        <option>Espagnol</option>
+                      </select>
+                    </div>
+                    <div class="samedi1">
+                      <select id="matiere">
+                        <option></option>
+                        <option>Mathematique</option>
+                        <option>Physique</option>
+                        <option>histo-geo</option>
+                        <option>Francais</option>
+                        <option>Malagasy</option>
+                        <option>Anglais</option>
+                        <option>SVT</option>
+                        <option>EPS</option>
+                        <option>Philosophie</option>
+                        <option>allemand</option>
+                        <option>Espagnol</option>
+                      </select>
+                    </div>
+                    <div class="quartorze">
+                      <input type="time" class="sept1" />
+                      <p class="p">-</p>
+                      <input type="time" class="sept2" />
+                    </div>
+                    <div class="quinze">
+                      <select id="matiere">
+                        <option></option>
+                        <option>Mathematique</option>
+                        <option>Physique</option>
+                        <option>histo-geo</option>
+                        <option>Francais</option>
+                        <option>Malagasy</option>
+                        <option>Anglais</option>
+                        <option>SVT</option>
+                        <option>EPS</option>
+                        <option>Philosophie</option>
+                        <option>allemand</option>
+                        <option>Espagnol</option>
+                      </select>
+                    </div>
+                    <div class="seize">
+                      <select id="matiere">
+                        <option></option>
+                        <option>Mathematique</option>
+                        <option>Physique</option>
+                        <option>histo-geo</option>
+                        <option>Francais</option>
+                        <option>Malagasy</option>
+                        <option>Anglais</option>
+                        <option>SVT</option>
+                        <option>EPS</option>
+                        <option>Philosophie</option>
+                        <option>allemand</option>
+                        <option>Espagnol</option>
+                      </select>
+                    </div>
+                    <div class="dixsept">
+                      <select id="matiere">
+                        <option></option>
+                        <option>Mathematique</option>
+                        <option>Physique</option>
+                        <option>histo-geo</option>
+                        <option>Francais</option>
+                        <option>Malagasy</option>
+                        <option>Anglais</option>
+                        <option>SVT</option>
+                        <option>EPS</option>
+                        <option>Philosophie</option>
+                        <option>allemand</option>
+                        <option>Espagnol</option>
+                      </select>
+                    </div>
+                    <div class="dixhuit">
+                      <select id="matiere">
+                        <option></option>
+                        <option>Mathematique</option>
+                        <option>Physique</option>
+                        <option>histo-geo</option>
+                        <option>Francais</option>
+                        <option>Malagasy</option>
+                        <option>Anglais</option>
+                        <option>SVT</option>
+                        <option>EPS</option>
+                        <option>Philosophie</option>
+                        <option>allemand</option>
+                        <option>Espagnol</option>
+                      </select>
+                    </div>
+                    <div class="dixneuf">
+                      <select id="matiere">
+                        <option></option>
+                        <option>Mathematique</option>
+                        <option>Physique</option>
+                        <option>histo-geo</option>
+                        <option>Francais</option>
+                        <option>Malagasy</option>
+                        <option>Anglais</option>
+                        <option>SVT</option>
+                        <option>EPS</option>
+                        <option>Philosophie</option>
+                        <option>allemand</option>
+                        <option>Espagnol</option>
+                      </select>
+                    </div>
+                    <div class="samedi2">
+                      <select id="matiere">
+                        <option></option>
+                        <option>Mathematique</option>
+                        <option>Physique</option>
+                        <option>histo-geo</option>
+                        <option>Francais</option>
+                        <option>Malagasy</option>
+                        <option>Anglais</option>
+                        <option>SVT</option>
+                        <option>EPS</option>
+                        <option>Philosophie</option>
+                        <option>allemand</option>
+                        <option>Espagnol</option>
+                      </select>
+                    </div>
+                    <div class="vinght"></div>
+                    <div class="vun"></div>
+                    <div class="vdeux"></div>
+                    <div class="vtrois"></div>
+                    <div class="vquatre"></div>
+                    <div class="vcinq"></div>
+                    <div class="vsix"></div>
+                    <div class="vsept"></div>
+                    <div class="samedi4"></div>
+                    <div class="vhuit">
+                      <input type="time" class="sept1" />
+                      <p class="p">-</p>
+                      <input type="time" class="sept2" />
+                    </div>
+                    <div class="vneuf">
+                      <select id="matiere">
+                        <option></option>
+                        <option>Mathematique</option>
+                        <option>Physique</option>
+                        <option>histo-geo</option>
+                        <option>Francais</option>
+                        <option>Malagasy</option>
+                        <option>Anglais</option>
+                        <option>SVT</option>
+                        <option>EPS</option>
+                        <option>Philosophie</option>
+                        <option>allemand</option>
+                        <option>Espagnol</option>
+                      </select>
+                    </div>
+                    <div class="trente">
+                      <select id="matiere">
+                        <option></option>
+                        <option>Mathematique</option>
+                        <option>Physique</option>
+                        <option>histo-geo</option>
+                        <option>Francais</option>
+                        <option>Malagasy</option>
+                        <option>Anglais</option>
+                        <option>SVT</option>
+                        <option>EPS</option>
+                        <option>Philosophie</option>
+                        <option>allemand</option>
+                        <option>Espagnol</option>
+                      </select>
+                    </div>
+                    <div class="tun">
+                      <select id="matiere">
+                        <option></option>
+                        <option>Mathematique</option>
+                        <option>Physique</option>
+                        <option>histo-geo</option>
+                        <option>Francais</option>
+                        <option>Malagasy</option>
+                        <option>Anglais</option>
+                        <option>SVT</option>
+                        <option>EPS</option>
+                        <option>Philosophie</option>
+                        <option>allemand</option>
+                        <option>Espagnol</option>
+                      </select>
+                    </div>
+                    <div class="tdeux">
+                      <select id="matiere">
+                        <option></option>
+                        <option>Mathematique</option>
+                        <option>Physique</option>
+                        <option>histo-geo</option>
+                        <option>Francais</option>
+                        <option>Malagasy</option>
+                        <option>Anglais</option>
+                        <option>SVT</option>
+                        <option>EPS</option>
+                        <option>Philosophie</option>
+                        <option>allemand</option>
+                        <option>Espagnol</option>
+                      </select>
+                    </div>
+                    <div class="ttrois">
+                      <select id="matiere">
+                        <option></option>
+                        <option>Mathematique</option>
+                        <option>Physique</option>
+                        <option>histo-geo</option>
+                        <option>Francais</option>
+                        <option>Malagasy</option>
+                        <option>Anglais</option>
+                        <option>SVT</option>
+                        <option>EPS</option>
+                        <option>Philosophie</option>
+                        <option>allemand</option>
+                        <option>Espagnol</option>
+                      </select>
+                    </div>
+                    <div class="samedi5">
+                      <select id="matiere">
+                        <option></option>
+                        <option>Mathematique</option>
+                        <option>Physique</option>
+                        <option>histo-geo</option>
+                        <option>Francais</option>
+                        <option>Malagasy</option>
+                        <option>Anglais</option>
+                        <option>SVT</option>
+                        <option>EPS</option>
+                        <option>Philosophie</option>
+                        <option>allemand</option>
+                        <option>Espagnol</option>
+                      </select>
+                    </div>
+                    <div class="tquatre">
+                      <input type="time" class="sept1" />
+                      <p class="p">-</p>
+                      <input type="time" class="sept2" />
+                    </div>
+                    <div class="tcinq">
+                      <select id="matiere">
+                        <option></option>
+                        <option>Mathematique</option>
+                        <option>Physique</option>
+                        <option>histo-geo</option>
+                        <option>Francais</option>
+                        <option>Malagasy</option>
+                        <option>Anglais</option>
+                        <option>SVT</option>
+                        <option>EPS</option>
+                        <option>Philosophie</option>
+                        <option>allemand</option>
+                        <option>Espagnol</option>
+                      </select>
+                    </div>
+                    <div class="tsix">
+                      <select id="matiere">
+                        <option></option>
+                        <option>Mathematique</option>
+                        <option>Physique</option>
+                        <option>histo-geo</option>
+                        <option>Francais</option>
+                        <option>Malagasy</option>
+                        <option>Anglais</option>
+                        <option>SVT</option>
+                        <option>EPS</option>
+                        <option>Philosophie</option>
+                        <option>allemand</option>
+                        <option>Espagnol</option>
+                      </select>
+                    </div>
+                    <div class="tsept">
+                      <select id="matiere">
+                        <option></option>
+                        <option>Mathematique</option>
+                        <option>Physique</option>
+                        <option>histo-geo</option>
+                        <option>Francais</option>
+                        <option>Malagasy</option>
+                        <option>Anglais</option>
+                        <option>SVT</option>
+                        <option>EPS</option>
+                        <option>Philosophie</option>
+                        <option>allemand</option>
+                        <option>Espagnol</option>
+                      </select>
+                    </div>
+                    <div class="thuit">
+                      <select id="matiere">
+                        <option></option>
+                        <option>Mathematique</option>
+                        <option>Physique</option>
+                        <option>histo-geo</option>
+                        <option>Francais</option>
+                        <option>Malagasy</option>
+                        <option>Anglais</option>
+                        <option>SVT</option>
+                        <option>EPS</option>
+                        <option>Philosophie</option>
+                        <option>allemand</option>
+                        <option>Espagnol</option>
+                      </select>
+                    </div>
+                    <div class="tneuf">
+                      <select id="matiere">
+                        <option></option>
+                        <option>Mathematique</option>
+                        <option>Physique</option>
+                        <option>histo-geo</option>
+                        <option>Francais</option>
+                        <option>Malagasy</option>
+                        <option>Anglais</option>
+                        <option>SVT</option>
+                        <option>EPS</option>
+                        <option>Philosophie</option>
+                        <option>allemand</option>
+                        <option>Espagnol</option>
+                      </select>
+                    </div>
+                    <div class="samedi6">
+                      <select id="matiere">
+                        <option></option>
+                        <option>Mathematique</option>
+                        <option>Physique</option>
+                        <option>histo-geo</option>
+                        <option>Francais</option>
+                        <option>Malagasy</option>
+                        <option>Anglais</option>
+                        <option>SVT</option>
+                        <option>EPS</option>
+                        <option>Philosophie</option>
+                        <option>allemand</option>
+                        <option>Espagnol</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <input class="modifieredt" type="submit" value="Poster" />
+                </div>
               </div>
-
-              <div class="date">
-                <div class="nombre">4</div>
-                <div class="nom">Total d'heure creuse</div>
-              </div>
-            </div>
+            </form>
           </div>
-          <!--box1 -->
           <div class="ParentTableau box1">
             <div class="ListRecu edt">
               <div class="ListRecuTete title">
                 <h2>Emploi du temps</h2>
                 <form action="">
-                  <input type="date" />
+                  <input type="date" name="date" id="date" />
                   <input type="submit" value="Recherche" />
                 </form>
               </div>
               <div class="hiddenTab">
                 <div class="grid">
-                  <div class="un">HEURES</div>
+                  <div class="un">heure</div>
                   <div class="deux">LUNDI</div>
                   <div class="trois">MARDI</div>
                   <div class="quatre">MERCREDI</div>
                   <div class="cinq">JEUDI</div>
                   <div class="six">VENDREDI</div>
                   <div class="samedi">SAMEDI</div>
-                  <div class="sept">07h15-09h15</div>
-                  <div class="huit">Algèbre</div>
-                  <div class="neuf">MATH Discret</div>
-                  <div class="onze">Français</div>
+                  <div class="sept">07:15 - 09:15</div>
+                  <div class="huit"></div>
+                  <div class="neuf"></div>
+                  <div class="onze"></div>
                   <div class="douze"></div>
-                  <div class="treize">Probabilité</div>
-                  <div class="samedi1">IS</div>
-                  <div class="quartorze">09h15-11h15</div>
-                  <div class="quinze">SD</div>
-                  <div class="seize">Base de Données</div>
-                  <div class="dixsept">Analyse MATH</div>
-                  <div class="dixhuit">TP Programation</div>
-                  <div class="dixneuf">Organisation</div>
-                  <div class="samedi2">MATH FI Fi</div>
+                  <div class="treize"></div>
+                  <div class="samedi1"></div>
+                  <div class="quartorze">09:15 - 10:15</div>
+                  <div class="quinze"></div>
+                  <div class="seize"></div>
+                  <div class="dixsept"></div>
+                  <div class="dixhuit"></div>
+                  <div class="dixneuf"></div>
+                  <div class="samedi2"></div>
                   <div class="vinght"></div>
                   <div class="vun"></div>
                   <div class="vdeux"></div>
@@ -218,26 +648,32 @@
                   <div class="vsix"></div>
                   <div class="vsept"></div>
                   <div class="samedi4"></div>
-                  <div class="vhuit">12h30H-14h15</div>
-                  <div class="vneuf">Algorithme</div>
-                  <div class="trente">Comptabilité</div>
-                  <div class="tun">Français</div>
-                  <div class="tdeux">TP Programation</div>
-                  <div class="ttrois">HTML - CSS</div>
+                  <div class="vhuit">12:30 - 14:00</div>
+                  <div class="vneuf"></div>
+                  <div class="trente"></div>
+                  <div class="tun"></div>
+                  <div class="tdeux"></div>
+                  <div class="ttrois"></div>
                   <div class="samedi5"></div>
-                  <div class="tquatre">14h15-15h30</div>
-                  <div class="tcinq">Pascal</div>
+                  <div class="tquatre">14:00 - 15:30</div>
+                  <div class="tcinq"></div>
                   <div class="tsix"></div>
                   <div class="tsept"></div>
-                  <div class="thuit">SD</div>
+                  <div class="thuit"></div>
                   <div class="tneuf"></div>
                   <div class="samedi6"></div>
                 </div>
               </div>
+              <div>
+                <input
+                  class="modifieredt"
+                  type="submit"
+                  value="Modifier l'emplois du temps"
+                />
+              </div>
             </div>
           </div>
         </div>
-        
       </div>
     </div>
 

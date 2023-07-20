@@ -1,255 +1,257 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pupil.Finder</title>
 
-    <!-- All -->
-    <link rel="stylesheet" href="/public/css/allstyle.css" />
-    <link rel="stylesheet" href="/public/css/Burger.css">
-    <link rel="stylesheet" href="/public/css/style_acceuil.css" />
-    <link rel="shortcut icon" href="/public/imgs/ICON-01.svg" type="image/x-icon" />
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pupil.Finder</title>
 
-
-
-    <link rel="stylesheet" href="/public/css/absence.css" />
-   
+  <!-- All -->
+  <link rel="stylesheet" href="/public/css/allstyle.css" />
+  <link rel="stylesheet" href="/public/css/Burger.css">
+  <link rel="stylesheet" href="/public/css/style_acceuil.css" />
+  <link rel="shortcut icon" href="/public/imgs/ICON-01.svg" type="image/x-icon" />
 
 
 
-    <!-- FontAwesome -->
-    <link rel="stylesheet" href="/public/assets/FontAwesome/css/all.min.css" />
-  </head>
+  <link rel="stylesheet" href="/public/css/admin/adminAbsence.css" />
 
-  <body>
-    <div class="parentMax">
-      <!-- Nav Barre Vertical -->
-      <div id="navVertical" class="navigation-Vertical">
-        <ul>
-          <li>
-            <button>
+
+
+
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="/public/assets/FontAwesome/css/all.min.css" />
+</head>
+
+<body>
+  <div class="parentMax">
+    <!-- Nav Barre Vertical -->
+    <div id="navVertical" class="navigation-Vertical">
+      <ul>
+        <li>
+          <button>
+            <span class="icon">
+              <i class="fas fa-school sizeIcon"></i>
+            </span>
+            <p class="titre">ISPM Plateforme</p>
+          </button>
+        </li>
+
+
+        <li>
+          <form action="/admin/gerer">
+            <button type="submit" id="Profil">
               <span class="icon">
-                <i class="fas fa-school sizeIcon"></i>
+                <i class="fas fa-cogs sizeIcon"></i>
               </span>
-              <p class="titre">ISPM Plateforme</p>
+              <p class="titre">Gerer</p>
             </button>
-          </li>
+          </form>
+        </li>
 
-         
-          <li>
-            <form action="/admin/gerer">
-              <button type="submit" id="Profil">
-                <span class="icon">
-                  <i class="fas fa-cogs sizeIcon"></i>
-                </span>
-                <p class="titre">Gerer</p>
-              </button>
-            </form>
-          </li>
+        <li>
+          <form action="/admin/annonce">
+            <button type="submit" id="Annonce">
+              <span class="icon">
+                <i class="fas fa-bullhorn sizeIcon"></i>
+              </span>
+              <p class="titre">Annonces</p>
+            </button>
+          </form>
 
-          <li>
-            <form action="/admin/annonce">
-              <button type="submit" id="Annonce">
-                <span class="icon">
-                  <i class="fas fa-bullhorn sizeIcon"></i>
-                </span>
-                <p class="titre">Annonces</p>
-              </button>
-            </form>
-            
-          </li>
+        </li>
 
-          <li>
-            <form action="/admin/edt">
-              <button id="Edt" type="submit">
-                <span class="icon">
-                  <i class="far fa-calendar sizeIcon"></i>
-                </span>
-                <p class="titre">Emploie du temps</p>
-              </button>
-            </form>
-            
-          </li>
+        <li>
+          <form action="/admin/edt">
+            <button id="Edt" type="submit">
+              <span class="icon">
+                <i class="far fa-calendar sizeIcon"></i>
+              </span>
+              <p class="titre">Emploie du temps</p>
+            </button>
+          </form>
 
-          <li>
-            <form action="/admin/absence">
-              <button type="submit" id="Absence">
-                <span class="icon">
-                  <i class="fas fa-hourglass-end sizeIcon"></i>
-                </span>
-                <p class="titre">Absence</p>
-              </button>
-            </form>
-            
-          </li>
+        </li>
 
-          <li>
-            <form action="/admin/apayer">
-              <button type="submit" id="Payer">
-                <span class="icon">
-                  <i class="far fa-credit-card sizeIcon"></i>
-                </span>
-                <p class="titre">A Payer</p>
-              </button>
-            </form>
-            
-          </li>
+        <li>
+          <form action="/admin/absence">
+            <button type="submit" id="Absence">
+              <span class="icon">
+                <i class="fas fa-hourglass-end sizeIcon"></i>
+              </span>
+              <p class="titre">Absence</p>
+            </button>
+          </form>
 
-          <li>
-            <form action="/admin/note">
-              <button type="submit" id="Note">
-                <span class="icon">
-                  <i class="far fa-file-alt sizeIcon"></i>
-                </span>
-                <p class="titre">Notes</p>
-              </button>
-            </form>
-            
-          </li>
+        </li>
 
-          <li>
-            <form action="/admin/calendrier">
-              <button type="submit" id="Agenda">
-                <span class="icon">
-                  <i class="far fa-calendar-alt sizeIcon"></i>
-                </span>
-                <p class="titre">Calendrier Scolaire</p>
-              </button>
-            </form>
-            
-          </li>
-          
-          <li>
-            <!-- SE deconnecter -->
-            <form action="/admin/deconnexion" method="post">
-              <button id="Logout" type="submit">
-                <span class="icon">
-                  <i class="fas fa-sign-out-alt sizeIcon"></i>
-                </span>
-                <p class="titre">Se Deconnecter</p>
-              </button>
-            </form>
-          </li>
-        </ul>
-      </div>
-      <div class="topbarMax">
-        <div class="topbar">
-          <div class="toggle">
-            <i class="fas fa-bars Toggle1"></i>
-            <i class="fas fa-xmark Toggle2"></i>
-          </div>
+        <li>
+          <form action="/admin/apayer">
+            <button type="submit" id="Payer">
+              <span class="icon">
+                <i class="far fa-credit-card sizeIcon"></i>
+              </span>
+              <p class="titre">A Payer</p>
+            </button>
+          </form>
 
-          <div class="navHorizontal">
-            <div>
-              <form action="/admin">
-                <button type="submit" class="btnNavH home" id="versHome">
-                  <i class="fas fa-home navIcon"></i>
-                </button>
-              </form>
-              
-            </div>
+        </li>
 
-            <div class="user">
-              <i class="far fa-user-circle"></i>
-            </div>
-          </div>
-        </div>
-      </div>
-    
-      <div class="main">
+        <li>
+          <form action="/admin/note">
+            <button type="submit" id="Note">
+              <span class="icon">
+                <i class="far fa-file-alt sizeIcon"></i>
+              </span>
+              <p class="titre">Notes</p>
+            </button>
+          </form>
 
-        <!-- ATO Micode ANATIN'I PPggAbsence -->
-        <div id="PPggAbsence" class="Apayer Absence">
-          <div class="flottantebox">
-            <div class="boxKely">
-              <div>
-                <div class="chiffreBoxF payer">4</div>
-                <div class="nomBoxKely">Total Absence</div>
-              </div>
-              <div class="iconBoxFlottante">
-                <i class="far fa-calendar"></i>
-              </div>
-            </div>
-          </div>
+        </li>
 
-          <div class="ParentTableau">
-            <div class="ListRecu">
-              <div class="ListRecuTete">
-                <h2>Liste Absences</h2>
-                <form action="" id="formDateAbs">
-                  <input type="date" />
-                  <input type="submit" value="Rechercher" />
-                </form>
-              </div>
+        <li>
+          <form action="/admin/calendrier">
+            <button type="submit" id="Agenda">
+              <span class="icon">
+                <i class="far fa-calendar-alt sizeIcon"></i>
+              </span>
+              <p class="titre">Calendrier Scolaire</p>
+            </button>
+          </form>
 
-              <div class="hiddenTab">
-                <table>
-                  <thead>
-                    <tr>
-                      <td>Matières</td>
-                      <td>Heures</td>
-                      <td>Status</td>
-                    </tr>
-                  </thead>
+        </li>
 
-                  <tbody>
-                    <tr>
-                      <td>INformatique scientifique</td>
-                      <td>07h 15 - 08h 15</td>
-                      <td><span class="status payyee">Present</span></td>
-                    </tr>
-
-                    <tr>
-                      <td>Html css</td>
-                      <td>08h 15 - 09h 15</td>
-                      <td><span class="status payyee">Present</span></td>
-                    </tr>
-
-                    <tr>
-                      <td>Francais</td>
-                      <td>09h 15 - 10h 15</td>
-                      <td><span class="status NonPayyee">Absent</span></td>
-                    </tr>
-
-                    <tr>
-                      <td>Structure de donné</td>
-                      <td>10h 15 - 11h 30</td>
-                      <td><span class="status NonPayyee">Absent</span></td>
-                    </tr>
-                    <tr>
-                      <td>Mathématique Finacière</td>
-                      <td>11h 15 - 12h 15</td>
-                      <td><span class="status payyee">Present</span></td>
-                    </tr>
-
-                    <tr>
-                      <td>Pascal</td>
-                      <td>12h 15 - 13h 15</td>
-                      <td><span class="status payyee">Present</span></td>
-                    </tr>
-
-                    <tr>
-                      <td>Analyse Mathematique</td>
-                      <td>14h 15 - 15h 30</td>
-                      <td><span class="status NonPayyee">Absent</span></td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </div>
+        <li>
+          <!-- SE deconnecter -->
+          <form action="/admin/deconnexion" method="post">
+            <button id="Logout" type="submit">
+              <span class="icon">
+                <i class="fas fa-sign-out-alt sizeIcon"></i>
+              </span>
+              <p class="titre">Se Deconnecter</p>
+            </button>
+          </form>
+        </li>
+      </ul>
+    </div>
+    <div class="topbarMax">
+      <div class="topbar">
+        <div class="toggle">
+          <i class="fas fa-bars Toggle1"></i>
+          <i class="fas fa-xmark Toggle2"></i>
         </div>
 
+        <div class="navHorizontal">
+          <div>
+            <form action="/admin">
+              <button type="submit" class="btnNavH home" id="versHome">
+                <i class="fas fa-home navIcon"></i>
+              </button>
+            </form>
 
+          </div>
 
+          <div class="user">
+            <i class="far fa-user-circle"></i>
+          </div>
+        </div>
       </div>
     </div>
 
-    <!-- =========== Scripts =========  -->
-    <script src="/public/js/scriptDflt.js"></script>
-    
-    <script src="/public/assets/FontAwesome/js/all.min.js"></script>
-  </body>
+    <div class="main">
+
+      <!-- ATO Micode ANATIN'I PPggAbsence -->
+      <div id="PPggAbsence" class="Apayer Absence">
+
+
+        <div class="ParentTableau ">
+
+
+          <!-- <div class="ParentTableau"> -->
+          <div class="ListRecu ParentTableau2">
+            <div class="ListRecuTete">
+              <form action="" id="formDateAbs">
+                <input type="search">
+                <input type="submit" value="Rechercher">
+              </form>
+            </div>
+
+            <div class="hiddenTab">
+              <table>
+                <thead>
+                  <tr>
+                    <td>Utilisateur</td>
+                  </tr>
+                </thead>
+
+                <tbody>
+                  <tr>
+                    <td>Nom</td>
+                  </tr>
+                  <tr>
+                    <td>Nom</td>
+                  </tr>
+                  <tr>
+                    <td>Nom</td>
+                  </tr>
+                  <tr>
+                    <td>Nom</td>
+                  </tr>
+                  <tr>
+                    <td>Nom</td>
+                  </tr>
+
+                </tbody>
+              </table>
+              <p><button class="ggg" type="submit">Envoyer</button></p>
+
+            </div>
+          </div>
+
+          <div class="ListRecu ParentTableau1 ">
+            <div class="ListRecuTete">
+              <h2> Absences</h2>
+            </div>
+
+            <div class="hiddenTabZ">
+              <form action="">
+                <select name="" id="">
+                  <option value="">Nom de la Matière</option>
+                  <option value="">Informatique scientifique</option>
+                  <option value="">Html-CSS</optiion>
+                  <option value="">Anglais</option>
+                  <option value="">Français</option>
+                  <option value=""> Comptabilité</optiion>
+                </select>
+                <div class="eee">
+                  <div class="jjj">
+                    <label for="absentId">Absent</label>
+                    <input id="absentId" type="radio" name="présence" value="Absent">
+                  </div>
+                  <div class="fff">
+                    <label for="presentId">Present</label>
+                    <input id="presentId" type="radio" name="présence" value="Présent" checked>
+                  </div>
+                </div>
+
+                <p><button class="ggg" type="submit">Envoyer</button></p>
+              </form>
+            </div>
+          </div>
+          <!-- </div> -->
+        </div>
+      </div>
+
+
+
+    </div>
+  </div>
+
+  <!-- =========== Scripts =========  -->
+  <script src="/public/js/scriptDflt.js"></script>
+
+  <script src="/public/assets/FontAwesome/js/all.min.js"></script>
+</body>
+
 </html>
