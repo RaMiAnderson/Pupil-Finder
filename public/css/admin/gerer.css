@@ -1,0 +1,79 @@
+.Gerer{
+    display: flex ;
+}
+.Block-Lien{
+    position: relative;
+    width: 16%;
+}
+.Block-Lien div{
+    position: fixed;
+    width: 14%;
+}
+
+.Block-Lien a button {
+    margin-bottom: 15px;
+}
+
+.Block-Lien button{
+    font-size: 1rem;
+    width: 90%;
+    padding: 20px 20px;
+    background: rgb(235, 235, 235);
+    border-radius: 10px;
+    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+}
+.Block-Lien button:hover{
+   background-color: var(--violet);
+   color: var(--white);
+}
+.Content-Gerer{
+    width: 84%;
+    /* background-color: green; */
+}
+.Content-Gerer main{
+    margin-bottom: 40px;
+}
+
+.Add-User{
+    padding: 10px 15px;
+    background: var(--violet);
+    border-radius: 10px;
+    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+}
+.Add-User:hover{
+    background-color: var(--rose);
+}
+
+.formMatiere{
+    padding: 15px;
+    margin-bottom: 10px;
+    justify-content: space-between;
+}
+.formMatiere input{
+    padding: 10px 15px;
+   
+    border: solid 1px var(--blackkely);
+    border-radius: 6px;
+}
+
+
+#parentFormMatiere{
+    margin: 10px 0;
+    padding: 10px;
+   display: flex;
+   flex-direction: column;
+   
+
+}
+.inputClassM{
+    margin: 10px 0;
+    display: flex;
+}
+
+.inputCoeeff{
+    margin-left: 20px;
+}
+.inputSelect{
+ padding: 10px 20px;
+ border-radius: 10px;
+}

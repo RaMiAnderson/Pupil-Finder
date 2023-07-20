@@ -7,8 +7,10 @@
     <title>Pupil.Finder</title>
 
     <!-- All -->
+    
     <link rel="stylesheet" href="/public/css/allstyle.css" />
     <link rel="stylesheet" href="/public/css/Burger.css">
+   
     <link rel="stylesheet" href="/public/css/style_acceuil.css"/>
     
     <link rel="shortcut icon" href="/public/imgs/ICON-01.svg" type="image/x-icon" />
@@ -16,11 +18,16 @@
 
 
     <link rel="stylesheet" href="/public/css/profil.css" />
+   
+    <link rel="stylesheet" href="/public/css/admin/gerer.css">
+
+    <link rel="stylesheet" href="/public/css/admin/style.css">
 
   
 
     <!-- FontAwesome -->
     <link rel="stylesheet" href="/public/assets/FontAwesome/css/all.min.css" />
+    
   </head>
 
   <body>
@@ -162,54 +169,351 @@
 
 
         <!-- ATO AMIN'I PgProfil -->
-        <div id="PgProfil" class="profil">
+        <div id="PgProfil" style=" width: 100%; padding: 20px;">
           <!-- <button><a href="/admin/add-filiere" style="text-decoration: none;">Ajout Filière</a></button>
           <button><a href="/admin/add-matiere" style="text-decoration: none;">Ajout Matiere</a></button> -->
 
           <!-- MATIERE -->
-          <div class="profil-content">
-            <h3>Ajout Matiere</h3>
-            <form action="/admin/gerer/add-matiere" method="post" style="display: flex;">
-              <input type="text" placeholder="Nom de la matiere" name="nomMatiere" required>
-              <input type="text" placeholder="Nom du Prof" name="nomProf" required>
-              <input type="submit">
-            </form>
+          <!-- Lien -->
+         <div class="Gerer">
+
+
+          <div class="Block-Lien">
+            <div>
+              <a href="#site-main">
+                <button>Utilisateur</button>
+              </a>
+              <a href="#site-matiere">
+                <button>Matières</button>
+              </a>
+              <a href="#site-classe">
+                <button>Matières</button>
+              </a>
+            </div>
+
           </div>
 
-          <!-- CLASSE -->
-          <div class="profil-content">
-            <h3>Ajout Classe</h3>
 
-            <!-- Fampidirana nombre matiere -->
-            <form action="/admin/gerer/nombre-matiere" method="post">
-              <input type="text" placeholder="Entrer le nombre des matiere" name="nombreMatiere">
-              <input type="submit" value="Créer le champs des matiere">
-            </form>
+          <div class="Content-Gerer">
+            <main id="site-main">
+              <div class="container">
+                  <div class="box-nav d-flex justify-between" >
+                    <h3>Utilisateur</h3>
+                    <a href="/admin/gerer/add-user" ><button class="Add-User">Ajout Utilisateur</button></a>
+                  </div>
+      
+                  <!-- form handling -->
+                  <form action="/" method="POST">
+                      <table class="table">
+                          <thead class="thead-dark">
+                              <tr>
+                                  <th>Rang</th>
+                                  <th>Nom</th>
+                                  <th>Email</th>
+                                  <th>Classe</th>
+                                  <th>Numero en classe</th>
+                                  <th>Action</th>
+                              </tr>
+                          </thead>
+                          <tbody>
+                            <!-- Aodina boucle -->
+                            <tr>
+                              <td>1</td>
+                              <td>Rakoto</td>
+                              <td>rakoto@gmail.com</td>
+                              <td>6e</td>
+                              <td>3</td>
+                              <td>
+                                  <a href="" class="btn border-shadow update">
+                                      <span class="text-gradient edit"><i class="fas fa-pencil-alt"></i></span>
+                                  </a>
+                                  <a class="btn border-shadow delete" >
+                                      <span class="text-gradient"><i class="fas fa-times"></i></span>
+                                  </a>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>2</td>
+                              <td>Rako</td>
+                              <td>rako@gmail.com</td>
+                              <td>1er</td>
+                              <td>9</td>
+                              <td>
+                                  <a href="" class="btn border-shadow update">
+                                      <span class="text-gradient edit"><i class="fas fa-pencil-alt"></i></span>
+                                  </a>
+                                  <a class="btn border-shadow delete" >
+                                      <span class="text-gradient"><i class="fas fa-times"></i></span>
+                                  </a>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>2</td>
+                              <td>Rako</td>
+                              <td>rako@gmail.com</td>
+                              <td>1er</td>
+                              <td>9</td>
+                              <td>
+                                  <a href="" class="btn border-shadow update">
+                                      <span class="text-gradient edit"><i class="fas fa-pencil-alt"></i></span>
+                                  </a>
+                                  <a class="btn border-shadow delete" >
+                                      <span class="text-gradient"><i class="fas fa-times"></i></span>
+                                  </a>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>2</td>
+                              <td>Rako</td>
+                              <td>rako@gmail.com</td>
+                              <td>1er</td>
+                              <td>9</td>
+                              <td>
+                                  <a href="" class="btn border-shadow update">
+                                      <span class="text-gradient edit"><i class="fas fa-pencil-alt"></i></span>
+                                  </a>
+                                  <a class="btn border-shadow delete" >
+                                      <span class="text-gradient"><i class="fas fa-times"></i></span>
+                                  </a>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>2</td>
+                              <td>Rako</td>
+                              <td>rako@gmail.com</td>
+                              <td>1er</td>
+                              <td>9</td>
+                              <td>
+                                  <a href="" class="btn border-shadow update">
+                                      <span class="text-gradient edit"><i class="fas fa-pencil-alt"></i></span>
+                                  </a>
+                                  <a class="btn border-shadow delete" >
+                                      <span class="text-gradient"><i class="fas fa-times"></i></span>
+                                  </a>
+                              </td>
+                            </tr>
+                          </tbody>
+                      </table>
+                  </form>
+              </div>
+            </main>
+
+            <main id="site-matiere" class="Parent-matiere">
+              <div class="container">
+                <div class="box-nav d-flex justify-between" >
+                  <h3>Ajout Matières</h3>
+                  <a href="" hidden ><button class="Add-User">Ajout Utilisateur</button></a>
+                </div>
+               
+                <form action="/admin/gerer/add-matiere" method="post" style="display: flex;" class="formMatiere">
+                  <input type="text" placeholder="Nom de la matiere" name="nomMatiere" required>
+                  <input type="text" placeholder="Nom du Prof" name="nomProf" required>
+                  <input type="submit" class="Add-User" style="color: white ;">
+                </form>
+    
+                <!-- form handling -->
+                <form action="/" method="POST">
+                    <table class="table">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th>Rang</th>
+                                <th>Nom</th>
+                                <th>Proffesseur</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                          <!-- Aodina boucle -->
+                          <tr>
+                            <td>1</td>
+                            <td>Malagasy</td>
+                            <td> Mr Edmond</td>
+                            <td>
+                                <a href="" class="btn border-shadow update">
+                                    <span class="text-gradient edit"><i class="fas fa-pencil-alt"></i></span>
+                                </a>
+                                <a class="btn border-shadow delete" >
+                                    <span class="text-gradient"><i class="fas fa-times"></i></span>
+                                </a>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>2</td>
+                            <td>Français</td>
+                            <td>Mme Juditte</td>
+                            <td>
+                                <a href="" class="btn border-shadow update">
+                                    <span class="text-gradient edit"><i class="fas fa-pencil-alt"></i></span>
+                                </a>
+                                <a class="btn border-shadow delete" >
+                                    <span class="text-gradient"><i class="fas fa-times"></i></span>
+                                </a>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>3</td>
+                            <td>SVT</td>
+                            <td>Mme Landy</td>
+                            <td>
+                                <a href="" class="btn border-shadow update">
+                                    <span class="text-gradient edit"><i class="fas fa-pencil-alt"></i></span>
+                                </a>
+                                <a class="btn border-shadow delete" >
+                                    <span class="text-gradient"><i class="fas fa-times"></i></span>
+                                </a>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>4</td>
+                            <td>Physique</td>
+                            <td>Mr Andry</td>
+                            <td>
+                                <a href="" class="btn border-shadow update">
+                                    <span class="text-gradient edit"><i class="fas fa-pencil-alt"></i></span>
+                                </a>
+                                <a class="btn border-shadow delete" >
+                                    <span class="text-gradient"><i class="fas fa-times"></i></span>
+                                </a>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>5</td>
+                            <td>Histo-Geo</td>
+                            <td>Mr Lalaina</td>
+                            <td>
+                                <a href="" class="btn border-shadow update">
+                                    <span class="text-gradient edit"><i class="fas fa-pencil-alt"></i></span>
+                                </a>
+                                <a class="btn border-shadow delete" >
+                                    <span class="text-gradient"><i class="fas fa-times"></i></span>
+                                </a>
+                            </td>
+                          </tr>
+                        </tbody>
+                    </table>
+                </form>
+            </div>
+            </main>
+
+            <main id="site-classe" class="Parent-classe">
+              <div class="container">
+                <div class="box-nav d-flex justify-between" >
+                  <h3>Ajout Classe</h3>
+                  <a href="" hidden ><button class="Add-User">Ajout Utilisateur</button></a>
+                </div>
+               
+                  <!-- Fampidirana nombre matiere -->
+                <form action="/admin/gerer/nombre-matiere" method="post" style="display: flex;" class="formMatiere">
+                  <input type="text" placeholder="Entrer le nombre des matiere" name="nombreMatiere">
+                  <input type="submit" value="Créer le champs des matiere" class="Add-User" style="color: white ;">
+                </form>
 
 
-            <h3>Ajout Matiere dans la classe</h3>
-            <!-- Mbola mila aodina boucle fa iankina am nombre matiere ampidirina -->
-            <form action="/admin/gerer/add-classe" method="post" style="display: flex;">
+                <h3>Ajout Matiere dans la classe</h3>
+                <!-- Mbola mila aodina boucle fa iankina am nombre matiere ampidirina -->
+                <form action="/admin/gerer/add-classe" method="post" class="formMatiere">
 
-              <input type="text" placeholder="Nom de la classe" name="nomClasse" required>
+                  <input type="text" placeholder="Nom de la classe" name="nomClasse" required>
       
           
-              <div id="parentFormMatiere">
-                <span id="dataNombreMatiere" hidden><%= data.nombreMatiere %></span>
+                  <div id="parentFormMatiere" >
+                    <span id="dataNombreMatiere" hidden><%= data.nombreMatiere %></span>
                 
 
                 
-              </div>
-              <input type="submit">
-            </form>
-
-
+                  </div>
+                  <input type="submit" class="Add-User" style="color: white ;" value="Créer une classe">
+                </form>
+    
+                <!-- form handling -->
+                <form action="/" method="POST">
+                    <table class="table">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th>Rang</th>
+                                <th>Nom</th>
+                                <th>Matières</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                          <!-- Aodina boucle -->
+                          <tr>
+                            <td>1</td>
+                            <td>Terminal A</td>
+                            <td> 7</td>
+                            <td>
+                                <a href="" class="btn border-shadow update">
+                                    <span class="text-gradient edit"><i class="fas fa-pencil-alt"></i></span>
+                                </a>
+                                <a class="btn border-shadow delete" >
+                                    <span class="text-gradient"><i class="fas fa-times"></i></span>
+                                </a>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>2</td>
+                            <td>Terminal D</td>
+                            <td>8</td>
+                            <td>
+                                <a href="" class="btn border-shadow update">
+                                    <span class="text-gradient edit"><i class="fas fa-pencil-alt"></i></span>
+                                </a>
+                                <a class="btn border-shadow delete" >
+                                    <span class="text-gradient"><i class="fas fa-times"></i></span>
+                                </a>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>3</td>
+                            <td>Seconde</td>
+                            <td>10</td>
+                            <td>
+                                <a href="" class="btn border-shadow update">
+                                    <span class="text-gradient edit"><i class="fas fa-pencil-alt"></i></span>
+                                </a>
+                                <a class="btn border-shadow delete" >
+                                    <span class="text-gradient"><i class="fas fa-times"></i></span>
+                                </a>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>4</td>
+                            <td>3e</td>
+                            <td>8</td>
+                            <td>
+                                <a href="" class="btn border-shadow update">
+                                    <span class="text-gradient edit"><i class="fas fa-pencil-alt"></i></span>
+                                </a>
+                                <a class="btn border-shadow delete" >
+                                    <span class="text-gradient"><i class="fas fa-times"></i></span>
+                                </a>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>5</td>
+                            <td>4e</td>
+                            <td>8</td>
+                            <td>
+                                <a href="" class="btn border-shadow update">
+                                    <span class="text-gradient edit"><i class="fas fa-pencil-alt"></i></span>
+                                </a>
+                                <a class="btn border-shadow delete" >
+                                    <span class="text-gradient"><i class="fas fa-times"></i></span>
+                                </a>
+                            </td>
+                          </tr>
+                        </tbody>
+                    </table>
+                </form>
+            </div>
+            </main>
+  
           </div>
-
-
-          <div class="profil-content">
-            <button><a href="/admin/gerer/add-user" >Ajout Utilisateur</a></button>
-          </div>          
+         </div>
+          
+          
+          
         </div>
 
        
@@ -237,20 +541,30 @@
             for  (var i = 0 ; i < nombreMatiere ; i++){
               var selectMatiere = document.createElement("select");
               var inputCoeff = document.createElement("input");
+              var div = document.createElement("div");
+
+              div.id = `div${i}`;
+              div.className = "inputClassM";
+              
               
           
               // Select config : Matière
               selectMatiere.name = `nomMatiere${i}`;
               selectMatiere.id = `selectMatiere${i}`;
+              selectMatiere.className = "inputSelect"
 
               
               // input texte config : Coef
               inputCoeff.type = "text";
               inputCoeff.placeholder = "Coeff";
               inputCoeff.name = `coeffMatiere${i}`;
+              inputCoeff.className = "inputCoeeff"
+              
+              parentFormMatiereClass.appendChild(div);
+              const parentDiv = document.getElementById(`div${i}`);
 
-              parentFormMatiereClass.appendChild(selectMatiere);
-              parentFormMatiereClass.appendChild(inputCoeff);
+              parentDiv.appendChild(selectMatiere);
+              parentDiv.appendChild(inputCoeff);
 
               // ----option config : Matière
               // avadika tableau ilay objet data
@@ -291,5 +605,6 @@
      
        
     </script>
+    <script src="/public/js/admin/index.js"></script>
   </body>
 </html>

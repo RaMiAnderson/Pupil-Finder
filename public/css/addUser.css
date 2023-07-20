@@ -11,11 +11,11 @@ body{
   justify-content: center;
   align-items: center;
   padding: 10px;
-  background: linear-gradient(135deg, #71b7e6, #9b59b6);
+  /* background: linear-gradient(135deg, #71b7e6, #9b59b6); */
 }
 .container{
-  max-width: 700px;
-  width: 100%;
+  /* max-width: 700px; */
+  width: 95%;
   background-color: #fff;
   padding: 25px 30px;
   border-radius: 5px;
