@@ -150,6 +150,24 @@ const getNumInClasse = async (Classe) => {
     }
 }
 
+const getAllUsers = async () => {
+    try{
+        return new Promise( (resolve , reject) => {
+            User.find( {role: "user"} , (err, userBase) => {
+                if (err){
+                    console.log(err);
+                    reject("Errreur Server");
+                }
+                resolve(userBase);
+            })
+        })
+    }
+    catch (err) {
+        console.log(err);
+        throw "ERROR SERVER"
+    }
+}
+
 const getMatriculeClasse = async () => {
     try {
         return new Promise( (resolve, reject) => {
@@ -180,5 +198,6 @@ module.exports = {
     addMatiere,
     addClasse,
     NombreMatiere,
-    getClasseDispo
+    getClasseDispo,
+    getAllUsers
 }

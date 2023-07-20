@@ -187,7 +187,7 @@
                 <button>Matières</button>
               </a>
               <a href="#site-classe">
-                <button>Matières</button>
+                <button>Classe</button>
               </a>
             </div>
 
@@ -217,12 +217,13 @@
                           </thead>
                           <tbody>
                             <!-- Aodina boucle -->
+                            <% for (var i = 0 ; i < data.listUsers.length ; i++){ %>
                             <tr>
-                              <td>1</td>
-                              <td>Rakoto</td>
-                              <td>rakoto@gmail.com</td>
-                              <td>6e</td>
-                              <td>3</td>
+                              <td><%= i + 1 %></td>
+                              <td><%= data.listUsers[i].nom %> <%= data.listUsers[i].prenom %></td>
+                              <td><%= data.listUsers[i].email %></td>
+                              <td><%= data.listUsers[i].classe %></td>
+                              <td><%= data.listUsers[i].numInClasse %></td>
                               <td>
                                   <a href="" class="btn border-shadow update">
                                       <span class="text-gradient edit"><i class="fas fa-pencil-alt"></i></span>
@@ -232,66 +233,7 @@
                                   </a>
                               </td>
                             </tr>
-                            <tr>
-                              <td>2</td>
-                              <td>Rako</td>
-                              <td>rako@gmail.com</td>
-                              <td>1er</td>
-                              <td>9</td>
-                              <td>
-                                  <a href="" class="btn border-shadow update">
-                                      <span class="text-gradient edit"><i class="fas fa-pencil-alt"></i></span>
-                                  </a>
-                                  <a class="btn border-shadow delete" >
-                                      <span class="text-gradient"><i class="fas fa-times"></i></span>
-                                  </a>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>2</td>
-                              <td>Rako</td>
-                              <td>rako@gmail.com</td>
-                              <td>1er</td>
-                              <td>9</td>
-                              <td>
-                                  <a href="" class="btn border-shadow update">
-                                      <span class="text-gradient edit"><i class="fas fa-pencil-alt"></i></span>
-                                  </a>
-                                  <a class="btn border-shadow delete" >
-                                      <span class="text-gradient"><i class="fas fa-times"></i></span>
-                                  </a>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>2</td>
-                              <td>Rako</td>
-                              <td>rako@gmail.com</td>
-                              <td>1er</td>
-                              <td>9</td>
-                              <td>
-                                  <a href="" class="btn border-shadow update">
-                                      <span class="text-gradient edit"><i class="fas fa-pencil-alt"></i></span>
-                                  </a>
-                                  <a class="btn border-shadow delete" >
-                                      <span class="text-gradient"><i class="fas fa-times"></i></span>
-                                  </a>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>2</td>
-                              <td>Rako</td>
-                              <td>rako@gmail.com</td>
-                              <td>1er</td>
-                              <td>9</td>
-                              <td>
-                                  <a href="" class="btn border-shadow update">
-                                      <span class="text-gradient edit"><i class="fas fa-pencil-alt"></i></span>
-                                  </a>
-                                  <a class="btn border-shadow delete" >
-                                      <span class="text-gradient"><i class="fas fa-times"></i></span>
-                                  </a>
-                              </td>
-                            </tr>
+                            <% } %>
                           </tbody>
                       </table>
                   </form>
@@ -322,73 +264,18 @@
                                 <th>Action</th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody id="tabAffichageMatiere">
                           <!-- Aodina boucle -->
+                          <% for (var i = 0; i < data.listMatiere.length ; i++){ %>
                           <tr>
-                            <td>1</td>
-                            <td>Malagasy</td>
-                            <td> Mr Edmond</td>
+                            <td><%= i + 1 %></td>
+                            <td><%= data.listMatiere[i].nomMatiere %></td>
+                            <td><%= data.listMatiere[i].nomProf %></td>
                             <td>
-                                <a href="" class="btn border-shadow update">
-                                    <span class="text-gradient edit"><i class="fas fa-pencil-alt"></i></span>
-                                </a>
-                                <a class="btn border-shadow delete" >
-                                    <span class="text-gradient"><i class="fas fa-times"></i></span>
-                                </a>
+                                <a href="" class="btn border-shadow update"><span class="text-gradient edit"><i class="fas fa-pencil-alt"></i></span></a><a class="btn border-shadow delete" ><span class="text-gradient"><i class="fas fa-times"></i></span></a>
                             </td>
                           </tr>
-                          <tr>
-                            <td>2</td>
-                            <td>Français</td>
-                            <td>Mme Juditte</td>
-                            <td>
-                                <a href="" class="btn border-shadow update">
-                                    <span class="text-gradient edit"><i class="fas fa-pencil-alt"></i></span>
-                                </a>
-                                <a class="btn border-shadow delete" >
-                                    <span class="text-gradient"><i class="fas fa-times"></i></span>
-                                </a>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>3</td>
-                            <td>SVT</td>
-                            <td>Mme Landy</td>
-                            <td>
-                                <a href="" class="btn border-shadow update">
-                                    <span class="text-gradient edit"><i class="fas fa-pencil-alt"></i></span>
-                                </a>
-                                <a class="btn border-shadow delete" >
-                                    <span class="text-gradient"><i class="fas fa-times"></i></span>
-                                </a>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>4</td>
-                            <td>Physique</td>
-                            <td>Mr Andry</td>
-                            <td>
-                                <a href="" class="btn border-shadow update">
-                                    <span class="text-gradient edit"><i class="fas fa-pencil-alt"></i></span>
-                                </a>
-                                <a class="btn border-shadow delete" >
-                                    <span class="text-gradient"><i class="fas fa-times"></i></span>
-                                </a>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>5</td>
-                            <td>Histo-Geo</td>
-                            <td>Mr Lalaina</td>
-                            <td>
-                                <a href="" class="btn border-shadow update">
-                                    <span class="text-gradient edit"><i class="fas fa-pencil-alt"></i></span>
-                                </a>
-                                <a class="btn border-shadow delete" >
-                                    <span class="text-gradient"><i class="fas fa-times"></i></span>
-                                </a>
-                            </td>
-                          </tr>
+                          <% } %>
                         </tbody>
                     </table>
                 </form>
@@ -438,10 +325,11 @@
                         </thead>
                         <tbody>
                           <!-- Aodina boucle -->
+                          <% for (var i = 0 ; i < data.listClasse.length ; i++){ %>
                           <tr>
-                            <td>1</td>
-                            <td>Terminal A</td>
-                            <td> 7</td>
+                            <td><%= i + 1 %></td>
+                            <td><%= data.listClasse[i].nomClasse %></td>
+                            <td><%= data.listClasse[i].matiere.length %></td>
                             <td>
                                 <a href="" class="btn border-shadow update">
                                     <span class="text-gradient edit"><i class="fas fa-pencil-alt"></i></span>
@@ -451,58 +339,8 @@
                                 </a>
                             </td>
                           </tr>
-                          <tr>
-                            <td>2</td>
-                            <td>Terminal D</td>
-                            <td>8</td>
-                            <td>
-                                <a href="" class="btn border-shadow update">
-                                    <span class="text-gradient edit"><i class="fas fa-pencil-alt"></i></span>
-                                </a>
-                                <a class="btn border-shadow delete" >
-                                    <span class="text-gradient"><i class="fas fa-times"></i></span>
-                                </a>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>3</td>
-                            <td>Seconde</td>
-                            <td>10</td>
-                            <td>
-                                <a href="" class="btn border-shadow update">
-                                    <span class="text-gradient edit"><i class="fas fa-pencil-alt"></i></span>
-                                </a>
-                                <a class="btn border-shadow delete" >
-                                    <span class="text-gradient"><i class="fas fa-times"></i></span>
-                                </a>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>4</td>
-                            <td>3e</td>
-                            <td>8</td>
-                            <td>
-                                <a href="" class="btn border-shadow update">
-                                    <span class="text-gradient edit"><i class="fas fa-pencil-alt"></i></span>
-                                </a>
-                                <a class="btn border-shadow delete" >
-                                    <span class="text-gradient"><i class="fas fa-times"></i></span>
-                                </a>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>5</td>
-                            <td>4e</td>
-                            <td>8</td>
-                            <td>
-                                <a href="" class="btn border-shadow update">
-                                    <span class="text-gradient edit"><i class="fas fa-pencil-alt"></i></span>
-                                </a>
-                                <a class="btn border-shadow delete" >
-                                    <span class="text-gradient"><i class="fas fa-times"></i></span>
-                                </a>
-                            </td>
-                          </tr>
+                          <% } %>
+                        
                         </tbody>
                     </table>
                 </form>
@@ -537,6 +375,7 @@
 
           if (document.getElementById('dataNombreMatiere').textContent !== ""){
             const nombreMatiere = parseInt(document.getElementById('dataNombreMatiere').textContent);
+            const affichageMatiereParent = document.getElementById('tabAffichageMatiere');
 
             for  (var i = 0 ; i < nombreMatiere ; i++){
               var selectMatiere = document.createElement("select");
@@ -571,6 +410,7 @@
               var tabListMatiere = Object.values(data);
               var selectCorespondant = document.getElementById(`selectMatiere${i}`);
 
+
               for (var j = 0; j < tabListMatiere.length ; j++){
                 var option = document.createElement("option");
 
@@ -579,22 +419,17 @@
 
 
                 selectCorespondant.appendChild(option);
+
+
+                // List Matiere affichage
+
+
               }
 
 
-              // for (var j = 0 ; j < tabListMatiere.lenght ; j++){
-                // var option = document.createElement("option");
-              //   var selectCorespondant = document.getElementById(`selectMatiere${i}`);
-
-              //   option.value = tabListMatiere[j].nomMatiere;
-              //   option.textContent = tabListMatiere[j].nomMatiere;
-
-              //   selectCorespondant.appendChild(option);
-              // }
-             
-
             }
 
+           
             
      
           }

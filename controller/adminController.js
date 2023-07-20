@@ -65,7 +65,9 @@ const getGerer = async (req,res) => {
         if (req?.session?.user?.role === "admin") {
             const data =  {
                 nombreMatiere: await temporaryData.dataNombreMatiere,
-               
+                listMatiere : Object.values(await gererService.getMatiereDispo(req?.session?.user?.role)),
+                listUsers : Object.values(await gererService.getAllUsers()),
+                listClasse : Object.values(await gererService.getClasseDispo("admin"))
             };
         
 

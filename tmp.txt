@@ -1,0 +1,60 @@
+<tr>
+                            <td>1</td>
+                            <td>Malagasy</td>
+                            <td>Mr Edmond</td>
+                            <td>
+                                <a href="" class="btn border-shadow update"><span class="text-gradient edit"><i class="fas fa-pencil-alt"></i></span></a><a class="btn border-shadow delete" ><span class="text-gradient"><i class="fas fa-times"></i></span></a>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>2</td>
+                            <td>Français</td>
+                            <td>Mme Juditte</td>
+                            <td>
+                                <a href="" class="btn border-shadow update">
+                                    <span class="text-gradient edit"><i class="fas fa-pencil-alt"></i></span>
+                                </a>
+                                <a class="btn border-shadow delete" >
+                                    <span class="text-gradient"><i class="fas fa-times"></i></span>
+                                </a>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>3</td>
+                            <td>SVT</td>
+                            <td>Mme Landy</td>
+                            <td>
+                                <a href="" class="btn border-shadow update">
+                                    <span class="text-gradient edit"><i class="fas fa-pencil-alt"></i></span>
+                                </a>
+                                <a class="btn border-shadow delete" >
+                                    <span class="text-gradient"><i class="fas fa-times"></i></span>
+                                </a>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>4</td>
+                            <td>Physique</td>
+                            <td>Mr Andry</td>
+                            <td>
+                                <a href="" class="btn border-shadow update">
+                                    <span class="text-gradient edit"><i class="fas fa-pencil-alt"></i></span>
+                                </a>
+                                <a class="btn border-shadow delete" >
+                                    <span class="text-gradient"><i class="fas fa-times"></i></span>
+                                </a>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>5</td>
+                            <td>Histo-Geo</td>
+                            <td>Mr Lalaina</td>
+                            <td>
+                                <a href="" class="btn border-shadow update">
+                                    <span class="text-gradient edit"><i class="fas fa-pencil-alt"></i></span>
+                                </a>
+                                <a class="btn border-shadow delete" >
+                                    <span class="text-gradient"><i class="fas fa-times"></i></span>
+                                </a>
+                            </td>
+                          </tr>
