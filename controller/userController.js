@@ -1,6 +1,7 @@
 const authentificationService = require("../services/authentificationService");
 const User = require("../model/user");
 const userService = require("../services/userService");
+const annonceService = require('../services/annonceService');
 
 // GET
 
@@ -25,11 +26,19 @@ const getAbsence = (req, res) => {
   } else res.redirect("/auth/login");
 };
 
-const getAnnonce = (req, res) => {
+const getAnnonce = async (req, res) => {
   const stateConnection = authentificationService.verifyIfAlreadyConnected(req);
   if (stateConnection) {
-    if (req?.session?.user?.role === "user")
-      res.render("user/pages/userAnnonce");
+    if (req?.session?.user?.role === "user"){
+      var allAnnonce = Object.values( await annonceService.getAllAnnonce());
+            
+            const data = {
+                allAnnonce : allAnnonce
+            }
+
+            res.render("user/pages/userAnnonce" , {data});
+    }
+      
     else res.redirect("/admin");
 
   } else res.redirect("/auth/login");

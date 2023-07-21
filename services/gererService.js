@@ -2,6 +2,8 @@ const classe = require('../model/classe');
 const Matiere = require('../model/matiere');
 const temporaryData = require('../tmp/temporaryData');
 const User = require('../model/user');
+const Annonce = require('../model/annonce');
+// const UserService = require('../services/userService');
 
 
 
@@ -48,6 +50,27 @@ const addMatiere = (dataMatiere) => {
     }
 }
 
+const addAnnonceService = (annonce) => {
+    try {
+        const date = new Date();
+        const annonceModel = new Annonce();
+
+        annonceModel.contenu = annonce.annonceContent;
+        annonceModel.datePub = date;
+        return new Promise( (resolve,reject) => {
+            annonceModel.save( (err) => {
+                if (err) {
+                    console.log(err);
+                    reject("Error: post matiere failed");
+                }
+                resolve(annonceModel);
+            })
+        });
+    }
+    catch (err){
+        throw ` ERROR : ${err} `
+    }
+}
 
 
 const NombreMatiere = async (nombre) => {
@@ -199,5 +222,6 @@ module.exports = {
     addClasse,
     NombreMatiere,
     getClasseDispo,
-    getAllUsers
+    getAllUsers,
+    addAnnonceService
 }

@@ -7,27 +7,26 @@
     <title>Pupil.Finder</title>
 
     <!-- All -->
-    
+
     <link rel="stylesheet" href="/public/css/allstyle.css" />
-    <link rel="stylesheet" href="/public/css/Burger.css">
-   
-    <link rel="stylesheet" href="/public/css/style_acceuil.css"/>
-    
-    <link rel="shortcut icon" href="/public/imgs/ICON-01.svg" type="image/x-icon" />
+    <link rel="stylesheet" href="/public/css/Burger.css" />
 
+    <link rel="stylesheet" href="/public/css/style_acceuil.css" />
 
+    <link
+      rel="shortcut icon"
+      href="/public/imgs/ICON-01.svg"
+      type="image/x-icon"
+    />
 
     <link rel="stylesheet" href="/public/css/profil.css" />
-   
-    <link rel="stylesheet" href="/public/css/admin/gerer.css">
 
-    <link rel="stylesheet" href="/public/css/admin/style.css">
+    <link rel="stylesheet" href="/public/css/admin/gerer.css" />
 
-  
+    <link rel="stylesheet" href="/public/css/admin/style.css" />
 
     <!-- FontAwesome -->
     <link rel="stylesheet" href="/public/assets/FontAwesome/css/all.min.css" />
-    
   </head>
 
   <body>
@@ -64,7 +63,6 @@
                 <p class="titre">Annonces</p>
               </button>
             </form>
-            
           </li>
 
           <li>
@@ -76,7 +74,6 @@
                 <p class="titre">Emploie du temps</p>
               </button>
             </form>
-            
           </li>
 
           <li>
@@ -88,7 +85,6 @@
                 <p class="titre">Absence</p>
               </button>
             </form>
-            
           </li>
 
           <li>
@@ -100,7 +96,6 @@
                 <p class="titre">A Payer</p>
               </button>
             </form>
-            
           </li>
 
           <li>
@@ -112,7 +107,6 @@
                 <p class="titre">Notes</p>
               </button>
             </form>
-            
           </li>
 
           <li>
@@ -124,9 +118,8 @@
                 <p class="titre">Calendrier Scolaire</p>
               </button>
             </form>
-            
           </li>
-        
+
           <li>
             <!-- SE deconnecter -->
             <form action="/admin/deconnexion" method="post">
@@ -154,7 +147,6 @@
                   <i class="fas fa-home navIcon"></i>
                 </button>
               </form>
-              
             </div>
 
             <div class="user">
@@ -164,241 +156,294 @@
         </div>
       </div>
       <!-- CONTENU -->
-    
+
       <div class="main">
-
-
         <!-- ATO AMIN'I PgProfil -->
-        <div id="PgProfil" style=" width: 100%; padding: 20px;">
+        <div id="PgProfil" style="width: 100%; padding: 20px">
           <!-- <button><a href="/admin/add-filiere" style="text-decoration: none;">Ajout Filière</a></button>
           <button><a href="/admin/add-matiere" style="text-decoration: none;">Ajout Matiere</a></button> -->
 
           <!-- MATIERE -->
           <!-- Lien -->
-         <div class="Gerer">
-
-
-          <div class="Block-Lien">
-            <div>
-              <a href="#site-main">
-                <button>Utilisateur</button>
-              </a>
-              <a href="#site-matiere">
-                <button>Matières</button>
-              </a>
-              <a href="#site-classe">
-                <button>Classe</button>
-              </a>
+          <div class="Gerer">
+            <div class="Block-Lien">
+              <div>
+                <a href="#site-main">
+                  <button>Utilisateur</button>
+                </a>
+                <a href="#site-matiere">
+                  <button>Matières</button>
+                </a>
+                <a href="#site-classe">
+                  <button>Classe</button>
+                </a>
+              </div>
             </div>
 
-          </div>
-
-
-          <div class="Content-Gerer">
-            <main id="site-main">
-              <div class="container">
-                  <div class="box-nav d-flex justify-between" >
+            <div class="Content-Gerer">
+              <main id="site-main">
+                <div class="container">
+                  <div class="box-nav d-flex justify-between">
                     <h3>Utilisateur</h3>
-                    <a href="/admin/gerer/add-user" ><button class="Add-User">Ajout Utilisateur</button></a>
+                    <a href="/admin/gerer/add-user"
+                      ><button class="Add-User">Ajout Utilisateur</button></a
+                    >
                   </div>
-      
+
                   <!-- form handling -->
                   <form action="/" method="POST">
-                      <table class="table">
-                          <thead class="thead-dark">
-                              <tr>
-                                  <th>Rang</th>
-                                  <th>Nom</th>
-                                  <th>Email</th>
-                                  <th>Classe</th>
-                                  <th>Numero en classe</th>
-                                  <th>Action</th>
-                              </tr>
-                          </thead>
-                          <tbody>
-                            <!-- Aodina boucle -->
-                            <% for (var i = 0 ; i < data.listUsers.length ; i++){ %>
-                            <tr>
-                              <td><%= i + 1 %></td>
-                              <td><%= data.listUsers[i].nom %> <%= data.listUsers[i].prenom %></td>
-                              <td><%= data.listUsers[i].email %></td>
-                              <td><%= data.listUsers[i].classe %></td>
-                              <td><%= data.listUsers[i].numInClasse %></td>
-                              <td>
-                                  <a href="" class="btn border-shadow update">
-                                      <span class="text-gradient edit"><i class="fas fa-pencil-alt"></i></span>
-                                  </a>
-                                  <a class="btn border-shadow delete" >
-                                      <span class="text-gradient"><i class="fas fa-times"></i></span>
-                                  </a>
-                              </td>
-                            </tr>
-                            <% } %>
-                          </tbody>
-                      </table>
+                    <table class="table">
+                      <thead class="thead-dark">
+                        <tr>
+                          <th>Rang</th>
+                          <th>Nom</th>
+                          <th>Email</th>
+                          <th>Classe</th>
+                          <th>Numero en classe</th>
+                          <th>Action</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <!-- Aodina boucle -->
+                        <% for (var i = 0 ; i < data.listUsers.length ; i++){ %>
+                        <tr>
+                          <td><%= i + 1 %></td>
+                          <td>
+                            <%= data.listUsers[i].nom %> <%=
+                            data.listUsers[i].prenom %>
+                          </td>
+                          <td><%= data.listUsers[i].email %></td>
+                          <td><%= data.listUsers[i].classe %></td>
+                          <td><%= data.listUsers[i].numInClasse %></td>
+                          <td>
+                            <a href="" class="btn border-shadow update">
+                              <span class="text-gradient edit"
+                                ><i class="fas fa-pencil-alt"></i
+                              ></span>
+                            </a>
+                            <a class="btn border-shadow delete">
+                              <span class="text-gradient"
+                                ><i class="fas fa-times"></i
+                              ></span>
+                            </a>
+                          </td>
+                        </tr>
+                        <% } %>
+                      </tbody>
+                    </table>
                   </form>
-              </div>
-            </main>
-
-            <main id="site-matiere" class="Parent-matiere">
-              <div class="container">
-                <div class="box-nav d-flex justify-between" >
-                  <h3>Ajout Matières</h3>
-                  <a href="" hidden ><button class="Add-User">Ajout Utilisateur</button></a>
                 </div>
-               
-                <form action="/admin/gerer/add-matiere" method="post" style="display: flex;" class="formMatiere">
-                  <input type="text" placeholder="Nom de la matiere" name="nomMatiere" required>
-                  <input type="text" placeholder="Nom du Prof" name="nomProf" required>
-                  <input type="submit" class="Add-User" style="color: white ;">
-                </form>
-    
-                <!-- form handling -->
-                <form action="/" method="POST">
-                    <table class="table">
-                        <thead class="thead-dark">
-                            <tr>
-                                <th>Rang</th>
-                                <th>Nom</th>
-                                <th>Proffesseur</th>
-                                <th>Action</th>
-                            </tr>
-                        </thead>
-                        <tbody id="tabAffichageMatiere">
-                          <!-- Aodina boucle -->
-                          <% for (var i = 0; i < data.listMatiere.length ; i++){ %>
-                          <tr>
-                            <td><%= i + 1 %></td>
-                            <td><%= data.listMatiere[i].nomMatiere %></td>
-                            <td><%= data.listMatiere[i].nomProf %></td>
-                            <td>
-                                <a href="" class="btn border-shadow update"><span class="text-gradient edit"><i class="fas fa-pencil-alt"></i></span></a><a class="btn border-shadow delete" ><span class="text-gradient"><i class="fas fa-times"></i></span></a>
-                            </td>
-                          </tr>
-                          <% } %>
-                        </tbody>
-                    </table>
-                </form>
-            </div>
-            </main>
+              </main>
 
-            <main id="site-classe" class="Parent-classe">
-              <div class="container">
-                <div class="box-nav d-flex justify-between" >
-                  <h3>Ajout Classe</h3>
-                  <a href="" hidden ><button class="Add-User">Ajout Utilisateur</button></a>
-                </div>
-               
-                  <!-- Fampidirana nombre matiere -->
-                <form action="/admin/gerer/nombre-matiere" method="post" style="display: flex;" class="formMatiere">
-                  <input type="text" placeholder="Entrer le nombre des matiere" name="nombreMatiere">
-                  <input type="submit" value="Créer le champs des matiere" class="Add-User" style="color: white ;">
-                </form>
-
-
-                <h3 class="h3Div">Ajout Matiere dans la classe</h3>
-                <!-- Mbola mila aodina boucle fa iankina am nombre matiere ampidirina -->
-                <form action="/admin/gerer/add-classe" method="post" class="formMatiere">
-
-                  <input type="text" placeholder="Nom de la classe" name="nomClasse" required>
-      
-          
-                  <div id="parentFormMatiere" >
-                    <span id="dataNombreMatiere" hidden><%= data.nombreMatiere %></span>
-                
-
-                
+              <main id="site-matiere" class="Parent-matiere">
+                <div class="container">
+                  <div class="box-nav d-flex justify-between">
+                    <h3>Ajout Matières</h3>
+                    <a href="" hidden
+                      ><button class="Add-User">Ajout Utilisateur</button></a
+                    >
                   </div>
-                  <input type="submit" class="Add-User" style="color: white ;" value="Créer une classe">
-                </form>
-    
-                <!-- form handling -->
-                <form action="/" method="POST">
+
+                  <form
+                    action="/admin/gerer/add-matiere"
+                    method="post"
+                    style="display: flex"
+                    class="formMatiere"
+                  >
+                    <input
+                      type="text"
+                      placeholder="Nom de la matière"
+                      name="nomMatiere"
+                      required
+                    />
+                    <input
+                      type="text"
+                      placeholder="Nom du Prof"
+                      name="nomProf"
+                      required
+                    />
+                    <input
+                      type="submit"
+                      class="Add-User"
+                      style="color: white"
+                    />
+                  </form>
+
+                  <!-- form handling -->
+                  <form action="/" method="POST">
                     <table class="table">
-                        <thead class="thead-dark">
-                            <tr>
-                                <th>Rang</th>
-                                <th>Nom</th>
-                                <th>Matières</th>
-                                <th>Action</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                          <!-- Aodina boucle -->
-                          <% for (var i = 0 ; i < data.listClasse.length ; i++){ %>
-                          <tr>
-                            <td><%= i + 1 %></td>
-                            <td><%= data.listClasse[i].nomClasse %></td>
-                            <td><%= data.listClasse[i].matiere.length %></td>
-                            <td>
-                                <a href="" class="btn border-shadow update">
-                                    <span class="text-gradient edit"><i class="fas fa-pencil-alt"></i></span>
-                                </a>
-                                <a class="btn border-shadow delete" >
-                                    <span class="text-gradient"><i class="fas fa-times"></i></span>
-                                </a>
-                            </td>
-                          </tr>
-                          <% } %>
-                        
-                        </tbody>
+                      <thead class="thead-dark">
+                        <tr>
+                          <th>Rang</th>
+                          <th>Nom</th>
+                          <th>Professeur</th>
+                          <th>Action</th>
+                        </tr>
+                      </thead>
+                      <tbody id="tabAffichageMatiere">
+                        <!-- Aodina boucle -->
+                        <% for (var i = 0; i < data.listMatiere.length ; i++){
+                        %>
+                        <tr>
+                          <td><%= i + 1 %></td>
+                          <td><%= data.listMatiere[i].nomMatiere %></td>
+                          <td><%= data.listMatiere[i].nomProf %></td>
+                          <td>
+                            <a href="" class="btn border-shadow update"
+                              ><span class="text-gradient edit"
+                                ><i class="fas fa-pencil-alt"></i></span></a
+                            ><a class="btn border-shadow delete"
+                              ><span class="text-gradient"
+                                ><i class="fas fa-times"></i></span
+                            ></a>
+                          </td>
+                        </tr>
+                        <% } %>
+                      </tbody>
                     </table>
-                </form>
+                  </form>
+                </div>
+              </main>
+
+              <main id="site-classe" class="Parent-classe">
+                <div class="container">
+                  <div class="box-nav d-flex justify-between">
+                    <h3>Ajout Classe</h3>
+                    <a href="" hidden
+                      ><button class="Add-User">Ajout Utilisateur</button></a
+                    >
+                  </div>
+
+                  <!-- Fampidirana nombre matiere -->
+                  <form
+                    action="/admin/gerer/nombre-matiere"
+                    method="post"
+                    style="display: flex"
+                    class="formMatiere"
+                  >
+                    <input
+                      type="text"
+                      placeholder="Entrer le nombre des matières"
+                      name="nombreMatiere"
+                    />
+                    <input
+                      type="submit"
+                      value="Créer le champs des matières"
+                      class="Add-User"
+                      style="color: white"
+                    />
+                  </form>
+
+                  <h3 class="h3Div">Ajout Matière dans la classe</h3>
+                  <!-- Mbola mila aodina boucle fa iankina am nombre matiere ampidirina -->
+                  <form
+                    action="/admin/gerer/add-classe"
+                    method="post"
+                    class="formMatiere"
+                  >
+                    <input
+                      type="text"
+                      placeholder="Nom de la classe"
+                      name="nomClasse"
+                      required
+                    />
+
+                    <div id="parentFormMatiere">
+                      <span id="dataNombreMatiere" hidden
+                        ><%= data.nombreMatiere %></span
+                      >
+                    </div>
+                    <input
+                      type="submit"
+                      class="Add-User"
+                      style="color: white"
+                      value="Créer une classe"
+                    />
+                  </form>
+
+                  <!-- form handling -->
+                  <form action="/" method="POST">
+                    <table class="table">
+                      <thead class="thead-dark">
+                        <tr>
+                          <th>Rang</th>
+                          <th>Nom</th>
+                          <th>Matières</th>
+                          <th>Action</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <!-- Aodina boucle -->
+                        <% for (var i = 0 ; i < data.listClasse.length ; i++){
+                        %>
+                        <tr>
+                          <td><%= i + 1 %></td>
+                          <td><%= data.listClasse[i].nomClasse %></td>
+                          <td><%= data.listClasse[i].matiere.length %></td>
+                          <td>
+                            <a href="" class="btn border-shadow update">
+                              <span class="text-gradient edit"
+                                ><i class="fas fa-pencil-alt"></i
+                              ></span>
+                            </a>
+                            <a class="btn border-shadow delete">
+                              <span class="text-gradient"
+                                ><i class="fas fa-times"></i
+                              ></span>
+                            </a>
+                          </td>
+                        </tr>
+                        <% } %>
+                      </tbody>
+                    </table>
+                  </form>
+                </div>
+              </main>
             </div>
-            </main>
-  
           </div>
-         </div>
-          
-          
-          
         </div>
-
-       
-
-
-
       </div>
     </div>
 
     <!-- =========== Scripts =========  -->
-    
+
     <script src="/public/js/scriptDflt.js"></script>
 
     <script src="/public/assets/FontAwesome/js/all.min.js"></script>
     <script>
-      const parentFormMatiereClass = document.getElementById('parentFormMatiere');
+      const parentFormMatiereClass =
+        document.getElementById("parentFormMatiere");
 
       fetch("/admin/gerer/getDataGerer")
         .then((res) => res.json())
         .then((data) => {
+          if (document.getElementById("dataNombreMatiere").textContent !== "") {
+            const nombreMatiere = parseInt(
+              document.getElementById("dataNombreMatiere").textContent
+            );
+            const affichageMatiereParent = document.getElementById(
+              "tabAffichageMatiere"
+            );
 
-          if (document.getElementById('dataNombreMatiere').textContent !== ""){
-            const nombreMatiere = parseInt(document.getElementById('dataNombreMatiere').textContent);
-            const affichageMatiereParent = document.getElementById('tabAffichageMatiere');
-
-            for  (var i = 0 ; i < nombreMatiere ; i++){
+            for (var i = 0; i < nombreMatiere; i++) {
               var selectMatiere = document.createElement("select");
               var inputCoeff = document.createElement("input");
               var div = document.createElement("div");
 
               div.id = `div${i}`;
               div.className = "inputClassM";
-              
-              
-          
+
               // Select config : Matière
               selectMatiere.name = `nomMatiere${i}`;
               selectMatiere.id = `selectMatiere${i}`;
-              selectMatiere.className = "inputSelect"
+              selectMatiere.className = "inputSelect";
 
-              
               // input texte config : Coef
               inputCoeff.type = "text";
               inputCoeff.placeholder = "Coeff";
               inputCoeff.name = `coeffMatiere${i}`;
-              inputCoeff.className = "inputCoeeff"
-              
+              inputCoeff.className = "inputCoeeff";
+
               parentFormMatiereClass.appendChild(div);
               const parentDiv = document.getElementById(`div${i}`);
 
@@ -408,37 +453,23 @@
               // ----option config : Matière
               // avadika tableau ilay objet data
               var tabListMatiere = Object.values(data);
-              var selectCorespondant = document.getElementById(`selectMatiere${i}`);
+              var selectCorespondant = document.getElementById(
+                `selectMatiere${i}`
+              );
 
-
-              for (var j = 0; j < tabListMatiere.length ; j++){
+              for (var j = 0; j < tabListMatiere.length; j++) {
                 var option = document.createElement("option");
 
                 option.value = tabListMatiere[j].nomMatiere;
                 option.textContent = tabListMatiere[j].nomMatiere;
 
-
                 selectCorespondant.appendChild(option);
 
-
                 // List Matiere affichage
-
-
               }
-
-
             }
-
-           
-            
-     
           }
-      
-          
         });
-  
-     
-       
     </script>
     <script src="/public/js/admin/index.js"></script>
   </body>

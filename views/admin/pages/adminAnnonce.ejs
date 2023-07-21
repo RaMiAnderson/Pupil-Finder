@@ -172,10 +172,10 @@
           
           <div class="w3-container" id="">
 
-            <form action="" target="_blank">
-              <p><textarea name="" id="" cols="10" rows="5" class="w3-input w3-padding-16 w3-border"placeholder="commenncez à écrire..." ></textarea></p>
+            <form action="/admin/annonce/add-annonce" method="post">
+              <p><textarea name="annonceContent" id="" cols="10" rows="5" class="w3-input w3-padding-16 w3-border"placeholder="Commencez à écrire..." ></textarea></p>
         
-            <select name="types" id="">
+            <!-- <select name="types" id="">
                 <option value="">Entrer la type de l'annonce</option>
                 <option value="hier">Annonces générales</option>
                 <option value="recent">Annonces administratives</optiion>
@@ -183,29 +183,26 @@
                 <option value="hier">Annonces de sécurité</option>
                 <option value="recent"> Annonces pédacologiques</optiion>
         
-            </select>
+            </select> -->
               <p><button class="www" type="submit">Envoyer</button></p>
             </form>
           </div>
           
           <!-- afaka anaovana recherche dashboard -->
           <!--annonce 1 plus récent, 2 hier ohatra de lay 3 farany plus ancien fa miandry javascript anaovana azy-->
+          <% for (var i = 0; i < data.allAnnonce.length ; i++){ %>
           <div class="ann-rec">
             <div class="div1">
-              <legend><strong>23/06/2023</strong></legend>
+              <legend><strong >21 July 2023</strong></legend>
               <div>
                 <button><i class="far fa-edit"></i></button>
                 <button><i class="far fa-trash-alt"></i></button>
               </div>
             </div>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus quas
-              molestias in omnis autem voluptatibus esse, aliquam libero officiis ratione
-              soluta quod? Harum, alias beatae deserunt eum obcaecati rem velit.</p>
-            <!-- <div class="cont">
-              <i id="img1" class="fas fa-scroll mitah"></i>
-              <p><strong>Info Génér</strong></p>
-            </div> -->
+            <p> <%= data.allAnnonce[i].contenu %></p>
+            
           </div>
+          <% } %>
         </div>
        
         
@@ -217,5 +214,23 @@
     <script src="/public/js/scriptDflt.js"></script>
 
     <script src="/public/assets/FontAwesome/js/all.min.js"></script>
+    <!-- <script>
+      fetch("/admin/annonce/getAllAnnonce")
+        .then((res) => res.json())
+        .then((data) => {
+          const Data = Object.values(data);
+          var date = [];
+          for (var i = 0 ; i < Data.length ; i++ ){
+            var tmp = Data[i].datePub;
+             date.push(tmp.split("T")[0]);
+
+             
+            // var separate = tmp.split("T");
+            // date.push(separate[O])
+            // console.log(date);
+          }
+        })
+    </script> -->
+    
   </body>
 </html>

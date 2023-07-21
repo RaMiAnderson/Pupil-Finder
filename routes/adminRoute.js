@@ -44,6 +44,10 @@ router.post('/gerer/add-classe' , adminController.addClasseController);
 
 router.post("/gerer/add-user" ,adminController.addUserController);
 
+// ----Annonce
+
+router.post("/annonce/add-annonce" ,adminController.addAnnonce);
+
 
 
 
@@ -64,9 +68,9 @@ router.post("/deconnexion" , authController.logoutController );
 router.get("/gerer/getDataGerer" , adminController.dataGerer );
 
 
-router.get("/gerer/add-user/getClasse" , adminController.getClasseDispo)
+router.get("/gerer/add-user/getClasse" , adminController.getClasseDispo);
 
-
+router.get("/annonce/getAllAnnonce" , adminController.getAllAnonceController);
 
 
 

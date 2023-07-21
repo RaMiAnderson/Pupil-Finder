@@ -2,6 +2,7 @@
 const authentificationService = require("../services/authentificationService");
 const gererService = require('../services/gererService');
 const temporaryData = require('../tmp/temporaryData');
+const annonceService = require('../services/annonceService');
 
 
 
@@ -23,10 +24,18 @@ const getAbsence = (req,res) => {
     else res.redirect('/auth/login');
 }
 
-const getAnnonce = (req,res) => {
+const getAnnonce = async (req,res) => {
     const stateConnection = authentificationService.verifyIfAlreadyConnected(req);
     if (stateConnection) {
-        if (req?.session?.user?.role === "admin") res.render("admin/pages/adminAnnonce")
+        if (req?.session?.user?.role === "admin"){
+            var allAnnonce = Object.values( await annonceService.getAllAnnonce());
+            
+            const data = {
+                allAnnonce : allAnnonce
+            }
+
+            res.render("admin/pages/adminAnnonce" , {data})
+        } 
         else res.redirect('/user');
     } 
     else res.redirect("/auth/login");
@@ -157,6 +166,20 @@ const addUserController = async (req,res) => {
 };
 
 
+const addAnnonce = async (req,res) => {
+    try {
+        const annonce = req.body;
+        const result = await gererService.addAnnonceService(annonce);
+        res.redirect('/admin/annonce')
+    } catch (err) {
+        const messageError = ` ERREUR d'ajout de l'annonce  `;
+        console.log(err);
+        res.redirect(`/admin/annonce?message=${messageError}`);
+    }
+
+}
+
+
 
 
 
@@ -189,6 +212,19 @@ const getClasseDispo = async (req,res) => {
     else res.redirect("/auth/login");
 }
 
+const getAllAnonceController = async (req,res) => {
+    const stateConnection = authentificationService.verifyIfAlreadyConnected(req);
+    if (stateConnection) {
+        if (req?.session?.user?.role === "admin") {
+            const AllAnonce = await annonceService.getAllAnnonce();
+            
+            res.json(AllAnonce);
+        }  
+        else res.redirect('/user');
+    } 
+    else res.redirect("/auth/login");
+}
+
 
 
 
@@ -207,8 +243,10 @@ module.exports = {
     getNmbrMatiere,
     addClasseController,
     addUserController,
+    addAnnonce,
 
 
     dataGerer,
-    getClasseDispo
+    getClasseDispo,
+    getAllAnonceController
 }
