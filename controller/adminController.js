@@ -225,8 +225,6 @@ const deleteOneUser = async (req, res) => {
 
 
 
- 
-
 // --------------- API ----------
 
 const dataGerer = async (req,res) => {
