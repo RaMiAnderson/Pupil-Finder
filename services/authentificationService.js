@@ -17,7 +17,7 @@ const login = async (user,request) => {
     }
 }
 
-const verifyIfAlreadyConnected = (request) => {
+const  verifyIfAlreadyConnected =  (request) => {
 
     if (request?.session?.user) {
         return true;

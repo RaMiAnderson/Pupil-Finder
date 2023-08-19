@@ -71,7 +71,7 @@
                 <span class="icon">
                   <i class="far fa-calendar sizeIcon"></i>
                 </span>
-                <p class="titre">Emploie du temps</p>
+                <p class="titre">Emploi du temps</p>
               </button>
             </form>
           </li>
@@ -191,7 +191,7 @@
                   </div>
 
                   <!-- form handling -->
-                  <form action="/" method="POST">
+                  <div class="tttt" >
                     <table class="table">
                       <thead class="thead-dark">
                         <tr>
@@ -212,26 +212,33 @@
                             <%= data.listUsers[i].nom %> <%=
                             data.listUsers[i].prenom %>
                           </td>
-                          <td><%= data.listUsers[i].email %></td>
+                          <td class="userEmail"><%= data.listUsers[i].email %></td>
                           <td><%= data.listUsers[i].classe %></td>
                           <td><%= data.listUsers[i].numInClasse %></td>
-                          <td>
-                            <a href="" class="btn border-shadow update">
-                              <span class="text-gradient edit"
-                                ><i class="fas fa-pencil-alt"></i
-                              ></span>
-                            </a>
-                            <a class="btn border-shadow delete">
-                              <span class="text-gradient"
+                          <td style="display: flex; justify-content: center;">
+                            
+                              <form action="/admin" class="btn border-shadow update crudBtn sense-etre-a formEditEmail">
+                               
+                                <button type="submit" class="btn" style="background: none; "><span  class="text-gradient edit"
+                                  ><i class="fas fa-pencil-alt"></i
+                                ></span></button>
+                              </form>
+                           
+                            <form action="/admin/gerer/delete-on-list" method="post" class="btn border-shadow delete crudBtn sense-etre-a formDeleteEmail">
+                            
+                              <button type="submit" class="btn" style="background: none;">
+                                <span  class="text-gradient edit"
                                 ><i class="fas fa-times"></i
-                              ></span>
-                            </a>
+                                ></span>
+                              </button>
+                            </form>
+                            
                           </td>
                         </tr>
                         <% } %>
                       </tbody>
                     </table>
-                  </form>
+                  </div>
                 </div>
               </main>
 
@@ -270,7 +277,7 @@
                   </form>
 
                   <!-- form handling -->
-                  <form action="/" method="POST">
+                  <div  class="tttt">
                     <table class="table">
                       <thead class="thead-dark">
                         <tr>
@@ -288,20 +295,39 @@
                           <td><%= i + 1 %></td>
                           <td><%= data.listMatiere[i].nomMatiere %></td>
                           <td><%= data.listMatiere[i].nomProf %></td>
-                          <td>
-                            <a href="" class="btn border-shadow update"
+                          <!-- <td>
+                            <a  href="" class="btn border-shadow update crudBtn"
                               ><span class="text-gradient edit"
                                 ><i class="fas fa-pencil-alt"></i></span></a
-                            ><a class="btn border-shadow delete"
+                            ><a href="" class="btn border-shadow delete crudBtn"
                               ><span class="text-gradient"
                                 ><i class="fas fa-times"></i></span
                             ></a>
+                          </td> -->
+                          <td style="display: flex; justify-content: center;">
+                            
+                            <form action="/admin" class="btn border-shadow update crudBtn sense-etre-a">
+                              <!-- <input type="email" hidden value=""> -->
+                              <button type="submit" class="btn" style="background: none;"><span  class="text-gradient edit"
+                                ><i class="fas fa-pencil-alt"></i
+                              ></span></button>
+                            </form>
+                         
+                            <form action="/admin" class="btn border-shadow delete crudBtn sense-etre-a">
+                              <!-- <input type="email" hidden value=""> -->
+                              <button type="submit" class="btn" style="background: none;">
+                                <span  class="text-gradient edit"
+                                ><i class="fas fa-times"></i
+                                ></span>
+                              </button>
+                            </form>
+                          
                           </td>
                         </tr>
                         <% } %>
                       </tbody>
                     </table>
-                  </form>
+                  </div>
                 </div>
               </main>
 
@@ -362,7 +388,7 @@
                   </form>
 
                   <!-- form handling -->
-                  <form action="/" method="POST">
+                  <div class="tttt">
                     <table class="table">
                       <thead class="thead-dark">
                         <tr>
@@ -380,23 +406,30 @@
                           <td><%= i + 1 %></td>
                           <td><%= data.listClasse[i].nomClasse %></td>
                           <td><%= data.listClasse[i].matiere.length %></td>
-                          <td>
-                            <a href="" class="btn border-shadow update">
-                              <span class="text-gradient edit"
+                          <td style="display: flex; justify-content: center;">
+                            
+                            <form action="/admin" class="btn border-shadow update crudBtn sense-etre-a">
+                              <!-- <input type="email" hidden value=""> -->
+                              <button type="submit" class="btn" style="background: none;"><span  class="text-gradient edit"
                                 ><i class="fas fa-pencil-alt"></i
-                              ></span>
-                            </a>
-                            <a class="btn border-shadow delete">
-                              <span class="text-gradient"
+                              ></span></button>
+                            </form>
+                         
+                            <form action="/admin" class="btn border-shadow delete crudBtn sense-etre-a">
+                              <!-- <input type="email" hidden value=""> -->
+                              <button type="submit" class="btn" style="background: none;">
+                                <span  class="text-gradient edit"
                                 ><i class="fas fa-times"></i
-                              ></span>
-                            </a>
+                                ></span>
+                              </button>
+                            </form>
+                          
                           </td>
                         </tr>
                         <% } %>
                       </tbody>
                     </table>
-                  </form>
+                  </div>
                 </div>
               </main>
             </div>
@@ -470,7 +503,27 @@
             }
           }
         });
+
+        // CRUD USER
+
+        const AllEmailUser = document.querySelectorAll('.userEmail');
+        const AllFormEditUser = document.querySelectorAll('.formEditEmail');
+        const AllFormDeleteEmail = document.querySelectorAll('.formDeleteEmail');
+        
+        for ( var i = 0;i < AllEmailUser.length; i++){
+
+          var inputIdentifiant = document.createElement("input");
+          
+          inputIdentifiant.name = "emailDelete";
+          inputIdentifiant.value = AllEmailUser[i].textContent;
+          inputIdentifiant.type = "email";
+          inputIdentifiant.className = "hidden";
+          
+          // Parent
+          AllFormEditUser[i].appendChild(inputIdentifiant);
+          AllFormDeleteEmail[i].appendChild(inputIdentifiant);
+        };
     </script>
-    <script src="/public/js/admin/index.js"></script>
+    
   </body>
 </html>

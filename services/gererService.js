@@ -106,7 +106,7 @@ const structureDataClasse = async  (classe) => {
     return structuredData;
 } 
 
-
+ 
 
 const addClasse = (dataClasse) => {
     try {
@@ -176,7 +176,7 @@ const getNumInClasse = async (Classe) => {
 const getAllUsers = async () => {
     try{
         return new Promise( (resolve , reject) => {
-            User.find( {role: "user"} , (err, userBase) => {
+            User.find( {role: "user" } , (err, userBase) => {
                 if (err){
                     console.log(err);
                     reject("Errreur Server");
@@ -211,6 +211,14 @@ const getMatriculeClasse = async () => {
     }
 }
 
+const deleteUserByIdentifiant = async (Identifiant) => {
+    try {
+        return await User.deleteOne({email: Identifiant});
+    }
+    catch (err) {
+        console.log(err);
+    }
+}
 
 module.exports = {
     getMatiereDispo,
@@ -223,5 +231,7 @@ module.exports = {
     NombreMatiere,
     getClasseDispo,
     getAllUsers,
-    addAnnonceService
+    addAnnonceService,
+
+    deleteUserByIdentifiant
 }

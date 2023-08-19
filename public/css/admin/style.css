@@ -90,7 +90,7 @@ a {
     color: white;
 }
 
-#site-main .container form{
+#site-main .container .tttt{
     margin: 10px 0;
 }
 
@@ -107,7 +107,7 @@ table{
     border-top: 1px solid var(--border);
 }
 
-.table td > a.btn{
+.table td > .sense-etre-a{
     padding: .3em 1em;
     font-size: 1.1em;
     margin: 0 .2em;
@@ -115,12 +115,12 @@ table{
 
 
 
-.table td > a.btn .edit{
+.table td > .sense-etre-a .edit{
     color: var(--blackbe);
 }
 
 
-.table tr:hover td > a{
+.table tr:hover td > .sense-etre-a{
     box-shadow: none;
 }
 
@@ -129,7 +129,7 @@ table{
     background-color:rgb(235, 235, 235);
     
 }
-.table tr:hover, .table tr:hover td > a.btn , .table tr:hover td > a.btn span.edit{
+.table tr:hover, .table tr:hover td > .sense-etre-a , .table tr:hover td > .sense-etre-a span.edit{
     background-color: var(--violet) ;
     color: white;
 }

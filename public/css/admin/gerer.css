@@ -77,3 +77,14 @@
  padding: 10px 20px;
  border-radius: 10px;
 }
+.crudBtn:hover span{
+    color: var(--rose) !important;
+    transition: .3s;
+}
+.crudBtn:hover{
+    border-color: var(--rose) !important;
+    transition: .3s;
+}
+.btn{
+    cursor: pointer !important;
+}

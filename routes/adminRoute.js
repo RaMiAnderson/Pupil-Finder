@@ -30,7 +30,7 @@ router.get("/gerer/add-user",adminController.getPageAddUserController);
 
 
 
-
+ 
 
 //---------------------- Post --------------- 
 
@@ -57,6 +57,14 @@ router.post("/annonce/add-annonce" ,adminController.addAnnonce);
 // logout
 
 router.post("/deconnexion" , authController.logoutController );
+
+
+
+// --------------------- DELETE ----------
+
+// gerer
+
+router.post("/gerer/delete-on-list" , adminController.deleteOneUser);
 
 
 

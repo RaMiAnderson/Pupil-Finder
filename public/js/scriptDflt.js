@@ -143,12 +143,8 @@ var btnHoriz = document.querySelectorAll('.btnNavH');
         }
       });
     });
-formDatePayer.addEventListener('submit' , (stopFormDatePayer)=>{
-  stopFormDatePayer.preventDefault();
-});
-FormDateNote.addEventListener('submit' , (stopFormDateNote)=>{
-  stopFormDateNote.preventDefault();
-})
+
+
 
 //INteraction acceuil
 var btnAcc = document.querySelectorAll('.blockGrid .flottantebox .boxKely');

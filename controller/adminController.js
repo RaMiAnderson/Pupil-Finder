@@ -111,9 +111,13 @@ const getPageAddUserController = (req,res) => {
 
 const addMatiereController = async (req,res) => {
     try {
-        const matiere = req.body;
-        const result = await gererService.addMatiere(matiere);
-        res.redirect('/admin/gerer')
+        const stateConnection = authentificationService.verifyIfAlreadyConnected(req);
+        if (stateConnection) {
+            const matiere = req.body;
+            const result = await gererService.addMatiere(matiere);
+            res.redirect('/admin/gerer');
+        }
+        else   res.redirect('/auth/login')
     } catch (err) {
         const messageError = ` ERREUR d'ajout de la matiere  `;
         console.log(err);
@@ -124,9 +128,13 @@ const addMatiereController = async (req,res) => {
 
 const getNmbrMatiere = async (req,res) => {
     try {
-        const nombreMatiere = parseInt(req.body.nombreMatiere);
-        const envoie = await gererService.NombreMatiere(nombreMatiere);
-        res.redirect("/admin/gerer");
+        const stateConnection = authentificationService.verifyIfAlreadyConnected(req);
+        if (stateConnection) {
+            const nombreMatiere = parseInt(req.body.nombreMatiere);
+            const envoie = await gererService.NombreMatiere(nombreMatiere);
+            res.redirect("/admin/gerer");
+        }
+        else res.redirect('/auth/login')
     }
     catch (err) {
         if (err) {
@@ -140,10 +148,14 @@ const getNmbrMatiere = async (req,res) => {
   
 const addClasseController = async (req, res) => {
     try {
-        const classe = req.body;
-        const structuredDataClass = await gererService.structureDataClasse(classe);
-        const result = await gererService.addClasse(structuredDataClass);
-        res.redirect('/admin/gerer');
+        const stateConnection = authentificationService.verifyIfAlreadyConnected(req);
+        if (stateConnection) {
+            const classe = req.body;
+            const structuredDataClass = await gererService.structureDataClasse(classe);
+            const result = await gererService.addClasse(structuredDataClass);
+            res.redirect('/admin/gerer');
+        }
+        else res.redirect('auth/login')
     }
     catch (err) {
         const messageError = "ERREUR d'ajout de la classe";
@@ -155,9 +167,13 @@ const addClasseController = async (req, res) => {
 
 const addUserController = async (req,res) => {
     try {
-        const user = req.body;
-        const result = await authentificationService.addUser(user);
-        res.redirect('/admin/gerer');
+        const stateConnection = authentificationService.verifyIfAlreadyConnected(req);
+        if (stateConnection) {
+            const user = req.body;
+            const result = await authentificationService.addUser(user);
+            res.redirect('/admin/gerer');
+        }
+        else res.redirect('auth/login')
     } catch (error) {
         const messageError = "Erreur d'ajout de l'utilisateur";
         console.log(error);
@@ -168,9 +184,13 @@ const addUserController = async (req,res) => {
 
 const addAnnonce = async (req,res) => {
     try {
-        const annonce = req.body;
-        const result = await gererService.addAnnonceService(annonce);
-        res.redirect('/admin/annonce')
+        const stateConnection = authentificationService.verifyIfAlreadyConnected(req);
+        if (stateConnection) {
+            const annonce = req.body;
+            const result = await gererService.addAnnonceService(annonce);
+            res.redirect('/admin/annonce');
+        }
+        else res.redirect('/auth/login')
     } catch (err) {
         const messageError = ` ERREUR d'ajout de l'annonce  `;
         console.log(err);
@@ -183,7 +203,29 @@ const addAnnonce = async (req,res) => {
 
 
 
+//------------------------ DELETE -------------
+// gerer
+const deleteOneUser = async (req, res) => {
+    try {
+        const stateConnection = authentificationService.verifyIfAlreadyConnected(req);
+        if (stateConnection) if (req?.session?.user?.role === "admin") {
+                const result = await gererService.deleteUserByIdentifiant(req.body.emailDelete);
+                res.redirect('/admin/gerer');
+            }
+            else res.redirect('/user')
+           
+        else res.redirect('/auth/login')
+    }
+    catch (err) {
+        const messageError = ` ERREUR de suppression `;
+        console.log(err);
+        res.redirect(`/admin/gerer?message=${messageError}`);
+    }
+}
 
+
+
+ 
 
 // --------------- API ----------
 
@@ -197,7 +239,7 @@ const dataGerer = async (req,res) => {
         else res.redirect('/user');
     } 
     else res.redirect("/auth/login");
-}
+} 
 
 const getClasseDispo = async (req,res) => {
     const stateConnection = authentificationService.verifyIfAlreadyConnected(req);
@@ -244,6 +286,9 @@ module.exports = {
     addClasseController,
     addUserController,
     addAnnonce,
+
+
+    deleteOneUser,
 
 
     dataGerer,
