@@ -115,7 +115,7 @@ const addMatiereController = async (req,res) => {
         if (stateConnection) {
             const matiere = req.body;
             const result = await gererService.addMatiere(matiere);
-            res.redirect('/admin/gerer');
+            res.redirect('/admin/gerer#site-matiere');
         }
         else   res.redirect('/auth/login')
     } catch (err) {
@@ -132,7 +132,7 @@ const getNmbrMatiere = async (req,res) => {
         if (stateConnection) {
             const nombreMatiere = parseInt(req.body.nombreMatiere);
             const envoie = await gererService.NombreMatiere(nombreMatiere);
-            res.redirect("/admin/gerer");
+            res.redirect("/admin/gerer#site-classe");
         }
         else res.redirect('/auth/login')
     }
@@ -153,7 +153,7 @@ const addClasseController = async (req, res) => {
             const classe = req.body;
             const structuredDataClass = await gererService.structureDataClasse(classe);
             const result = await gererService.addClasse(structuredDataClass);
-            res.redirect('/admin/gerer');
+            res.redirect('/admin/gerer#site-classe');
         }
         else res.redirect('auth/login')
     }
@@ -228,12 +228,27 @@ const deleteOneMatiere = async (req,res) => {
         const stateConnection = authentificationService.verifyIfAlreadyConnected(req);
         if (stateConnection) if (req?.session?.user?.role === "admin") {
             const result = await gererService.deleteMatiereByIdentifiant(req.body.matiereDelete);
-            res.redirect('/admin/gerer');
+            res.redirect('/admin/gerer#site-matiere');
         }
         else res.redirect('/user');
     }
     catch (err) {
         const messageError = " ERREUR SERVER";
+        console.log(err);
+        res.redirect(`/admin/gerer?message=${messageError}`);
+    }
+}
+
+const deleteOneClasse = async (req,res) => {
+    try {
+        const stateConnection = authentificationService.verifyIfAlreadyConnected(req);
+        if (stateConnection) if (req?.session?.user?.role === "admin" ) {
+            const result = await gererService.deleteClasseByIdentifiant(req.body.classeDelete);
+            res.redirect('/admin/gerer#site-classe');
+        }
+    }
+    catch (err) {
+        const messageError = " ERREUR SERVER ";
         console.log(err);
         res.redirect(`/admin/gerer?message=${messageError}`);
     }
@@ -302,6 +317,7 @@ module.exports = {
 
     deleteOneUser,
     deleteOneMatiere,
+    deleteOneClasse,
 
 
     dataGerer,

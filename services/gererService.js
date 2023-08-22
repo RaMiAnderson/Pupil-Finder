@@ -229,6 +229,15 @@ const deleteMatiereByIdentifiant = async ( Identifiant ) => {
     }
 }
 
+const deleteClasseByIdentifiant = async ( Identifiant ) => {
+    try {
+        return await classe.deleteOne({ _id : Identifiant });
+    }
+    catch (err) {
+        console.log(err);
+    }
+}
+
 module.exports = {
     getMatiereDispo,
     getNumInClasse,
@@ -243,5 +252,6 @@ module.exports = {
     addAnnonceService,
 
     deleteUserByIdentifiant,
-    deleteMatiereByIdentifiant
+    deleteMatiereByIdentifiant,
+    deleteClasseByIdentifiant
 }

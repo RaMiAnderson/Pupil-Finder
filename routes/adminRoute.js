@@ -68,6 +68,8 @@ router.post("/gerer/delete-on-list" , adminController.deleteOneUser);
 
 router.post("/gerer/delete-on-listmatiere" , adminController.deleteOneMatiere);
 
+router.post("/gerer/delete-on-classe"  , adminController.deleteOneClasse );
+
 
 
 

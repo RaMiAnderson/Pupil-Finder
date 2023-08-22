@@ -415,7 +415,7 @@
                               ></span></button>
                             </form>
                          
-                            <form action="/admin" class="btn border-shadow delete crudBtn sense-etre-a formDeleteClasse">
+                            <form action="/admin/gerer/delete-on-classe" method="post" class="btn border-shadow delete crudBtn sense-etre-a formDeleteClasse">
                               <span class="listClasseDispo" hidden><%= data.listClasse[i]._id %></span>
                               <button type="submit" class="btn" style="background: none;">
                                 <span  class="text-gradient edit"
@@ -551,7 +551,7 @@
         for ( var i = 0; i < AllClasseDispo.length ; i++ ) {
           var inputIdentifiant = document.createElement("input");
           
-          inputIdentifiant.name = "ClasseDelete";
+          inputIdentifiant.name = "classeDelete";
           inputIdentifiant.value = AllClasseDispo[i].textContent;
           inputIdentifiant.type = "text";
           inputIdentifiant.className = "hidden";
