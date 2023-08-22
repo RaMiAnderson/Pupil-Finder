@@ -1,3 +1,4 @@
+
 const Annonce = require('../model/annonce');
 
 
@@ -21,6 +22,16 @@ const getAllAnnonce  = async () =>{
     }
 }
 
+const deleteAnnonceByIdentifiant = async (Id) => {
+    try {
+        return await Annonce.findOneAndDelete( { _id : Id } );
+    }
+    catch (err) {
+        console.log(err);
+    }
+}
+
 module.exports = {
-    getAllAnnonce
+    getAllAnnonce,
+    deleteAnnonceByIdentifiant
 }

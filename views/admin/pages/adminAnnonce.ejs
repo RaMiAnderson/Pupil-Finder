@@ -19,6 +19,11 @@
    
     <!-- FontAwesome -->
     <link rel="stylesheet" href="/public/assets/FontAwesome/css/all.min.css" />
+    <style>
+      .btn:hover{
+        cursor: pointer !important;
+      }
+    </style>
   </head>
  
   <body>
@@ -174,32 +179,31 @@
 
             <form action="/admin/annonce/add-annonce" method="post">
               <p><textarea name="annonceContent" id="" cols="10" rows="5" class="w3-input w3-padding-16 w3-border"placeholder="Commencez à écrire..." ></textarea></p>
-        
-            <!-- <select name="types" id="">
-                <option value="">Entrer la type de l'annonce</option>
-                <option value="hier">Annonces générales</option>
-                <option value="recent">Annonces administratives</optiion>
-                <option value="ancien">Annonces d'événements</option>
-                <option value="hier">Annonces de sécurité</option>
-                <option value="recent"> Annonces pédacologiques</optiion>
-        
-            </select> -->
+
               <p><button class="www" type="submit">Envoyer</button></p>
             </form>
           </div>
           
           <!-- afaka anaovana recherche dashboard -->
           <!--annonce 1 plus récent, 2 hier ohatra de lay 3 farany plus ancien fa miandry javascript anaovana azy-->
-          <% for (var i = 0; i < data.allAnnonce.length ; i++){ %>
+          <% for (var i = data.allAnnonce.length - 1 ; i >= 0 ; i-- ){ %>
           <div class="ann-rec">
             <div class="div1">
               <legend><strong >21 July 2023</strong></legend>
               <div>
-                <button><i class="far fa-edit"></i></button>
-                <button><i class="far fa-trash-alt"></i></button>
+                <form action="" method="post" class="formEditAnnonce btn" >
+              
+                  <button type="submit" class="btn"><i class="far fa-edit"></i></button>
+                </form>
+                
+                <form action="/admin/annonce/delete-on-annonce" method="post" class="formDeleteAnnonce btn" >
+                  <span hidden class="listAnnonce"><%= data.allAnnonce[i]._id %></span>
+                  <button type="submit" class="btn" ><i class="far fa-trash-alt"></i></button>
+                </form>
+                
               </div>
             </div>
-            <p> <%= data.allAnnonce[i].contenu %></p>
+            <pre> <%= data.allAnnonce[i].contenu %> </pre>
             
           </div>
           <% } %>
@@ -209,6 +213,8 @@
 
       </div>
     </div>
+
+    
 
     <!-- =========== Scripts =========  -->
     <script src="/public/js/scriptDflt.js"></script>
@@ -231,6 +237,25 @@
           }
         })
     </script> -->
+    <script>
+      // CRUD Annonce
+      const AllAnnonceDispo = document.querySelectorAll(".listAnnonce");
+        const AllFormDeleteAnnonce = document.querySelectorAll(".formDeleteAnnonce");
+        const AllFormEditAnnonce = document.querySelectorAll(".formEditAnnonce");
+
+        for ( var i = 0; i < AllAnnonceDispo.length ; i++ ) {
+          var inputIdentifiant = document.createElement("input");
+          
+          inputIdentifiant.name = "annonceDelete";
+          inputIdentifiant.value = AllAnnonceDispo[i].textContent;
+          inputIdentifiant.type = "text";
+          inputIdentifiant.className = "hidden";
+          
+          // Parent
+          AllFormEditAnnonce[i].appendChild(inputIdentifiant);
+          AllFormDeleteAnnonce[i].appendChild(inputIdentifiant);
+        }
+    </script>
     
   </body>
 </html>

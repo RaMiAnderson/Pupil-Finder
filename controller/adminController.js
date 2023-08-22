@@ -254,6 +254,21 @@ const deleteOneClasse = async (req,res) => {
     }
 }
 
+const deleteOneAnnonce = async (req,res) => {
+    try {
+        const stateConnection = authentificationService.verifyIfAlreadyConnected(req);
+        if (stateConnection) if (req?.session?.user?.role === "admin" ) {
+            const result = await annonceService.deleteAnnonceByIdentifiant(req.body.annonceDelete);
+            res.redirect('/admin/annonce');
+        }
+    }
+    catch (err) {
+        const messageError = "ERREUR SERVER";
+        console.log(err);
+        res.redirect(`/admin/annonce?message=${messageError}`);
+    }
+}
+
 // --------------- API ----------
 
 const dataGerer = async (req,res) => {
@@ -318,6 +333,7 @@ module.exports = {
     deleteOneUser,
     deleteOneMatiere,
     deleteOneClasse,
+    deleteOneAnnonce,
 
 
     dataGerer,
