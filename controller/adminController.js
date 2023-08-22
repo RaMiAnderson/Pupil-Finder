@@ -223,7 +223,21 @@ const deleteOneUser = async (req, res) => {
     }
 }
 
-
+const deleteOneMatiere = async (req,res) => {
+    try {
+        const stateConnection = authentificationService.verifyIfAlreadyConnected(req);
+        if (stateConnection) if (req?.session?.user?.role === "admin") {
+            const result = await gererService.deleteMatiereByIdentifiant(req.body.matiereDelete);
+            res.redirect('/admin/gerer');
+        }
+        else res.redirect('/user');
+    }
+    catch (err) {
+        const messageError = " ERREUR SERVER";
+        console.log(err);
+        res.redirect(`/admin/gerer?message=${messageError}`);
+    }
+}
 
 // --------------- API ----------
 
@@ -287,6 +301,7 @@ module.exports = {
 
 
     deleteOneUser,
+    deleteOneMatiere,
 
 
     dataGerer,

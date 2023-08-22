@@ -306,15 +306,15 @@
                           </td> -->
                           <td style="display: flex; justify-content: center;">
                             
-                            <form action="/admin" class="btn border-shadow update crudBtn sense-etre-a">
+                            <form action="/admin" class="btn border-shadow update crudBtn sense-etre-a formEditMatiere">
                               <!-- <input type="email" hidden value=""> -->
                               <button type="submit" class="btn" style="background: none;"><span  class="text-gradient edit"
                                 ><i class="fas fa-pencil-alt"></i
                               ></span></button>
                             </form>
                          
-                            <form action="/admin" class="btn border-shadow delete crudBtn sense-etre-a">
-                              <!-- <input type="email" hidden value=""> -->
+                            <form action="/admin/gerer/delete-on-listmatiere" method="post" class="btn border-shadow delete crudBtn sense-etre-a formDeleteMatierer ">
+                              <span class="listMatiereDispo" hidden ><%= data.listMatiere[i]._id %></span>
                               <button type="submit" class="btn" style="background: none;">
                                 <span  class="text-gradient edit"
                                 ><i class="fas fa-times"></i
@@ -522,6 +522,25 @@
           // Parent
           AllFormEditUser[i].appendChild(inputIdentifiant);
           AllFormDeleteEmail[i].appendChild(inputIdentifiant);
+        };
+
+        // CRUD MATIERE
+        const AllMatiereDispo = document.querySelectorAll('.listMatiereDispo');
+        const AllFormDeleteMatiere = document.querySelectorAll('.formDeleteMatierer');
+        const AllFormEditMatiere = document.querySelectorAll('.formEditMatiere');
+
+        for ( var i = 0;i < AllMatiereDispo.length; i++){
+
+          var inputIdentifiant = document.createElement("input");
+          
+          inputIdentifiant.name = "matiereDelete";
+          inputIdentifiant.value = AllMatiereDispo[i].textContent;
+          inputIdentifiant.type = "text";
+          inputIdentifiant.className = "hidden";
+          
+          // Parent
+          AllFormEditMatiere[i].appendChild(inputIdentifiant);
+          AllFormDeleteMatiere[i].appendChild(inputIdentifiant);
         };
     </script>
     

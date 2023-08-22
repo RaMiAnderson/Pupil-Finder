@@ -66,6 +66,8 @@ router.post("/deconnexion" , authController.logoutController );
 
 router.post("/gerer/delete-on-list" , adminController.deleteOneUser);
 
+router.post("/gerer/delete-on-listmatiere" , adminController.deleteOneMatiere);
+
 
 
 
@@ -74,7 +76,6 @@ router.post("/gerer/delete-on-list" , adminController.deleteOneUser);
 
 
 router.get("/gerer/getDataGerer" , adminController.dataGerer );
-
 
 router.get("/gerer/add-user/getClasse" , adminController.getClasseDispo);
 

@@ -220,6 +220,15 @@ const deleteUserByIdentifiant = async (Identifiant) => {
     }
 }
 
+const deleteMatiereByIdentifiant = async ( Identifiant ) => {
+    try {
+        return await Matiere.deleteOne({ _id : Identifiant});
+    }
+    catch (err) {
+        console.log(err);
+    }
+}
+
 module.exports = {
     getMatiereDispo,
     getNumInClasse,
@@ -233,5 +242,6 @@ module.exports = {
     getAllUsers,
     addAnnonceService,
 
-    deleteUserByIdentifiant
+    deleteUserByIdentifiant,
+    deleteMatiereByIdentifiant
 }
