@@ -408,15 +408,15 @@
                           <td><%= data.listClasse[i].matiere.length %></td>
                           <td style="display: flex; justify-content: center;">
                             
-                            <form action="/admin" class="btn border-shadow update crudBtn sense-etre-a">
+                            <form action="/admin" class="btn border-shadow update crudBtn sense-etre-a formEditClasse">
                               <!-- <input type="email" hidden value=""> -->
                               <button type="submit" class="btn" style="background: none;"><span  class="text-gradient edit"
                                 ><i class="fas fa-pencil-alt"></i
                               ></span></button>
                             </form>
                          
-                            <form action="/admin" class="btn border-shadow delete crudBtn sense-etre-a">
-                              <!-- <input type="email" hidden value=""> -->
+                            <form action="/admin" class="btn border-shadow delete crudBtn sense-etre-a formDeleteClasse">
+                              <span class="listClasseDispo" hidden><%= data.listClasse[i]._id %></span>
                               <button type="submit" class="btn" style="background: none;">
                                 <span  class="text-gradient edit"
                                 ><i class="fas fa-times"></i
@@ -542,6 +542,24 @@
           AllFormEditMatiere[i].appendChild(inputIdentifiant);
           AllFormDeleteMatiere[i].appendChild(inputIdentifiant);
         };
+
+        // CRUD Classe
+        const AllClasseDispo = document.querySelectorAll(".listClasseDispo");
+        const AllFormDeleteClasse = document.querySelectorAll(".formDeleteClasse");
+        const AllFormEditClasse = document.querySelectorAll(".formEditClasse");
+
+        for ( var i = 0; i < AllClasseDispo.length ; i++ ) {
+          var inputIdentifiant = document.createElement("input");
+          
+          inputIdentifiant.name = "ClasseDelete";
+          inputIdentifiant.value = AllClasseDispo[i].textContent;
+          inputIdentifiant.type = "text";
+          inputIdentifiant.className = "hidden";
+          
+          // Parent
+          AllFormEditClasse[i].appendChild(inputIdentifiant);
+          AllFormDeleteClasse[i].appendChild(inputIdentifiant);
+        }
     </script>
     
   </body>
