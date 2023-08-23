@@ -46,6 +46,8 @@ router.post('/gerer/add-classe' , adminController.addClasseController);
 
 router.post("/gerer/add-user" ,adminController.addUserController);
 
+router.post("/gerer/add-prof" , adminController.addProfController);
+
 // ----Annonce
 
 router.post("/annonce/add-annonce" ,adminController.addAnnonce);
@@ -74,6 +76,7 @@ router.post("/gerer/delete-on-classe"  , adminController.deleteOneClasse );
 
 router.post("/annonce/delete-on-annonce" , adminController.deleteOneAnnonce );
 
+router.post("/gerer/delete-one-listProf" , adminController.deleteOneProf );
 
 
 
@@ -82,6 +85,8 @@ router.post("/annonce/delete-on-annonce" , adminController.deleteOneAnnonce );
 
 
 router.get("/gerer/getDataGerer" , adminController.dataGerer );
+
+router.get("/gerer/getDataGererProff" , adminController.dataGererProf );
 
 router.get("/gerer/add-user/getClasse" , adminController.getClasseDispo);
 

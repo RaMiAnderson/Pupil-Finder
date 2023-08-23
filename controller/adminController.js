@@ -83,7 +83,8 @@ const getGerer = async (req,res) => {
                 nombreMatiere: await temporaryData.dataNombreMatiere,
                 listMatiere : Object.values(await gererService.getMatiereDispo(req?.session?.user?.role)),
                 listUsers : Object.values(await gererService.getAllUsers()),
-                listClasse : Object.values(await gererService.getClasseDispo("admin"))
+                listClasse : Object.values(await gererService.getClasseDispo("admin")),
+                listProf : Object.values(await gererService.getAllProff("admin"))
             };
         
 
@@ -202,6 +203,25 @@ const addUserController = async (req,res) => {
     };
 };
 
+const addProfController = async (req,res) => {
+    try {
+        const stateConnection = req?.session?.user;
+        if (stateConnection) {
+            if ( stateConnection.role = "admin") {
+                const user = req.body;
+                const result = await authentificationService.addProf(user);
+                res.redirect('/admin/gerer/add-prof');
+            }
+            else res.redirect('/user');
+        }
+        else res.redirect('auth/login')
+    } catch (error) {
+        const messageError = "Erreur d'ajout du Proffesseur";
+        console.log(error);
+        res.redirect(`/auth/add-prof?message=${messageError}`);
+    };
+}
+
 
 const addAnnonce = async (req,res) => {
     try {
@@ -290,6 +310,21 @@ const deleteOneAnnonce = async (req,res) => {
     }
 }
 
+const deleteOneProf = async (req,res) => {
+    try {
+        const stateConnection = authentificationService.verifyIfAlreadyConnected(req);
+        if (stateConnection) if (req?.session?.user?.role === "admin" ) {
+            const result = await gererService.deleteProfByIdentifiant(req.body.profDelete);
+            res.redirect('/admin/gerer#site-prof');
+        }
+    }
+    catch (err) {
+        const messageError = "ERREUR SERVER";
+        console.log(err);
+        res.redirect(`/admin/gerer?message=${messageError}`);
+    }
+}
+
 // --------------- API ----------
 
 const dataGerer = async (req,res) => {
@@ -303,6 +338,18 @@ const dataGerer = async (req,res) => {
     } 
     else res.redirect("/auth/login");
 } 
+
+const dataGererProf = async (req,res) => {
+    const stateConnection = authentificationService.verifyIfAlreadyConnected(req);
+    if (stateConnection) {
+        if (req?.session?.user?.role === "admin") {
+            const proffDispo = await gererService.getAllProff("admin");
+            res.json(proffDispo);
+        }  
+        else res.redirect('/user');
+    } 
+    else res.redirect("/auth/login");
+}
 
 const getClasseDispo = async (req,res) => {
     const stateConnection = req?.session?.user;;
@@ -350,15 +397,18 @@ module.exports = {
     addClasseController,
     addUserController,
     addAnnonce,
+    addProfController,
 
 
     deleteOneUser,
     deleteOneMatiere,
     deleteOneClasse,
     deleteOneAnnonce,
+    deleteOneProf,
 
 
     dataGerer,
+    dataGererProf,
     getClasseDispo,
     getAllAnonceController
 }

@@ -262,33 +262,33 @@
                           <th>Rang</th>
                           <th>Nom</th>
                           <th>Email</th>
-                          <th>Classe</th>
-                          <th>Numero en classe</th>
+                          <th>Prof de</th>
+                          <th>Numero</th>
                           <th>Action</th>
                         </tr>
                       </thead>
                       <tbody>
                         <!-- Aodina boucle -->
-                        <% for (var i = 0 ; i < data.listUsers.length ; i++){ %>
+                        <% for (var i = 0 ; i < data.listProf.length ; i++){ %>
                         <tr>
                           <td><%= i + 1 %></td>
                           <td>
-                            <%= data.listUsers[i].nom %> <%=
-                            data.listUsers[i].prenom %>
+                            <%= data.listProf[i].nom %> <%=
+                            data.listProf[i].prenom %>
                           </td>
-                          <td class=""><%= data.listUsers[i].email %></td>
-                          <td><%= data.listUsers[i].classe %></td>
-                          <td><%= data.listUsers[i].numInClasse %></td>
+                          <td class="profEmail"><%= data.listProf[i].email %></td>
+                          <td><%= data.listProf[i].fonction %></td>
+                          <td><%= data.listProf[i].numeros %></td>
                           <td style="display: flex; justify-content: center;">
                             
-                              <form action="/admin" class="btn border-shadow update crudBtn sense-etre-a ">
+                              <form action="/admin" class="btn border-shadow update crudBtn sense-etre-a formEditProff">
                                
                                 <button type="submit" class="btn" style="background: none; "><span  class="text-gradient edit"
                                   ><i class="fas fa-pencil-alt"></i
                                 ></span></button>
                               </form>
                            
-                            <form action="" method="post" class="btn border-shadow delete crudBtn sense-etre-a ">
+                            <form action="/admin/gerer/delete-one-listProf" method="post" class="btn border-shadow delete crudBtn sense-etre-a formDeleteProff">
                             
                               <button type="submit" class="btn" style="background: none;">
                                 <span  class="text-gradient edit"
@@ -320,6 +320,7 @@
                     method="post"
                     style="display: flex"
                     class="formMatiere"
+                    id="formMatiereSave"
                   >
                     <input
                       type="text"
@@ -327,12 +328,11 @@
                       name="nomMatiere"
                       required
                     />
-                    <input
-                      type="text"
-                      placeholder="Nom du Prof"
-                      name="nomProf"
-                      required
-                    />
+                    
+                    <select id="selectProf" name="emailProf" required >
+                      
+                    </select>
+
                     <input
                       type="submit"
                       class="Add-User"
@@ -508,8 +508,7 @@
 
     <script src="/public/assets/FontAwesome/js/all.min.js"></script>
     <script>
-      const parentFormMatiereClass =
-        document.getElementById("parentFormMatiere");
+      const parentFormMatiereClass = document.getElementById("parentFormMatiere");
 
       fetch("/admin/gerer/getDataGerer")
         .then((res) => res.json())
@@ -568,6 +567,25 @@
           }
         });
 
+      const selectProff = document.getElementById('selectProf');
+
+      fetch("/admin/gerer/getDataGererProff")
+        .then((res) => res.json())
+        .then((data) => {
+            const proffe = Object.values(data);
+   
+            for (var i = 0; i < proffe.length ; i++){
+              var option = document.createElement("option");
+
+              option.value = proffe[i].email;
+              option.textContent = proffe[i].prenom;
+
+              selectProff.appendChild(option);
+            };
+
+        });
+
+
         // CRUD USER
 
         const AllEmailUser = document.querySelectorAll('.userEmail');
@@ -586,6 +604,26 @@
           // Parent
           AllFormEditUser[i].appendChild(inputIdentifiant);
           AllFormDeleteEmail[i].appendChild(inputIdentifiant);
+        };
+
+        // CRUD Prof
+
+        const AllEmailProf = document.querySelectorAll('.profEmail');
+        const AllFormEditProf = document.querySelectorAll('.formEditProff');
+        const AllFormDeleteProf = document.querySelectorAll('.formDeleteProff');
+        
+        for ( var i = 0;i < AllEmailProf.length; i++){
+
+          var inputIdentifiant = document.createElement("input");
+          
+          inputIdentifiant.name = "profDelete";
+          inputIdentifiant.value = AllEmailProf[i].textContent;
+          inputIdentifiant.type = "email";
+          inputIdentifiant.className = "hidden";
+          
+          // Parent
+          AllFormEditProf[i].appendChild(inputIdentifiant);
+          AllFormDeleteProf[i].appendChild(inputIdentifiant);
         };
 
         // CRUD MATIERE

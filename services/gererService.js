@@ -2,6 +2,7 @@ const classe = require('../model/classe');
 const Matiere = require('../model/matiere');
 const temporaryData = require('../tmp/temporaryData');
 const User = require('../model/user');
+const Prof = require("../model/prof");
 const Annonce = require('../model/annonce');
 // const UserService = require('../services/userService');
 
@@ -29,12 +30,22 @@ const getMatiereDispo = async (role) => {
 }
 
 
-const addMatiere = (dataMatiere) => {
+
+const addMatiere = async (dataMatiere) => {
     try {
         const matiereModel = new Matiere();
-
+        const ProfCorespondant = await getOneProff(dataMatiere.emailProf);
         matiereModel.nomMatiere = dataMatiere.nomMatiere;
-        matiereModel.nomProf = dataMatiere.nomProf;
+        matiereModel.emailProf = dataMatiere.emailProf;
+        matiereModel.nomProf = ProfCorespondant.prenom ;
+        
+        await Prof.findOneAndUpdate( 
+            {email: dataMatiere.emailProf} ,
+            { $set: {fonction : dataMatiere.nomMatiere} },
+            (err, updatedDocument) => {
+                if (err) console.log(err);
+            });
+
         return new Promise( (resolve,reject) => {
             matiereModel.save( (err) => {
                 if (err) {
@@ -191,6 +202,44 @@ const getAllUsers = async () => {
     }
 }
 
+const getAllProff = async (role) => {
+    try{
+        if (role === "admin") {
+         return new Promise( (resolve , reject) => {
+            Prof.find( {} , (err, userBase) => {
+                if (err){
+                    console.log(err);
+                    reject("Errreur Server");
+                }
+                resolve(userBase);
+            })
+        })
+        }else return false;
+    }
+    catch (err) {
+        console.log(err);
+        throw "ERROR SERVER"
+    }
+}
+
+const getOneProff = async (email) => {
+    try{
+         return new Promise( (resolve , reject) => {
+            Prof.findOne( {email : email} , (err, userBase) => {
+                if (err){
+                    console.log(err);
+                    reject("Errreur Server");
+                }
+                resolve(userBase);
+            })
+        })
+    }
+    catch (err) {
+        console.log(err);
+        throw "ERROR SERVER"
+    }
+}
+
 const getMatriculeClasse = async () => {
     try {
         return new Promise( (resolve, reject) => {
@@ -214,6 +263,21 @@ const getMatriculeClasse = async () => {
 const deleteUserByIdentifiant = async (Identifiant) => {
     try {
         return await User.deleteOne({email: Identifiant});
+    }
+    catch (err) {
+        console.log(err);
+    }
+}
+
+const deleteProfByIdentifiant = async (Id) => {
+    try {
+        await Matiere.findOneAndUpdate( 
+            {emailProf: Id} ,
+            { $set: { emailProf : "none" , nomProf : "none"} },
+            (err, updatedDocument) => {
+                if (err) console.log(err);
+            });
+        return await Prof.deleteOne({email: Id});
     }
     catch (err) {
         console.log(err);
@@ -249,9 +313,12 @@ module.exports = {
     NombreMatiere,
     getClasseDispo,
     getAllUsers,
+    getAllProff,
     addAnnonceService,
+    getOneProff,
 
     deleteUserByIdentifiant,
     deleteMatiereByIdentifiant,
-    deleteClasseByIdentifiant
+    deleteClasseByIdentifiant,
+    deleteProfByIdentifiant
 }

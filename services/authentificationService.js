@@ -1,5 +1,6 @@
 const bcrypt = require("bcrypt");
 const User = require('../model/user') ;
+const Prof = require('../model/prof');
 const gererService = require("../services/gererService")
 
 
@@ -25,7 +26,34 @@ const  verifyIfAlreadyConnected =  (request) => {
     }
     return false;
 }
-  
+ 
+const addProf = async (user) => {
+    try {
+        const userModel = new Prof();
+        userModel.nom = user.Nom;
+        userModel.prenom = user.Prenom;
+        userModel.adresse = user.Adresse;
+        userModel.numeros = user.Numero;
+        userModel.email = user.Email;
+        userModel.password = await encryptPassword(user.MotDePasse);
+        userModel.dateNaissance = user.dateNaissance;
+        userModel.role = "prof";
+        userModel.genre = user.gender;
+        userModel.fonction = "none";
+        return new Promise((resolve, reject) => {
+            userModel.save((err) => {
+                if (err) {
+                    console.log(err);
+                    reject(`can't post prof : server failed`);
+                }
+                resolve(userModel);
+            })
+        })
+    } catch (error) {
+        throw ` Error : ${error}`;
+    }
+}
+
 const  addUser = async (user) => {
     try {
         const userModel = new User();
@@ -135,6 +163,7 @@ const comparePasswordencrypted = (inputPassword, databasePassword) => {
 
 module.exports = {
     addUser,
+    addProf,
     verifyIfAlreadyConnected,
     login,
     checkPasswordUser
