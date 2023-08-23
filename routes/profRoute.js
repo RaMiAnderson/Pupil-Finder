@@ -2,11 +2,15 @@ const express = require('express');
 const router = express.Router(); 
 
 const profController = require("../controller/profController");
-const adminController = require("../controller/adminController");
 
 
 
-router.get("/absence" , adminController.getAbsence);
+
+router.get("/" , profController.getPageHomeProfController);
+
+router.get("/absence" , profController.getPageAbsenceProfController);
+
+router.get("/note" , profController.getPageNoteProfController);
 
 
 

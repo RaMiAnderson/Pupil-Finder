@@ -11,7 +11,10 @@ const getHomepage = (req,res) => {
     const stateConnection = authentificationService.verifyIfAlreadyConnected(req);
     if (stateConnection) {
         if (req?.session?.user?.role === "admin") res.render('admin/adminHome')
-        else res.redirect('/user');
+        else {
+            if (req?.session?.user?.role === "user") res.redirect('/user')
+            else res.redirect('/prof');
+        }
     } 
     else res.redirect('/auth/login');
 }
@@ -20,7 +23,10 @@ const getAbsence = (req,res) => {
     const stateConnection = authentificationService.verifyIfAlreadyConnected(req);
     if(stateConnection){
         if (req?.session?.user?.role === "admin") res.render('admin/pages/adminAbsence')
-        else res.redirect('/user');
+        else {
+            if (req?.session?.user?.role === "user") res.redirect('/user')
+            else res.redirect('/prof/absence');
+        }
     } 
     else res.redirect('/auth/login');
 }
@@ -42,7 +48,10 @@ const getAnnonce = async (req,res) => {
 
             res.render("admin/pages/adminAnnonce" , {data})
         } 
-        else res.redirect('/user');
+        else {
+            if (req?.session?.user?.role === "user") res.redirect('/user')
+            else res.redirect('/prof');
+        };
     } 
     else res.redirect("/auth/login");
 }
@@ -53,7 +62,10 @@ const getApayer = (req,res) => {
         if (req?.session?.user?.role === "admin") res.render("admin/pages/adminApayer")
         else res.redirect('/user');
     } 
-    else res.redirect("/auth/login");
+    else {
+        if (req?.session?.user?.role === "user") res.redirect('/user')
+        else res.redirect('/prof');
+    };
 }
 
 const getCalendar = (req,res) => {
@@ -62,7 +74,10 @@ const getCalendar = (req,res) => {
         if (req?.session?.user?.role === "admin")  res.render("admin/pages/adminCalendar")
         else res.redirect('/user');
     }
-    else res.redirect("/auth/login");
+    else {
+        if (req?.session?.user?.role === "user") res.redirect('/user')
+        else res.redirect('/prof');
+    };
 }
 
 const getEdt = (req,res) => {
@@ -71,7 +86,10 @@ const getEdt = (req,res) => {
         if (req?.session?.user?.role === "admin")  res.render("admin/pages/adminEdt")
         else res.redirect('/user');
     } 
-    else res.redirect("/auth/login");
+    else {
+        if (req?.session?.user?.role === "user") res.redirect('/user')
+        else res.redirect('/prof');
+    };
 }
 
 const getGerer = async (req,res) => {
@@ -93,7 +111,10 @@ const getGerer = async (req,res) => {
             if ( (req?.session?.user?.role === "admin") && (req?.session?.user?.raison === "inscription") ) {
                 res.redirect('/admin/gerer/add-user');
             } 
-            else res.redirect('/user');
+            else {
+                if (req?.session?.user?.role === "user") res.redirect('/user')
+                else res.redirect('/prof');
+            };
         }
     } 
     else res.redirect("/auth/login");
@@ -103,7 +124,10 @@ const getNote = (req,res) => {
     const stateConnection = authentificationService.verifyIfAlreadyConnected(req);
     if (stateConnection) {
         if (req?.session?.user?.role === "admin")  res.render("admin/pages/adminNote")
-        else res.redirect('/user');
+        else {
+            if (req?.session?.user?.role === "user") res.redirect('/user')
+            else res.redirect('/prof/note');
+        }
     } 
     else res.redirect("/auth/login");
 }

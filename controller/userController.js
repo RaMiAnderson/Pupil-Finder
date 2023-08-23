@@ -9,7 +9,10 @@ const getHomepage = (req, res) => {
   const stateConnection = authentificationService.verifyIfAlreadyConnected(req);
   if (stateConnection) {
     if (req?.session?.user?.role === "user") res.render("user/userHome");
-    else res.redirect("/admin");
+    else {
+        if (req?.session?.user?.role === "admin") res.redirect('/admin')
+        else res.redirect('/prof');
+      };
 
   } else {
     res.redirect("/auth/login");
@@ -19,9 +22,11 @@ const getHomepage = (req, res) => {
 const getAbsence = (req, res) => {
   const stateConnection = authentificationService.verifyIfAlreadyConnected(req);
   if (stateConnection) {
-    if (req?.session?.user?.role === "user")
-      res.render("user/pages/userAbsence");
-    else res.redirect("/admin");
+    if (req?.session?.user?.role === "user") res.render("user/pages/userAbsence");
+    else {
+      if (req?.session?.user?.role === "admin") res.redirect('/admin')
+      else res.redirect('/prof/absence');
+    };
 
   } else res.redirect("/auth/login");
 };
@@ -31,15 +36,22 @@ const getAnnonce = async (req, res) => {
   if (stateConnection) {
     if (req?.session?.user?.role === "user"){
       var allAnnonce = Object.values( await annonceService.getAllAnnonce());
+      var dateAllAnnonce = [];
+            for (var i = 0 ; i < allAnnonce.length ; i++){
+                dateAllAnnonce[i] = await annonceService.parseTimeBd(allAnnonce[i].datePub);
+            };
             
             const data = {
-                allAnnonce : allAnnonce
+                allAnnonce : allAnnonce ,
+                dateAllAnnonce : dateAllAnnonce
             }
 
             res.render("user/pages/userAnnonce" , {data});
-    }
-      
-    else res.redirect("/admin");
+    }  
+    else {
+      if (req?.session?.user?.role === "admin") res.redirect('/admin')
+      else res.redirect('/prof');
+    };
 
   } else res.redirect("/auth/login");
 };
@@ -47,9 +59,11 @@ const getAnnonce = async (req, res) => {
 const getApayer = (req, res) => {
   const stateConnection = authentificationService.verifyIfAlreadyConnected(req);
   if (stateConnection) {
-    if (req?.session?.user?.role === "user")
-      res.render("user/pages/userApayer");
-    else res.redirect("/admin");
+    if (req?.session?.user?.role === "user") res.render("user/pages/userApayer");
+    else {
+      if (req?.session?.user?.role === "admin") res.redirect('/admin')
+      else res.redirect('/prof');
+    };
 
   } else res.redirect("/auth/login");
 };
@@ -57,9 +71,11 @@ const getApayer = (req, res) => {
 const getCalendar = (req, res) => {
   const stateConnection = authentificationService.verifyIfAlreadyConnected(req);
   if (stateConnection) {
-    if (req?.session?.user?.role === "user")
-      res.render("user/pages/userCalendar");
-    else res.redirect("/admin");
+    if (req?.session?.user?.role === "user") res.render("user/pages/userCalendar");
+    else {
+      if (req?.session?.user?.role === "admin") res.redirect('/admin')
+      else res.redirect('/prof');
+    };
 
   } else res.redirect("/auth/login");
 };
@@ -68,7 +84,10 @@ const getEdt = (req, res) => {
   const stateConnection = authentificationService.verifyIfAlreadyConnected(req);
   if (stateConnection) {
     if (req?.session?.user?.role === "user") res.render("user/pages/userEdt");
-    else res.redirect("/admin");
+    else {
+      if (req?.session?.user?.role === "admin") res.redirect('/admin')
+      else res.redirect('/prof');
+    };
 
   } else res.redirect("/auth/login");
 };
@@ -105,7 +124,10 @@ const getProfil = (req, res) => {
         // Passage données vers user page
         res.render("user/pages/userProfil", { dataProfil: UserProfil });
       });
-    } else res.redirect("/admin");
+    } else {
+      if (req?.session?.user?.role === "admin") res.redirect('/admin')
+      else res.redirect('/prof');
+    };
   } else res.redirect("/auth/login");
 };
 
@@ -113,7 +135,10 @@ const getNote = (req, res) => {
   const stateConnection = authentificationService.verifyIfAlreadyConnected(req);
   if (stateConnection) {
     if (req?.session?.user?.role === "user") res.render("user/pages/userNote");
-    else res.redirect("/admin");
+    else {
+      if (req?.session?.user?.role === "admin") res.redirect('/admin')
+      else res.redirect('/prof/note');
+    };
 
   } else res.redirect("/auth/login");
 };

@@ -15,6 +15,7 @@
   <link rel="shortcut icon" href="/public/imgs/ICON-01.svg" type="image/x-icon" />
 
   <link rel="stylesheet" href="/public/css/annonce.css" />
+  <!-- <link rel="stylesheet" href="/public/css/admin/adminAnnonce.css"> -->
 
  
   <!-- FontAwesome -->
@@ -22,7 +23,7 @@
 </head>
 
 <body>
-  <div class="parentMax">
+  <div class="parentMax" >
     <!-- Nav Barre Vertical -->
     <div id="navVertical" class="navigation-Vertical">
       <ul>
@@ -155,26 +156,59 @@
       </div>
     </div>
     <!-- CONTENU -->
+    <!-- <div class="main" style="width: 94%; display: flex; justify-content: center;">
+      <div style="width: 97%;" >
+
+       
+          <% for (var i = data.allAnnonce.length - 1 ; i >= 0 ; i-- ){ %>
+            <div class="ann-rec">
+              <div class="div1">
+                <legend><strong ><%= data.dateAllAnnonce[i] %></strong></legend>
+                
+              </div>
+              <pre> <%= data.allAnnonce[i].contenu %> </pre>
+              
+            </div>
+            <% } %>
+  
+  
+  
+  
+      </div>
+    </div> -->
     <div class="main">
 
       <!-- ATO ANATIN'I PgAnnonce ATo Micode -->
-      <!--annonce 1 plus récent, 2 hier ohatra de lay 3 farany plus ancien fa miandry javascript anaovana azy-->
-      <% for (var i = data.allAnnonce.length - 1 ; i >= 0 ; i-- ){ %>
-        <div class="ann-rec">
+  
+      <div id="PgAnnonce" class="notif annonce">
+        <div class="a" style="margin-bottom: 40px;">
+          <div class="imgNom">
+            <h2>Annonces</h2>
+          </div>
+          <!-- INPUT ADMIN -->
+          <form action="">
+            <input type="date">
+            <input type="submit" value="Rechercher">
+          </form>   
+        </div>
+        
+        
+        
+        <!-- afaka anaovana recherche dashboard -->
+        <!--annonce 1 plus récent, 2 hier ohatra de lay 3 farany plus ancien fa miandry javascript anaovana azy-->
+        <% for (var i = data.allAnnonce.length - 1 ; i >= 0 ; i-- ){ %>
+        <div class="ann-rec" style="margin-top: 20px;">
           <div class="div1">
             <legend><strong ><%= data.dateAllAnnonce[i] %></strong></legend>
-            <div>
-              <button><i class="far fa-edit"></i></button>
-              <button><i class="far fa-trash-alt"></i></button>
-            </div>
+            
           </div>
-          <p> <%= data.allAnnonce[i].contenu %></p>
+          <pre> <%= data.allAnnonce[i].contenu %> </pre>
           
         </div>
         <% } %>
-
-
-
+      </div>
+     
+      
 
     </div>
   </div>

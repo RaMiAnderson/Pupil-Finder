@@ -7,11 +7,14 @@ const loginController = async (req,res) => {
         const userConnected = await authentificationService.login(user,req);
         if (userConnected.status == 200){
            
-            if (userConnected.role !== "user") res.redirect(`/admin`)
-            else res.redirect(`/user`);
+            if (userConnected.role === "user") res.redirect(`/user`)
+            else {
+                 if (userConnected.role === "admin") res.redirect(`/admin`)
+                 else res.redirect(`/prof`);
+            };
         } 
         else  res.redirect(`/auth/login?message=${userConnected.message}`);
-    
+     
 };
   
 

@@ -107,35 +107,63 @@ const checkPasswordUser = async (user) => {
     try {
 
         return new Promise((resolve, reject) => {
-            User.findOne({ email: user.email }, async (err, userBase) => {
-                if (err) { 
+            Prof.findOne( {email: user.email} , async (err,profBase) => {
+                if (err) {
                     console.log(err);
-                    reject("ErrorServeur");
+                    reject("ErrorServer");
                 };
-                // De lasa stocké ao anaty argument userBase ilay document an'ilay user itany(tous)
-                if (userBase !== null ) {
-                    const resultCheck = await comparePasswordencrypted(user.password , userBase.password);
+                if (profBase !== null ) {
+                    const resultCheck = await comparePasswordencrypted(user.password , profBase.password);
                     if (resultCheck) {
                         // Mila ataontsika anatin'ito res ito all info anle user fa io ampesaintsika any amle ejs aveo {AFAKA ANTAnIANA AHO; ANDERSON}
                         const res = {
-                            email : userBase.email,
-                            name : userBase.nom,
-                            role : userBase.role,
+                            email : profBase.email,
+                            name : profBase.nom,
+                            role : profBase.role,
                             status : 200,
                             raison : "connexion"
                         }
                         resolve(res);
                     }   
                     // ETO API POST PASSWORD INCORECT
-                    resolve({status: 403, message: 'Mot de passe incorrect'})
+                    resolve({status: 403, message: 'Mot de passe incorrect'});
                     
                     // reject('Password incorrect');
-                } else {
-                    // ETO API POST GMAIL NOT FOUND 404
-                    resolve({status: 403, message: "Votre email n'est pas inscrit"})
-                    // reject('Email not found , please try again with your correct gamil');
-                };
-            });
+                } 
+                else {
+                    User.findOne({ email: user.email }, async (err, userBase) => {
+                        if (err) { 
+                            console.log(err);
+                            reject("ErrorServeur");
+                        };
+                        // De lasa stocké ao anaty argument userBase ilay document an'ilay user itany(tous)
+                        if (userBase !== null ) {
+                            const resultCheck = await comparePasswordencrypted(user.password , userBase.password);
+                            if (resultCheck) {
+                                // Mila ataontsika anatin'ito res ito all info anle user fa io ampesaintsika any amle ejs aveo {AFAKA ANTAnIANA AHO; ANDERSON}
+                                const res = {
+                                    email : userBase.email,
+                                    name : userBase.nom,
+                                    role : userBase.role,
+                                    status : 200,
+                                    raison : "connexion"
+                                }
+                                resolve(res);
+                            }   
+                            // ETO API POST PASSWORD INCORECT
+                            resolve({status: 403, message: 'Mot de passe incorrect'})
+                            
+                            // reject('Password incorrect');
+                        } else {
+                            // ETO API POST GMAIL NOT FOUND 404
+                            resolve({status: 403, message: "Votre email n'est pas inscrit"})
+                            // reject('Email not found , please try again with your correct gamil');
+                        };
+                    });
+                }
+    
+            })
+            
         });
     } catch (error) {
         throw `error : ${error}`
