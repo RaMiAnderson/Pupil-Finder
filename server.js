@@ -4,6 +4,7 @@ const app = express();
 const authRoute = require('./routes/authRoute') ;
 const userRoute = require('./routes/userRoute');
 const adminRoute = require('./routes/adminRoute');
+const profRoute = require('./routes/profRoute');
 
 
  
@@ -34,6 +35,7 @@ app.use(sessionConfig);
 app.use('/auth',authRoute);
 app.use('/user',userRoute);
 app.use('/admin',adminRoute);
+app.use('/prof', profRoute);
 
 
 

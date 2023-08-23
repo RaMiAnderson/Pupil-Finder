@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <!---<title> Responsive Registration Form | CodingLab </title>--->
+         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <title>Pupil.Finder</title>
+         <link rel="stylesheet" href="/public/css/allstyle.css">
+         <link rel="stylesheet" href="/public/css/addUser.css">
+         <link rel="stylesheet" href="/public/assets/FontAwesome/css/all.min.css">
+         <link rel="shortcut icon" href="/public/imgs/ICON-01.svg" type="image/x-icon" />
+       </head>
+       <body> 
+        <div class="container">
+          <div class="title" style="display: flex; justify-content: space-between;">
+            <p>Inscription</p>
+            <a href="/admin/gerer">
+              <button class="btnBack">
+                <i class="fas fa-mail-reply"></i> Retour
+              </button>
+            </a>
+          </div>
+          <div class="content">
+            <form action="" method="POST" id="loginform">
+              <div class="user-details">
+                <div class="input-box">
+                  <span class="details">Nom</span>
+                  <input type="text" placeholder="Entrer votre nom" name="Nom" required >
+                  <small></small>
+                </div>
+                <div class="input-box">
+                  <span class="details">Prenom</span>
+                  <input type="text" placeholder="Entrer votre prenom" name="Prenom" required>
+                  <small></small>
+                </div>
+                <div class="input-box">
+                  <span class="details">Date de naissance</span>
+                  <input type="date" placeholder="Entrer votre prenom" name="dateNaissance" required>
+                  <small></small>
+                </div>
+                <div class="input-box">
+                  <span class="details">Adresse</span>
+                  <input type="text" placeholder="Enter your Adresse" name="AdresseEleve" required>
+                  <small></small>
+                </div>
+                <div class="input-box">
+                  <span class="details">Numero de telephone</span>
+                  <input type="text" placeholder="Enter your number" name="Numero" required>
+                  <small></small>
+                </div>
+                <!-- <div class="input-box">
+                  
+                  <span class="details">Classe</span>
+                  
+                  <select name="Classe" id="selectClasse" required>
+      
+      
+                  </select>
+                  <small></small>
+                </div> -->
+                <div class="input-box">
+                  <span class="details">Adresse Email</span>
+                  <input type="text" placeholder="Entrer votre Adresse Email"name="Email" required>
+                  <small></small>
+                </div>
+                <div class="input-box">
+                  <span class="details">Mot de passe</span>
+                  <input type="text" placeholder="Entrer votre mot de passe"name="MotDePasse" required>
+                  <small></small>
+                </div>
+                <!-- <div class="input-box">
+                  <span class="details">Nom du Pere </span>
+                  <input type="text" placeholder="Nom" name="NomPere" required>
+                  <small></small>
+                </div> -->
+                <!-- <div class="input-box">
+                      <span class="details">Profession </span>
+                      <input type="text" placeholder="Profession" name="ProfessionPere" required> 
+                      <small></small>
+                </div> -->
+                <!-- <div class="input-box">
+                  <span class="details">Adresse </span>
+                  <input type="text" placeholder="Profession" name="AdressePere" required> 
+                  <small></small>
+              </div> -->
+              <!-- <div class="input-box">
+                  <span class="details">Numero </span>
+                  <input type="text" placeholder="Numero" name="NumeroPere" required> 
+                  <small></small>
+              </div>
+              <div class="input-box">
+                  <span class="details">Nom de la Mere </span>
+                  <input type="text" placeholder="Nom" name="NomMere" required>
+                  <small></small>
+                </div>
+                <div class="input-box">
+                      <span class="details">Profession </span>
+                      <input type="text" placeholder="Profession" name="ProfessionMere" required> 
+                      <small></small>
+                </div>
+                <div class="input-box">
+                  <span class="details">Adresse </span>
+                  <input type="text" placeholder="Profession" name="AdresseMere" required> 
+                  <small></small>
+              </div>
+              <div class="input-box">
+                  <span class="details">Numero </span>
+                  <input type="text" placeholder="Numero" name="NumeroMere" required> 
+                  <small></small>
+              </div> -->
+              </div>
+              <div class="gender-details">
+                <input type="radio" name="gender" id="dot-1" value="Homme">
+                <input type="radio" name="gender" id="dot-2" value="Femme">
+                <span class="gender-title">Genre</span>
+                <div class="category">
+                  <label for="dot-1">
+                  <span class="dot one"></span>
+                  <span class="gender">Homme</span>
+                </label>
+                <label for="dot-2">
+                  <span class="dot two"></span>
+                  <span class="gender">Femme</span>
+                </label>
+                <!-- <label for="dot-3">
+                  <span class="dot three"></span>
+                  <span class="gender">Prefer not to say</span>
+                  </label>
+                </div> -->
+              </div>
+              <div class="button">
+                <input type="submit" value="Register">
+              </div>
+            </form>
+          </div>
+        </div>
+        <script src="/public/js/adduser.js"></script>
+        <script src="/public/assets/FontAwesome/js/all.min.js"></script>
+      </body>
+</html>

@@ -113,6 +113,11 @@ const getPageAddUserController = (req,res) => {
     else res.redirect('/');
 };
 
+const getPageAddProf = (req,res) => {
+    if (req?.session?.user?.role === "admin") res.render('addProf')
+    else res.redirect('/');
+}
+
 
 
 
@@ -338,6 +343,7 @@ module.exports = {
     getGerer,
     getNote,
     getPageAddUserController,
+    getPageAddProf,
 
     addMatiereController,
     getNmbrMatiere,

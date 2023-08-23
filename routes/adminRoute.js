@@ -27,6 +27,8 @@ router.get("/note" , adminController.getNote);
 
 router.get("/gerer/add-user",adminController.getPageAddUserController);
 
+router.get("/gerer/add-prof" , adminController.getPageAddProf);
+
 
 
 

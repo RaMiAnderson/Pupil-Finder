@@ -67,7 +67,7 @@ a {
 
 
 
-#site-main{
+#site-main, #site-prof{
    
     font-family: 'Barlow', sans-serif;
     box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
@@ -85,12 +85,12 @@ a {
     border-radius: 20px;
 }
 
-#site-main .container .box-nav > a button{
+#site-main .container .box-nav > a button , #site-prof .container .box-nav > a button {
     /* font-size: 1em; */
     color: white;
 }
 
-#site-main .container .tttt{
+#site-main .container .tttt , #site-prof .container .tttt {
     margin: 10px 0;
 }
 
