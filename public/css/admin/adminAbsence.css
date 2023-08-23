@@ -10,11 +10,11 @@
   grid-gap: 30px;
   display: flex;
 }
-.Absence .ParentTableau .ParentTableau1 {
+/* .Absence .ParentTableau .ParentTableau1 {
   width: 30% !important;
-}
+} */
 .Absence .ParentTableau .ParentTableau2 {
-  width: 70% !important;
+  width: 100% !important;
   display: flex !important;
   flex-direction: column;
   align-items: center;
@@ -39,6 +39,8 @@
   overflow-x: auto;
   margin-top: -23%;
 }
+
+
 
 .Absence .ListRecuTete h2 {
   font-weight: 600;
