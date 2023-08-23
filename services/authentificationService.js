@@ -20,7 +20,8 @@ const login = async (user,request) => {
 const  verifyIfAlreadyConnected =  (request) => {
 
     if (request?.session?.user) {
-        return true;
+        if (request?.session?.user.raison === "connexion") return true
+        else return false;
     }
     return false;
 }
@@ -92,7 +93,8 @@ const checkPasswordUser = async (user) => {
                             email : userBase.email,
                             name : userBase.nom,
                             role : userBase.role,
-                            status : 200
+                            status : 200,
+                            raison : "connexion"
                         }
                         resolve(res);
                     }   
@@ -135,5 +137,6 @@ module.exports = {
     addUser,
     verifyIfAlreadyConnected,
     login,
+    checkPasswordUser
 
 }

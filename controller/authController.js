@@ -35,6 +35,26 @@ const getPageLoginController = (req, res) => {
     res.render('Login');
 };
 
+const getPageVerifyUser = (req,res) => {
+    res.render('verifyRoleAddUser');
+}
+
+const verifyPost = async (req , res) => {
+    const userTest = await authentificationService.checkPasswordUser(req.body);
+    userTest.raison = "inscription";
+    // req.session.destroy((err) => {
+    //     if (err) console.log(err);
+    // });
+    
+    req.session.user = userTest;
+    if (userTest.status == 200){
+        if (userTest.role === "admin")  res.redirect(`/admin/gerer/add-user`)
+        else logoutController(req,res);
+    } 
+    else  res.redirect(`/auth/verifyUser?message=${userTest.message}`);
+
+}
+
 
    
 
@@ -52,5 +72,7 @@ module.exports = {
     loginController,
     logoutController,
     getPageLoginController,
+    getPageVerifyUser,
+    verifyPost
 
 };

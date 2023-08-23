@@ -1,0 +1,23 @@
+body{
+    width: 100%;
+    margin-top: 10vh;
+    display: flex;
+    justify-content: center;
+}
+main {
+    width: 70%;
+    height: 500px;
+    background-color: red;
+}
+.formVerify{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.formVerify input{
+    margin-top: 20px;
+}
+.formVerify input[type="submit"] {
+    margin-top: 50px;
+}

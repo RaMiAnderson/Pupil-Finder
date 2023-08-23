@@ -11,8 +11,9 @@ const getAllAnnonce  = async () =>{
                 if (err){
                     console.log(err);
                     reject("Errreur Server");
-                }
+                };
                 resolve(userBase);
+            
             })
         })
     }
@@ -31,7 +32,19 @@ const deleteAnnonceByIdentifiant = async (Id) => {
     }
 }
 
+const parseTimeBd = async (date) => {
+    var stringify = date.toISOString();
+    var sectionPerT = stringify.split("T")[0];
+    let format = new Date(sectionPerT).toLocaleDateString('fr-Fr' , {
+        year: "numeric",
+        month: "long",
+        day : "numeric"
+    });
+    return format;
+}
+
 module.exports = {
     getAllAnnonce,
-    deleteAnnonceByIdentifiant
+    deleteAnnonceByIdentifiant,
+    parseTimeBd
 }

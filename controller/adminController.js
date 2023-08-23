@@ -3,6 +3,7 @@ const authentificationService = require("../services/authentificationService");
 const gererService = require('../services/gererService');
 const temporaryData = require('../tmp/temporaryData');
 const annonceService = require('../services/annonceService');
+const annonce = require("../model/annonce");
 
 
 
@@ -29,9 +30,14 @@ const getAnnonce = async (req,res) => {
     if (stateConnection) {
         if (req?.session?.user?.role === "admin"){
             var allAnnonce = Object.values( await annonceService.getAllAnnonce());
+            var dateAllAnnonce = [];
+            for (var i = 0 ; i < allAnnonce.length ; i++){
+                dateAllAnnonce[i] = await annonceService.parseTimeBd(allAnnonce[i].datePub);
+            };
             
             const data = {
-                allAnnonce : allAnnonce
+                allAnnonce : allAnnonce,
+                dateAllAnnonce : dateAllAnnonce
             }
 
             res.render("admin/pages/adminAnnonce" , {data})
@@ -69,9 +75,10 @@ const getEdt = (req,res) => {
 }
 
 const getGerer = async (req,res) => {
-    const stateConnection = authentificationService.verifyIfAlreadyConnected(req);
+    // const stateConnection = authentificationService.verifyIfAlreadyConnected(req);
+    const stateConnection = req?.session?.user;
     if (stateConnection) {
-        if (req?.session?.user?.role === "admin") {
+        if ((req?.session?.user?.role === "admin" ) && (req?.session?.user.raison === "connexion")) {
             const data =  {
                 nombreMatiere: await temporaryData.dataNombreMatiere,
                 listMatiere : Object.values(await gererService.getMatiereDispo(req?.session?.user?.role)),
@@ -81,8 +88,12 @@ const getGerer = async (req,res) => {
         
 
             res.render("admin/pages/adminGerer" , {data} );
-        }  
-        else res.redirect('/user');
+        } else {
+            if ( (req?.session?.user?.role === "admin") && (req?.session?.user?.raison === "inscription") ) {
+                res.redirect('/admin/gerer/add-user');
+            } 
+            else res.redirect('/user');
+        }
     } 
     else res.redirect("/auth/login");
 }
@@ -98,7 +109,8 @@ const getNote = (req,res) => {
 
 
 const getPageAddUserController = (req,res) => {
-    res.render('addUser');
+    if (req?.session?.user?.role === "admin") res.render('addUser')
+    else res.redirect('/');
 };
 
 
@@ -167,11 +179,15 @@ const addClasseController = async (req, res) => {
 
 const addUserController = async (req,res) => {
     try {
-        const stateConnection = authentificationService.verifyIfAlreadyConnected(req);
+        const stateConnection = req?.session?.user;
+
         if (stateConnection) {
-            const user = req.body;
-            const result = await authentificationService.addUser(user);
-            res.redirect('/admin/gerer');
+            if ( stateConnection.role = "admin") {
+                const user = req.body;
+                const result = await authentificationService.addUser(user);
+                res.redirect('/admin/gerer/add-user');
+            }
+            else res.redirect('/user');
         }
         else res.redirect('auth/login')
     } catch (error) {
@@ -284,7 +300,7 @@ const dataGerer = async (req,res) => {
 } 
 
 const getClasseDispo = async (req,res) => {
-    const stateConnection = authentificationService.verifyIfAlreadyConnected(req);
+    const stateConnection = req?.session?.user;;
     if (stateConnection) {
         if (req?.session?.user?.role === "admin") {
             const classeDipso = await gererService.getClasseDispo(req?.session?.user?.role);

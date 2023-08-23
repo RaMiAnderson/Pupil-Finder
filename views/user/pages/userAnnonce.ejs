@@ -159,10 +159,10 @@
 
       <!-- ATO ANATIN'I PgAnnonce ATo Micode -->
       <!--annonce 1 plus récent, 2 hier ohatra de lay 3 farany plus ancien fa miandry javascript anaovana azy-->
-      <% for (var i = 0; i < data.allAnnonce.length ; i++){ %>
+      <% for (var i = data.allAnnonce.length - 1 ; i >= 0 ; i-- ){ %>
         <div class="ann-rec">
           <div class="div1">
-            <legend><strong >21 July 2023</strong></legend>
+            <legend><strong ><%= data.dateAllAnnonce[i] %></strong></legend>
             <div>
               <button><i class="far fa-edit"></i></button>
               <button><i class="far fa-trash-alt"></i></button>

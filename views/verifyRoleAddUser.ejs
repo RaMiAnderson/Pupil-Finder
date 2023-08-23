@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- style par defaut -->
+        <link rel="stylesheet" href="/public/css/allstyle.css">
+        <!-- style specifique -->
+        <link rel="stylesheet" href="/public/css/verifyUser.css">
+        <link rel="shortcut icon" href="/public/imgs/ICON-01.svg" type="image/x-icon">
+    
+        <title>Pupil.Finder</title>
+    </head>
+<body>
+    <main>
+        <form action="/auth/verifyUser" method="post" class="formVerify">
+            <span class="Rslt_AnalyseInputLogin"></span>
+            <input type="email" name="email" placeholder="Votre Email">
+            <input type="password" name="password" placeholder="Mot de passe">
+            <input type="submit">
+            <a href="/auth/login" style="margin-top: 20px; text-decoration: none; color: white; padding: 8px 16px; border: solid 1px white;">Retour vers login</a>
+        </form>
+        
+    </main>
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const messages = urlParams.get('message');
+        const Rslt_AnalyseInputLogin = document.querySelector('.Rslt_AnalyseInputLogin'); // amzay tsy afaka manao retour
+
+        if (messages === null ) Rslt_AnalyseInputLogin.textContent = "Veuillez remplir ces champs"
+        else Rslt_AnalyseInputLogin.textContent = messages;
+    </script>
+</body>
+</html>

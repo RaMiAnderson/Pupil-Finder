@@ -9,11 +9,15 @@ router.get("/login",authController.getPageLoginController);
 
 router.get('/logout' , authController.logoutController);
 
+router.get('/verifyUser' , authController.getPageVerifyUser);
+
 
   
 // Action
 
 router.post('/login' , authController.loginController);
+
+router.post('/verifyUser' , authController.verifyPost);
 
 
 
