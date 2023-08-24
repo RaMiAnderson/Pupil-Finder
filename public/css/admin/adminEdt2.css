@@ -11,16 +11,16 @@
 }
 .sept1{
     background-color:  rgba(206, 206, 206, 0.849);
-    font-size: 300;
+    font-size: 10px;
 }
 .sept2{
     background-color:  rgba(206, 206, 206, 0.849);
-    font-size: 300;
+    font-size: 10px;
 }
 .p{
-    padding: 0px 15px;
+    padding: 1px 5px;
 }
-#matiere{
+.matiere{
     background-color:  #fff;
     font-size: large;
 }
