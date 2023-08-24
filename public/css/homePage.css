@@ -36,7 +36,7 @@
   justify-content: center;
   align-items: center;
 }
-.homepage .blockImg img {
+.homepage .blockImg img , .imgVidak{
   width: 96%;
   margin-right: -10%;
 }
