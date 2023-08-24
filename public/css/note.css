@@ -94,17 +94,19 @@
   width: 35%;
   justify-content: space-between;
 }
-.Apayer .ListRecuTete form input {
+.Apayer .ListRecuTete form input{
   padding: 5px 10px;
   font-size: 1rem;
   border: none;
   color: var(--blackbe);
   background-color: transparent;
 }
-.Apayer .ListRecuTete form input[type="date"] {
-  width: 70%;
+.Apayer .ListRecuTete  form select {
+  width: 100%;
   border-radius: 10px;
+  padding: 8px 16px;
   border: solid 1px var(--blackkely);
+ 
 }
 .Apayer .ListRecuTete form input[type="submit"] {
   cursor: pointer;
@@ -148,22 +150,6 @@
 }
 .Apayer table tr td:nth-child(2) {
   text-align: end;
-}
-.Apayer .status.payyee {
-  padding: 2px 4px;
-  background: #8de02c;
-  color: var(--white);
-  border-radius: 4px;
-  font-size: 14px;
-  font-weight: 500;
-}
-.Apayer .NonPayyee {
-  background: #f00;
-  color: var(--white);
-  border-radius: 4px;
-  font-size: 14px;
-  font-weight: 500;
-  padding: 2px 4px;
 }
 
 @media (max-width: 1023px) {

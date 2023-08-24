@@ -18,7 +18,51 @@
   <link rel="stylesheet" href="/public/css/admin/adminAbsence.css" />
 
 
-
+  <style>
+    .prespre{
+     background-color: red;
+     border-radius: 8px;
+     padding: 8px 16px;
+    }
+    .abspa{
+     background-color:green;
+     border-radius: 8px;
+     padding: 8px 16px;
+    }
+     
+    .profp{
+     color:white;
+    }
+    .profa{
+     color:white;
+    }
+ 
+    .Absence .hiddenTab form input {
+    padding: 5px 10px;
+    font-size: 1rem;
+    border: none;
+    color: var(--blackbe);
+    background-color: transparent;
+   }
+ 
+    .Absence .hiddenTab form input[type="submit"] {
+    cursor: pointer;
+    background: var(--violet);
+    border-radius: 10px;
+    color: var(--white);
+    margin-left: 15px;
+    margin-top: 10px;
+    }
+ 
+    .Absence .hiddenTab form input[type="submit"]:hover {
+     background: var(--rose);
+     transition: 0.2s;
+    }
+    .Absence .hiddenTab form input[type="date"]:focus {
+    color: var(--violet);
+    }
+   </style>
+ 
 
   <!-- FontAwesome -->
   <link rel="stylesheet" href="/public/assets/FontAwesome/css/all.min.css" />
@@ -141,12 +185,12 @@
                           <td style="display: flex; ">
                             <div  style="display: flex; width: 100%; justify-content: center;">
                               <div style="display: flex;  width: 60%; justify-content: space-evenly;">
-                                <div>
-                                  <label>Absent</label> 
+                                <div class="prespre">
+                                  <label class="profp">Absent</label> 
                                   <input type="radio" checked  name="presence" value="absent">
                                 </div>
-                                <div>
-                                  <label>Present</label> 
+                                <div class="abspa">
+                                  <label class="profa">Present</label> 
                                   <input type="radio" name="presence" value="present">
                                 </div>
                               </div>
