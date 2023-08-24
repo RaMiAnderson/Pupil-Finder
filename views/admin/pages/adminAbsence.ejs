@@ -18,7 +18,51 @@
   <link rel="stylesheet" href="/public/css/admin/adminAbsence.css" />
 
 
-
+  <style>
+    .prespre{
+     background-color: red;
+     border-radius: 8px;
+     padding: 8px 16px;
+    }
+    .abspa{
+     background-color:green;
+     border-radius: 8px;
+     padding: 8px 16px;
+    }
+     
+    .profp{
+     color:white;
+    }
+    .profa{
+     color:white;
+    }
+ 
+    .Absence .hiddenTab form input {
+    padding: 5px 10px;
+    font-size: 1rem;
+    border: none;
+    color: var(--blackbe);
+    background-color: transparent;
+   }
+ 
+    .Absence .hiddenTab form input[type="submit"] {
+    cursor: pointer;
+    background: var(--violet);
+    border-radius: 10px;
+    color: var(--white);
+    margin-left: 15px;
+    margin-top: 10px;
+    }
+ 
+    .Absence .hiddenTab form input[type="submit"]:hover {
+     background: var(--rose);
+     transition: 0.2s;
+    }
+    .Absence .hiddenTab form input[type="date"]:focus {
+    color: var(--violet);
+    }
+   </style>
+ 
 
   <!-- FontAwesome -->
   <link rel="stylesheet" href="/public/assets/FontAwesome/css/all.min.css" />
@@ -165,81 +209,77 @@
       <div id="PPggAbsence" class="Apayer Absence">
 
 
-        <div class="ParentTableau ">
-
-
-          <!-- <div class="ParentTableau"> -->
-          <div class="ListRecu ParentTableau2">
-            <div class="ListRecuTete">
-              <form action="" id="formDateAbs">
-                <input type="search">
-                <input type="submit" value="Rechercher">
+        <div class="ParentTableau noteParent" style="flex-direction: column; align-items: center;">
+          <div class="ListRecu">
+            <div class="ListRecuTete" style="display: flex; justify-content: space-between;">
+              <h2>Absence</h2>
+              <form action="/admin/absence/getUserInClass" method="post"  style="width: 30%; display: flex; justify-content: space-evenly; ">
+                <!-- matiere -->
+                <select name="classeChoisi" id="selectClasse" style="border: solid 1px rgba(0, 0, 0, 0.486); border-radius: 10px; width: 65%; ">
+                  
+                </select>
+                <input type="submit" value="Recherche" />
               </form>
             </div>
 
             <div class="hiddenTab">
-              <table>
-                <thead>
-                  <tr>
-                    <td>Utilisateur</td>
-                  </tr>
-                </thead>
-
-                <tbody>
-                  <tr>
-                    <td>Nom</td>
-                  </tr>
-                  <tr>
-                    <td>Nom</td>
-                  </tr>
-                  <tr>
-                    <td>Nom</td>
-                  </tr>
-                  <tr>
-                    <td>Nom</td>
-                  </tr>
-                  <tr>
-                    <td>Nom</td>
-                  </tr>
-
-                </tbody>
-              </table>
-              <p><button class="ggg" type="submit">Envoyer</button></p>
-
-            </div>
-          </div>
-
-          <div class="ListRecu ParentTableau1 ">
-            <div class="ListRecuTete">
-              <h2> Absences</h2>
-            </div>
-
-            <div class="hiddenTabZ">
-              <form action="">
-                <select name="" id="">
-                  <option value="">Nom de la Matière</option>
-                  <option value="">Informatique scientifique</option>
-                  <option value="">Html-CSS</optiion>
-                  <option value="">Anglais</option>
-                  <option value="">Français</option>
-                  <option value=""> Comptabilité</optiion>
+              <form action="" style="margin-top: 20px;">
+                <span style="font-size: 1.1rem; margin-left: 5px; margin-bottom: 10px; color: var(--violet);">Matiere :</span> <br>
+                <select name="" id="FormDateNote" style="border: solid 1px rgba(0, 0, 0, 0.486); border-radius: 10px; width: 20%; padding: 6px 12px; margin-bottom: 20px;">
+                  
                 </select>
-                <div class="eee">
-                  <div class="jjj">
-                    <label for="absentId">Absent</label>
-                    <input id="absentId" type="radio" name="présence" value="Absent">
-                  </div>
-                  <div class="fff">
-                    <label for="presentId">Present</label>
-                    <input id="presentId" type="radio" name="présence" value="Présent" checked>
-                  </div>
-                </div>
-
-                <p><button class="ggg" type="submit">Envoyer</button></p>
+                <table>
+                  <thead>
+                    <tr>
+                      <td>Nom élève</td>
+                      <td style="display: flex; justify-content: center;">Presence</td>
+                      
+                    </tr>
+                  </thead>
+  
+                  
+                    <tbody>
+                      <% if (data.dataInClassChoisi !== 0 ) { %>
+                        <% for (var i = 0; i < data.dataInClassChoisi.length ; i++ ){ %>
+                        <tr>
+                          <td><%= data.dataInClassChoisi[i].nom %> <%= data.dataInClassChoisi[i].prenom %></td>
+                          <td style="display: flex; ">
+                            <div  style="display: flex; width: 100%; justify-content: center;">
+                              <div style="display: flex;  width: 70%; justify-content: space-evenly;">
+                                <div class="prespre">
+                                  <label class="profp">Absent</label> 
+                                  <input type="radio" checked  name="presence" value="absent">
+                                </div>
+                                <div class="abspa">
+                                  <label class="profa">Present</label> 
+                                  <input type="radio" name="presence" value="present">
+                                </div>
+                                <div class="abspa" style="background: rgb(233, 233, 1);">
+                                  <label class="profa" >Retard</label> 
+                                  <input type="radio" name="presence" value="present">
+                                </div>
+                              </div>
+                            </div>
+                          </td>
+                          
+                        </tr>
+                        <% } %>
+                      <% } else { %>
+                        <tr>
+                          <td>Néant</td>
+                          
+                        </tr>
+                      <% } %>
+                    </tbody>
+                   
+                
+                </table>
+                <input type="submit">
               </form>
             </div>
           </div>
-          <!-- </div> -->
+
+          
         </div>
       </div>
 
@@ -252,6 +292,46 @@
   <script src="/public/js/scriptDflt.js"></script>
 
   <script src="/public/assets/FontAwesome/js/all.min.js"></script>
+  <script>
+    const selectClasse = document.getElementById('selectClasse');
+    const FormDateNote = document.getElementById('FormDateNote');
+
+     fetch("/admin/absence/getClasseDispo") 
+       .then((res) => res.json())
+       .then((data) => {
+       const classe = Object.values(data);
+       
+  
+       for (var i = 0; i < classe.length ; i++){
+         var option = document.createElement("option");
+
+         option.value = classe[i].nomClasse;
+         option.textContent = classe[i].nomClasse;
+
+         selectClasse.appendChild(option);
+       }
+
+     });
+
+     fetch("/admin/absence/getMatiereDispo")
+       .then((res) => res.json())
+       .then((data) => {
+       
+       
+        const Matiere = Object.values(data);
+       
+  
+       for (var i = 0; i < Matiere.length ; i++){
+         var option = document.createElement("option");
+
+         option.value = Matiere[i].nomMatiere;
+         option.textContent = Matiere[i].nomMatiere;
+
+         FormDateNote.appendChild(option);
+       }
+
+     });
+ </script>
 </body>
 
 </html>

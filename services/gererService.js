@@ -302,6 +302,23 @@ const deleteClasseByIdentifiant = async ( Identifiant ) => {
     }
 }
 
+
+
+
+const getAllUserInOneClass = async (classe) => {
+    try {
+        return new Promise( ( resolve, reject) => {
+            User.find( {classe : classe , role : "user"} , (err,userBase) => {
+                if (err) console.log(err);
+                resolve(userBase);
+            })
+        });
+    } catch (err) {
+        console.log(err);
+    }
+}
+
+
 module.exports = {
     getMatiereDispo,
     getNumInClasse,
@@ -316,6 +333,7 @@ module.exports = {
     getAllProff,
     addAnnonceService,
     getOneProff,
+    getAllUserInOneClass,
 
     deleteUserByIdentifiant,
     deleteMatiereByIdentifiant,

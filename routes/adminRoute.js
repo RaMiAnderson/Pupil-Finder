@@ -52,6 +52,10 @@ router.post("/gerer/add-prof" , adminController.addProfController);
 
 router.post("/annonce/add-annonce" ,adminController.addAnnonce);
 
+// Absence
+
+router.post("/absence/getUserInClass", adminController.getUserInClass )
+
 
 
 
@@ -91,6 +95,11 @@ router.get("/gerer/getDataGererProff" , adminController.dataGererProf );
 router.get("/gerer/add-user/getClasse" , adminController.getClasseDispo);
 
 router.get("/annonce/getAllAnnonce" , adminController.getAllAnonceController);
+
+router.get("/absence/getClasseDispo" , adminController.getClasseDispo);
+
+router.get("/absence/getMatiereDispo" , adminController.dataGerer );
+
 
 
 

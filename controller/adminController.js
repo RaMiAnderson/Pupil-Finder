@@ -19,10 +19,20 @@ const getHomepage = (req,res) => {
     else res.redirect('/auth/login');
 }
 
-const getAbsence = (req,res) => {
+const getAbsence = async (req,res) => {
     const stateConnection = authentificationService.verifyIfAlreadyConnected(req);
     if(stateConnection){
-        if (req?.session?.user?.role === "admin") res.render('admin/pages/adminAbsence')
+        const dataInClassChoisi = await temporaryData.dataClasseChoisiAdmin;
+        if (dataInClassChoisi !== undefined) {
+            var data = {
+                dataInClassChoisi : dataInClassChoisi
+            }
+        } else {
+            var data = {
+                dataInClassChoisi : 0
+            }
+        }
+        if (req?.session?.user?.role === "admin") res.render('admin/pages/adminAbsence', {data})
         else {
             if (req?.session?.user?.role === "user") res.redirect('/user')
             else res.redirect('/prof/absence');
@@ -401,6 +411,15 @@ const getAllAnonceController = async (req,res) => {
     else res.redirect("/auth/login");
 }
 
+const getUserInClass = async (req,res) => {
+    const result = await gererService.getAllUserInOneClass(req.body.classeChoisi);
+    temporaryData.dataClasseChoisiAdmin = result;
+    res.redirect("/admin/absence");
+}
+
+
+
+
 
 
 
@@ -422,6 +441,7 @@ module.exports = {
     addUserController,
     addAnnonce,
     addProfController,
+    getUserInClass ,
 
 
     deleteOneUser,
