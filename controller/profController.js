@@ -6,7 +6,7 @@ const authentificationService = require("../services/authentificationService");
 const getPageHomeProfController = async (req,res) => {
     const stateConnection = authentificationService.verifyIfAlreadyConnected(req);
     if(stateConnection){
-        if (req?.session?.user?.role === "prof") res.render('admin/adminHome')
+        if (req?.session?.user?.role === "prof") res.render('admin/profHome')
         else {
             if (req?.session?.user?.role === "user") res.redirect('/user')
             else res.redirect('/admin');
