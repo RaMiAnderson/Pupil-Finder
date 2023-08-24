@@ -112,18 +112,17 @@
           <div class="ListRecu">
             <div class="ListRecuTete" style="display: flex; justify-content: space-between;">
               <h2>Absence</h2>
-              <form action="" id="FormDateNote" style="width: 30%; display: flex; justify-content: space-evenly; ">
+              <form action="/prof/absence/getUserInClass" method="post"  style="width: 30%; display: flex; justify-content: space-evenly; ">
                 <!-- matiere -->
-                <input type="text" name="" hidden>
-                <select name="" id="" style="border: solid 1px rgba(0, 0, 0, 0.486); border-radius: 10px; width: 65%; ">
-                  <option value="">6e</option>
+                <select name="classeChoisi" id="selectClasse" style="border: solid 1px rgba(0, 0, 0, 0.486); border-radius: 10px; width: 65%; ">
+                  
                 </select>
                 <input type="submit" value="Recherche" />
               </form>
             </div>
 
             <div class="hiddenTab">
-              <form action="">
+              <form action="" id="FormDateNote">
                 <table>
                   <thead>
                     <tr>
@@ -135,24 +134,33 @@
   
                   
                     <tbody>
-                      <tr>
-                        <td>Comptabilité</td>
-                        <td style="display: flex; ">
-                          <div  style="display: flex; width: 100%; justify-content: center;">
-                            <div style="display: flex;  width: 60%; justify-content: space-evenly;">
-                              <div>
-                                <label for="abs">Absent</label> 
-                                <input type="radio" checked id="abs" name="presence" value="absent">
-                              </div>
-                              <div>
-                                <label for="pres">Present</label> 
-                                <input id="pres" type="radio" name="presence" value="present">
+                      <% if (data.dataInClassChoisi !== 0 ) { %>
+                        <% for (var i = 0; i < data.dataInClassChoisi.length ; i++ ){ %>
+                        <tr>
+                          <td><%= data.dataInClassChoisi[i].nom %> <%= data.dataInClassChoisi[i].prenom %></td>
+                          <td style="display: flex; ">
+                            <div  style="display: flex; width: 100%; justify-content: center;">
+                              <div style="display: flex;  width: 60%; justify-content: space-evenly;">
+                                <div>
+                                  <label>Absent</label> 
+                                  <input type="radio" checked  name="presence" value="absent">
+                                </div>
+                                <div>
+                                  <label>Present</label> 
+                                  <input type="radio" name="presence" value="present">
+                                </div>
                               </div>
                             </div>
-                          </div>
-                        </td>
-                        
-                      </tr>
+                          </td>
+                          
+                        </tr>
+                        <% } %>
+                      <% } else { %>
+                        <tr>
+                          <td>Néant</td>
+                          
+                        </tr>
+                      <% } %>
                     </tbody>
                    
                 
@@ -173,6 +181,42 @@
   <script src="/public/js/scriptDflt.js"></script>
 
   <script src="/public/assets/FontAwesome/js/all.min.js"></script>
+  <script>
+     const selectClasse = document.getElementById('selectClasse');
+     const FormDateNote = document.getElementById('FormDateNote');
+
+      fetch("/prof/absence/getClasseDispo")
+        .then((res) => res.json())
+        .then((data) => {
+        const classe = Object.values(data);
+        
+   
+        for (var i = 0; i < classe.length ; i++){
+          var option = document.createElement("option");
+
+          option.value = classe[i].nomClasse;
+          option.textContent = classe[i].nomClasse;
+
+          selectClasse.appendChild(option);
+        }
+
+      });
+
+      fetch("/prof/absence/getFonctionProf")
+        .then((res) => res.json())
+        .then((data) => {
+        
+        
+          var input = document.createElement("input");
+
+          input.value = data.fonction;
+          input.hidden = "true";
+
+          FormDateNote.appendChild(input);
+        
+
+      });
+  </script>
 </body>
 
 </html>

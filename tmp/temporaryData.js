@@ -3,7 +3,10 @@
 
 var dataNombreMatiere = undefined ;
 
+var dataClasseChoisi = undefined;
+
 
 module.exports = {
-    dataNombreMatiere
+    dataNombreMatiere,
+    dataClasseChoisi
 }
