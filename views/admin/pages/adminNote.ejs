@@ -18,6 +18,20 @@
 
     <!-- FontAwesome -->
     <link rel="stylesheet" href="/public/assets/FontAwesome/css/all.min.css" />
+    <style>
+      .btnSub{
+        width: 12%;
+        background-color: var(--violet);
+        color: white;
+        padding: 6px 12px;
+        border-radius: 8px;
+      }
+      .btnSub:hover{
+        background-color: var(--rose);
+        cursor: pointer;
+        transition: .3s;
+      }
+    </style>
   </head>
 
   <body>
@@ -160,30 +174,27 @@
         <div id="PgNote" class="Apayer note">
           <div class="ParentTableau noteParent">
             <div class="ListRecu">
+              
               <div class="ListRecuTete">
                 <h2>Fiche de notes</h2>
-                <form action="" id="FormDateNote">
-                  <div class="nomerao">
-                    <select name="" id="numéro">
-                      <option value="">Numéro</option>
-                      <option value="">1</option>
-                      <option value="">2</option>
-                      <option value="">3</option>
-                      <option value="">4</option>
+                <form action="/admin/note/findClass" method="post"  id="FormDateNote" style=" width: 55% ; display: flex; justify-content: space-evenly;">
+                  
+                  <div class="nomerao" style="width: 30%;">
+                    <select name="classeNote" id="selectClasse" style="padding: 6px 8px; border-radius: 8px; border: solid 1px rgba(0, 0, 0, 0.534); width: 100%;">
+                      <!-- <option value="" selected>Classe</option> -->
+                      
                     </select>
                   </div>
-                  <div class="kilasy">
-                    <select name="" id="classe">
-                      <option value="">classe</option>
-                      <option value="">6ème</option>
-                      <option value="">5ème</option>
-                      <option value="">4ème</option>
-                      <option value="">3ème</option>
+                  <div class="kilasy" style="width: 30%;">
+                    <select name="" id="selectNumInClasse" style="padding: 6px 8px; border-radius: 8px; border: solid 1px rgba(0, 0, 0, 0.534); width: 100%;">
+                      <!-- <option value="" selected>Numéro</option> -->
+                      <option value="" >01</option>
+                      
                     </select>
                   </div>
 
 
-                  <input type="submit" value="Recherche" />
+                  <input type="submit" class="btnSub" value="Valider"  />
                 </form>
               </div>
 
@@ -199,56 +210,31 @@
                   </thead>
 
                   <tbody>
-                    <tr>
-                      <td>Malagasy</td>
-                      <td>3</td>
-                      <td> <input type="text" placeholder="note"></td>
-                    </tr>
-                    <tr>
-                      <td>Français</td>
-                      <td>3</td>                 
-                      <td> <input type="text" placeholder="note"></td>
-                    </tr>
-                    <tr>
-                      <td>Anglais</td>
-                      <td>3</td>
-                      <td> <input type="text" placeholder="note"></td>
-                    </tr>
-                    <tr>
-                      <td>Allemand</td>
-                      <td>3</td>
-                      <td> <input type="text" placeholder="note"></td>
-                    </tr>
-                    <tr>
-                      <td>EPS</td>
-                      <td>3</td>
-                      <td> <input type="text" placeholder="note"></td>
-                    </tr>
-                    <tr>
-                      <td>Physique</td>
-                      <td>3</td>
-                      <td> <input type="text" placeholder="note"></td>
-                    </tr>
-                    <tr>
-                      <td>Science de la vie et de la terre</td>
-                      <td>3</td>
-                      <td> <input type="text" placeholder="note"></td>
-                    </tr>
-                    <tr>
-                      <td>Chimie</td>
-                      <td>3</td>
-                      <td> <input type="text" placeholder="note"></td>
-                    </tr>
-
-                    <tr>
-                      <td>Probabilité</td>
-                      <td>3</td>
-                      <td> <input type="text" placeholder="note"></td>
-                    </tr>
-
+                    <form action="">
+                      <input type="text" name="trimestre" placeholder="Trimestre.." style="padding: 6px 12px; border: solid 1px rgba(0, 0, 0, 0.534); border-radius: 8px;">
+                    
+                    <% if (data.dataFindClass !== 0 ) { %>
+                      <% for (var i = 0; i < data.dataFindClass.matiere.length ; i++ ){ %>
+                      <tr>
+                        <td><%= data.dataFindClass.matiere[i] %></td>
+                        <td><%= data.dataFindClass.coeff[i] %></td>
+                        <td><input type="text" placeholder="note"></td>
+                      </tr>
+                      <% } %>
+                    <% } else { %>
+                      <tr>
+                        <td>Néant</td>
+                        <td>Néant</td>
+                        <td>Néant</td>
+                        
+                      </tr>
+                    <% } %>
+                    <input type="submit" class="btnSub" value="Valider" style="margin-left: 20px;">
+                  </form>
                   </tbody>
                 </table>
               </div>
+            
             </div>
           </div>
         </div>
@@ -261,5 +247,30 @@
     <script src="/public/js/scriptDflt.js"></script>
 
     <script src="/public/assets/FontAwesome/js/all.min.js"></script>
+    <script>
+      const selectClasse = document.getElementById('selectClasse');
+      const selectNumero = document.getElementById('selectNumInClasse');
+      
+ 
+       fetch("/admin/note/getClasseDispo")
+         .then((res) => res.json())
+         .then((data) => {
+         const classe = Object.values(data);
+         
+    
+         for (var i = 0; i < classe.length ; i++){
+           var option = document.createElement("option");
+ 
+           option.value = classe[i]._id;
+           option.textContent = classe[i].nomClasse;
+ 
+           selectClasse.appendChild(option);
+         }
+ 
+       });
+       
+ 
+       
+   </script>
   </body>
 </html>

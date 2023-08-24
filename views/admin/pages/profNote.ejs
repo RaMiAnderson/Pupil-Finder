@@ -18,6 +18,20 @@
 
     <!-- FontAwesome -->
     <link rel="stylesheet" href="/public/assets/FontAwesome/css/all.min.css" />
+    <style>
+      .btnSub{
+        width: 12%;
+        background-color: var(--violet);
+        color: white;
+        padding: 6px 12px;
+        border-radius: 8px;
+      }
+      .btnSub:hover{
+        background-color: var(--rose);
+        cursor: pointer;
+        transition: .3s;
+      }
+    </style>
   </head>
 
   <body>
@@ -106,11 +120,27 @@
         <div id="PgNote" class="Apayer note">
           <div class="ParentTableau noteParent">
             <div class="ListRecu">
+              
               <div class="ListRecuTete">
                 <h2>Fiche de notes</h2>
-                <form action="" id="FormDateNote">
-                  <input type="date" name="date" />
-                  <input type="submit" value="Recherche" />
+                <form action="/prof/note/findClass" method="post"  id="" style=" width: 55% ; display: flex; justify-content: space-evenly;">
+                  
+                  <div class="nomerao" style="width: 30%;">
+                    <select name="classeNote" id="selectClasse" style="padding: 6px 8px; border-radius: 8px; border: solid 1px rgba(0, 0, 0, 0.534); width: 100%;">
+                      <!-- <option value="" selected>Classe</option> -->
+                      
+                    </select>
+                  </div>
+                  <div class="kilasy" style="width: 30%;">
+                    <select name="" id="selectNumInClasse" style="padding: 6px 8px; border-radius: 8px; border: solid 1px rgba(0, 0, 0, 0.534); width: 100%;">
+                      <!-- <option value="" selected>Numéro</option> -->
+                      <option value="" >01</option>
+                      
+                    </select>
+                  </div>
+
+
+                  <input type="submit" class="btnSub" value="Valider"  />
                 </form>
               </div>
 
@@ -121,118 +151,24 @@
                       <td>Matières</td>
                       <td>Coefficient</td>
                       <td>Notes</td>
-                      <td>Remarques</td>
+                     
                     </tr>
                   </thead>
 
                   <tbody>
-                    <tr>
-                      <td>Comptabilité</td>
-                      <td>3</td>
-                      <td>19</td>
-                      <td><span class="status honorable">Honorable</span></td>
-                    </tr>
-                    <tr>
-                      <td>Organisation de l'entreprise</td>
-                      <td>3</td>
-                      <td>12</td>
-                      <td><span class="status assez_bien">Assez-bien</span></td>
-                    </tr>
-                    <tr>
-                      <td>Mathématique Financière</td>
-                      <td>3</td>
-                      <td>14,75</td>
-                      <td><span class="status bien">Bien</span></td>
-                    </tr>
-                    <tr>
-                      <td>Structure de données</td>
-                      <td>3</td>
-                      <td>15</td>
-                      <td><span class="status bien">Bien</span></td>
-                    </tr>
-                    <tr>
-                      <td>Base de données</td>
-                      <td>3</td>
-                      <td>4</td>
-                      <td>
-                        <span class="status insuffisant">Insuffisant</span>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Algorithme et programmation</td>
-                      <td>3</td>
-                      <td>8</td>
-                      <td><span class="status passable">Passable</span></td>
-                    </tr>
-                    <tr>
-                      <td>Informatique Scientifique</td>
-                      <td>3</td>
-                      <td>19</td>
-                      <td><span class="status honorable">Honorable</span></td>
-                    </tr>
-                    <tr>
-                      <td>Algèbre Linéaire</td>
-                      <td>3</td>
-                      <td>1</td>
-                      <td>
-                        <span class="status insuffisant">Insuffisant</span>
-                      </td>
-                    </tr>
+                    <form action="" id="FormDateNote">
+                      <input type="text" name="trimestre" placeholder="Trimestre.." style="padding: 6px 12px; border: solid 1px rgba(0, 0, 0, 0.534); border-radius: 8px;">
+                    
+                      <td id="nomMatiereEE"></td>
+                      <td id="coeffMatiereEE">3</td>
+                      <td><input type="text" placeholder="note"></td>
 
-                    <tr>
-                      <td>Probabilité</td>
-                      <td>3</td>
-                      <td>1,25</td>
-                      <td>
-                        <span class="status insuffisant">Insuffisant</span>
-                      </td>
-                    </tr>
-
-                    <tr>
-                      <td>Analyse Mathématique</td>
-                      <td>3</td>
-                      <td>5,25</td>
-                      <td>
-                        <span class="status insuffisant">Insuffisant</span>
-                      </td>
-                    </tr>
-
-                    <tr>
-                      <td>Mathématique Discrète</td>
-                      <td>3</td>
-                      <td>16,05</td>
-                      <td><span class="status bien">Très bien</span></td>
-                    </tr>
-
-                    <tr>
-                      <td>Pascal</td>
-                      <td>4</td>
-                      <td>20</td>
-                      <td><span class="status honorable">Honorable</span></td>
-                    </tr>
-                    <tr>
-                      <td>HTML&CSS</td>
-                      <td>4</td>
-                      <td>17</td>
-                      <td><span class="status bien">Très bien</span></td>
-                    </tr>
-                    <tr>
-                      <td>Français</td>
-                      <td>3</td>
-                      <td>7,75</td>
-                      <td>
-                        <span class="status insuffisant">Insuffisant</span>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Dictée</td>
-                      <td>3</td>
-                      <td>13</td>
-                      <td><span class="status assez_bien">Assez-bien</span></td>
-                    </tr>
+                    <input type="submit" class="btnSub" value="Valider" style="margin-left: 20px;">
+                  </form>
                   </tbody>
                 </table>
               </div>
+            
             </div>
           </div>
         </div>
@@ -245,5 +181,39 @@
     <script src="/public/js/scriptDflt.js"></script>
 
     <script src="/public/assets/FontAwesome/js/all.min.js"></script>
+    <script>
+      const selectClasse = document.getElementById('selectClasse');
+      const selectNumero = document.getElementById('selectNumInClasse');
+      const nomMatiereEE = document.getElementById('nomMatiereEE');
+      const coeffMatiereEE = document.getElementById('coeffMatiereEE');
+      
+      fetch("/prof/note/getFonctionProf")
+         .then((res) => res.json())
+         .then((data) => {
+         
+          nomMatiereEE.textContent = data.fonction;
+       });
+
+       fetch("/prof/note/getClasseDispo")
+         .then((res) => res.json())
+         .then((data) => {
+         const classe = Object.values(data);
+         
+    
+         for (var i = 0; i < classe.length ; i++){
+           var option = document.createElement("option");
+ 
+           option.value = classe[i]._id;
+           option.textContent = classe[i].nomClasse;
+ 
+           selectClasse.appendChild(option);
+         }
+         
+         console.log(classe)
+       });
+       
+ 
+       
+   </script>
   </body>
 </html>

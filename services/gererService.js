@@ -240,6 +240,26 @@ const getOneProff = async (email) => {
     }
 }
 
+const getOneClass = async (id) => {
+    try{
+         return new Promise( (resolve , reject) => {
+            classe.findOne( {_id : id} , (err, userBase) => {
+                if (err){
+                    console.log(err);
+                    reject("Errreur Server");
+                }
+                resolve(userBase);
+            })
+        })
+    }
+    catch (err) {
+        console.log(err);
+        throw "ERROR SERVER"
+    }
+}
+
+
+
 const getMatriculeClasse = async () => {
     try {
         return new Promise( (resolve, reject) => {
@@ -334,6 +354,7 @@ module.exports = {
     addAnnonceService,
     getOneProff,
     getAllUserInOneClass,
+    getOneClass,
 
     deleteUserByIdentifiant,
     deleteMatiereByIdentifiant,

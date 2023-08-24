@@ -1,7 +1,8 @@
 const authentificationService = require("../services/authentificationService");
 const service = require("../services/profService");
 const temporary = require("../tmp/temporaryData");
-const gererService = require("../services/gererService")
+const gererService = require("../services/gererService");
+
 
 
 
@@ -101,6 +102,8 @@ const apiGetfonctionProf = async (req,res) => {
 
 
 
+
+
 module.exports = {
     getPageAbsenceProfController,
     getPageHomeProfController,
@@ -108,5 +111,6 @@ module.exports = {
 
     getUserInClass,
     apiGetClasseDispo,
-    apiGetfonctionProf
+    apiGetfonctionProf,
+  
 }

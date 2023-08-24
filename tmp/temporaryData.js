@@ -7,9 +7,12 @@ var dataClasseChoisi = undefined;
 
 var dataClasseChoisiAdmin = undefined;
 
+var dataFindClass = undefined;
+
 
 module.exports = {
     dataNombreMatiere,
     dataClasseChoisi,
-    dataClasseChoisiAdmin
+    dataClasseChoisiAdmin,
+    dataFindClass
 }

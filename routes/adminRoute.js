@@ -54,7 +54,11 @@ router.post("/annonce/add-annonce" ,adminController.addAnnonce);
 
 // Absence
 
-router.post("/absence/getUserInClass", adminController.getUserInClass )
+router.post("/absence/getUserInClass", adminController.getUserInClass );
+
+// Note
+
+router.post("/note/findClass", adminController.findClass );
 
 
 
@@ -99,6 +103,10 @@ router.get("/annonce/getAllAnnonce" , adminController.getAllAnonceController);
 router.get("/absence/getClasseDispo" , adminController.getClasseDispo);
 
 router.get("/absence/getMatiereDispo" , adminController.dataGerer );
+
+router.get("/note/getClasseDispo" , adminController.getClasseDispo);
+
+
 
 
 

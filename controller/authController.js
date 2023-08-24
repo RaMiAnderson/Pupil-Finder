@@ -1,4 +1,5 @@
 const authentificationService = require("../services/authentificationService");
+const temporaryData = require("../tmp/temporaryData");
 
 
 
@@ -21,6 +22,10 @@ const loginController = async (req,res) => {
 
 const logoutController = (req,res) => {
     // Détruire la session et rediriger vers la page de connexion
+    temporaryData.dataClasseChoisi = undefined;
+    temporaryData.dataClasseChoisiAdmin = undefined;
+    temporaryData.dataFindClass = undefined;
+    temporaryData.dataNombreMatiere = undefined;
     req.session.destroy((err) => {
         if (err) {
             console.log(err);

@@ -130,10 +130,20 @@ const getGerer = async (req,res) => {
     else res.redirect("/auth/login");
 }
 
-const getNote = (req,res) => {
+const getNote = async (req,res) => {
     const stateConnection = authentificationService.verifyIfAlreadyConnected(req);
     if (stateConnection) {
-        if (req?.session?.user?.role === "admin")  res.render("admin/pages/adminNote")
+        const dataFindClass = await temporaryData.dataFindClass;
+        if (dataFindClass !== undefined) {
+            var data = {
+                dataFindClass : dataFindClass
+            }
+        } else {
+            var data = {
+                dataFindClass : 0
+            }
+        }
+        if (req?.session?.user?.role === "admin")  res.render("admin/pages/adminNote" , {data})
         else {
             if (req?.session?.user?.role === "user") res.redirect('/user')
             else res.redirect('/prof/note');
@@ -417,7 +427,18 @@ const getUserInClass = async (req,res) => {
     res.redirect("/admin/absence");
 }
 
-
+const findClass = async (req,res) => {
+    const stateConnection = authentificationService.verifyIfAlreadyConnected(req);
+    if (stateConnection) {
+        if (req?.session?.user?.role === "admin" || req?.session?.user?.role === "prof") {
+            const classCoressp = await gererService.getOneClass(req.body.classeNote);
+            temporaryData.dataFindClass = classCoressp;
+            res.redirect("/admin/note");
+        }  
+        else res.redirect('/user');
+    } 
+    else res.redirect("/auth/login");
+}
 
 
 
@@ -442,6 +463,7 @@ module.exports = {
     addAnnonce,
     addProfController,
     getUserInClass ,
+    findClass,
 
 
     deleteOneUser,
