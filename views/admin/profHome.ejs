@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pupil.Finder</title>
+
+    <!-- All -->
+    <link rel="stylesheet" href="/public/css/allstyle.css" />
+    <link rel="stylesheet" href="/public/css/style_acceuil.css" />
+
+    <link rel="shortcut icon" href="/public/imgs/ICON-01.svg" type="image/x-icon" />
+    <link rel="stylesheet" href="/public/css/homePage.css" />
+
+
+
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="/public/assets/FontAwesome/css/all.min.css" />
+    <style>
+      .homepage .flottantebox {
+        position: relative;
+        width: 80%;
+        padding: 20px;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr) !important;
+        grid-gap: 15px;
+        right: 0;
+        height: calc(100vh - 150px);
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="parentMax">
+
+      <div class="topbarMax">
+        <div class="topbar">
+          
+
+          <div class="navHorizontal">
+            <div>
+              <button class="btnNavH home" id="versHome">
+                <i class="fas fa-home navIcon"></i>
+              </button>
+            </div>
+           
+            <div class="user">
+              <i class="far fa-user-circle"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- CONTENU -->
+      <div class="homepage" id="homePageGG">
+        <!--Page Acceuil  Branch : ANDERSON !!!  ACCEUIL ihany tsy inclus am Block content-->
+        <div class="blockImg">
+          <img
+            src="/public/imgs/Illustration/Welcome-Last Design.svg" alt="Welcome" />
+        </div>
+        <div class="blockGrid">
+          <div class="flottantebox">
+
+            
+            
+            <a href="/admin/absence" style="text-decoration: none;">
+              <div id="AbsenceAcc" class="boxKely bgAbsence">
+                <div class="flexcontent">
+                  <div class="chiffreBoxF Cpt">5</div>
+                  <div class="chiffreBoxF">Absences</div>
+                </div>
+                <div class="iconBoxFlottante">
+                  <i class="fas fa-hourglass-end iconAccRglg"></i>
+                </div>
+              </div>
+            </a>
+            
+            
+            
+            <a href="/admin/note" style="text-decoration: none;">
+              <div id="NoteAcc" class="boxKely bgProfil">
+                <div class="flexcontent">
+                  <div class="chiffreBoxF Cpt">6</div>
+                  <div class="chiffreBoxF">Notes</div>
+                </div>
+                <div class="iconBoxFlottante">
+                  <i class="far fa-file-alt iconAccRglg"></i>
+                </div>
+              </div>
+            </a>
+            
+            
+            
+            <!-- Se deconnecter -->
+            <form action="/admin/deconnexion" method="post" class="logOutAcc">
+              <button type="submit" class="boxKely bgProfil">
+                  <div class="flexcontent">
+                    <div class="chiffreBoxF Cpt"></div>
+                    <div class="chiffreBoxF">Se Déconnecter</div>
+                  </div>
+                  <div class="iconBoxFlottante">
+                    <i class="fas fa-sign-out-alt iconAccRglg"></i>
+                  </div>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    
+    </div>
+
+    <!-- =========== Scripts =========  -->
+    
+  
+
+    <script src="/public/assets/FontAwesome/js/all.min.js"></script>
+  </body>
+</html>
